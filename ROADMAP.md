@@ -126,6 +126,11 @@ calculation checks, uncertainty bounds and explicit delay accounting. This
 comparator must exist before any learned-warning comparison. Failure of one
 controller alone cannot establish that recovery is physically impossible.
 
+A pre-measurement envelope for the owned V995 exists in
+[Data/v995-envelope/](Data/v995-envelope/) (declared and literature inputs,
+no measurement). It bounds the force range for A and B and is replaced by
+measured inputs here; see the [decision record](docs/decisions/v995-cad-and-envelope-2026-10-11.md).
+
 ## P. Optional public-data checks
 
 Status: selected QDrone2 descriptive check done; other checks conditional.

@@ -12,6 +12,11 @@ the source qualification; [data and figures](../docs/data-and-figures.md) maps
 these outputs to their generators and limits. Full downloaded flights remain
 outside git, apart from the attributed development test excerpt.
 
+[v995-envelope/](v995-envelope/) contains the hand-calculated propulsion
+envelope for the owned V995: declared and literature inputs with evidence
+states, and the executed result from `Analysis/propulsion_envelope.py`. No
+measurement of the aircraft is in it.
+
 Other existing result files and the physical-test layout below belong to the
 historical aircraft. The warning study follows the [roadmap](../ROADMAP.md);
 the old tasks and thresholds do not transfer to it.

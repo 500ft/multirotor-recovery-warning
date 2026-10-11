@@ -1,0 +1,272 @@
+{
+  "evidence": "PRE-MEASUREMENT ENVELOPE. No V995 quantity is measured; evidence states of the inputs are listed. Not a bench result and not the physics baseline itself.",
+  "input_evidence_states_present": [
+    "declared",
+    "literature_derived",
+    "manufacturer_specification",
+    "owner_identified",
+    "unmeasured"
+  ],
+  "pre_measurement": true,
+  "corners": {
+    "low": {
+      "inputs": {
+        "load_voltage_V": 3.3,
+        "pack_current_A": 1.7999999999999998,
+        "pack_power_W": 5.9399999999999995,
+        "efficiency_g_per_W": 2.5,
+        "diameter_m": 0.031,
+        "CT": 0.1,
+        "max_rpm": 20000,
+        "motor_current_A": 0.7,
+        "disk_area_total_m2": 0.003019070540099791
+      },
+      "ideal_thrust_from_pack_power_N": 0.6390537851841139,
+      "constraints_N": {
+        "battery_W_times_efficiency": 0.14562875249999996,
+        "rotor_CT_rpm_D": 0.050280587777777774,
+        "motor_current": 0.22653361499999994
+      },
+      "binding_constraint": "rotor_CT_rpm_D",
+      "total_thrust_N": 0.050280587777777774,
+      "total_thrust_g": 5.127193055505986,
+      "implied_rpm_at_envelope_thrust": 20000.0,
+      "implied_blade_pass_Hz": 1000.0
+    },
+    "nominal": {
+      "inputs": {
+        "load_voltage_V": 3.7,
+        "pack_current_A": 2.6999999999999997,
+        "pack_power_W": 9.99,
+        "efficiency_g_per_W": 3.5,
+        "diameter_m": 0.035,
+        "CT": 0.18,
+        "max_rpm": 30000,
+        "motor_current_A": 1.2,
+        "disk_area_total_m2": 0.0038484510006474974
+      },
+      "ideal_thrust_from_pack_power_N": 0.9799283916297278,
+      "constraints_N": {
+        "battery_W_times_efficiency": 0.34288951725000005,
+        "rotor_CT_rpm_D": 0.3308878125000001,
+        "motor_current": 0.609581364
+      },
+      "binding_constraint": "rotor_CT_rpm_D",
+      "total_thrust_N": 0.3308878125000001,
+      "total_thrust_g": 33.741166708305094,
+      "implied_rpm_at_envelope_thrust": 29999.999999999996,
+      "implied_blade_pass_Hz": 1499.9999999999998
+    },
+    "high": {
+      "inputs": {
+        "load_voltage_V": 4.1,
+        "pack_current_A": 4.5,
+        "pack_power_W": 18.45,
+        "efficiency_g_per_W": 4.5,
+        "diameter_m": 0.04,
+        "CT": 0.3,
+        "max_rpm": 47000,
+        "motor_current_A": 2.0,
+        "disk_area_total_m2": 0.00502654824574367
+      },
+      "ideal_thrust_from_pack_power_N": 1.6124127621213062,
+      "constraints_N": {
+        "battery_W_times_efficiency": 0.8141971162499999,
+        "rotor_CT_rpm_D": 2.3091413333333333,
+        "motor_current": 1.4474615399999997
+      },
+      "binding_constraint": "battery_W_times_efficiency",
+      "total_thrust_N": 0.8141971162499999,
+      "total_thrust_g": 83.02499999999999,
+      "implied_rpm_at_envelope_thrust": 27908.556885533075,
+      "implied_blade_pass_Hz": 1395.4278442766538
+    }
+  },
+  "hover_and_arrest_by_mass_hypothesis": {
+    "listing": {
+      "mass_g": 22.3,
+      "weight_N": 0.21868829499999998,
+      "low": {
+        "thrust_to_weight": 0.22991897109892315,
+        "can_hover": false,
+        "hover_power_W_at_efficiency": 8.92,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "2.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "3.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          }
+        }
+      },
+      "nominal": {
+        "thrust_to_weight": 1.5130568030630087,
+        "can_hover": true,
+        "hover_power_W_at_efficiency": 6.371428571428572,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": 0.14937654143655282,
+            "nominal": 0.24937654143655283,
+            "high": 0.3993765414365528
+          },
+          "2.0": {
+            "low": 0.4975061657462113,
+            "nominal": 0.6975061657462114,
+            "high": 0.9975061657462113
+          },
+          "3.0": {
+            "low": 1.0443888729289754,
+            "nominal": 1.3443888729289755,
+            "high": 1.7943888729289754
+          }
+        }
+      },
+      "high": {
+        "thrust_to_weight": 3.7230941704035874,
+        "can_hover": true,
+        "hover_power_W_at_efficiency": 4.955555555555556,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": 0.0687234841905375,
+            "nominal": 0.1687234841905375,
+            "high": 0.3187234841905375
+          },
+          "2.0": {
+            "low": 0.17489393676215004,
+            "nominal": 0.37489393676215,
+            "high": 0.67489393676215
+          },
+          "3.0": {
+            "low": 0.31851135771483763,
+            "nominal": 0.6185113577148376,
+            "high": 1.0685113577148375
+          }
+        }
+      }
+    },
+    "owner_estimate": {
+      "mass_g": 50.0,
+      "weight_N": 0.4903325,
+      "low": {
+        "thrust_to_weight": 0.10254386111011972,
+        "can_hover": false,
+        "hover_power_W_at_efficiency": 20.0,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "2.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "3.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          }
+        }
+      },
+      "nominal": {
+        "thrust_to_weight": 0.6748233341661017,
+        "can_hover": false,
+        "hover_power_W_at_efficiency": 14.285714285714286,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "2.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          },
+          "3.0": {
+            "low": null,
+            "nominal": null,
+            "high": null
+          }
+        }
+      },
+      "high": {
+        "thrust_to_weight": 1.6604999999999999,
+        "can_hover": true,
+        "hover_power_W_at_efficiency": 11.11111111111111,
+        "arrest_height_m_by_descent_speed_and_delay": {
+          "1.0": {
+            "low": 0.1271927489006759,
+            "nominal": 0.2271927489006759,
+            "high": 0.3771927489006759
+          },
+          "2.0": {
+            "low": 0.4087709956027036,
+            "nominal": 0.6087709956027036,
+            "high": 0.9087709956027036
+          },
+          "3.0": {
+            "low": 0.8447347401060831,
+            "nominal": 1.144734740106083,
+            "high": 1.594734740106083
+          }
+        }
+      }
+    }
+  },
+  "deters_2018_table3_back_calculated_CT": [
+    {
+      "aircraft": "Cheerson CX-10C",
+      "diameter_mm": 30,
+      "blades": 2,
+      "max_rpm": 47000,
+      "max_thrust_g": 4.0,
+      "CT_at_rho_1p225": 0.06442676784007703
+    },
+    {
+      "aircraft": "Estes Proto X",
+      "diameter_mm": 30,
+      "blades": 2,
+      "max_rpm": 47000,
+      "max_thrust_g": 3.4,
+      "CT_at_rho_1p225": 0.05476275266406547
+    },
+    {
+      "aircraft": "Syma X12S",
+      "diameter_mm": 34,
+      "blades": 2,
+      "max_rpm": 31000,
+      "max_thrust_g": 5.1,
+      "CT_at_rho_1p225": 0.11445063534669289
+    },
+    {
+      "aircraft": "Crazyflie",
+      "diameter_mm": 47,
+      "blades": 2,
+      "max_rpm": 20000,
+      "max_thrust_g": 10.0,
+      "CT_at_rho_1p225": 0.14765075246282935
+    },
+    {
+      "aircraft": "JJRC H36",
+      "diameter_mm": 31,
+      "blades": 4,
+      "max_rpm": 30000,
+      "max_thrust_g": 9.6,
+      "CT_at_rho_1p225": 0.3328656924345598
+    }
+  ],
+  "reading": "Which constraint binds changes with the corner: the rotor-speed bound at the low and nominal corners (a toy motor that cannot spin a small, low-CT propeller fast), the pack power at the high corner. The low corner stacks every pessimistic choice and is not a realistic aircraft. Thrust-to-weight depends on the unmeasured mass more than on any other input, so AC-06 is the first number to take; if the aircraft hovers, every corner with thrust-to-weight at or below one at the true mass is excluded. The implied blade-pass frequency is what a phone spectrogram can check during a hover; with the measured diameter and a scale reading it gives a direct CT for the real propeller.",
+  "inputs_sha256": "68f2d9669b61a014166185de81c2b86570bad2d489ddfc48f66269e76756a707",
+  "implementation_sha256": "a3e208decc95cbf1d84636a8c881239e45c68702fdf0a8ddca1c00633c3d3c90"
+}

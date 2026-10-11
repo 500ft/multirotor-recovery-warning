@@ -1,0 +1,23 @@
+id,group,quantity,unit,feeds,method,repeats,reading_1,reading_2,reading_3,instrument,datum_or_station,notes
+DR-01,mass,Mass without battery,g,CAD mass check; mass_g input,scale 0.01 g,3,,,,,,"AC-06 in evidence/v995-fixture-measurements holds the flight-ready mass; do not re-enter it here. DR-01 plus DR-02 must reproduce AC-06 within the scale resolution."
+DR-02,mass,Battery mass,g,CAD battery part; mass check,scale 0.01 g,3,,,,,,
+DR-03,mass,Mass of one propeller,g,CAD prop part; blade inertia for the rotor model,scale 0.01 g,3,,,,,,"Only if a prop can be removed without damage. Leave blank otherwise."
+DR-04,mass,Mass of one guard,g,CAD guard part,scale 0.01 g,3,,,,,,"Only if removable. Leave blank otherwise."
+DR-05,overall,Motor shaft to motor shaft diagonal,mm,frame layout; checks AC-07 coordinates,calipers,3,,,,,,"Shaft centre to shaft centre. Deters 2018 Table 1 uses this as aircraft size (Cheerson CX-10 45 mm, Crazyflie 127 mm)."
+DR-06,overall,Overall length / width / height with guards,mm,bounding box; enclosure clearance,calipers or rule,3,,,,,,"Three values per reading, separated by slashes. Height from the standing surface to the highest point."
+DR-07,frame,Arm length from body edge to pod centre,mm,arm part,calipers,3,,,,,,"Record which body edge is the datum."
+DR-08,frame,Arm section width and thickness at the root,mm,arm part; modal model stiffness,calipers,3,,,,,,"Two values per reading. The root section sets the first bending mode more than any other dimension."
+DR-09,frame,Arm section width and thickness at the pod,mm,arm part; modal model stiffness,calipers,3,,,,,,
+DR-10,propeller,Propeller diameter tip to tip,mm,envelope input propeller.diameter_mm; CFD geometry,calipers,3,,,,,,"Replaces the declared 31 to 40 mm range. Measure across opposite blade tips; for three blades, measure tip to hub centre and double it, and say so."
+DR-11,propeller,Blade count / hub diameter / hub height,count and mm,prop part,visual and calipers,1,,,,,,"Confirms the three-blade inventory note."
+DR-12,propeller,Blade chord at 75 percent radius,mm,CFD geometry; Reynolds number,photo with scale bar or calipers,3,,,,,,"Deters 2018 reports Re at the 75 percent station. A photo against millimetre paper is enough; record the pixel scale."
+DR-13,propeller,Blade pitch angle at 75 percent radius,deg,CFD geometry,photo of the blade silhouette edge-on against a protractor,3,,,,,,"Hard to read on a 35 mm prop; a blank is better than a guess. Blade thickness at the same station if measurable."
+DR-14,motor,Motor can diameter and length,mm,motor class (6x15, 7x16, 8.5x20); motor mockup part,calipers through the pod opening,3,,,,,,"Do not pull a glued motor. If only the diameter is visible, record that and leave the length blank."
+DR-15,motor,Pod outer diameter and height,mm,pod part,calipers,3,,,,,,
+DR-16,guard,Guard ring outer diameter / ring section width and thickness,mm,guard part; impact model,calipers,3,,,,,,"Three values per reading."
+DR-17,guard,Strut count and strut section,count and mm,guard part,visual and calipers,1,,,,,,
+DR-18,body,Shell wall thickness at an open edge,mm,shell part; modal and impact models,calipers,3,,,,,,"Measure at a battery-bay or canopy edge; do not cut the shell."
+DR-19,body,Material marking,text,material family for E and density ranges,visual,1,,,,,,"A recycling code identifies the family only; take E and density as datasheet ranges for that family and let the tap test fit E."
+DR-20,electronics,PCB envelope length / width / thickness and mounting,mm,PCB block part; mass distribution,calipers,1,,,,,,"Envelope only. No probing of pads (OQ-011 is closed)."
+DR-21,electronics,Battery length / width / thickness and label text,mm and text,battery part; confirms 3.7 V 180 mAh,calipers and photo,1,,,,,,
+DR-22,photos,Top / bottom / side / each part with a scale bar,file names,CAD reference images,phone camera,1,,,,,,"Record file names here. Every CAD feature should be traceable to a photo or a row above."
