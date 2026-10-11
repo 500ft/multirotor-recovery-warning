@@ -1,56 +1,89 @@
-# 07: Loss-of-control prediction from onboard data
+# 07: Loss-of-control prediction and the recovery-warning question
 
-Repo artifacts this cluster governs: the research question in `ROADMAP.md`;
-the F.1 baselines and preregistration; `novelty-and-gaps.md` §6;
-`claim-ledger.md` H1.
+The full-text review corrects the earlier abstract-only positioning. A general
+onboard loss-of-control warning is already demonstrated. The current recovery
+comparison remains untested; neither its novelty nor a likely null result is
+established by this paper alone.
 
-Added 2026-10-09. Search scope: abstract-level, web search only, forward
-citations not searched.
+## Source and reading scope
 
-## Headline findings for this repo
+Altena, van Beers and de Visser, *Loss-of-Control Prediction of a Quadcopter
+Using Recurrent Neural Networks*, JAIS (2023),
+[DOI](https://doi.org/10.2514/1.I011231),
+[primary repository](https://repository.tudelft.nl/record/uuid%3A3051e4a5-5684-4d69-a3a5-bf1109298635),
+[final published PDF](https://repository.tudelft.nl/file/File_45d6fb48-867f-43ce-ba4f-c43cf0d51789).
+The complete article, including references, was read. The primary download
+matches the supplied local reading copy, SHA-256
+`ee6a20e23ed80856fe5c77e827d5f87d5324ff09506ab709be69f49067e078ae`.
+The PDF and extraction are excluded from git; their availability does not grant
+permission to redistribute them or reuse flight logs. No raw-data reproduction
+or forward-citation review was performed.
 
-1. **The nearest prior work predicts loss of control 2 s ahead on real flight
-   data, from onboard sensors only.** Altena, van Beers & de Visser (2023)
-   report 172 real-world loss-of-control events on three quadcopters (53 g
-   Tiny Whoop, 73 g URUAV UZ85, 265 g GEPRC CineGO). All four recurrent
-   architectures they trained predicted the event 2 s before it occurred, and
-   the predictors transferred across changes in mass, blade diameter and
-   blade count.
-2. **The clearest early signal was rotor-command saturation.** That is
-   effectively the thrust-margin signal, so it is the physics comparator the
-   maneuver-specific warning must beat.
-3. **The event differs from ours.** Their loss of control was forced by
-   commanding an excessive yaw rate (2000 deg/s), an unrecoverable upset by
-   design. This repository asks about a battery- or thrust-limited loss of
-   recovery capability.
-4. **A null result is likely.** If the physics quantity does most of the
-   predicting in their data, the maneuver-specific warning here may not beat
-   the thrust-margin baseline. This is a risk to milestone F, which depends on
-   the flight outcomes from E. Milestone status is unchanged; that is an owner
-   decision not yet made.
+## Verified paper findings
 
-## 1. Loss-of-control prediction
+This table is the repository's numerical source for this comparison.
 
-| Ref | A/E | Key finding |
+| Topic | Full-text finding | Location (journal page) |
 | --- | --- | --- |
-| **Altena, van Beers & de Visser (2023)**, *Loss-of-Control Prediction of a Quadcopter Using Recurrent Neural Networks*, Journal of Aerospace Information Systems 20(10) 648–659, [10.2514/1.I011231](https://doi.org/10.2514/1.I011231) | 3 / B | 172 real-world loss-of-control events on three quadcopters (53 g, 73 g, 265 g). Loss of control forced by a 2000 deg/s yaw-rate command. Four recurrent network architectures on onboard sensor measurements only; commanded rotor values saturate before loss of control and were the clearest early signal; all four predicted the event 2 s ahead; transfer across mass, blade diameter and blade count. Graded from the abstract; full text not read. |
+| Task | Predict time to forced yaw LOC; command ±2000 deg/s, label first roll/pitch magnitude exceeding 90° and continuing to grow. | III.A, 649–650 |
+| Hardware | Tiny Whoop, UZ85, CineGO; Betaflight 4.2. Tiny Whoop motor-output limit 50%; onboard commands, rotor outputs and IMU logs. | III.A, Tables 1/3 |
+| Conditions | Mass, propellers, wind and vehicle transfer; alternate pitch maneuver. | III.A, IV.C |
+| Comparison | LSTM, BILSTM, CNN-LSTM, GRU and input ablations; time-to-LOC RMSE. No standalone saturation-threshold or height-to-arrest comparator. | III.B–IV |
+| Evaluation | Random 80/20 split, overlapping windows; scaling uses all nominal runs; model comparison uses one separate validation flight. | III.A–C, IV |
+| Limits | Pitch endpoint was onset of roll-axis flipping; detection failed on both selected longest runs. Wind produced false positives. Detection-time/false-positive/false-negative tradeoff remains untested. | IV.C.3–4, V.C |
+| Timing/transfer | Approximately 2 s predictions track training duration; propeller/vehicle changes introduce timing bias and input-selection changes. | IV.C.2/5, V.C |
+| Source conflicts | Tiny Whoop mass: abstract 53 g versus Table 1's 56 g. Three-blade diameter: IV.C.2 30 mm versus Table 1/III.A/V.C 35 mm. | 648, 650, 655, 658 |
 
-## 2. Gaps (report as absences)
+## What changes in our interpretation
 
-- A warning compared with a physics comparator at matched false-alarm rate
-  was not found in the 2026-10-09 review (abstract-level, web search only,
-  forward citations not searched).
-- A warning tested on held-out battery packs was not found in the 2026-10-09
-  review (abstract-level, web search only, forward citations not searched).
+Command saturation is a controller-output observation. Available force depends
+on the installed motor, propeller, supply, airflow and allocation. Even an
+unsaturated command cannot guarantee adequate height to complete a recovery.
+For example, identical commands at different descent speeds or heights can
+produce different completion outcomes. Equating saturation with calibrated
+thrust margin discards those variables. Keep a simple saturation warning as a
+separate comparator alongside Roadmap C's delay-aware physics calculation.
 
-## 3. Consequence for the roadmap
+The paper's task-specific label cannot serve as our independent maneuver
+completion criterion. Its evaluation does not report a held-out battery-pack
+comparison. Our contrast is whether an advance warning improves on
+physics, saturation, voltage, sag-history and load comparators at equal
+false-alarm burden for an approved fixed controller and recovery maneuver,
+with whole packs and payload/guard conditions withheld. A new name for the
+warning or a different airframe would not establish added value.
 
-Cite Altena et al. as the related-work anchor for F.1. Keep the physics
-feasibility baseline as the preregistered primary comparator so a null result
-is reportable rather than a failure of the study.
+The table's split description does not establish whole-flight separation within
+the random partition. Overlapping windows and scaling provenance matter when
+assessing independence, but the text alone is insufficient to reproduce the
+split or allege a measured leakage effect. Our evaluation must keep complete
+groups separate and fit preprocessing only on development data. Likewise,
+time-prediction RMSE alone cannot establish useful warning lead time at a fixed
+false-alarm burden. Neither lower average error nor an early alert by itself
+proves a warning is actionable.
 
-## Unverified (do not cite until confirmed)
+Remove the earlier claim that a null result is likely: no matched comparator
+result supports that probability judgment. A null result remains possible and
+reportable. Evidence that would change the present assessment is either a
+prior matched comparison on the same recovery endpoint, or our own qualified,
+reserved comparison showing whether warning information adds value. This
+single-paper review establishes a narrower contrast, not field-wide novelty.
+The source conflicts above remain unresolved and must not populate a hardware
+register. Retired vehicle and CAD history remain unchanged.
 
-- Whether Altena et al. report a threshold or physics baseline, false-alarm
-  rates or lead-time distributions in the full text. Only the abstract was
-  read. Read the paper before asserting the gaps in §2 in any write-up.
+## M2 access choices, still pending
+
+These are alternatives for the owner, not approvals or a new execution plan.
+[Roadmap A](../../ROADMAP.md#a-qualify-component-instrumentation-and-propulsion)
+retains the qualification requirements and G5 purchase gate.
+
+| Route | What it could enable | Evidence needed before commitment | Supported endpoint |
+| --- | --- | --- | --- |
+| Borrow or lab access | Existing aircraft, measurement equipment, space and supervision could reduce what must be acquired. | Confirm the actual aircraft/controller, permitted logging and maneuvers, availability, independent outcome measurement, costs and safety responsibility. Access is currently unverified. | Component qualification first; warning evaluation only after the later roadmap gates. |
+| Buy Crazyflie 2.1+ later | A dedicated candidate platform could avoid dependence on a borrowed aircraft. | Owner selects the configuration and approves a complete incremental budget: aircraft/radio, packs, fixtures, references, sensing, spares and facility needs. Purchase alone provides no calibration or outcome labels. CAD then uses current drawings and delivered interfaces. | Same qualification and outcome requirements; purchase does not establish transfer from the paper's vehicles. |
+| Scoped qualification-only result | Report installed measurement capability, uncertainty and failed qualifications if qualified bench access becomes possible but flight outcomes do not. | Owner agrees the reduced scope; actual qualification records are still required. With current desk evidence alone, only this source review is complete. | Measurement capability within the tested configuration; recovery-warning performance remains unanswered. |
+
+Recommendation: establish whether suitable lab access exists before choosing a
+purchase. This is conditional on real availability, not an approved route.
+Declining purchase does not close the project or select qualification-only work.
+The next owner input is the M2 access/funding route and actual available hardware
+and space, with M4 safety responsibility before physical execution.

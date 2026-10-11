@@ -1,9 +1,8 @@
 # Novelty assessment and open gaps
 
-The repository's research question is preregistered in
-`docs/specs/survivable-set/design.md` §1. This file records what the literature
-shows is already established (so we never claim it), what is genuinely open, and
-who else is publishing an adjacent claim.
+The active question is in [ROADMAP.md](../ROADMAP.md). Section 6 addresses
+maneuver-specific warning. Sections 1–5 retain the earlier recovery-study
+assessment as history and do not authorize those experiments.
 
 ## 1. Established — never claim as novel
 
@@ -23,7 +22,7 @@ who else is publishing an adjacent claim.
 | 12 | **Attitude-priority desaturation** (roll/pitch → collective → yaw) | Faessler et al. (RA-L 2017); PX4 airmode | A / deployed |
 | 13 | **Monte-Carlo estimation of a quadrotor safe flight envelope**, substituting for HJ reachability | **Sun & de Visser (AIAA 2019)** | B |
 | 14 | Parachute recovery of small UAS **at ≥900 g**, with a 10–15 m altitude floor | ASTM F3322; EASA M2 MoC; Siotia et al. (2026); ParaZero test data | A / B / C |
-| 15 | **Loss-of-control prediction 2 s ahead on real quadcopter flight data**, from onboard sensor measurements only; commanded rotor values saturate before loss of control and were the clearest early signal; predictors transferred across mass, blade diameter and blade count (added 2026-10-09) | **Altena, van Beers & de Visser (JAIS 2023)** | B, 172 real events, abstract only |
+| 15 | Onboard loss-of-control warning with scenario-dependent transfer; see the [full-text findings](notes/07-loss-of-control-prediction.md#verified-paper-findings) for scope and failures. | Altena, van Beers & de Visser (JAIS 2023) | Full article reviewed; no local reproduction |
 
 ## 2. Genuinely open — the defensible lane
 
@@ -147,38 +146,12 @@ These are real absences, verified, and within reach of this project:
 - **The paired-comparison fix (note 05 §3) is a correctness prerequisite** for
   any future claim about mechanism vs reallocation.
 
-## 6. Warning versus physics baseline (added 2026-10-09)
+## 6. Warning versus physics baseline
 
-The repository question is now whether a maneuver-specific warning improves on
-a physics feasibility baseline (`ROADMAP.md`). The nearest prior work is
-**Altena, van Beers & de Visser (2023)**, *Loss-of-Control Prediction of a
-Quadcopter Using Recurrent Neural Networks*, Journal of Aerospace Information
-Systems 20(10) 648–659, [10.2514/1.I011231](https://doi.org/10.2514/1.I011231).
-
-From the abstract: 172 real-world loss-of-control events on three quadcopters
-(53 g Tiny Whoop, 73 g URUAV UZ85, 265 g GEPRC CineGO). Loss of control was
-forced by commanding an excessive yaw rate (2000 deg/s), an unrecoverable upset
-by design. Four recurrent network architectures were trained on onboard sensor
-measurements only. The commanded rotor values were the clearest early warning
-signal because they saturate before loss of control. All four architectures
-predicted the event 2 s before it occurred. The predictors transferred across
-changes in mass, blade diameter and blade count.
-
-| | Altena et al. (2023) | This repo |
-| --- | --- | --- |
-| Event | commanded upset (2000 deg/s yaw rate), unrecoverable by design | battery- or thrust-limited loss of recovery capability |
-| Inputs | onboard sensor measurements only | warning features preregistered in F.1; voltage, sag-history, load and physics baselines |
-| Transfer | across mass, blade diameter and blade count | unseen packs, payloads and guard conditions |
-| Status | published, real flight data | no outcome data yet (ROADMAP E, F) |
-
-Rotor-command saturation is effectively the thrust-margin signal, so this is
-the physics comparator the warning must beat.
-
-**Gap:** a warning compared with a physics comparator at matched false-alarm
-rate, or tested on held-out battery packs, was not found in the 2026-10-09
-review (abstract-level, web search only, forward citations not searched).
-
-**Risk:** the nearest prior work suggests the physics quantity does most of the
-predicting, so a null result against the thrust-margin baseline is likely.
-Record this as a risk to milestone F, which depends on the flight outcomes from
-E. No milestone status changes here; that is an owner decision not yet made.
+The [full-text comparison](notes/07-loss-of-control-prediction.md) replaces the
+abstract-only assessment. It holds the source findings, qualifications and M2
+options in one place. The current testable contrast is incremental warning
+value against matched physics and simple signal baselines for independently
+labeled recovery outcomes. Command saturation and calibrated thrust margin
+remain separate quantities. Field-wide novelty and a likely null result are
+unestablished; M2–M4 remain owner decisions.

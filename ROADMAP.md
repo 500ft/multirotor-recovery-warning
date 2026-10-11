@@ -22,6 +22,10 @@ continuous altitude tracking under the source authors' controller. Numerical
 outputs live in the [result file](Data/qdrone-response/results.json). Independent
 pack identities and recovery-failure labels are unavailable in that recording.
 
+**Done:** the [full-text prior-work comparison](literature/notes/07-loss-of-control-prediction.md)
+corrects the earlier warning positioning and compares access options for M2.
+The added recovery comparison remains untested; access/funding is still pending.
+
 **Current:** component instrumentation and propulsion qualification are the next
 prerequisites. Existing ownership, wiring plans, synthetic capture tests and CAD
 assets do not establish a calibrated or safely contained stand. Hardware access,
@@ -204,8 +208,8 @@ Status: future; depends on C and E, with an approved final evaluation scope.
 
 - F.1 Preregister warning features, processing, baselines, false-alarm burden,
   useful lead time, exclusions and independent resampling unit. Include the
-  physics feasibility, voltage, sag-history and load baselines under identical
-  information availability.
+  physics feasibility, rotor-command saturation, voltage, sag-history and load
+  baselines under identical information availability.
 - F.2 Assign whole packs and payload/guard conditions to development and final
   evaluation before exposure. Learn processing only from development data;
   freeze the fitted model and thresholds before opening reserved outcomes.
