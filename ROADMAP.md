@@ -73,6 +73,18 @@ retain G5 purchase approval if anything must be bought.
   needs torque. A thrust load cell and INA260 do not measure reaction torque.
   A qualified reaction arm or torque sensor needs its own geometry, calibration,
   cross-load assessment and uncertainty; otherwise leave torque unmeasured.
+- A.5 Fixture CAD, keyed to the aircraft M2 selects. Necessary once the bench
+  is approved: a cradle and adapters for the delivered aircraft (for a
+  Crazyflie 2.1+, from the current datasheet and delivered-unit measurements
+  rather than the older generic board outline), a calibration-load fixture at
+  the force line, adjustable mounting height for the boundary-effect check,
+  and containment sized to the rotor. Recommended beyond that: nothing. A
+  dedicated stage or cage is designed only if the bench cannot provide it.
+  Fixture modal analysis waits for an observed dynamic measurement problem
+  after the channel bandwidth is qualified. Published propeller curves are not
+  installed-system calibration; Bitcraze measured a 13 percent efficiency
+  difference between two stand arrangements. The retired V995 register and
+  generator stay as history.
 
 Completion evidence: reviewed configuration and safe operating envelope,
 installed calibration records with independent checks, uncertainty and timing
