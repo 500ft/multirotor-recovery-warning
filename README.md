@@ -41,6 +41,11 @@ the component qualification and physics-baseline prerequisites. The
 The actual test aircraft, physical maneuver, access, budget and safety approval remain
 [owner decisions](OPEN_QUESTIONS.md#pending-owner-decisions).
 
+The [full-text prior-work comparison](literature/notes/07-loss-of-control-prediction.md)
+corrects the nearest-paper positioning and compares the pending access options.
+The warning's added value against physics and simple signal baselines remains
+untested.
+
 ## Quick start
 
 ```sh
