@@ -38,8 +38,11 @@ tracking under the source controller and provides no recovery-failure labels.
 The [dependency-roadmap decision](docs/decisions/dependency-roadmap.md) adopts
 the component qualification and physics-baseline prerequisites. The
 [roadmap](ROADMAP.md#dependency-order) shows what each later result depends on.
-The actual test aircraft, physical maneuver, access, budget and safety approval remain
-[owner decisions](OPEN_QUESTIONS.md#pending-owner-decisions).
+The project is paused until the owner chooses concrete borrowed or self-funded
+hardware, its configuration, site and budget. Experimental qualification needs
+physical equipment; closure is recommended while access remains unset. This is
+a recommendation, and the repository remains open. The physical maneuver and
+safety responsibility remain [owner decisions](OPEN_QUESTIONS.md#pending-owner-decisions).
 
 The [full-text prior-work comparison](literature/notes/07-loss-of-control-prediction.md)
 corrects the nearest-paper positioning and compares the pending access options.

@@ -26,13 +26,15 @@ pack identities and recovery-failure labels are unavailable in that recording.
 corrects the earlier warning positioning and compares access options for M2.
 The added recovery comparison remains untested; access/funding is still pending.
 
-**Current:** component instrumentation and propulsion qualification are the next
-prerequisites. Existing ownership, wiring plans, synthetic capture tests and CAD
-assets do not establish a calibrated or safely contained stand. Hardware access,
-configuration and permission to characterize it remain owner-held inputs.
+**Current:** paused before component instrumentation and propulsion qualification.
+The [adopted access decision](docs/decisions/dependency-roadmap.md#physical-access-disposition)
+requires borrowed or bought physical hardware even for a qualification-only
+experiment. Existing ownership, wiring plans, synthetic capture tests and CAD
+assets do not establish a calibrated or safely contained stand.
 
-**Blocked:** new measurements and recovery trials await the approvals below.
-No new experiment or public-data campaign is started by this cleanup.
+**Blocked:** M2 has no selected hardware, site or budget. Closure is recommended
+while no access route is chosen; no closure or archive decision has been made.
+New measurements and recovery trials still require the approvals below.
 
 ## Dependency order
 
@@ -56,7 +58,7 @@ qualification steps.
 
 ## A. Qualify component instrumentation and propulsion
 
-Status: current prerequisite, blocked on owner inputs and powered-bench approval.
+Status: paused prerequisite, blocked on the M2 access choice and powered-bench approval.
 
 Prerequisites: owner identifies the accessible motor, propeller, ESC, battery,
 load cell, acquisition chain and mounting/containment arrangement. Resolve
@@ -223,23 +225,25 @@ claim follows from simulations alone.
 
 ## G. Write up and stop
 
-Status: future; depends on the completed comparison or a documented stop at an
-earlier measurement, access or safety gate.
+Status: future; depends on the completed comparison or an owner decision to
+stop at an earlier measurement, access or safety gate.
 
 Completion evidence: one report with question, qualified observations,
 reproduction commands, failed cases, baseline comparison when available and the
 scope that the evidence supports. Separate controller failure from necessary
-physics exclusions and unmeasured possibilities. A negative or qualification-only
-result can finish the scoped work; external publication remains an owner decision.
+physics exclusions and unmeasured possibilities. A negative result after
+measurements or a qualification-only experimental result can finish the scoped
+work. Qualification-only experiments still require measured hardware evidence.
+External publication remains an owner decision.
 
 ## Cost, safety and publication
 
-Only this dependency-plan adoption and repository cleanup are authorized now.
-No purchase, powered test, outreach, paid compute, merge or external publication
-is authorized. Owner action: supply the proposed component configuration,
-access/funding direction and bench safety responsibility for A; M2–M4 remain
-unanswered. The [safety material](Safety/README.md) needs configuration-specific
-review before any physical operation.
+The owner adopted the [physical access disposition](docs/decisions/dependency-roadmap.md#physical-access-disposition).
+No purchase, powered test, outreach, paid compute or external publication is
+authorized. The next owner action is to choose concrete borrowed or self-funded
+hardware, its configuration, site and budget. M3–M4 and G5 remain open. The
+[safety material](Safety/README.md) needs configuration-specific review before
+any physical operation.
 
 ## Preserved scientific gates
 
