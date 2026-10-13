@@ -20,7 +20,7 @@ and mandatory physics-baseline sequence; physical choices remain open.
 | ID | Owner choice | Status |
 | --- | --- | --- |
 | M1 / MR-1 | Adopt the maneuver-warning question and dependency roadmap? | ADOPTED for the question, completed public-data task and [dependency-plan cleanup](docs/decisions/dependency-roadmap.md); no physical execution approval |
-| M2 | Provide physical access/funding direction and select the actual aircraft; change purchase timing before existing G5? | PENDING; no purchase, aircraft switch or physical campaign authorization |
+| M2 | Choose concrete borrowed or self-funded hardware, configuration, site and budget; resolve any G5 purchase approval separately. | PENDING; [adopted access disposition](docs/decisions/dependency-roadmap.md#physical-access-disposition) pauses experimental qualification until physical access is selected. Closure is recommended while no route exists; neither closure nor purchase is approved. |
 | M3 | Specify recovery maneuver, available height and independent completion criterion? | PENDING |
 | M4 | Identify test facility and responsible safety owner? | PENDING |
 
