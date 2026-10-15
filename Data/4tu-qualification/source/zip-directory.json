@@ -1,0 +1,2739 @@
+[
+  {
+    "name": "README_flight_data.txt",
+    "compressed": 1994,
+    "size": 5572,
+    "method": 8,
+    "offset": 0
+  },
+  {
+    "name": "flight_dragonfly_exp/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 2094
+  },
+  {
+    "name": "flight_dragonfly_exp/DragonFlyConfig_CGI.json",
+    "compressed": 324,
+    "size": 718,
+    "method": 8,
+    "offset": 2177
+  },
+  {
+    "name": "flight_dragonfly_exp/DragonFly_file_log.csv",
+    "compressed": 5400,
+    "size": 83290,
+    "method": 8,
+    "offset": 2624
+  },
+  {
+    "name": "flight_dragonfly_exp/FIDINFO.json",
+    "compressed": 1224,
+    "size": 18001,
+    "method": 8,
+    "offset": 8145
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 9480
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 9571
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00159.csv",
+    "compressed": 6237647,
+    "size": 37707966,
+    "method": 8,
+    "offset": 9682
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00160.csv",
+    "compressed": 6187193,
+    "size": 37412127,
+    "method": 8,
+    "offset": 6247468
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00161.csv",
+    "compressed": 6234691,
+    "size": 37427474,
+    "method": 8,
+    "offset": 12434800
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00162.csv",
+    "compressed": 6161259,
+    "size": 37335342,
+    "method": 8,
+    "offset": 18669630
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00163.csv",
+    "compressed": 6210831,
+    "size": 37199648,
+    "method": 8,
+    "offset": 24831028
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00164.csv",
+    "compressed": 7239664,
+    "size": 40419453,
+    "method": 8,
+    "offset": 31041998
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00165.csv",
+    "compressed": 6672314,
+    "size": 37141716,
+    "method": 8,
+    "offset": 38281801
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00167.csv",
+    "compressed": 6690595,
+    "size": 37471573,
+    "method": 8,
+    "offset": 44954254
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00168.csv",
+    "compressed": 6665225,
+    "size": 37467588,
+    "method": 8,
+    "offset": 51644988
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00169.csv",
+    "compressed": 6743590,
+    "size": 37593726,
+    "method": 8,
+    "offset": 58310352
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00172.csv",
+    "compressed": 5904672,
+    "size": 36404202,
+    "method": 8,
+    "offset": 65054081
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00173.csv",
+    "compressed": 6103839,
+    "size": 37153080,
+    "method": 8,
+    "offset": 70958892
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00174.csv",
+    "compressed": 6170593,
+    "size": 36991881,
+    "method": 8,
+    "offset": 77062870
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00175.csv",
+    "compressed": 6089962,
+    "size": 36828059,
+    "method": 8,
+    "offset": 83233602
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00176.csv",
+    "compressed": 6079518,
+    "size": 36633395,
+    "method": 8,
+    "offset": 89323703
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00177.csv",
+    "compressed": 6553925,
+    "size": 36892471,
+    "method": 8,
+    "offset": 95403360
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00178.csv",
+    "compressed": 6531539,
+    "size": 37139612,
+    "method": 8,
+    "offset": 101957424
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00179.csv",
+    "compressed": 6576662,
+    "size": 37276329,
+    "method": 8,
+    "offset": 108489102
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00180.csv",
+    "compressed": 6581983,
+    "size": 37242377,
+    "method": 8,
+    "offset": 115065903
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00181.csv",
+    "compressed": 6551995,
+    "size": 37232067,
+    "method": 8,
+    "offset": 121648025
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00182.csv",
+    "compressed": 3916671,
+    "size": 22067639,
+    "method": 8,
+    "offset": 128200159
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00183.csv",
+    "compressed": 3688619,
+    "size": 21100247,
+    "method": 8,
+    "offset": 132116969
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00184.csv",
+    "compressed": 3850363,
+    "size": 22279507,
+    "method": 8,
+    "offset": 135805727
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00185.csv",
+    "compressed": 3897904,
+    "size": 22463060,
+    "method": 8,
+    "offset": 139656229
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00186.csv",
+    "compressed": 4089099,
+    "size": 24026696,
+    "method": 8,
+    "offset": 143554272
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00189.csv",
+    "compressed": 3668983,
+    "size": 21095838,
+    "method": 8,
+    "offset": 147643510
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00190.csv",
+    "compressed": 3625400,
+    "size": 21714411,
+    "method": 8,
+    "offset": 151312632
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00191.csv",
+    "compressed": 3325788,
+    "size": 20066929,
+    "method": 8,
+    "offset": 154938171
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00192.csv",
+    "compressed": 3433933,
+    "size": 20904030,
+    "method": 8,
+    "offset": 158264098
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00193.csv",
+    "compressed": 3414032,
+    "size": 20646623,
+    "method": 8,
+    "offset": 161698170
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00194.csv",
+    "compressed": 3566792,
+    "size": 20498220,
+    "method": 8,
+    "offset": 165112341
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00195.csv",
+    "compressed": 3513716,
+    "size": 20284374,
+    "method": 8,
+    "offset": 168679272
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00196.csv",
+    "compressed": 3477857,
+    "size": 20038094,
+    "method": 8,
+    "offset": 172193127
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00197.csv",
+    "compressed": 3573154,
+    "size": 20592015,
+    "method": 8,
+    "offset": 175671123
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-06-08-2025/LOG00198.csv",
+    "compressed": 3895708,
+    "size": 22867139,
+    "method": 8,
+    "offset": 179244416
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 183140263
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00199.csv",
+    "compressed": 3611621,
+    "size": 20872206,
+    "method": 8,
+    "offset": 183140374
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00200.csv",
+    "compressed": 3787714,
+    "size": 22048397,
+    "method": 8,
+    "offset": 186752134
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00201.csv",
+    "compressed": 3512604,
+    "size": 20367646,
+    "method": 8,
+    "offset": 190539987
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00202.csv",
+    "compressed": 3906462,
+    "size": 22947239,
+    "method": 8,
+    "offset": 194052730
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00204.csv",
+    "compressed": 3552634,
+    "size": 20572055,
+    "method": 8,
+    "offset": 197959331
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00205.csv",
+    "compressed": 3986724,
+    "size": 20939312,
+    "method": 8,
+    "offset": 201512104
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00206.csv",
+    "compressed": 4226952,
+    "size": 22442679,
+    "method": 8,
+    "offset": 205498967
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00207.csv",
+    "compressed": 3832613,
+    "size": 20245328,
+    "method": 8,
+    "offset": 209726058
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00208.csv",
+    "compressed": 3843414,
+    "size": 20462113,
+    "method": 8,
+    "offset": 213558810
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00209.csv",
+    "compressed": 3786152,
+    "size": 19796997,
+    "method": 8,
+    "offset": 217402363
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00210.csv",
+    "compressed": 5657961,
+    "size": 36508652,
+    "method": 8,
+    "offset": 221188654
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00211.csv",
+    "compressed": 5659312,
+    "size": 37003636,
+    "method": 8,
+    "offset": 226846754
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00212.csv",
+    "compressed": 5698528,
+    "size": 37019751,
+    "method": 8,
+    "offset": 232506205
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00213.csv",
+    "compressed": 5522388,
+    "size": 36688672,
+    "method": 8,
+    "offset": 238204872
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00214.csv",
+    "compressed": 5542430,
+    "size": 37063612,
+    "method": 8,
+    "offset": 243727399
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00240.csv",
+    "compressed": 4909802,
+    "size": 26831152,
+    "method": 8,
+    "offset": 249269968
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00241.csv",
+    "compressed": 4019444,
+    "size": 20367014,
+    "method": 8,
+    "offset": 254179909
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00242.csv",
+    "compressed": 4026404,
+    "size": 20681233,
+    "method": 8,
+    "offset": 258199492
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00243.csv",
+    "compressed": 4221587,
+    "size": 21181509,
+    "method": 8,
+    "offset": 262226035
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00244.csv",
+    "compressed": 4033065,
+    "size": 20480975,
+    "method": 8,
+    "offset": 266447761
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00245.csv",
+    "compressed": 4047627,
+    "size": 20914828,
+    "method": 8,
+    "offset": 270480965
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00246.csv",
+    "compressed": 3949752,
+    "size": 19911706,
+    "method": 8,
+    "offset": 274528731
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00247.csv",
+    "compressed": 3935551,
+    "size": 20391622,
+    "method": 8,
+    "offset": 278478622
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00248.csv",
+    "compressed": 4063538,
+    "size": 20496481,
+    "method": 8,
+    "offset": 282414312
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00249.csv",
+    "compressed": 3915534,
+    "size": 20150971,
+    "method": 8,
+    "offset": 286477989
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00250.csv",
+    "compressed": 4230743,
+    "size": 21104945,
+    "method": 8,
+    "offset": 290393662
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00251.csv",
+    "compressed": 3992834,
+    "size": 19619404,
+    "method": 8,
+    "offset": 294624544
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00252.csv",
+    "compressed": 4309093,
+    "size": 21223052,
+    "method": 8,
+    "offset": 298617517
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00253.csv",
+    "compressed": 4108978,
+    "size": 20282699,
+    "method": 8,
+    "offset": 302926749
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00254.csv",
+    "compressed": 4182726,
+    "size": 20705406,
+    "method": 8,
+    "offset": 307035866
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00255.csv",
+    "compressed": 4113001,
+    "size": 20363647,
+    "method": 8,
+    "offset": 311218731
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00256.csv",
+    "compressed": 4152725,
+    "size": 20601969,
+    "method": 8,
+    "offset": 315331871
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00257.csv",
+    "compressed": 4046895,
+    "size": 19784196,
+    "method": 8,
+    "offset": 319484735
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00258.csv",
+    "compressed": 4143664,
+    "size": 20368082,
+    "method": 8,
+    "offset": 323531769
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00259.csv",
+    "compressed": 4197533,
+    "size": 20416599,
+    "method": 8,
+    "offset": 327675572
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00260.csv",
+    "compressed": 4344694,
+    "size": 20778459,
+    "method": 8,
+    "offset": 331873244
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00261.csv",
+    "compressed": 4245083,
+    "size": 20035956,
+    "method": 8,
+    "offset": 336218077
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00262.csv",
+    "compressed": 4485221,
+    "size": 21560633,
+    "method": 8,
+    "offset": 340463299
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00263.csv",
+    "compressed": 4275481,
+    "size": 20223470,
+    "method": 8,
+    "offset": 344948659
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-07-08-2025/LOG00264.csv",
+    "compressed": 4323064,
+    "size": 20541000,
+    "method": 8,
+    "offset": 349224279
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 353547482
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00001.csv",
+    "compressed": 5060521,
+    "size": 36888305,
+    "method": 8,
+    "offset": 353547593
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00002.csv",
+    "compressed": 4959132,
+    "size": 36309511,
+    "method": 8,
+    "offset": 358608253
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00003.csv",
+    "compressed": 5095051,
+    "size": 36659772,
+    "method": 8,
+    "offset": 363567524
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00004.csv",
+    "compressed": 5084801,
+    "size": 37006016,
+    "method": 8,
+    "offset": 368662714
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00006.csv",
+    "compressed": 5192979,
+    "size": 37308770,
+    "method": 8,
+    "offset": 373747654
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00007.csv",
+    "compressed": 5283791,
+    "size": 36510866,
+    "method": 8,
+    "offset": 378940772
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00008.csv",
+    "compressed": 5284614,
+    "size": 36248406,
+    "method": 8,
+    "offset": 384224702
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00009.csv",
+    "compressed": 5175604,
+    "size": 35341702,
+    "method": 8,
+    "offset": 389509455
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00010.csv",
+    "compressed": 5137960,
+    "size": 35260741,
+    "method": 8,
+    "offset": 394685198
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00011.csv",
+    "compressed": 5301978,
+    "size": 36619572,
+    "method": 8,
+    "offset": 399823297
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00012.csv",
+    "compressed": 5658642,
+    "size": 36276210,
+    "method": 8,
+    "offset": 405125414
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00013.csv",
+    "compressed": 6824429,
+    "size": 35891066,
+    "method": 8,
+    "offset": 410784195
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00014.csv",
+    "compressed": 6361592,
+    "size": 37154355,
+    "method": 8,
+    "offset": 417608763
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00015.csv",
+    "compressed": 6498589,
+    "size": 35196931,
+    "method": 8,
+    "offset": 423970494
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00016.csv",
+    "compressed": 6303184,
+    "size": 35506879,
+    "method": 8,
+    "offset": 430469222
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00017.csv",
+    "compressed": 6711934,
+    "size": 35854779,
+    "method": 8,
+    "offset": 436772545
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00018.csv",
+    "compressed": 6938996,
+    "size": 35908210,
+    "method": 8,
+    "offset": 443484618
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00019.csv",
+    "compressed": 8562268,
+    "size": 44007751,
+    "method": 8,
+    "offset": 450423753
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00020.csv",
+    "compressed": 7001945,
+    "size": 35917046,
+    "method": 8,
+    "offset": 458986160
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00021.csv",
+    "compressed": 6458773,
+    "size": 33272361,
+    "method": 8,
+    "offset": 465988244
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00022.csv",
+    "compressed": 7151436,
+    "size": 38358864,
+    "method": 8,
+    "offset": 472447156
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00023.csv",
+    "compressed": 6742914,
+    "size": 36285239,
+    "method": 8,
+    "offset": 479598731
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00024.csv",
+    "compressed": 6910030,
+    "size": 41629484,
+    "method": 8,
+    "offset": 486341784
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00025.csv",
+    "compressed": 5981158,
+    "size": 36029784,
+    "method": 8,
+    "offset": 493251953
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00026.csv",
+    "compressed": 6109792,
+    "size": 35439844,
+    "method": 8,
+    "offset": 499233250
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00028.csv",
+    "compressed": 7732277,
+    "size": 45014552,
+    "method": 8,
+    "offset": 505343181
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00029.csv",
+    "compressed": 7413289,
+    "size": 42658853,
+    "method": 8,
+    "offset": 513075597
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00030.csv",
+    "compressed": 6976293,
+    "size": 39805816,
+    "method": 8,
+    "offset": 520489025
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00031.csv",
+    "compressed": 6946935,
+    "size": 39614546,
+    "method": 8,
+    "offset": 527465457
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00032.csv",
+    "compressed": 6951243,
+    "size": 39815647,
+    "method": 8,
+    "offset": 534412531
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00033.csv",
+    "compressed": 7075483,
+    "size": 40536387,
+    "method": 8,
+    "offset": 541363913
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00034.csv",
+    "compressed": 6982476,
+    "size": 39407269,
+    "method": 8,
+    "offset": 548439535
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00035.csv",
+    "compressed": 7107781,
+    "size": 40290436,
+    "method": 8,
+    "offset": 555422150
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00036.csv",
+    "compressed": 6659745,
+    "size": 38797864,
+    "method": 8,
+    "offset": 562530070
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00037.csv",
+    "compressed": 6822294,
+    "size": 39805988,
+    "method": 8,
+    "offset": 569189954
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00038.csv",
+    "compressed": 8674198,
+    "size": 41461484,
+    "method": 8,
+    "offset": 576012387
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00039.csv",
+    "compressed": 8351091,
+    "size": 40562956,
+    "method": 8,
+    "offset": 584686724
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00040.csv",
+    "compressed": 8712648,
+    "size": 41425433,
+    "method": 8,
+    "offset": 593037954
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00041.csv",
+    "compressed": 8520012,
+    "size": 40071672,
+    "method": 8,
+    "offset": 601750741
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-07-2025/LOG00042.csv",
+    "compressed": 8596236,
+    "size": 40320417,
+    "method": 8,
+    "offset": 610270892
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 618867267
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00265.csv",
+    "compressed": 6801274,
+    "size": 40226875,
+    "method": 8,
+    "offset": 618867378
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00266.csv",
+    "compressed": 6680781,
+    "size": 39551839,
+    "method": 8,
+    "offset": 625668791
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00267.csv",
+    "compressed": 6505102,
+    "size": 38581922,
+    "method": 8,
+    "offset": 632349711
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00268.csv",
+    "compressed": 6605592,
+    "size": 39105747,
+    "method": 8,
+    "offset": 638854952
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00269.csv",
+    "compressed": 6785288,
+    "size": 40316159,
+    "method": 8,
+    "offset": 645460683
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00270.csv",
+    "compressed": 6953236,
+    "size": 40259378,
+    "method": 8,
+    "offset": 652246110
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00271.csv",
+    "compressed": 6730525,
+    "size": 38781844,
+    "method": 8,
+    "offset": 659199485
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00272.csv",
+    "compressed": 6661404,
+    "size": 38642101,
+    "method": 8,
+    "offset": 665930149
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00273.csv",
+    "compressed": 6640171,
+    "size": 38320696,
+    "method": 8,
+    "offset": 672591692
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00274.csv",
+    "compressed": 6757805,
+    "size": 38873019,
+    "method": 8,
+    "offset": 679232002
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00275.csv",
+    "compressed": 7153303,
+    "size": 39030727,
+    "method": 8,
+    "offset": 685989946
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00276.csv",
+    "compressed": 7173649,
+    "size": 39594641,
+    "method": 8,
+    "offset": 693143388
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00277.csv",
+    "compressed": 7354895,
+    "size": 40890685,
+    "method": 8,
+    "offset": 700317176
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00278.csv",
+    "compressed": 6962666,
+    "size": 38598334,
+    "method": 8,
+    "offset": 707672210
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00279.csv",
+    "compressed": 6938140,
+    "size": 38615238,
+    "method": 8,
+    "offset": 714635015
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00281.csv",
+    "compressed": 6403222,
+    "size": 38254325,
+    "method": 8,
+    "offset": 721573294
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00283.csv",
+    "compressed": 6535653,
+    "size": 39416271,
+    "method": 8,
+    "offset": 727976655
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00284.csv",
+    "compressed": 6661877,
+    "size": 40134992,
+    "method": 8,
+    "offset": 734512447
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00285.csv",
+    "compressed": 6473723,
+    "size": 38944371,
+    "method": 8,
+    "offset": 741174463
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-08-08-2025/LOG00286.csv",
+    "compressed": 6615385,
+    "size": 39628580,
+    "method": 8,
+    "offset": 747648325
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 754263849
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00044.csv",
+    "compressed": 7528267,
+    "size": 41037459,
+    "method": 8,
+    "offset": 754263960
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00045.csv",
+    "compressed": 7598497,
+    "size": 41124716,
+    "method": 8,
+    "offset": 761792366
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00046.csv",
+    "compressed": 7520339,
+    "size": 40776626,
+    "method": 8,
+    "offset": 769391002
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00047.csv",
+    "compressed": 7581752,
+    "size": 40070621,
+    "method": 8,
+    "offset": 776911480
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00048.csv",
+    "compressed": 7565484,
+    "size": 39675211,
+    "method": 8,
+    "offset": 784493371
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00049.csv",
+    "compressed": 7224476,
+    "size": 40009637,
+    "method": 8,
+    "offset": 792058994
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00050.csv",
+    "compressed": 7083200,
+    "size": 39149204,
+    "method": 8,
+    "offset": 799283609
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00051.csv",
+    "compressed": 7025667,
+    "size": 40271567,
+    "method": 8,
+    "offset": 806366948
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00052.csv",
+    "compressed": 7225289,
+    "size": 39875086,
+    "method": 8,
+    "offset": 813392754
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00053.csv",
+    "compressed": 7109509,
+    "size": 39254699,
+    "method": 8,
+    "offset": 820618182
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00054.csv",
+    "compressed": 7452381,
+    "size": 37043616,
+    "method": 8,
+    "offset": 827727830
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00055.csv",
+    "compressed": 7626717,
+    "size": 37797837,
+    "method": 8,
+    "offset": 835180350
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00056.csv",
+    "compressed": 7184968,
+    "size": 36528510,
+    "method": 8,
+    "offset": 842807206
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00057.csv",
+    "compressed": 7094287,
+    "size": 35750688,
+    "method": 8,
+    "offset": 849992313
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00058.csv",
+    "compressed": 7228567,
+    "size": 36664578,
+    "method": 8,
+    "offset": 857086739
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00059.csv",
+    "compressed": 7336631,
+    "size": 36700454,
+    "method": 8,
+    "offset": 864315445
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00060.csv",
+    "compressed": 7308415,
+    "size": 35997162,
+    "method": 8,
+    "offset": 871652215
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00061.csv",
+    "compressed": 7287090,
+    "size": 35890241,
+    "method": 8,
+    "offset": 878960769
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00062.csv",
+    "compressed": 7271916,
+    "size": 35956447,
+    "method": 8,
+    "offset": 886247998
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00063.csv",
+    "compressed": 7380693,
+    "size": 35693628,
+    "method": 8,
+    "offset": 893520053
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00064.csv",
+    "compressed": 7611475,
+    "size": 36396651,
+    "method": 8,
+    "offset": 900900885
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00065.csv",
+    "compressed": 7589153,
+    "size": 36518851,
+    "method": 8,
+    "offset": 908512499
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00066.csv",
+    "compressed": 7479794,
+    "size": 36173564,
+    "method": 8,
+    "offset": 916101791
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-10-07-2025/LOG00068.csv",
+    "compressed": 7668078,
+    "size": 36486387,
+    "method": 8,
+    "offset": 923581724
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 931249941
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00072.csv",
+    "compressed": 5834162,
+    "size": 32621316,
+    "method": 8,
+    "offset": 931250052
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00073.csv",
+    "compressed": 5224455,
+    "size": 28562319,
+    "method": 8,
+    "offset": 937084353
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00074.csv",
+    "compressed": 5271810,
+    "size": 28693331,
+    "method": 8,
+    "offset": 942308947
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00075.csv",
+    "compressed": 4540608,
+    "size": 24057361,
+    "method": 8,
+    "offset": 947580896
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00076.csv",
+    "compressed": 4370211,
+    "size": 22990580,
+    "method": 8,
+    "offset": 952121643
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00077.csv",
+    "compressed": 4798582,
+    "size": 25971288,
+    "method": 8,
+    "offset": 956491993
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00078.csv",
+    "compressed": 4879208,
+    "size": 26497511,
+    "method": 8,
+    "offset": 961290714
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00083.csv",
+    "compressed": 4877789,
+    "size": 26307497,
+    "method": 8,
+    "offset": 966170061
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00084.csv",
+    "compressed": 4780438,
+    "size": 26044120,
+    "method": 8,
+    "offset": 971047989
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00085.csv",
+    "compressed": 4330829,
+    "size": 22858586,
+    "method": 8,
+    "offset": 975828566
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00088.csv",
+    "compressed": 7888348,
+    "size": 36377309,
+    "method": 8,
+    "offset": 980159534
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00089.csv",
+    "compressed": 7716764,
+    "size": 35729380,
+    "method": 8,
+    "offset": 988048021
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00090.csv",
+    "compressed": 7131455,
+    "size": 33449386,
+    "method": 8,
+    "offset": 995764924
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00091.csv",
+    "compressed": 8320518,
+    "size": 38754962,
+    "method": 8,
+    "offset": 1002896518
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00092.csv",
+    "compressed": 7935946,
+    "size": 36715119,
+    "method": 8,
+    "offset": 1011217175
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00093.csv",
+    "compressed": 7905314,
+    "size": 36245322,
+    "method": 8,
+    "offset": 1019153260
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00094.csv",
+    "compressed": 8659753,
+    "size": 40341325,
+    "method": 8,
+    "offset": 1027058713
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-11-07-2025/LOG00095.csv",
+    "compressed": 8588565,
+    "size": 39986059,
+    "method": 8,
+    "offset": 1035718605
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1044307309
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00287.csv",
+    "compressed": 5576060,
+    "size": 36786411,
+    "method": 8,
+    "offset": 1044307420
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00288.csv",
+    "compressed": 5551790,
+    "size": 36432090,
+    "method": 8,
+    "offset": 1049883619
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00289.csv",
+    "compressed": 5879940,
+    "size": 39072704,
+    "method": 8,
+    "offset": 1055435548
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00290.csv",
+    "compressed": 5585389,
+    "size": 37291854,
+    "method": 8,
+    "offset": 1061315627
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00291.csv",
+    "compressed": 5939641,
+    "size": 39807291,
+    "method": 8,
+    "offset": 1066901155
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00292.csv",
+    "compressed": 6004506,
+    "size": 37601112,
+    "method": 8,
+    "offset": 1072840935
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00293.csv",
+    "compressed": 5924575,
+    "size": 37423732,
+    "method": 8,
+    "offset": 1078845580
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00294.csv",
+    "compressed": 5863876,
+    "size": 36892937,
+    "method": 8,
+    "offset": 1084770294
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00295.csv",
+    "compressed": 5903587,
+    "size": 37009241,
+    "method": 8,
+    "offset": 1090634309
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00296.csv",
+    "compressed": 5770509,
+    "size": 36450540,
+    "method": 8,
+    "offset": 1096538035
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00297.csv",
+    "compressed": 5507466,
+    "size": 37461713,
+    "method": 8,
+    "offset": 1102308683
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00298.csv",
+    "compressed": 5513452,
+    "size": 36866729,
+    "method": 8,
+    "offset": 1107816288
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00299.csv",
+    "compressed": 5574628,
+    "size": 36910203,
+    "method": 8,
+    "offset": 1113329879
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00300.csv",
+    "compressed": 5766123,
+    "size": 38955338,
+    "method": 8,
+    "offset": 1118904646
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00301.csv",
+    "compressed": 5606055,
+    "size": 37190280,
+    "method": 8,
+    "offset": 1124670908
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00303.csv",
+    "compressed": 6486601,
+    "size": 37049747,
+    "method": 8,
+    "offset": 1130277102
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00304.csv",
+    "compressed": 6570200,
+    "size": 37315029,
+    "method": 8,
+    "offset": 1136763842
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00305.csv",
+    "compressed": 6586878,
+    "size": 37520157,
+    "method": 8,
+    "offset": 1143334181
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00306.csv",
+    "compressed": 6281202,
+    "size": 35864457,
+    "method": 8,
+    "offset": 1149921198
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00307.csv",
+    "compressed": 6425120,
+    "size": 36679230,
+    "method": 8,
+    "offset": 1156202539
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00308.csv",
+    "compressed": 3558288,
+    "size": 20883742,
+    "method": 8,
+    "offset": 1162627798
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00309.csv",
+    "compressed": 4269760,
+    "size": 25605057,
+    "method": 8,
+    "offset": 1166186225
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00310.csv",
+    "compressed": 3373286,
+    "size": 20119890,
+    "method": 8,
+    "offset": 1170456124
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00311.csv",
+    "compressed": 3752245,
+    "size": 23202679,
+    "method": 8,
+    "offset": 1173829549
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00312.csv",
+    "compressed": 3507991,
+    "size": 20944800,
+    "method": 8,
+    "offset": 1177581933
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00315.csv",
+    "compressed": 3456559,
+    "size": 20023177,
+    "method": 8,
+    "offset": 1181090063
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00316.csv",
+    "compressed": 3465597,
+    "size": 20072987,
+    "method": 8,
+    "offset": 1184546761
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00317.csv",
+    "compressed": 3426603,
+    "size": 19812171,
+    "method": 8,
+    "offset": 1188012497
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00318.csv",
+    "compressed": 3443577,
+    "size": 20030592,
+    "method": 8,
+    "offset": 1191439239
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00319.csv",
+    "compressed": 3522305,
+    "size": 20465253,
+    "method": 8,
+    "offset": 1194882955
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00321.csv",
+    "compressed": 3520203,
+    "size": 19859461,
+    "method": 8,
+    "offset": 1198405399
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00322.csv",
+    "compressed": 3592252,
+    "size": 20464238,
+    "method": 8,
+    "offset": 1201925741
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00323.csv",
+    "compressed": 3684280,
+    "size": 20979034,
+    "method": 8,
+    "offset": 1205518132
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00324.csv",
+    "compressed": 3643883,
+    "size": 20852027,
+    "method": 8,
+    "offset": 1209202551
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00325.csv",
+    "compressed": 3658111,
+    "size": 20877106,
+    "method": 8,
+    "offset": 1212846573
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00327.csv",
+    "compressed": 3178672,
+    "size": 19693531,
+    "method": 8,
+    "offset": 1216504823
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00328.csv",
+    "compressed": 3247956,
+    "size": 20085865,
+    "method": 8,
+    "offset": 1219683634
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00329.csv",
+    "compressed": 3156362,
+    "size": 19542536,
+    "method": 8,
+    "offset": 1222931729
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00330.csv",
+    "compressed": 3189955,
+    "size": 19843634,
+    "method": 8,
+    "offset": 1226088230
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00331.csv",
+    "compressed": 3222987,
+    "size": 20046327,
+    "method": 8,
+    "offset": 1229278324
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00332.csv",
+    "compressed": 3731284,
+    "size": 20249114,
+    "method": 8,
+    "offset": 1232501450
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00333.csv",
+    "compressed": 3806370,
+    "size": 20597644,
+    "method": 8,
+    "offset": 1236232873
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00334.csv",
+    "compressed": 3734339,
+    "size": 20163654,
+    "method": 8,
+    "offset": 1240039382
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00335.csv",
+    "compressed": 3751767,
+    "size": 20215518,
+    "method": 8,
+    "offset": 1243773860
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-13-08-2025/LOG00336.csv",
+    "compressed": 3845575,
+    "size": 20948570,
+    "method": 8,
+    "offset": 1247525766
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1251371480
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00128.csv",
+    "compressed": 10013737,
+    "size": 57985560,
+    "method": 8,
+    "offset": 1251371591
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00129.csv",
+    "compressed": 7564618,
+    "size": 42425810,
+    "method": 8,
+    "offset": 1261385467
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00130.csv",
+    "compressed": 7947032,
+    "size": 44451422,
+    "method": 8,
+    "offset": 1268950224
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00131.csv",
+    "compressed": 7690457,
+    "size": 42961470,
+    "method": 8,
+    "offset": 1276897395
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00132.csv",
+    "compressed": 7916040,
+    "size": 44177717,
+    "method": 8,
+    "offset": 1284587991
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00133.csv",
+    "compressed": 7031884,
+    "size": 39449302,
+    "method": 8,
+    "offset": 1292504170
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00134.csv",
+    "compressed": 6979879,
+    "size": 39368900,
+    "method": 8,
+    "offset": 1299536193
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00135.csv",
+    "compressed": 6979587,
+    "size": 39149532,
+    "method": 8,
+    "offset": 1306516211
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00136.csv",
+    "compressed": 6927590,
+    "size": 38576100,
+    "method": 8,
+    "offset": 1313495937
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00137.csv",
+    "compressed": 6871022,
+    "size": 38337262,
+    "method": 8,
+    "offset": 1320423666
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00138.csv",
+    "compressed": 6741947,
+    "size": 38486738,
+    "method": 8,
+    "offset": 1327294827
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00139.csv",
+    "compressed": 6850386,
+    "size": 38128994,
+    "method": 8,
+    "offset": 1334036913
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00140.csv",
+    "compressed": 6815236,
+    "size": 38169973,
+    "method": 8,
+    "offset": 1340887438
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00141.csv",
+    "compressed": 6882430,
+    "size": 38320094,
+    "method": 8,
+    "offset": 1347702813
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00142.csv",
+    "compressed": 6829704,
+    "size": 38329399,
+    "method": 8,
+    "offset": 1354585382
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00143.csv",
+    "compressed": 7075932,
+    "size": 39410045,
+    "method": 8,
+    "offset": 1361415225
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00144.csv",
+    "compressed": 7181700,
+    "size": 39735840,
+    "method": 8,
+    "offset": 1368491296
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00145.csv",
+    "compressed": 6803232,
+    "size": 37385454,
+    "method": 8,
+    "offset": 1375673135
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00146.csv",
+    "compressed": 6852316,
+    "size": 38026423,
+    "method": 8,
+    "offset": 1382476506
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00147.csv",
+    "compressed": 6856603,
+    "size": 38266042,
+    "method": 8,
+    "offset": 1389328961
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00148.csv",
+    "compressed": 7178417,
+    "size": 38875998,
+    "method": 8,
+    "offset": 1396185703
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00149.csv",
+    "compressed": 7118793,
+    "size": 38177417,
+    "method": 8,
+    "offset": 1403364259
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00150.csv",
+    "compressed": 7209349,
+    "size": 38559514,
+    "method": 8,
+    "offset": 1410483191
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00151.csv",
+    "compressed": 7005769,
+    "size": 37523758,
+    "method": 8,
+    "offset": 1417692679
+  },
+  {
+    "name": "flight_dragonfly_exp/Onboard/CYBERZOO-31-07-2025/LOG00152.csv",
+    "compressed": 7498297,
+    "size": 40628542,
+    "method": 8,
+    "offset": 1424698587
+  },
+  {
+    "name": "flight_hoverfly_exp/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1432197023
+  },
+  {
+    "name": "flight_hoverfly_exp/FIDINFO.json",
+    "compressed": 593,
+    "size": 7273,
+    "method": 8,
+    "offset": 1432197105
+  },
+  {
+    "name": "flight_hoverfly_exp/HoverFlyConfig_CGI.json",
+    "compressed": 324,
+    "size": 718,
+    "method": 8,
+    "offset": 1432197808
+  },
+  {
+    "name": "flight_hoverfly_exp/HoverFly_file_log.csv",
+    "compressed": 4400,
+    "size": 42903,
+    "method": 8,
+    "offset": 1432198253
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1432202772
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1432202862
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00091.csv",
+    "compressed": 129932,
+    "size": 780602,
+    "method": 8,
+    "offset": 1432202977
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00092.csv",
+    "compressed": 131167,
+    "size": 821580,
+    "method": 8,
+    "offset": 1432333052
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00093.csv",
+    "compressed": 159830,
+    "size": 1017575,
+    "method": 8,
+    "offset": 1432464362
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00094.csv",
+    "compressed": 135161,
+    "size": 869046,
+    "method": 8,
+    "offset": 1432624335
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00095.csv",
+    "compressed": 140829,
+    "size": 879374,
+    "method": 8,
+    "offset": 1432759639
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00096.csv",
+    "compressed": 142806,
+    "size": 897899,
+    "method": 8,
+    "offset": 1432900611
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00097.csv",
+    "compressed": 124122,
+    "size": 762615,
+    "method": 8,
+    "offset": 1433043560
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00098.csv",
+    "compressed": 140402,
+    "size": 874151,
+    "method": 8,
+    "offset": 1433167825
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00099.csv",
+    "compressed": 116226,
+    "size": 727899,
+    "method": 8,
+    "offset": 1433308370
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00100.csv",
+    "compressed": 121239,
+    "size": 740609,
+    "method": 8,
+    "offset": 1433424739
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00101.csv",
+    "compressed": 161179,
+    "size": 862446,
+    "method": 8,
+    "offset": 1433546121
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00102.csv",
+    "compressed": 162855,
+    "size": 836995,
+    "method": 8,
+    "offset": 1433707443
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00103.csv",
+    "compressed": 171774,
+    "size": 895341,
+    "method": 8,
+    "offset": 1433870441
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00104.csv",
+    "compressed": 170165,
+    "size": 896573,
+    "method": 8,
+    "offset": 1434042358
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00105.csv",
+    "compressed": 132409,
+    "size": 695578,
+    "method": 8,
+    "offset": 1434212666
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00106.csv",
+    "compressed": 146529,
+    "size": 759317,
+    "method": 8,
+    "offset": 1434345218
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00107.csv",
+    "compressed": 372999,
+    "size": 1927757,
+    "method": 8,
+    "offset": 1434491890
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00108.csv",
+    "compressed": 172979,
+    "size": 908701,
+    "method": 8,
+    "offset": 1434865032
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00109.csv",
+    "compressed": 182676,
+    "size": 942518,
+    "method": 8,
+    "offset": 1435038154
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00110.csv",
+    "compressed": 195144,
+    "size": 1006321,
+    "method": 8,
+    "offset": 1435220973
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00111.csv",
+    "compressed": 197827,
+    "size": 1016797,
+    "method": 8,
+    "offset": 1435416260
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00112.csv",
+    "compressed": 176120,
+    "size": 893583,
+    "method": 8,
+    "offset": 1435614230
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00114.csv",
+    "compressed": 131012,
+    "size": 826043,
+    "method": 8,
+    "offset": 1435790493
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00115.csv",
+    "compressed": 139843,
+    "size": 912836,
+    "method": 8,
+    "offset": 1435921648
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00116.csv",
+    "compressed": 117556,
+    "size": 768439,
+    "method": 8,
+    "offset": 1436061634
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00117.csv",
+    "compressed": 149000,
+    "size": 947129,
+    "method": 8,
+    "offset": 1436179333
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00118.csv",
+    "compressed": 138813,
+    "size": 878334,
+    "method": 8,
+    "offset": 1436328476
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00119.csv",
+    "compressed": 136038,
+    "size": 879947,
+    "method": 8,
+    "offset": 1436467432
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00120.csv",
+    "compressed": 121254,
+    "size": 777917,
+    "method": 8,
+    "offset": 1436603613
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00121.csv",
+    "compressed": 228279,
+    "size": 1145194,
+    "method": 8,
+    "offset": 1436725010
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00122.csv",
+    "compressed": 170638,
+    "size": 863698,
+    "method": 8,
+    "offset": 1436953432
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00123.csv",
+    "compressed": 193147,
+    "size": 964282,
+    "method": 8,
+    "offset": 1437124213
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00124.csv",
+    "compressed": 194295,
+    "size": 984697,
+    "method": 8,
+    "offset": 1437317503
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00125.csv",
+    "compressed": 186944,
+    "size": 934467,
+    "method": 8,
+    "offset": 1437511941
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00126.csv",
+    "compressed": 210756,
+    "size": 1041770,
+    "method": 8,
+    "offset": 1437699028
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00127.csv",
+    "compressed": 195653,
+    "size": 976656,
+    "method": 8,
+    "offset": 1437909927
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00128.csv",
+    "compressed": 218439,
+    "size": 1087124,
+    "method": 8,
+    "offset": 1438105723
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00129.csv",
+    "compressed": 209063,
+    "size": 1037482,
+    "method": 8,
+    "offset": 1438324305
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST-WIND_02-05-2025/LOG00130.csv",
+    "compressed": 197086,
+    "size": 986288,
+    "method": 8,
+    "offset": 1438533511
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1438730740
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00003.csv",
+    "compressed": 608131,
+    "size": 4826874,
+    "method": 8,
+    "offset": 1438730850
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00005.csv",
+    "compressed": 780563,
+    "size": 5990179,
+    "method": 8,
+    "offset": 1439339119
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00006.csv",
+    "compressed": 561016,
+    "size": 4650518,
+    "method": 8,
+    "offset": 1440119820
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00007.csv",
+    "compressed": 528926,
+    "size": 3805881,
+    "method": 8,
+    "offset": 1440680974
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00008.csv",
+    "compressed": 665905,
+    "size": 4837962,
+    "method": 8,
+    "offset": 1441210038
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00009.csv",
+    "compressed": 741574,
+    "size": 5341357,
+    "method": 8,
+    "offset": 1441876081
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00010.csv",
+    "compressed": 1044058,
+    "size": 5498658,
+    "method": 8,
+    "offset": 1442617793
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00011.csv",
+    "compressed": 1187463,
+    "size": 6159566,
+    "method": 8,
+    "offset": 1443661989
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00012.csv",
+    "compressed": 1427991,
+    "size": 7428582,
+    "method": 8,
+    "offset": 1444849590
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00013.csv",
+    "compressed": 1118053,
+    "size": 5529858,
+    "method": 8,
+    "offset": 1446277719
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00014.csv",
+    "compressed": 1014809,
+    "size": 5078403,
+    "method": 8,
+    "offset": 1447395910
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_11-04-2025/LOG00015.csv",
+    "compressed": 1370214,
+    "size": 6950354,
+    "method": 8,
+    "offset": 1448410857
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1449781209
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00016.csv",
+    "compressed": 923406,
+    "size": 6859586,
+    "method": 8,
+    "offset": 1449781319
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00017.csv",
+    "compressed": 935207,
+    "size": 7126948,
+    "method": 8,
+    "offset": 1450704863
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00018.csv",
+    "compressed": 1274883,
+    "size": 9083974,
+    "method": 8,
+    "offset": 1451640208
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00019.csv",
+    "compressed": 1064308,
+    "size": 7308159,
+    "method": 8,
+    "offset": 1452915229
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00020.csv",
+    "compressed": 1191483,
+    "size": 8564454,
+    "method": 8,
+    "offset": 1453979675
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00021.csv",
+    "compressed": 1248610,
+    "size": 9217409,
+    "method": 8,
+    "offset": 1455171296
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00022.csv",
+    "compressed": 1013797,
+    "size": 7200316,
+    "method": 8,
+    "offset": 1456420044
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00023.csv",
+    "compressed": 918314,
+    "size": 5961387,
+    "method": 8,
+    "offset": 1457433979
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00024.csv",
+    "compressed": 895318,
+    "size": 5890758,
+    "method": 8,
+    "offset": 1458352431
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00025.csv",
+    "compressed": 812757,
+    "size": 5593116,
+    "method": 8,
+    "offset": 1459247887
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00026.csv",
+    "compressed": 903446,
+    "size": 5581327,
+    "method": 8,
+    "offset": 1460060782
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00027.csv",
+    "compressed": 1119814,
+    "size": 6818577,
+    "method": 8,
+    "offset": 1460964366
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00028.csv",
+    "compressed": 1365725,
+    "size": 7369856,
+    "method": 8,
+    "offset": 1462084318
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00029.csv",
+    "compressed": 1208850,
+    "size": 6525063,
+    "method": 8,
+    "offset": 1463450181
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00030.csv",
+    "compressed": 1257294,
+    "size": 6850593,
+    "method": 8,
+    "offset": 1464659169
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00031.csv",
+    "compressed": 796344,
+    "size": 5527937,
+    "method": 8,
+    "offset": 1465916601
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00032.csv",
+    "compressed": 816995,
+    "size": 5514339,
+    "method": 8,
+    "offset": 1466713083
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00033.csv",
+    "compressed": 912049,
+    "size": 6125790,
+    "method": 8,
+    "offset": 1467530216
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00034.csv",
+    "compressed": 765843,
+    "size": 5246366,
+    "method": 8,
+    "offset": 1468442403
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00035.csv",
+    "compressed": 916378,
+    "size": 6626269,
+    "method": 8,
+    "offset": 1469208384
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_17-04-2025/LOG00036.csv",
+    "compressed": 903933,
+    "size": 6582118,
+    "method": 8,
+    "offset": 1470124900
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1471028971
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00040.csv",
+    "compressed": 1418187,
+    "size": 7625862,
+    "method": 8,
+    "offset": 1471029081
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00041.csv",
+    "compressed": 1160584,
+    "size": 6173604,
+    "method": 8,
+    "offset": 1472447406
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00042.csv",
+    "compressed": 1180677,
+    "size": 6434192,
+    "method": 8,
+    "offset": 1473608128
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00043.csv",
+    "compressed": 1183696,
+    "size": 6841848,
+    "method": 8,
+    "offset": 1474788943
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00044.csv",
+    "compressed": 1063584,
+    "size": 6133446,
+    "method": 8,
+    "offset": 1475972777
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00045.csv",
+    "compressed": 1209040,
+    "size": 6869774,
+    "method": 8,
+    "offset": 1477036499
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00046.csv",
+    "compressed": 1120795,
+    "size": 6100527,
+    "method": 8,
+    "offset": 1478245677
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00047.csv",
+    "compressed": 1105284,
+    "size": 5902053,
+    "method": 8,
+    "offset": 1479366610
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00048.csv",
+    "compressed": 947263,
+    "size": 5177171,
+    "method": 8,
+    "offset": 1480472032
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00049.csv",
+    "compressed": 1204100,
+    "size": 6281494,
+    "method": 8,
+    "offset": 1481419433
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00050.csv",
+    "compressed": 1037271,
+    "size": 5445379,
+    "method": 8,
+    "offset": 1482623671
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_24-04-2025/LOG00051.csv",
+    "compressed": 1186719,
+    "size": 6137745,
+    "method": 8,
+    "offset": 1483661080
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/",
+    "compressed": 0,
+    "size": 0,
+    "method": 0,
+    "offset": 1484847937
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00052.csv",
+    "compressed": 760290,
+    "size": 5623999,
+    "method": 8,
+    "offset": 1484848047
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00053.csv",
+    "compressed": 733262,
+    "size": 5460882,
+    "method": 8,
+    "offset": 1485608475
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00054.csv",
+    "compressed": 737281,
+    "size": 5444522,
+    "method": 8,
+    "offset": 1486341875
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00055.csv",
+    "compressed": 968170,
+    "size": 5895539,
+    "method": 8,
+    "offset": 1487079294
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00056.csv",
+    "compressed": 934744,
+    "size": 5693879,
+    "method": 8,
+    "offset": 1488047602
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00057.csv",
+    "compressed": 951551,
+    "size": 5864972,
+    "method": 8,
+    "offset": 1488982484
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00058.csv",
+    "compressed": 1033184,
+    "size": 5778110,
+    "method": 8,
+    "offset": 1489934173
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00059.csv",
+    "compressed": 1049532,
+    "size": 5916417,
+    "method": 8,
+    "offset": 1490967495
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00060.csv",
+    "compressed": 1065203,
+    "size": 5997863,
+    "method": 8,
+    "offset": 1492017165
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00061.csv",
+    "compressed": 1080352,
+    "size": 6053678,
+    "method": 8,
+    "offset": 1493082506
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00062.csv",
+    "compressed": 1063482,
+    "size": 5940275,
+    "method": 8,
+    "offset": 1494162996
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00063.csv",
+    "compressed": 1124443,
+    "size": 6243779,
+    "method": 8,
+    "offset": 1495226616
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00064.csv",
+    "compressed": 1093003,
+    "size": 5974710,
+    "method": 8,
+    "offset": 1496351197
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00065.csv",
+    "compressed": 1194223,
+    "size": 6549123,
+    "method": 8,
+    "offset": 1497444338
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00066.csv",
+    "compressed": 1080409,
+    "size": 5985831,
+    "method": 8,
+    "offset": 1498638699
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00067.csv",
+    "compressed": 881123,
+    "size": 6048700,
+    "method": 8,
+    "offset": 1499719246
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00068.csv",
+    "compressed": 845288,
+    "size": 5681972,
+    "method": 8,
+    "offset": 1500600507
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00069.csv",
+    "compressed": 872372,
+    "size": 5931286,
+    "method": 8,
+    "offset": 1501445933
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00070.csv",
+    "compressed": 687441,
+    "size": 5578690,
+    "method": 8,
+    "offset": 1502318443
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00071.csv",
+    "compressed": 710902,
+    "size": 5775124,
+    "method": 8,
+    "offset": 1503006022
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00072.csv",
+    "compressed": 749728,
+    "size": 5851412,
+    "method": 8,
+    "offset": 1503717062
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00073.csv",
+    "compressed": 856322,
+    "size": 6106449,
+    "method": 8,
+    "offset": 1504466928
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00074.csv",
+    "compressed": 890008,
+    "size": 6393892,
+    "method": 8,
+    "offset": 1505323388
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00075.csv",
+    "compressed": 824734,
+    "size": 5897462,
+    "method": 8,
+    "offset": 1506213534
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00076.csv",
+    "compressed": 912340,
+    "size": 6018719,
+    "method": 8,
+    "offset": 1507038406
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00077.csv",
+    "compressed": 881395,
+    "size": 5677575,
+    "method": 8,
+    "offset": 1507950884
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00078.csv",
+    "compressed": 858339,
+    "size": 5524907,
+    "method": 8,
+    "offset": 1508832417
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00079.csv",
+    "compressed": 959492,
+    "size": 5744327,
+    "method": 8,
+    "offset": 1509690894
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00080.csv",
+    "compressed": 992995,
+    "size": 5877563,
+    "method": 8,
+    "offset": 1510650524
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00081.csv",
+    "compressed": 1062155,
+    "size": 6309357,
+    "method": 8,
+    "offset": 1511643657
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00082.csv",
+    "compressed": 1027406,
+    "size": 5921115,
+    "method": 8,
+    "offset": 1512705950
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00083.csv",
+    "compressed": 994319,
+    "size": 5694916,
+    "method": 8,
+    "offset": 1513733494
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00084.csv",
+    "compressed": 1032490,
+    "size": 5918834,
+    "method": 8,
+    "offset": 1514727951
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00085.csv",
+    "compressed": 1017546,
+    "size": 5702496,
+    "method": 8,
+    "offset": 1515760579
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00086.csv",
+    "compressed": 1071418,
+    "size": 5974568,
+    "method": 8,
+    "offset": 1516778263
+  },
+  {
+    "name": "flight_hoverfly_exp/Onboard/AC1_TEST_25-04-2025/LOG00087.csv",
+    "compressed": 1061804,
+    "size": 5899468,
+    "method": 8,
+    "offset": 1517849819
+  }
+]

@@ -4,6 +4,15 @@ The [dependency roadmap](../ROADMAP.md) requires qualified propulsion measuremen
 and a delay-aware physics comparator before warning evaluation. No new physical
 or warning result is supplied by the roadmap cleanup.
 
+## 4TU propeller-damage source qualification
+
+The [source eligibility matrix](../docs/4tu-propeller-data-qualification.md)
+and [metadata audit](../Data/4tu-qualification/results.json) pin the version,
+reuse rights, archive inventory, log fields and source hashes. The published
+damage condition can support a separate descriptive question. The inspected
+sources lack independently timed recovery outcomes and pack identities needed
+for this roadmap's warning comparison. No flight arrays were opened.
+
 ## QDrone2 public component response
 
 The [development summary](../docs/qdrone-response.md) reports continuous altitude
