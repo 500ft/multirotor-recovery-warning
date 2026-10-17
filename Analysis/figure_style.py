@@ -8,7 +8,6 @@ from contextlib import contextmanager
 from pathlib import Path
 
 import matplotlib
-from matplotlib.colors import to_rgb
 
 # Three font sizes by role: titles, axis labels and series names; legends and
 # annotations; tick labels. Panel letters are the only larger text.
@@ -22,8 +21,7 @@ LIGHT = '#d6d9dc'
 # One colour per entity, reused in every figure that shows that entity.
 # Parameter tiers are ordered, so they share one hue at three depths.
 TIER = {'best': '#00441b', 'nominal': '#238b45', 'worst': '#74c476'}
-# Design packages in the survivable-set study (Okabe-Ito, no red/green pair).
-ACTION = {'realloc_only': '#0072B2', 'mechanism': '#E69F00', 'parachute': '#CC79A7'}
+# Survivable-set design packages and failure classes, as named in captions.
 ACTION_NAME = {'realloc_only': 'Thrust reallocation only',
                'mechanism': 'Guard mechanism',
                'parachute': 'Parachute-like device'}
@@ -58,12 +56,6 @@ def style():
     """Apply the shared settings for the duration of one figure."""
     with matplotlib.rc_context(RC):
         yield
-
-
-def tint(color, amount=.35):
-    """Mix a colour with white; amount=1 keeps the colour, 0 gives white."""
-    r, g, b = to_rgb(color)
-    return (1 - amount + amount*r, 1 - amount + amount*g, 1 - amount + amount*b)
 
 
 def panel_letter(fig, ax, letter, dx=-.06, dy=.02):

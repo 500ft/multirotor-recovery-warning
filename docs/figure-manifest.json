@@ -61,7 +61,11 @@
         "Figures/survivable_set_psafe.png",
         "Figures/survivable_set_policy.png",
         "Figures/survivable_set_psafe_a2.png",
-        "Figures/survivable_set_policy_a2.png"
+        "Figures/survivable_set_policy_a2.png",
+        "Figures/survivable_set_psafe.caption.md",
+        "Figures/survivable_set_policy.caption.md",
+        "Figures/survivable_set_psafe_a2.caption.md",
+        "Figures/survivable_set_policy_a2.caption.md"
       ],
       "data_outputs": [],
       "notes": "Redraws the figures from the committed results without running the sweep. The full sweep (python -m Analysis.run_survivable_set) writes the same figures together with the results.",

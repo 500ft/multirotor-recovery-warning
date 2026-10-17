@@ -240,7 +240,8 @@ Full definitions and audit trail: `docs/specs/survivable-set/design.md` (Study
 A/B preregistration), `design-a2.md` (spin-aware variant + machinery revision),
 `drop-test-prediction.md` (registered Study C prediction). Generated data:
 `Data/survivable_set_results{,_a2}.json`, figures
-`Figures/survivable_set_{psafe,policy}{,_a2}.png`. Everything below is
+`Figures/survivable_set_{psafe,policy}{,_a2}.png` with captions in the matching
+`.caption.md` files. Everything below is
 **simulation on EST action inputs (OQ-010)** — no survivable-set claim is
 released until the bench and drop gates run.
 

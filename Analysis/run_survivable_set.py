@@ -133,75 +133,109 @@ def _trial_note(rows):
     return note + "."
 
 
-def psafe_figure(rows, path: Path, variant: str):
+# Data-only canvas: words live in <stem>.caption.md (figures/v6 rules in figure_style).
+PSAFE_H, PSAFE_W = (1.5, 3.0, 6.0), (2.0, 6.0)
+# One marker per design package; filled means the interval is clear of the others.
+PACKAGE = {"realloc_only": {"label": "Reallocation", "marker": "o"},
+           "mechanism": {"label": "Mechanism", "marker": "s"},
+           "parachute": {"label": "Parachute-like device", "marker": "^"}}
+# Grey ramp so black cell numbers stay legible at every value.
+FIELD = matplotlib.colors.LinearSegmentedColormap.from_list("field", ["white", "0.55"])
+LETTERS = "abcdefghijkl"
+
+
+def _bound(v):
+    """Two decimals, except a positive bound that would print as 0.00.
+
+    cmr10 has no "<" glyph, so the sign is set in mathtext.
+    """
+    return r"$<$0.01" if 0 < v < .005 else f"{v:.2f}"
+
+
+def _psafe_slice(rows):
+    """Rows of the plotted slice: no initial vertical speed, 0.11 s delay."""
+    cells = {ss.Cell(h, 0.0, w, 0.11).label() for h in PSAFE_H for w in PSAFE_W}
+    return [r for r in rows if r["cell"] in cells]
+
+
+def psafe_caption(rows, variant: str) -> str:
+    classes = sorted(FAILURE_CLASSES)
+    shown = _psafe_slice(rows)
+    peak = max(shown, key=lambda r: r["p_safe_95_lower"])
+    zero = [a for a in ss.ACTIONS
+            if all(r["p_safe_95_lower"] == 0 for r in shown if r["action"] == a)]
+    found = (f"The highest bound is {peak['p_safe_95_lower']:.2f}, under "
+             f"{fs.FAILURE_NAME[peak['class']].lower()}")
+    if peak["successes"] == peak["n"]:
+        found += f", the bound that {peak['n']} survivals in {peak['n']} trials give"
+    found += "."
+    if zero:
+        found += (" The " + " and the ".join(fs.ACTION_NAME[a].lower() for a in zero)
+                  + " has a bound of 0 in every cell.")
+    rows_text = ", ".join(f"{fs.FAILURE_NAME[c].lower()} ({LETTERS[3*i]}) to ({LETTERS[3*i + 2]})"
+                          for i, c in enumerate(classes))
+    return (
+        f"{SIM_NOTE} {VARIANT_NAME[variant]}. Exact 95% lower bound on survival probability "
+        "by release height [m] and tumble rate at failure [rad/s], at the slice with no "
+        f"initial vertical speed and 0.11 s detection delay. Rows of panels: {rows_text}. "
+        "Columns, left to right: "
+        + ", ".join(fs.ACTION_NAME[a].lower() for a in ss.ACTIONS)
+        + ". Cell numbers print each bound; a positive bound below 0.005 prints as <0.01. "
+        f"{_trial_note(shown)} {found} Values: Data/survivable_set_results"
+        f"{'' if variant == 'a' else '_' + variant}.json (exploratory rows)."
+    )
+
+
+def make_psafe_figure(rows):
     """Exact-lower-bound heatmaps over (h, omega) at the vz=0, delay=0.11 slice."""
     classes = sorted(FAILURE_CLASSES)
-    hs, ws = (1.5, 3.0, 6.0), (2.0, 6.0)
     by_key = {(r["class"], r["cell"], r["action"]): r for r in rows}
-    shown = [r for r in rows if r["cell"] in
-             {ss.Cell(h, 0.0, w, 0.11).label() for h in hs for w in ws}]
-    peak = max(shown, key=lambda r: r["p_safe_95_lower"])
-    zero_actions = [a for a in ss.ACTIONS
-                    if all(r["p_safe_95_lower"] == 0 for r in shown if r["action"] == a)]
-    short = fs.FAILURE_NAME[peak["class"]].split(" (")[0]
-    title = f"{short} peaks at {peak['p_safe_95_lower']:.2f}"
-    if zero_actions:
-        title += "; the " + " and ".join(fs.ACTION_NAME[a].lower() for a in zero_actions)
-        title += " is 0 in every cell"
-    with fs.style():
-        fig, axes = plt.subplots(len(classes), len(ss.ACTIONS), figsize=(7.0, 8.6),
-                                 sharex=True, sharey=True,
-                                 gridspec_kw={"left": .1, "right": .83, "top": .775,
-                                              "bottom": .07, "hspace": .55, "wspace": .08})
-        for i, cls in enumerate(classes):
-            for j, action in enumerate(ss.ACTIONS):
-                grid = np.full((len(ws), len(hs)), np.nan)
-                ns = {}
-                for (a, h), (b, w) in product(enumerate(hs), enumerate(ws)):
-                    cell = ss.Cell(h, 0.0, w, 0.11)
-                    r = by_key.get((cls, cell.label(), action))
-                    if r:
-                        grid[b, a] = r["p_safe_95_lower"]
-                        ns[(a, b)] = r["n"]
-                ax = axes[i, j]
-                im = ax.imshow(grid, vmin=0.0, vmax=1.0, cmap="viridis",
-                               origin="lower", aspect="auto")
-                base_n = min(ns.values()) if ns else None
-                for (a, b), n in ns.items():
-                    v = grid[b, a]
-                    ax.text(a, b, "<0.01" if 0 < v < .005 else f"{v:.2f}", ha="center", va="center",
-                            fontsize=fs.SMALL,
-                            color="white" if v < 0.6 else "black")
-                    if action != "parachute" and n != base_n:
-                        ax.add_patch(plt.Rectangle((a - .45, b - .45), .9, .9, fill=False,
-                                                   ec="white", lw=1.4))
-                ax.set_xticks(range(len(hs)), [f"{h:g}" for h in hs])
-                ax.set_yticks(range(len(ws)), [f"{w:g}" for w in ws])
-                ax.tick_params(length=2)
-                for spine in ax.spines.values():
-                    spine.set_visible(False)
-                if i == 0:
-                    ax.text(.5, 1.36, fs.ACTION_NAME[action].replace(" only", "\nonly")
-                            .replace("-like ", "-like\n").replace("Guard ", "Guard\n"),
-                            transform=ax.transAxes, ha="center", va="bottom")
-            axes[i, 0].text(0, 1.07, fs.FAILURE_NAME[cls], transform=axes[i, 0].transAxes,
-                            ha="left", va="bottom")
-        fig.supxlabel("Release height (m)", y=.015)
-        fig.supylabel("Tumble rate at failure (rad/s)", x=.015)
-        cax = fig.add_axes([.855, .3, .022, .4])
-        cb = fig.colorbar(im, cax=cax)
-        cb.set_label("Survival probability,\nexact 95% lower bound")
-        cb.outline.set_visible(False)
-        fig.text(.02, .985, title, va="top")
-        cap = ""
-        if peak["successes"] == peak["n"]:
-            cap = (f"\n{peak['p_safe_95_lower']:.2f} is the bound that {peak['n']} survivals "
-                   f"in {peak['n']} trials give.")
-        fig.text(.02, .955, f"{SIM_NOTE}\n{VARIANT_NAME[variant]}. Slice: "
-                 "no initial vertical speed, 0.11 s detection delay.\n" + _trial_note(shown)
-                 + cap, va="top", fontsize=fs.SMALL, color=fs.GRAY)
-        fs.save(fig, path)
+    fs.apply()
+    fig, axes = plt.subplots(len(classes), len(ss.ACTIONS), figsize=(7.0, 7.6),
+                             sharex=True, sharey=True,
+                             gridspec_kw={"left": .09, "right": .85, "top": .92,
+                                          "bottom": .075, "hspace": .38, "wspace": .1})
+    primary_n = None
+    for i, cls in enumerate(classes):
+        for j, action in enumerate(ss.ACTIONS):
+            grid = np.full((len(PSAFE_W), len(PSAFE_H)), np.nan)
+            ns = {}
+            for (a, h), (b, w) in product(enumerate(PSAFE_H), enumerate(PSAFE_W)):
+                r = by_key.get((cls, ss.Cell(h, 0.0, w, 0.11).label(), action))
+                if r:
+                    grid[b, a] = r["p_safe_95_lower"]
+                    ns[(a, b)] = r["n"]
+            ax = axes[i, j]
+            im = ax.imshow(grid, vmin=0.0, vmax=1.0, cmap=FIELD, origin="lower", aspect="auto")
+            base_n = min(ns.values()) if ns else None
+            for (a, b), n in ns.items():
+                ax.text(a, b, _bound(grid[b, a]), ha="center", va="center", size=fs.TICK_SIZE)
+                if action != "parachute" and n != base_n:
+                    primary_n = n
+                    ax.add_patch(plt.Rectangle((a - .44, b - .42), .88, .84, fill=False,
+                                               ec=fs.RULE_INK, lw=1.0))
+            ax.set_xticks(range(len(PSAFE_H)), [f"{h:g}" for h in PSAFE_H])
+            ax.set_yticks(range(len(PSAFE_W)), [f"{w:g}" for w in PSAFE_W])
+            ax.tick_params(length=2)
+            fs.letter(ax, f"({LETTERS[i * len(ss.ACTIONS) + j]})")
+    fig.supxlabel("Release height [m]", y=.012, size=fs.LABEL_SIZE)
+    fig.supylabel("Tumble rate at failure [rad/s]", x=.012, size=fs.LABEL_SIZE)
+    cax = fig.add_axes([.875, .3, .022, .4])
+    cb = fig.colorbar(im, cax=cax)
+    cb.set_label("Survival probability, exact 95% lower bound")
+    cb.ax.tick_params(length=2)
+    if primary_n:
+        fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, fill=False, ec=fs.RULE_INK, lw=1.0)],
+                   labels=[f"Primary cell, {primary_n} trials"], loc="upper center",
+                   bbox_to_anchor=(.47, .995), borderaxespad=0, handlelength=1.4)
+    return fig
+
+
+def psafe_figure(rows, path: Path, variant: str):
+    fig = make_psafe_figure(rows)
+    fs.save_audited(fig, path.with_suffix(""))
     plt.close(fig)
+    path.with_suffix(".caption.md").write_text(psafe_caption(rows, variant) + "\n")
 
 
 def _cell_factors(label):
@@ -210,103 +244,105 @@ def _cell_factors(label):
     return float(h[1:]), float(vz[2:]), float(w[1:]), float(d[1:])
 
 
-def policy_figure(policy, path: Path, variant: str):
-    """Study B decision map: best action per (class, cell), shaded where ambiguous."""
-    classes = sorted(FAILURE_CLASSES)
+def _policy_rows(policy):
     cells = [c.label() for c in ss.EXPLORATORY_CELLS]
-    rows = {(r["class"], r["cell"]): r for r in policy if r["cell"] in cells}
-    total = len(rows)
-    clear = [r for r in rows.values() if not r["ambiguous_with"]]
+    return cells, {(r["class"], r["cell"]): r for r in policy if r["cell"] in cells}
 
-    def kind(r):
-        if r["best_p_safe_95_lower"] == 0:
-            return "none"
-        return "clear" if not r["ambiguous_with"] else "overlap"
 
-    if not clear:
-        title = f"No design package is clearly best in any of the {total} failure-state cells"
-    else:
-        title = (f"A design package is clearly best in {len(clear)} of {total} "
-                 "failure-state cells")
+def _policy_kind(r):
+    if r["best_p_safe_95_lower"] == 0:
+        return "none"
+    return "clear" if not r["ambiguous_with"] else "overlap"
+
+
+def policy_caption(policy, variant: str) -> str:
+    _, rows = _policy_rows(policy)
+    kinds = [_policy_kind(r) for r in rows.values()]
+    clear = kinds.count("clear")
+    found = (f"No design package is clearly best in any of the {len(rows)} failure-state cells."
+             if not clear else
+             f"A design package is clearly best in {clear} of {len(rows)} failure-state cells.")
+    shown = [a for a in ss.ACTIONS
+             if any(r["best_action"] == a and _policy_kind(r) != "none" for r in rows.values())]
+    shapes = {"o": "circle", "s": "square", "^": "triangle"}
+    return (
+        "Ranks aircraft design packages by exact 95% lower bound on survival probability; "
+        f"it is not a runtime policy (design.md 6b). {SIM_NOTE} {VARIANT_NAME[variant]}. "
+        "Each row is one failure-state cell: release height [m], initial vertical speed "
+        "[m/s], tumble rate at failure [rad/s] and detection delay [s], as the tick labels "
+        "list them. Each column is one failure class. The marker names the best package ("
+        + ", ".join(f"{PACKAGE[a]['label'].lower()}: {shapes[PACKAGE[a]['marker']]}"
+                    for a in shown)
+        + "); filled means its interval is clear of the others, hollow means it lies within "
+        "Monte Carlo uncertainty of another package. A cell without a marker has every "
+        "lower bound at 0. The number is the best package's lower bound; a positive bound "
+        f"below 0.005 prints as <0.01. {found} {ss.EXPLORATORY_TRIALS} trials per cell "
+        f"({ss.PRIMARY_TRIALS} in outlined primary cells); parachute-like device "
+        f"{ss.PARACHUTE_TRIALS:,}. Horizontal rules separate release heights. Values: "
+        f"Data/survivable_set_results{'' if variant == 'a' else '_' + variant}.json "
+        "(policy rows)."
+    )
+
+
+def make_policy_figure(policy):
+    """Study B decision map: best package per (class, cell), hollow where ambiguous."""
+    classes = sorted(FAILURE_CLASSES)
+    cells, rows = _policy_rows(policy)
     primary = {c.label() for c in ss.PRIMARY_CELLS}
+    fs.apply()
+    fig, ax = plt.subplots(figsize=(7.0, 8.0))
+    fig.subplots_adjust(left=.25, right=.98, top=.905, bottom=.02)
     seen = set()
-    with fs.style():
-        fig = plt.figure(figsize=(7.0, 8.0))
-        grid = fig.add_gridspec(1, 2, width_ratios=[1.45, 2.2], left=.02, right=.98,
-                                top=.77, bottom=.13, wspace=.02)
-        table = fig.add_subplot(grid[0, 0])
-        heat = fig.add_subplot(grid[0, 1], sharey=table)
-        for j, cls in enumerate(classes):
-            for i, cell in enumerate(cells):
-                r = rows.get((cls, cell))
-                if r is None:
-                    continue
-                k = kind(r)
-                base = fs.ACTION[r["best_action"]]
-                face = {"none": "#eeeeee", "overlap": fs.tint(base, .35), "clear": base}[k]
-                seen.add((k, r["best_action"] if k != "none" else None))
-                heat.add_patch(plt.Rectangle((j, i), 1, 1, fc=face, ec="white", lw=1))
-                if cls in ss.PRIMARY_CLASSES and cell in primary:
-                    heat.add_patch(plt.Rectangle((j + .06, i + .1), .88, .8, fill=False,
-                                                 ec=fs.INK, lw=1.1))
-                v = r["best_p_safe_95_lower"]
-                # Two decimals, except a positive bound that would print as 0.00.
-                heat.text(j + .5, i + .5, "<0.01" if 0 < v < .005 else f"{v:.2f}", ha="center",
-                          va="center", fontsize=fs.SMALL,
-                          color="white" if k == "clear" else fs.INK)
-        heat.set_xlim(0, len(classes))
-        heat.set_ylim(len(cells), 0)
-        heat.set_xticks([j + .5 for j in range(len(classes))],
-                        [fs.FAILURE_NAME[c].replace(" rotors out", "\nrotors out")
-                         .replace(" authority ", " authority\n").replace(" rotor out", "\nrotor out")
-                         for c in classes])
-        heat.xaxis.tick_top()
-        heat.tick_params(length=0, labelleft=False, labelsize=fs.SMALL)
-        heat.spines[:].set_visible(False)
-        heat.set_xlabel("Best package's survival lower bound, by failure class")
-        heat.xaxis.set_label_position("top")
-        # Left: the four state factors of each row, read as a small table.
-        heads = ["Height\n(m)", "Vertical\nspeed (m/s)", "Tumble\nrate (rad/s)", "Delay\n(s)"]
-        xs = [.11, .37, .66, .91]
-        for x, h in zip(xs, heads):
-            table.text(x, -.4, h, ha="center", va="bottom", fontsize=fs.SMALL)
-        previous = None
+    for j, cls in enumerate(classes):
         for i, cell in enumerate(cells):
-            f = _cell_factors(cell)
-            for k, (x, v) in enumerate(zip(xs, f)):
-                if k == 0 and v == previous:
-                    continue
-                table.text(x, i + .5, f"{v:g}", ha="center", va="center", fontsize=fs.TICK)
-            if previous is not None and f[0] != previous:
-                for ax in (table, heat):
-                    ax.axhline(i, color=fs.GRAY, lw=.8)
-            previous = f[0]
-        table.set_xlim(0, 1)
-        table.axis("off")
-        names = {"realloc_only": "reallocation", "mechanism": "mechanism",
-                 "parachute": "parachute-like device"}
-        handles, labels = [], []
-        order = [("clear", a) for a in ss.ACTIONS] + [("overlap", a) for a in ss.ACTIONS]
-        for k, a in order + [("none", None)]:
-            if (k, a) not in seen:
+            r = rows.get((cls, cell))
+            if r is None:
                 continue
-            face = ("#eeeeee" if k == "none" else
-                    fs.ACTION[a] if k == "clear" else fs.tint(fs.ACTION[a], .35))
-            handles.append(plt.Rectangle((0, 0), 1, 1, fc=face, ec="none"))
-            labels.append({"clear": f"Best: {names.get(a)}, interval clear of the others",
-                           "overlap": f"Best: {names.get(a)}, within Monte Carlo uncertainty",
-                           "none": "No package above 0 (all lower bounds 0)"}[k])
-        fig.legend(handles, labels, loc="lower left", bbox_to_anchor=(.03, .005),
-                   ncol=1, handlelength=1.2, borderaxespad=0)
-        fig.text(.02, .985, title, va="top")
-        fig.text(.02, .955, "Ranks aircraft design packages by exact 95% lower bound; "
-                 "it is not a runtime policy (design.md 6b).\n"
-                 f"{SIM_NOTE}\n{VARIANT_NAME[variant]}.\n"
-                 f"{ss.EXPLORATORY_TRIALS} trials per cell ({ss.PRIMARY_TRIALS} in outlined "
-                 f"primary cells); parachute-like device {ss.PARACHUTE_TRIALS:,}.",
-                 va="top", fontsize=fs.SMALL, color=fs.GRAY)
-        fs.save(fig, path)
+            kind = _policy_kind(r)
+            if kind != "none":
+                seen.add(r["best_action"])
+                ax.plot(j + .3, i + .5, marker=PACKAGE[r["best_action"]]["marker"], ls="none",
+                        mfc=fs.FILL[kind == "clear"], **fs.MARKER)
+            ax.text(j + .62, i + .5, _bound(r["best_p_safe_95_lower"]), ha="center",
+                    va="center", size=fs.TICK_SIZE)
+            if cls in ss.PRIMARY_CLASSES and cell in primary:
+                ax.add_patch(plt.Rectangle((j + .08, i + .1), .84, .8, fill=False,
+                                           ec=fs.RULE_INK, lw=.9))
+    previous = None
+    for i, cell in enumerate(cells):
+        height = _cell_factors(cell)[0]
+        if previous is not None and height != previous:
+            ax.axhline(i, color=fs.RULE_INK, lw=.6)
+        previous = height
+    ax.set_xlim(0, len(classes))
+    ax.set_ylim(len(cells), 0)
+    ax.set_xticks([j + .5 for j in range(len(classes))],
+                  [fs.FAILURE_NAME[c].replace(" rotors out", "\nrotors out")
+                   .replace(" authority ", " authority\n").replace(" rotor out", "\nrotor out")
+                   for c in classes])
+    ax.set_yticks([i + .5 for i in range(len(cells))],
+                  [", ".join(f"{v:g}" for v in _cell_factors(c)) for c in cells])
+    ax.xaxis.tick_top()
+    ax.tick_params(length=0)
+    ax.spines[:].set_visible(False)
+    ax.set_ylabel("Height [m], vertical speed [m/s], tumble rate [rad/s], delay [s]")
+    handles = [matplotlib.lines.Line2D([], [], marker=PACKAGE[a]["marker"], ls="none",
+                                       mfc=fs.FILL[True], label=PACKAGE[a]["label"], **fs.MARKER)
+               for a in ss.ACTIONS if a in seen]
+    handles.append(matplotlib.lines.Line2D([], [], marker="o", ls="none", mfc=fs.FILL[False],
+                                           label="Hollow: within uncertainty", **fs.MARKER))
+    handles.append(plt.Rectangle((0, 0), 1, 1, fill=False, ec=fs.RULE_INK, lw=.9,
+                                 label="Primary cell"))
+    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(.5, .995),
+               ncol=len(handles), columnspacing=1.2, handletextpad=.5, borderaxespad=0)
+    return fig
+
+
+def policy_figure(policy, path: Path, variant: str):
+    fig = make_policy_figure(policy)
+    fs.save_audited(fig, path.with_suffix(""))
     plt.close(fig)
+    path.with_suffix(".caption.md").write_text(policy_caption(policy, variant) + "\n")
 
 
 def render_committed_figures(repo: Path):

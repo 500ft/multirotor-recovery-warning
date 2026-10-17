@@ -124,7 +124,8 @@ adds gyroscopic feedforward and EST yaw rotational drag. Writes
 `--convergence` writes `Data/survivable_set_convergence.json` (dt-halving
 impact-state deltas) and `--smoke` exercises the pipeline in CI without writing.
 `--figures-only` redraws the four figures from the committed results JSON and
-runs no simulation.
+runs no simulation. Each figure's caption, with the panel key, trial counts and
+findings, is written beside it as `Figures/survivable_set_{psafe,policy}{,_a2}.caption.md`.
 Action parameters marked EST are owner inputs (OQ-010); the preregistrations in
 [`docs/specs/survivable-set/design.md`](specs/survivable-set/design.md) and
 [`design-a2.md`](specs/survivable-set/design-a2.md) freeze criteria, cells,
