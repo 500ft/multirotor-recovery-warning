@@ -1,4 +1,9 @@
-"""Plot the executed development CSV; no data acquisition or scoring."""
+"""Plot the executed development CSV; no data acquisition or scoring.
+
+The canvas shows only the stored per-horizon means. Everything in words is
+written by ``caption()`` to a file beside the image and copied into the report
+under it.
+"""
 import argparse
 import csv
 from pathlib import Path
@@ -6,22 +11,32 @@ from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 
 from Analysis import figure_style as fs
 
-NAMES = ['cf21plus_firmware', 'thrust_upgrade_firmware', 'legacy_propellers_firmware', 'persistence']
-LABELS = {'cf21plus_firmware': '2.1+ curve', 'thrust_upgrade_firmware': 'Thrust-upgrade curve',
-          'legacy_propellers_firmware': 'Legacy-propeller curve',
-          'persistence': 'Persistence (hold state)'}
-METRICS = [('velocity', 'World velocity error (m/s)'), ('body_rate', 'Body angular rate error (rad/s)')]
+# One marker per model; the shape carries the distinction in every panel.
+MODELS = {'cf21plus_firmware': {'label': '2.1+ curve', 'marker': 'o'},
+          'thrust_upgrade_firmware': {'label': 'Thrust-upgrade curve', 'marker': 's'},
+          'legacy_propellers_firmware': {'label': 'Legacy-propeller curve', 'marker': '^'}}
+PERSISTENCE = {'label': 'Persistence (hold state)', 'marker': 'D'}
+NAMES = [*MODELS, 'persistence']
+METRICS = [('velocity', 'Velocity error [m/s]', 'world velocity'),
+           ('body_rate', 'Body rate error [rad/s]', 'body angular rate')]
+LETTERS = 'abcdef'
+
+# Layout in inches: 178 mm wide like the other repo figures, two rows of three panels, legend above.
+WIDTH, HEIGHT = 7.0, 4.4
+MARGINS = {'left': .085, 'right': .99, 'top': .87, 'bottom': .11, 'wspace': .45, 'hspace': .42}
 
 
 def summarize(rows):
     """Within-flight vector RMSE, then unweighted mean over flights."""
     horizons = sorted({float(r['horizon_s']) for r in rows if float(r['horizon_s']) > 0})
     values, flights = {}, set()
-    for metric, _ in METRICS:
+    for metric, _, _ in METRICS:
         for name in NAMES:
             series = []
             for horizon in horizons:
@@ -36,62 +51,84 @@ def summarize(rows):
     return horizons, values, flights
 
 
-def plot(results, output):
-    with results.open() as f:
-        rows = list(csv.DictReader(f))
+def findings(horizons, values):
+    """Sentences that hold for every plotted point, derived from the data."""
+    out = []
+    if all(np.all(values[m, 'persistence'] < values[m, n]) for m, _, _ in METRICS for n in MODELS):
+        out.append('Persistence has the lowest error at every horizon for both quantities.')
+    ends = {n: values['velocity', n][-1] for n in MODELS}
+    if max(ends.values()) - min(ends.values()) < .05 * max(ends.values()):
+        out.append(f'The three motor-curve velocity errors meet by {horizons[-1]:g} s.')
+    worst = max(MODELS, key=lambda n: values['body_rate', n].max())
+    if all(np.all(values['body_rate', worst] >= values['body_rate', n]) for n in MODELS):
+        out.append(f'The {MODELS[worst]["label"].lower()} has the largest body rate error '
+                   'at every horizon.')
+    return out
+
+
+def caption(rows) -> str:
     horizons, values, flights = summarize(rows)
-    lowest = all(np.all(values[m, 'persistence'] < values[m, n])
-                 for m, _ in METRICS for n in NAMES[:-1])
-    title = 'Documented models accumulate error on development flights'
-    if lowest:
-        title += '; persistence stays lowest'
-    n_note = (f'n = {flights.pop()} development flights per point'
-              if len(flights) == 1 else 'flight count varies by point; see CSV')
-    with fs.style():
-        fig, axes = plt.subplots(1, 2, figsize=(7.0, 4.0),
-                                 gridspec_kw={'left': .09, 'right': .76, 'top': .66,
-                                              'bottom': .13, 'wspace': .36})
-        for ax, (metric, label), letter in zip(axes, METRICS, 'ab'):
-            for name in NAMES:
-                ax.plot(horizons, values[metric, name], 'o-', ms=4, lw=1.6,
-                        color=fs.MODEL[name])
+    n_note = (f'{flights.pop()} development flights per point'
+              if len(flights) == 1 else 'flight count varies by point; see the CSV')
+    panels = ', '.join(f'({LETTERS[j]}) {MODELS[n]["label"]}' for j, n in enumerate(MODELS))
+    rate = ', '.join(f'({LETTERS[3 + j]})' for j in range(len(MODELS)))
+    return (
+        'NanoBench development replay: open-loop rollout error of the documented motor '
+        'models against the persistence comparator. Panels (a) to (c): mean world velocity '
+        f'error [m/s] for {panels}. Panels {rate}: mean body angular rate error [rad/s] '
+        'for the same models in the same order. Each panel repeats persistence (hold state, '
+        'diamonds, dashed line) so the panels share one scale per row. Horizons '
+        f'{", ".join(f"{h:g}" for h in horizons)} s; same starts for all models; '
+        f'{n_note}; mean of within-flight vector RMSE with equal flight weighting; no '
+        f'uncertainty interval. {" ".join(findings(horizons, values))} '
+        'NanoBench observations collected by Ullah and Baca. Per-axis and per-flight '
+        'values: Data/nanobench-baseline/development-errors.csv.'
+    )
+
+
+def figure(rows):
+    horizons, values, _ = summarize(rows)
+    fs.apply()
+    fig, axes = plt.subplots(len(METRICS), len(MODELS), figsize=(WIDTH, HEIGHT))
+    fig.subplots_adjust(**MARGINS)
+    for i, (metric, label, _) in enumerate(METRICS):
+        top = max(values[metric, n].max() for n in NAMES)
+        for j, name in enumerate(MODELS):
+            ax = axes[i, j]
+            ax.plot(horizons, values[metric, 'persistence'], marker=PERSISTENCE['marker'],
+                    ls=fs.DASHED, zorder=2, **fs.MARKER, lw=fs.LINE['lw'])
+            ax.plot(horizons, values[metric, name], marker=MODELS[name]['marker'],
+                    ls='-', zorder=3, **fs.MARKER, lw=fs.LINE['lw'])
+            ax.set(xlim=(0, horizons[-1] * 1.12), ylim=(0, top * 1.15))
             ax.set_xticks(horizons, [f'{h:g}' for h in horizons])
-            ax.set_xlabel('Open-loop horizon (s)')
-            ax.set_ylabel(label)
-            ax.set_ylim(bottom=0)
-            ax.grid(axis='y')
-            ax.set_axisbelow(True)
-            ax.margins(x=.06)
-            fs.panel_letter(fig, ax, letter, dx=-.075, dy=.065)
-        ends = {n: values['velocity', n][-1] for n in NAMES}
-        top3 = max(v for n, v in ends.items() if n != 'persistence')
-        spread = top3 - min(v for n, v in ends.items() if n != 'persistence')
-        axes[0].set_title('Velocity: the motor curves\nmeet by 0.5 s'
-                          if spread < .05 * top3 else 'World velocity')
-        worst = {m: max(NAMES[:-1], key=lambda n: values[m, n].max()) for m, _ in METRICS}
-        always = all(np.all(values['body_rate', worst['body_rate']] >= values['body_rate', n])
-                     for n in NAMES[:-1])
-        axes[1].set_title(f"Body rate: the {LABELS[worst['body_rate']].lower()}\nis worst at every horizon"
-                          if always else 'Body angular rate')
-        # Direct labels at the right end of the body-rate lines, nudged apart.
-        y = {n: values['body_rate', n][-1] for n in NAMES}
-        lo, hi = axes[1].get_ylim()
-        gap = .065 * (hi - lo)
-        placed = []
-        for name in sorted(NAMES, key=lambda n: y[n]):
-            pos = y[name] if not placed else max(y[name], placed[-1] + gap)
-            placed.append(pos)
-            axes[1].annotate(LABELS[name], (horizons[-1], y[name]), xytext=(horizons[-1] + .03, pos),
-                             textcoords='data', va='center', fontsize=fs.SMALL,
-                             color=fs.MODEL[name], annotation_clip=False)
-        fig.text(.02, .975, title, va='top')
-        fig.text(.02, .92, 'NanoBench observations collected by Ullah and Baca. Same starts '
-                 f'for all models;\n{n_note}. Mean of within-flight vector RMSE, equal flight '
-                 'weighting,\nno uncertainty interval. Per-axis and per-flight values are '
-                 'in the CSV.', va='top', fontsize=fs.SMALL, color=fs.GRAY)
-        output.parent.mkdir(parents=True, exist_ok=True)
-        fs.save(fig, output)
+            ax.tick_params(axis='x', labelbottom=i == len(METRICS) - 1, length=3)
+            ax.tick_params(axis='y', labelleft=j == 0, length=3)
+            ax.yaxis.set_major_locator(MaxNLocator(nbins=4))
+            if j == 0:
+                ax.set_ylabel(label)
+            if i == len(METRICS) - 1:
+                ax.set_xlabel('Open-loop horizon [s]')
+            fs.letter(ax, f'({LETTERS[i * len(MODELS) + j]})')
+    handles = [Line2D([], [], marker=m['marker'], ls='-', label=m['label'], **fs.MARKER,
+                      lw=fs.LINE['lw']) for m in MODELS.values()]
+    handles.append(Line2D([], [], marker=PERSISTENCE['marker'], ls=fs.DASHED,
+                          label=PERSISTENCE['label'], **fs.MARKER, lw=fs.LINE['lw']))
+    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.5, .995), ncol=len(handles),
+               columnspacing=1.4, handletextpad=.5, borderaxespad=0)
+    return fig
+
+
+def read_rows(results: Path):
+    with results.open() as f:
+        return list(csv.DictReader(f))
+
+
+def plot(results: Path, output: Path):
+    rows = read_rows(results)
+    fig = figure(rows)
+    fs.save_audited(fig, output)
     plt.close(fig)
+    output.with_suffix('.caption.md').write_text(caption(rows) + '\n')
 
 
 if __name__ == '__main__':

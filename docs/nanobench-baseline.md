@@ -9,6 +9,9 @@ The per-flight, per-axis results are in
 exclusions, numerical failures through the metric table, input hashes and runtime.
 No parameters were fitted and no final-test predictions were evaluated.
 
+Figure caption ([caption file](../Figures/nanobench-baseline.caption.md)):
+NanoBench development replay: open-loop rollout error of the documented motor models against the persistence comparator. Panels (a) to (c): mean world velocity error [m/s] for (a) 2.1+ curve, (b) Thrust-upgrade curve, (c) Legacy-propeller curve. Panels (d), (e), (f): mean body angular rate error [rad/s] for the same models in the same order. Each panel repeats persistence (hold state, diamonds, dashed line) so the panels share one scale per row. Horizons 0.1, 0.25, 0.5 s; same starts for all models; 12 development flights per point; mean of within-flight vector RMSE with equal flight weighting; no uncertainty interval. Persistence has the lowest error at every horizon for both quantities. The three motor-curve velocity errors meet by 0.5 s. The thrust-upgrade curve has the largest body rate error at every horizon. NanoBench observations collected by Ullah and Baca. Per-axis and per-flight values: Data/nanobench-baseline/development-errors.csv.
+
 ## Reproduce
 
 Run from the repository root with Python and `curl`. Store the dataset outside

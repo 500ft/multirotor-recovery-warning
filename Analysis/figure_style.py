@@ -31,9 +31,6 @@ FAILURE_NAME = {'one_out': 'One rotor out',
                 'partial_authority': 'Partial authority (60%)',
                 'two_adjacent': 'Two adjacent rotors out',
                 'two_opposite': 'Two opposite rotors out'}
-# NanoBench documented motor models and the persistence comparator.
-MODEL = {'cf21plus_firmware': '#0072B2', 'thrust_upgrade_firmware': '#D55E00',
-         'legacy_propellers_firmware': '#009E73', 'persistence': '#333333'}
 # QDrone2 channels and command directions, as chosen in PR #60.
 QDRONE = {'altitude': '#2980b9', 'voltage': '#27ae60', 'reference': GRAY,
           'up': '#2980b9', 'down': '#7d3c98'}
@@ -86,3 +83,121 @@ def save(fig, path, formats=('png',)):
             fig.savefig(out, metadata={'CreationDate': None, 'ModDate': None})
         else:
             fig.savefig(out, dpi=300)
+
+
+# ---------------------------------------------------------------------------
+# Data-only canvas rules (figures/v6). Used by the rebuilt NanoBench replay and
+# survivable-set figures. The settings above stay for the QDrone2 and
+# release-recovery generators, which need data that is not committed.
+#
+# - The canvas carries data, axes, tick labels, axis labels, panel letters and
+#   one framed legend. Everything in words lives in <stem>.caption.md beside
+#   the image and in the document under it.
+# - Condition (which series) is carried by marker shape and line style; state
+#   by marker fill. Colour appears only in a heatmap field with a colourbar.
+# - Nothing printed may touch anything: ``audit`` lists every pair that does,
+#   and ``save_audited`` refuses to write while the list is not empty.
+# - Type is Computer Modern (matplotlib's bundled cmr10).
+# ---------------------------------------------------------------------------
+from matplotlib.text import Text  # noqa: E402
+
+RULE_INK = 'black'
+FILL = {True: RULE_INK, False: 'white'}
+MARKER = {'ms': 5, 'mew': 0.9, 'color': RULE_INK}
+LINE = {'color': RULE_INK, 'lw': 0.9}
+DASHED = (0, (4, 3))
+LABEL_SIZE, LETTER_SIZE, TICK_SIZE = 9, 9, 7
+DPI = 600
+
+
+def apply() -> None:
+    matplotlib.rcParams.update({
+        'font.family': 'serif',
+        'font.serif': ['cmr10'],
+        'mathtext.fontset': 'cm',
+        # cmr10 has no Unicode minus; mathtext tick labels carry a proper one.
+        'axes.formatter.use_mathtext': True,
+        'axes.unicode_minus': False,
+        'font.size': LABEL_SIZE,
+        'axes.labelsize': LABEL_SIZE,
+        'legend.fontsize': LABEL_SIZE,
+        'xtick.labelsize': TICK_SIZE,
+        'ytick.labelsize': TICK_SIZE,
+        'xtick.direction': 'out',
+        'ytick.direction': 'out',
+        'axes.spines.top': False,
+        'axes.spines.right': False,
+        'axes.linewidth': 0.8,
+        'axes.edgecolor': RULE_INK,
+        'axes.labelcolor': RULE_INK,
+        'text.color': RULE_INK,
+        'xtick.color': RULE_INK,
+        'ytick.color': RULE_INK,
+        'axes.grid': False,
+        'legend.frameon': True,
+        'legend.fancybox': False,
+        'legend.edgecolor': RULE_INK,
+        'legend.framealpha': 1.0,
+        'figure.facecolor': 'white',
+        'axes.facecolor': 'white',
+        'savefig.facecolor': 'white',
+        'savefig.dpi': DPI,
+    })
+
+
+def letter(ax, text: str) -> None:
+    """Panel letter just above the top-left corner of an axes."""
+    ax.text(0, 1.04, text, transform=ax.transAxes, ha='left', va='bottom', size=LETTER_SIZE)
+
+
+def audit(fig) -> list:
+    """Pairs of printed things whose boxes touch. Empty means the canvas is clean.
+
+    Every drawn text (tick labels inside the view, axis labels, panel letters,
+    legend entries, heatmap cell numbers) is checked against every other drawn
+    text, against the lines drawn in each axes and against each legend frame.
+    Data is not checked against data. Texts inside a legend are not checked
+    against their own frame.
+    """
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    legends = list(fig.legends) + [ax.get_legend() for ax in fig.axes if ax.get_legend()]
+    owner = {id(child): legend for legend in legends for child in legend.findobj()}
+    tick_labels, drawn = set(), []
+    for ax in fig.axes:
+        for axis in (ax.xaxis, ax.yaxis):
+            low, high = sorted(axis.get_view_interval())
+            slack = 1e-9 * (high - low)
+            for tick in axis.get_major_ticks() + axis.get_minor_ticks():
+                for label in (tick.label1, tick.label2):
+                    tick_labels.add(id(label))
+                    if (label.get_visible() and label.get_text().strip()
+                            and low - slack <= tick.get_loc() <= high + slack):
+                        drawn.append(label)
+    drawn += [t for t in fig.findobj(Text)
+              if id(t) not in tick_labels and t.get_visible() and t.get_text().strip()]
+    texts = [(f'text {t.get_text()!r}', t.get_window_extent(renderer).padded(1), owner.get(id(t)))
+             for t in drawn]
+    others = [(f"data in {ax.get_ylabel() or 'axes'}", line.get_window_extent(renderer), None)
+              for ax in fig.axes for line in ax.lines]
+    others += [('legend frame', legend.get_window_extent(renderer), legend) for legend in legends]
+    hits = []
+    for i, (name_a, box_a, legend_a) in enumerate(texts):
+        for name_b, box_b, legend_b in texts[i + 1:] + others:
+            if legend_a is not None and legend_a is legend_b:
+                continue
+            if box_a.overlaps(box_b):
+                hits.append((name_a, name_b))
+    return hits
+
+
+def save_audited(fig, stem, formats=('png',)) -> None:
+    """Write ``stem.<ext>`` for each format without timestamps; refuse a touching canvas."""
+    hits = audit(fig)
+    if hits:
+        raise ValueError(f'printed items touch: {hits}')
+    stem = Path(stem)
+    stem.parent.mkdir(parents=True, exist_ok=True)
+    for ext in formats:
+        fig.savefig(stem.with_suffix(f'.{ext}'), dpi=DPI,
+                    metadata={'CreationDate': None, 'ModDate': None} if ext == 'pdf' else {})
