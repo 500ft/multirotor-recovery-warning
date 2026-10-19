@@ -1,0 +1,46 @@
+{
+  "scope": "historical estimated aircraft; release_startup; independent torque/thrust limits",
+  "controllers": [
+    "legacy",
+    "tilt_angle"
+  ],
+  "antipodal_axis_latch_exit_deg_from_inversion": 5.0,
+  "initial_tilt_deg": [
+    60.0,
+    142.2387560927618,
+    180.0
+  ],
+  "initial_rate_rad_s": [
+    0.0,
+    4.0
+  ],
+  "tiers": [
+    "nominal",
+    "worst"
+  ],
+  "dt_s": [
+    0.0005,
+    0.00025
+  ],
+  "t_max_s": 12.0,
+  "diagnostic_height_m": 1000.0,
+  "height_step_m": 0.5,
+  "illustrative_clearance_m": 0.25,
+  "tumble_axis": [
+    1.0,
+    1.0,
+    0.0
+  ],
+  "tilt_axis": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "success": {
+    "tilt_below_deg": 5.0,
+    "rate_below_rad_s": 0.3,
+    "absolute_vz_below_m_s": 0.2,
+    "continuous_duration_s": 0.25
+  },
+  "interpretation": "development grid, not a continuous envelope or physical release recommendation"
+}

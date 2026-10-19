@@ -38,6 +38,15 @@ audit and records the missing collection timing/configuration. Conditional
 identification stopped before fitting. The alternative-data inspection and
 unsent request are recorded with that result.
 
+## Large-tilt simulation development
+
+The [controller and height comparison](../docs/large-tilt-recovery.md) adds an
+optional angle-error correction to the historical release simulator. All executed
+cases, failures, timestep checks and ground-limited reruns are retained in
+[results.json](../Data/large-tilt-recovery/results.json). The
+[figure](../Figures/large-tilt-recovery.png) compares matched initial states.
+The historical independent thrust/torque plant remains an unqualified assumption.
+
 ## Historical designed aircraft
 
 All results below use the earlier estimated aircraft. Their old bench gates

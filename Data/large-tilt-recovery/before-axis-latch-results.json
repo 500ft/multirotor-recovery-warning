@@ -1,0 +1,1153 @@
+{
+  "protocol": "protocol.json",
+  "model_sha256": "294f0e92b1d8993e53961b577c44989ecc31d6e6c2b0dd71f575d9db140b0502",
+  "parameters": {
+    "nominal": {
+      "mass_kg": 0.12976,
+      "inertia_lateral_kg_m2": 0.00035,
+      "inertia_yaw_factor": 1.6,
+      "max_torque_n_m": 0.004,
+      "max_thrust_n": 4.2,
+      "drag_coefficient": 1.0,
+      "projected_area_m2": 0.012,
+      "detection_latency_s": 0.05,
+      "motor_start_latency_s": 0.06,
+      "gyro_limit_rad_s": 34.906585039886586,
+      "available_height_m": 3.0,
+      "arm_m": null,
+      "yaw_torque_n_m": null,
+      "yaw_drag_n_m_s2": 0.0
+    },
+    "worst": {
+      "mass_kg": 0.155,
+      "inertia_lateral_kg_m2": 0.00055,
+      "inertia_yaw_factor": 1.6,
+      "max_torque_n_m": 0.0025,
+      "max_thrust_n": 3.5,
+      "drag_coefficient": 0.8,
+      "projected_area_m2": 0.008,
+      "detection_latency_s": 0.1,
+      "motor_start_latency_s": 0.12,
+      "gyro_limit_rad_s": 34.906585039886586,
+      "available_height_m": 3.0,
+      "arm_m": null,
+      "yaw_torque_n_m": null,
+      "yaw_drag_n_m_s2": 0.0
+    }
+  },
+  "cases": [
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 1.0725,
+          "maximum_descent_m": 0.14497456780239432,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.5937571598700075,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 1.073,
+          "maximum_descent_m": 0.14499375699549794,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.593472458541764,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 1.9189193103619218e-05,
+      "tested_release_height_m": 0.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 1.073,
+        "maximum_descent_m": 0.14499375699549794,
+        "peak_tilt_deg": 59.99999999999999,
+        "peak_rate_rad_s": 2.593472458541764,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 1.0575,
+          "maximum_descent_m": 0.14497456780239432,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.7295967291535255,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 1.058,
+          "maximum_descent_m": 0.14499375699549794,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.7293408882011367,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 1.9189193103619218e-05,
+      "tested_release_height_m": 0.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 1.058,
+        "maximum_descent_m": 0.14499375699549794,
+        "peak_tilt_deg": 59.99999999999999,
+        "peak_rate_rad_s": 2.7293408882011367,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.0645,
+          "maximum_descent_m": 3.2595823726280395,
+          "peak_tilt_deg": 101.30186935139328,
+          "peak_rate_rad_s": 3.9999999999999996,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.065,
+          "maximum_descent_m": 3.260198634840904,
+          "peak_tilt_deg": 101.32443605458843,
+          "peak_rate_rad_s": 3.9999999999999996,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0006162622128647044,
+      "tested_release_height_m": 4.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 4.065,
+        "maximum_descent_m": 3.260198634840904,
+        "peak_tilt_deg": 101.32443605458843,
+        "peak_rate_rad_s": 3.9999999999999996,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.03,
+          "maximum_descent_m": 3.198894896924901,
+          "peak_tilt_deg": 101.25956238619246,
+          "peak_rate_rad_s": 4.113173464463486,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.03025,
+          "maximum_descent_m": 3.199440270888794,
+          "peak_tilt_deg": 101.28203454447976,
+          "peak_rate_rad_s": 4.113640974420726,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0005453739638929811,
+      "tested_release_height_m": 3.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 4.03025,
+        "maximum_descent_m": 3.199440270888794,
+        "peak_tilt_deg": 101.28203454447976,
+        "peak_rate_rad_s": 4.113640974420726,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.8245,
+          "maximum_descent_m": 2.7869172609603052,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 4.210330684235208,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.825,
+          "maximum_descent_m": 2.7877570126142444,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 4.209892010725211,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0008397516539391248,
+      "tested_release_height_m": 3.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.825,
+        "maximum_descent_m": 2.7877570126142444,
+        "peak_tilt_deg": 142.2387560927618,
+        "peak_rate_rad_s": 4.209892010725211,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.6515,
+          "maximum_descent_m": 2.497106547160579,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 5.241775804133332,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.6510000000000002,
+          "maximum_descent_m": 2.4965210217058513,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 5.2415741673440746,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0005855254547277866,
+      "tested_release_height_m": 3.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.6510000000000002,
+        "maximum_descent_m": 2.4965210217058513,
+        "peak_tilt_deg": 142.2387560927618,
+        "peak_rate_rad_s": 5.2415741673440746,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.972,
+          "maximum_descent_m": 3.0822101484746365,
+          "peak_tilt_deg": 154.33852767369834,
+          "peak_rate_rad_s": 4.244017604283362,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.97125,
+          "maximum_descent_m": 3.0804162381525813,
+          "peak_tilt_deg": 154.33853070976605,
+          "peak_rate_rad_s": 4.243665201247362,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0017939103220552255,
+      "tested_release_height_m": 3.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.97125,
+        "maximum_descent_m": 3.0804162381525813,
+        "peak_tilt_deg": 154.33853070976605,
+        "peak_rate_rad_s": 4.243665201247362,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.0500000000000003,
+          "maximum_descent_m": 1.6174591954060697,
+          "peak_tilt_deg": 154.2660108753234,
+          "peak_rate_rad_s": 6.278577794195989,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.0500000000000003,
+          "maximum_descent_m": 1.6171929602574213,
+          "peak_tilt_deg": 154.2672465415888,
+          "peak_rate_rad_s": 6.277952890069139,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.00026623514864843045,
+      "tested_release_height_m": 2.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.0500000000000003,
+        "maximum_descent_m": 1.6171929602574213,
+        "peak_tilt_deg": 154.2672465415888,
+        "peak_rate_rad_s": 6.277952890069139,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": false,
+          "logged_state_success": false,
+          "settled_since_release_s": null,
+          "maximum_descent_m": 145.38733045145307,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.234278001158822,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 30.590969987519475,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": false,
+          "logged_state_success": false,
+          "settled_since_release_s": null,
+          "maximum_descent_m": 145.39660706599983,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.233859922017283,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 31.08041839958327,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.00927661454676354,
+      "tested_release_height_m": null,
+      "height_verification": null
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.0825000000000005,
+          "maximum_descent_m": 3.369005309523812,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 6.159080687878534,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.08225,
+          "maximum_descent_m": 3.3681638674031738,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 6.1592299857443065,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0008414421206381917,
+      "tested_release_height_m": 4.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 4.08225,
+        "maximum_descent_m": 3.3681638674031738,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 6.1592299857443065,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.348,
+          "maximum_descent_m": 1.9858184386821434,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.292795292705466,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.347,
+          "maximum_descent_m": 1.9842335873353798,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.292625689400494,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0015848513467635605,
+      "tested_release_height_m": 2.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.347,
+        "maximum_descent_m": 1.9842335873353798,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 4.292625689400494,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "nominal",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.5105,
+          "maximum_descent_m": 1.050244996238197,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 6.941492331672426,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.5107500000000003,
+          "maximum_descent_m": 1.049996147487783,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 6.940427835583597,
+          "peak_thrust_n": 4.2,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0002488487504139769,
+      "tested_release_height_m": 1.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 2.5107500000000003,
+        "maximum_descent_m": 1.049996147487783,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 6.940427835583597,
+        "peak_thrust_n": 4.2,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.493,
+          "maximum_descent_m": 0.8986492827376773,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.0814218992353175,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.493,
+          "maximum_descent_m": 0.8986401814528249,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.0813345209435767,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 9.10128485243078e-06,
+      "tested_release_height_m": 1.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 2.493,
+        "maximum_descent_m": 0.8986401814528249,
+        "peak_tilt_deg": 59.99999999999999,
+        "peak_rate_rad_s": 2.0813345209435767,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.493,
+          "maximum_descent_m": 0.8986463891730224,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.124164664779019,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 2.493,
+          "maximum_descent_m": 0.898637251057355,
+          "peak_tilt_deg": 59.99999999999999,
+          "peak_rate_rad_s": 2.12408678597825,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 9.138115667384206e-06,
+      "tested_release_height_m": 1.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 2.493,
+        "maximum_descent_m": 0.898637251057355,
+        "peak_tilt_deg": 59.99999999999999,
+        "peak_rate_rad_s": 2.12408678597825,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.924,
+          "maximum_descent_m": 12.723157000165452,
+          "peak_tilt_deg": 139.28738448665638,
+          "peak_rate_rad_s": 3.9999999999999996,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.92325,
+          "maximum_descent_m": 12.719361730582127,
+          "peak_tilt_deg": 139.29188530563783,
+          "peak_rate_rad_s": 3.9999999999999996,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0037952695833247674,
+      "tested_release_height_m": 13.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 6.92325,
+        "maximum_descent_m": 12.719361730582127,
+        "peak_tilt_deg": 139.29188530563783,
+        "peak_rate_rad_s": 3.9999999999999996,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 60.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 7.426,
+          "maximum_descent_m": 12.293515985049924,
+          "peak_tilt_deg": 136.68000844205994,
+          "peak_rate_rad_s": 4.521300085692607,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 7.426,
+          "maximum_descent_m": 12.293678054901001,
+          "peak_tilt_deg": 136.68415766769743,
+          "peak_rate_rad_s": 4.521549890695536,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.00016206985107736216,
+      "tested_release_height_m": 13.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 7.426,
+        "maximum_descent_m": 12.293678054901001,
+        "peak_tilt_deg": 136.68415766769743,
+        "peak_rate_rad_s": 4.521549890695536,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.0195,
+          "maximum_descent_m": 8.141152622507512,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 3.597052371781945,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.019,
+          "maximum_descent_m": 8.14006084229526,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 3.5969592339320626,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0010917802122527576,
+      "tested_release_height_m": 8.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 6.019,
+        "maximum_descent_m": 8.14006084229526,
+        "peak_tilt_deg": 142.2387560927618,
+        "peak_rate_rad_s": 3.5969592339320626,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.2090000000000005,
+          "maximum_descent_m": 8.212990837952962,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 3.7760386629558487,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.2085,
+          "maximum_descent_m": 8.211800334218115,
+          "peak_tilt_deg": 142.2387560927618,
+          "peak_rate_rad_s": 3.775986547965477,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0011905037348469705,
+      "tested_release_height_m": 8.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 6.2085,
+        "maximum_descent_m": 8.211800334218115,
+        "peak_tilt_deg": 142.2387560927618,
+        "peak_rate_rad_s": 3.775986547965477,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.369,
+          "maximum_descent_m": 3.4778522793516724,
+          "peak_tilt_deg": 154.34104468724988,
+          "peak_rate_rad_s": 4.1820077867641405,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 4.368,
+          "maximum_descent_m": 3.4761207713357543,
+          "peak_tilt_deg": 154.3410932102223,
+          "peak_rate_rad_s": 4.181904423183526,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0017315080159181484,
+      "tested_release_height_m": 4.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 4.368,
+        "maximum_descent_m": 3.4761207713357543,
+        "peak_tilt_deg": 154.3410932102223,
+        "peak_rate_rad_s": 4.181904423183526,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 142.2387560927618,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 5.4405,
+          "maximum_descent_m": 3.610014576719047,
+          "peak_tilt_deg": 154.34104468724988,
+          "peak_rate_rad_s": 4.867447033539259,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 5.43825,
+          "maximum_descent_m": 3.605698852466994,
+          "peak_tilt_deg": 154.3410932102223,
+          "peak_rate_rad_s": 4.867352361302238,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.004315724252052622,
+      "tested_release_height_m": 4.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 5.43825,
+        "maximum_descent_m": 3.605698852466994,
+        "peak_tilt_deg": 154.3410932102223,
+        "peak_rate_rad_s": 4.867352361302238,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": false,
+          "logged_state_success": false,
+          "settled_since_release_s": null,
+          "maximum_descent_m": 208.93147203886767,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 0.12614280577463827,
+          "peak_thrust_n": 0.0,
+          "final_tilt_deg": 177.4815270758941,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": false,
+          "logged_state_success": false,
+          "settled_since_release_s": null,
+          "maximum_descent_m": 208.932423572533,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 0.12551423852640367,
+          "peak_thrust_n": 0.0,
+          "final_tilt_deg": 177.49457381909352,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0009515336653294071,
+      "tested_release_height_m": null,
+      "height_verification": null
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 0.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.74,
+          "maximum_descent_m": 10.141694472957512,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.900326004705543,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 6.58025,
+          "maximum_descent_m": 9.572264477254915,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.969670592921103,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.5694299957025972,
+      "tested_release_height_m": 10.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 6.58025,
+        "maximum_descent_m": 9.572264477254915,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 4.969670592921103,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "legacy",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.6295,
+          "maximum_descent_m": 2.28819548687431,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.287626718430691,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.6285000000000003,
+          "maximum_descent_m": 2.286770370659977,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 4.2875928721774965,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0014251162143330554,
+      "tested_release_height_m": 3.0,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.6285000000000003,
+        "maximum_descent_m": 2.286770370659977,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 4.2875928721774965,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    },
+    {
+      "tier": "worst",
+      "initial_tilt_deg": 180.0,
+      "initial_rate_rad_s": 4.0,
+      "controller": "tilt_angle",
+      "runs": [
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.774,
+          "maximum_descent_m": 1.9584163789708082,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 5.336569649614924,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.9995,
+          "crashed": false
+        },
+        {
+          "simulator_success": true,
+          "logged_state_success": true,
+          "settled_since_release_s": 3.77125,
+          "maximum_descent_m": 1.9573434529523688,
+          "peak_tilt_deg": 180.0,
+          "peak_rate_rad_s": 5.336014409997082,
+          "peak_thrust_n": 3.5,
+          "final_tilt_deg": 0.0,
+          "last_time_s": 11.99975,
+          "crashed": false
+        }
+      ],
+      "same_outcome_on_halved_dt": true,
+      "descent_difference_m": 0.0010729260184394462,
+      "tested_release_height_m": 2.5,
+      "height_verification": {
+        "simulator_success": true,
+        "logged_state_success": true,
+        "settled_since_release_s": 3.77125,
+        "maximum_descent_m": 1.9573434529523688,
+        "peak_tilt_deg": 180.0,
+        "peak_rate_rad_s": 5.336014409997082,
+        "peak_thrust_n": 3.5,
+        "final_tilt_deg": 0.0,
+        "last_time_s": 11.99975,
+        "crashed": false
+      }
+    }
+  ],
+  "limits": [
+    "Independent thrust/torque limits; estimated historical plant, not Crazyflie.",
+    "No horizontal-speed, clearance envelope, battery or sensor-estimator validation.",
+    "Exactly inverted uses a discontinuous deterministic body-x tie-break.",
+    "No settling by the time limit is not proof that no height could work.",
+    "Illustrative clearance is a display-study choice, not an operational safety margin."
+  ]
+}
