@@ -1,0 +1,49 @@
+{
+  "physics_tests": {
+    "command": "python -m unittest Analysis.tests.test_recovery_video -v",
+    "passed": 6
+  },
+  "analysis_suite": {
+    "command": "python -m unittest discover -s Analysis/tests -v",
+    "discovered": 206,
+    "passed_before_video_export": 205,
+    "after_export_repository_recheck": "OK"
+  },
+  "instrumentation_tests": {
+    "passed": 7
+  },
+  "presentation_unit_tests": {
+    "passed": 4
+  },
+  "survivable_set_smoke": "passed",
+  "pinned_numpy_replay": {
+    "version": "2.4.6",
+    "max_absolute_difference_all_saved_fields": 0.0
+  },
+  "display_state_check": {
+    "all_positions_and_quaternions_match_logged_samples": true,
+    "max_sample_time_error_s": 0.00025000000000030553,
+    "frame_count": 589,
+    "minimum_conservative_frame_margin_px": 30.022119485373537,
+    "minimum_conservative_glyph_ground_clearance_m": 0.23087309689969504
+  },
+  "motor_force_bounds_and_squared_speed_relation": "passed for all saved samples",
+  "render_environment": {
+    "blender": "3.2.2",
+    "matplotlib": "3.11.2",
+    "pillow": "12.2.0",
+    "host_numpy": "2.5.3",
+    "distinct_scene_renders": 1726
+  },
+  "encoded_video": {
+    "width": 1440,
+    "height": 1680,
+    "fps": "24/1",
+    "frame_count": 589,
+    "duration_s": 24.541667,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "full_decode_passed": true,
+    "sha256": "ce415d0697dcb970d30c748991a5838e0fb9b4ffed8836d170f2c73cd293fa71"
+  }
+}

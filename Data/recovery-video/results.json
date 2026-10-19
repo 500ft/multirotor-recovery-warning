@@ -1,0 +1,165 @@
+{
+  "settings": "settings.json",
+  "cases": {
+    "best": {
+      "ground_contact": false,
+      "first_under_5deg_s": 0.546,
+      "attitude_vertical_settled_s": 0.915,
+      "max_drop_m": 0.048733156570635504,
+      "final_horizontal_displacement_m": 14.03689217433143,
+      "final_horizontal_speed_m_s": 1.2434830749307257,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 1.198656765391237,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    },
+    "nominal": {
+      "ground_contact": false,
+      "first_under_5deg_s": 0.7225,
+      "attitude_vertical_settled_s": 1.149,
+      "max_drop_m": 0.29011564864626005,
+      "final_horizontal_displacement_m": 25.104037781694533,
+      "final_horizontal_speed_m_s": 2.347499574868796,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 1.0499999990146875,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    },
+    "worst": {
+      "ground_contact": false,
+      "first_under_5deg_s": 1.169,
+      "attitude_vertical_settled_s": 3.904,
+      "max_drop_m": 2.472121760763323,
+      "final_horizontal_displacement_m": 43.159586552059444,
+      "final_horizontal_speed_m_s": 4.805453107458865,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 0.8749999999999977,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    }
+  },
+  "lag_sensitivity": {
+    "best": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.5515,
+        "attitude_vertical_settled_s": 0.9255,
+        "max_drop_m": 0.03932150382667022,
+        "final_horizontal_displacement_m": 13.754164804729113,
+        "final_horizontal_speed_m_s": 1.2318900257808265,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.2108348741664412,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.546,
+        "attitude_vertical_settled_s": 0.915,
+        "max_drop_m": 0.048733156570635504,
+        "final_horizontal_displacement_m": 14.03689217433143,
+        "final_horizontal_speed_m_s": 1.2434830749307257,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.198656765391237,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.534,
+        "attitude_vertical_settled_s": 0.8835000000000001,
+        "max_drop_m": 0.07308161665249616,
+        "final_horizontal_displacement_m": 14.580825422384887,
+        "final_horizontal_speed_m_s": 1.2659400607768843,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.181976233580119,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    },
+    "nominal": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.724,
+        "attitude_vertical_settled_s": 1.153,
+        "max_drop_m": 0.2504316654913555,
+        "final_horizontal_displacement_m": 24.79040573402969,
+        "final_horizontal_speed_m_s": 2.3295334159804484,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499999999999987,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.7225,
+        "attitude_vertical_settled_s": 1.149,
+        "max_drop_m": 0.29011564864626005,
+        "final_horizontal_displacement_m": 25.104037781694533,
+        "final_horizontal_speed_m_s": 2.347499574868796,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499999990146875,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.7265,
+        "attitude_vertical_settled_s": 1.4325,
+        "max_drop_m": 0.3734976731410635,
+        "final_horizontal_displacement_m": 25.71773775746947,
+        "final_horizontal_speed_m_s": 2.383750807919901,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499926297903823,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    },
+    "worst": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.1635,
+        "attitude_vertical_settled_s": 3.8285,
+        "max_drop_m": 2.333814819991097,
+        "final_horizontal_displacement_m": 43.54334218005622,
+        "final_horizontal_speed_m_s": 4.836079998747864,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999999989,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.169,
+        "attitude_vertical_settled_s": 3.904,
+        "max_drop_m": 2.472121760763323,
+        "final_horizontal_displacement_m": 43.159586552059444,
+        "final_horizontal_speed_m_s": 4.805453107458865,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999999977,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.1825,
+        "attitude_vertical_settled_s": 4.047,
+        "max_drop_m": 2.750095103768903,
+        "final_horizontal_displacement_m": 42.12174915748743,
+        "final_horizontal_speed_m_s": 4.714219138951824,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999991281336,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    }
+  },
+  "convergence": {
+    "best": {
+      "same_contact_outcome": true,
+      "max_position_difference_m": 0.003030932257115234,
+      "max_tilt_difference_deg": 0.01795458825590046,
+      "max_drop_difference_m": 1.750377857270835e-05
+    },
+    "nominal": {
+      "same_contact_outcome": true,
+      "max_position_difference_m": 0.004483602414776886,
+      "max_tilt_difference_deg": 0.012467555196078589,
+      "max_drop_difference_m": 4.214956678638693e-05
+    },
+    "worst": {
+      "same_contact_outcome": true,
+      "max_position_difference_m": 0.002155384277422706,
+      "max_tilt_difference_deg": 0.025867776597376695,
+      "max_drop_difference_m": 0.00048571941637876037
+    }
+  }
+}

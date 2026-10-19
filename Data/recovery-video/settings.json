@@ -1,0 +1,21 @@
+{
+  "dt_s": 0.0005,
+  "duration_s": 6.0,
+  "initial_tilt_deg": 60.0,
+  "initial_rate_rad_s": 1.0,
+  "arm_m": 0.06,
+  "motor_tau_up_s": 0.0125,
+  "motor_tau_down_s": 0.025,
+  "motor_reference_url": "https://github.com/PX4/PX4-gazebo-models/blob/e5997f455e33ec071c7c677fc59a65781de496a4/models/x500/model.sdf",
+  "motor_reference_scope": "Gazebo X500 simulation defaults, borrowed as sensitivity assumptions; not measured parameters for this aircraft.",
+  "activation_delay": "Retain legacy detection + motor_start dead time; first-order rotor-speed response begins afterwards.",
+  "lag_sensitivity_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "fps": 24,
+  "playback_speed": 0.25,
+  "initial_hold_s": 0.5,
+  "source_revision": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58"
+}

@@ -253,3 +253,7 @@ The [history index](docs/history/README.md) records removed obsolete execution
 surfaces and retained reproduction sources. [Engineering data](Engineering%20Data/README.md)
 keeps numerical inputs separate by configuration; [current results](Analysis/current-results.md)
 holds the result index. ROADMAP.md is the only active plan.
+
+The owner-requested [recovery replay](docs/recovery-video.md) adds an executed
+historical-model illustration with motor allocation and response assumptions.
+It leaves the current access prerequisite and measurement dependencies unchanged.

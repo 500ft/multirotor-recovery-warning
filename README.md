@@ -71,6 +71,12 @@ for the full checks and interpretation.
 
 ## History and limits
 
+The [recovery replay](docs/recovery-video.md) adds motor-level allocation and
+rotor-speed response to the historical estimated aircraft. Its maximum simulated
+altitude losses are **0.05 m, 0.29 m and 2.47 m**; the aircraft continue drifting
+sideways. [Watch the video](Figures/recovery-physical-replay.mp4) or inspect the
+[executed results](Data/recovery-video/results.json).
+
 The [history index](docs/history/README.md) preserves the designed-aircraft
 simulations, V995/CAD/calibration assets and NanoBench development replay.
 NanoBench collection timing and deployed configuration remain unresolved at
