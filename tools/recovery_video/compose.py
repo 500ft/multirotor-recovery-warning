@@ -35,12 +35,7 @@ for key,top in zip(D['keys'],[100,620,1140]):
 fig.canvas.draw();bg=fig.canvas.copy_from_bbox(fig.bbox)
 preview='--preview' in sys.argv
 manifest=json.loads((HERE/('preview_manifest.json' if preview else 'manifest.json')).read_text())
-# Keep all three cases on one clock; sample the startup at real speed.
-startup_end=round((CFG['initial_hold_s']+CFG.get('realtime_startup_until_s',0)/CFG['playback_speed'])*FPS)
-hold_frames=round(CFG['initial_hold_s']*FPS)
-startup_stride=round(1/CFG['playback_speed'])
-if not preview:
- manifest=[e for e in manifest if e['frame']<hold_frames or e['frame']>=startup_end or (e['frame']-hold_frames)%startup_stride==0]
+# Every frame uses the same fixed simulation-to-video time scale.
 proc=None
 if not preview:
  proc=subprocess.Popen(['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','-','-an','-c:v','libx264','-threads','4','-preset','medium','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(ROOT/'Figures/recovery-physical-replay.mp4')],stdin=subprocess.PIPE)
@@ -54,7 +49,7 @@ for entry in manifest:
  for artist in artists:artist.axes.draw_artist(artist)
  im=Image.fromarray(np.asarray(fig.canvas.buffer_rgba()).copy()).convert('RGB');draw=ImageDraw.Draw(im)
  draw.text((1400,22),f'{s["t"]:0.2f} s',font=mono(30),fill=INK,anchor='ra')
- speed=1.0 if f<startup_end else CFG['playback_speed']
+ speed=CFG['playback_speed']
  draw.text((1400,62),f"{speed:g}× speed",font=font(21),fill=MUTED,anchor='ra')
  for c,((key,top,a,parts),j,render) in enumerate(zip(rows,s['indices'],entry['files'])):
   draw.text((40,top),['Optimistic','Nominal','Pessimistic'][c],font=font(30),fill=INK)

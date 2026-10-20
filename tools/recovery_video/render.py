@@ -9,6 +9,7 @@ BUILD = ROOT / '.video-build'
 OUT = BUILD / 'frames'
 OUT.mkdir(exist_ok=True)
 DATA = json.loads((BUILD / 'display.json').read_text())
+CFG = json.loads((ROOT / 'Data/recovery-video/settings.json').read_text())
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -16,7 +17,7 @@ import geometry
 parent = geometry.parent
 # Equal-sized glyphs keep the small airframe legible. World travel and attitude
 # remain exactly the simulated values; this is not an aircraft CAD rendering.
-parent.scale = (2.4,) * 3
+parent.scale = (CFG['display_airframe_scale'],) * 3
 parent.rotation_mode = 'QUATERNION'
 blades = [o for o in parent.children if 'rotor_index' in o]
 
@@ -76,7 +77,24 @@ d=bpy.data.cameras.new('Common scale camera'); camera=bpy.data.objects.new('Came
 scene.collection.objects.link(camera); scene.camera=camera
 d.type='ORTHO'; d.ortho_scale=8.8
 preview='--preview' in sys.argv
-frames=[0,60,108,144,240,420,588] if preview else range(len(DATA['timeline']))
+frames=[0,24,36,48,66,84,120,180,300] if preview else range(len(DATA['timeline']))
+# Fine motor-centre arcs expose recent rotation without altering the current pose.
+# Recenter old orientations on the current centre so translation is not counted twice.
+arc_material = mat('Recent orientation', (.24,.44,.72))
+arc_material.diffuse_color = (.24,.44,.72,.42)
+arc_material.node_tree.nodes['Principled BSDF'].inputs['Alpha'].default_value = .42
+arc_material.blend_method = 'BLEND'; arc_material.use_screen_refraction = False
+arcs = []
+for i in range(4):
+    c = bpy.data.curves.new('Recent motor orientation','CURVE')
+    c.dimensions='3D'; c.bevel_depth=.007; c.bevel_resolution=2
+    o=bpy.data.objects.new('Recent motor orientation',c)
+    bpy.context.collection.objects.link(o); c.materials.append(arc_material)
+    arcs.append(c)
+motor_points=[Vector((x,y,.026))*CFG['display_airframe_scale']
+              for x,y in [(-.14,-.14),(.14,-.14),(-.14,.14),(.14,.14)]]
+history_frames=round(CFG['orientation_trail_duration_s']*DATA['fps']/CFG['playback_speed'])
+
 manifest=[]; cache={}; start=time.time()
 # Display rotor indices (-x,-y),(+x,-y),(-x,+y),(+x,+y)
 # map to the allocation order (+x,+y),(-x,+y),(-x,-y),(+x,-y).
@@ -88,6 +106,15 @@ for f in frames:
         state=tuple(round(v,8) for v in [*pos,*q,*phases])
         if state not in cache:
             parent.location=pos; parent.rotation_quaternion=Quaternion(q)
+            first=max(0,f-history_frames)
+            history=[Quaternion(DATA['timeline'][j]['q'][c]) for j in range(first,f+1)]
+            rotation=history[0].rotation_difference(Quaternion(q)).angle
+            for arc,point in zip(arcs,motor_points):
+                arc.splines.clear()
+                if rotation > math.radians(CFG['orientation_trail_min_rotation_deg']):
+                    spline=arc.splines.new('POLY'); spline.points.add(len(history)-1)
+                    for vertex,old_q in zip(spline.points,history):
+                        vertex.co=(*(pos + old_q @ point),1)
             for b in blades:
                 i=rotor_map[b['rotor_index']]
                 b.rotation_euler.z=(1 if i in [0,2] else -1)*phases[i]

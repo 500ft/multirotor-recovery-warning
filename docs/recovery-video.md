@@ -34,14 +34,16 @@ into the historical aircraft parameters.
 ## Reading the video
 
 The blue trace follows the logged centre of mass. All cases use the same world
-scale, camera orientation and playback timing. Startup plays at real speed,
-then slows to the configured playback speed. This makes the existing fast
-righting response visible without changing the simulated motion. The camera
-follows horizontal travel after the initial movement within the frame; camera height stays fixed.
+scale, camera orientation and constant playback speed. Faint arcs trace recent
+motor-centre orientations, recentered on the current centre of mass. They make
+rotation visible without adding a disturbance or changing the attitude. The
+camera follows horizontal travel after the initial movement within the frame;
+camera height stays fixed.
 Floor motion and the departing release pad show that travel. Graphs use the
 same logged samples. Neither position nor attitude is amplified or eased.
 
-The generic airframe is enlarged equally for visibility. It is an illustrative
+The generic airframe is enlarged equally for visibility. Display scale and the
+orientation-trail window live in the settings file. It is an illustrative
 glyph, not CAD or a collision envelope. Blade animation follows each motor's
 normalized speed at a readable display rate; it does not show physical RPM.
 The removed header/footer text stays absent. There is no "Recovered" badge:

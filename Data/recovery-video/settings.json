@@ -15,8 +15,10 @@
     2.0
   ],
   "fps": 24,
-  "playback_speed": 0.25,
+  "playback_speed": 0.5,
   "initial_hold_s": 0.5,
   "source_revision": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58",
-  "realtime_startup_until_s": 0.75
+  "display_airframe_scale": 3.6,
+  "orientation_trail_duration_s": 0.12,
+  "orientation_trail_min_rotation_deg": 1.0
 }

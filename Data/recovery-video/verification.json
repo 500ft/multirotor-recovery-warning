@@ -22,10 +22,10 @@
   },
   "display_state_check": {
     "all_positions_and_quaternions_match_logged_samples": true,
-    "max_sample_time_error_s": 0.00025000000000030553,
-    "frame_count": 589,
-    "minimum_conservative_frame_margin_px": 30.022119485373537,
-    "minimum_conservative_glyph_ground_clearance_m": 0.23087309689969504
+    "max_sample_time_error_s": 0.00016666666666687036,
+    "frame_count": 301,
+    "minimum_conservative_frame_margin_px": 5.15770493422292,
+    "minimum_conservative_glyph_ground_clearance_m": 0.05583129230365602
   },
   "motor_force_bounds_and_squared_speed_relation": "passed for all saved samples",
   "render_environment": {
@@ -33,24 +33,24 @@
     "matplotlib": "3.11.2",
     "pillow": "12.2.0",
     "host_numpy": "2.5.3",
-    "distinct_scene_renders": 1726
+    "distinct_scene_renders": 864
   },
   "encoded_video": {
     "width": 1440,
     "height": 1680,
     "fps": "24/1",
-    "frame_count": 535,
-    "duration_s": 22.291667,
+    "frame_count": 301,
+    "duration_s": 12.541667,
     "codec": "h264",
     "pixel_format": "yuv420p",
     "full_decode_passed": true,
-    "sha256": "18311598993f9f6243a2e93489327e051948bc0c38bfcbd2d1fe94ec35cbe0a5"
+    "sha256": "80465e2f067f558b4795874b8c02f39e56b2a455f7a1062a92fa4dcaf945376f"
   },
   "playback_profile": {
-    "real_time_startup_then_quarter_speed": true,
+    "constant_speed": 0.5,
     "all_cases_share_clock": true,
     "independent_clock_check_passed": true,
-    "selected_source_frames": 535,
+    "selected_source_frames": 301,
     "simulation_arrays_unchanged": true
   }
 }
