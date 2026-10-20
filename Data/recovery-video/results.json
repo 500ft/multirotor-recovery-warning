@@ -1,0 +1,511 @@
+{
+  "settings": "settings.json",
+  "cases": {
+    "best": {
+      "ground_contact": false,
+      "first_under_5deg_s": 0.7225,
+      "attitude_vertical_settled_s": 1.149,
+      "recovery_held_to_end_s": 1.6665,
+      "post_righting_tilt_peaks": [
+        {
+          "time_s": 0.971,
+          "tilt_deg": 4.623854630561591
+        },
+        {
+          "time_s": 1.6015,
+          "tilt_deg": 0.40097697254028786
+        }
+      ],
+      "max_drop_m": 0.29011564864626005,
+      "final_horizontal_displacement_m": 35.45950855455939,
+      "final_horizontal_speed_m_s": 1.3057217010117863,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 1.0499999990146875,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    },
+    "nominal": {
+      "ground_contact": false,
+      "first_under_5deg_s": 1.169,
+      "attitude_vertical_settled_s": 3.904,
+      "recovery_held_to_end_s": 4.4935,
+      "post_righting_tilt_peaks": [
+        {
+          "time_s": 1.571,
+          "tilt_deg": 16.15184348352128
+        },
+        {
+          "time_s": 2.325,
+          "tilt_deg": 2.8500540789557136
+        },
+        {
+          "time_s": 3.073,
+          "tilt_deg": 0.48892671289686945
+        }
+      ],
+      "max_drop_m": 2.472121760763323,
+      "final_horizontal_displacement_m": 64.8138803346694,
+      "final_horizontal_speed_m_s": 2.778961157537147,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 0.8749999999999977,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    },
+    "worst": {
+      "ground_contact": false,
+      "first_under_5deg_s": 1.1495,
+      "attitude_vertical_settled_s": 7.2475000000000005,
+      "recovery_held_to_end_s": 8.2165,
+      "post_righting_tilt_peaks": [
+        {
+          "time_s": 1.696,
+          "tilt_deg": 36.212596498722775
+        },
+        {
+          "time_s": 2.6385,
+          "tilt_deg": 20.488206630683027
+        },
+        {
+          "time_s": 3.3605,
+          "tilt_deg": 13.086760329980288
+        },
+        {
+          "time_s": 3.9735,
+          "tilt_deg": 9.670201295389331
+        },
+        {
+          "time_s": 4.5235,
+          "tilt_deg": 7.847868692281553
+        },
+        {
+          "time_s": 5.047,
+          "tilt_deg": 6.741250604549714
+        },
+        {
+          "time_s": 5.567,
+          "tilt_deg": 5.85346725560958
+        },
+        {
+          "time_s": 6.087,
+          "tilt_deg": 5.069382893941653
+        },
+        {
+          "time_s": 6.6075,
+          "tilt_deg": 4.391849292504891
+        },
+        {
+          "time_s": 7.128,
+          "tilt_deg": 3.802242369579769
+        },
+        {
+          "time_s": 7.649,
+          "tilt_deg": 3.2904440081283983
+        },
+        {
+          "time_s": 8.17,
+          "tilt_deg": 2.846144538107899
+        },
+        {
+          "time_s": 8.691,
+          "tilt_deg": 2.4607549763267147
+        },
+        {
+          "time_s": 9.212,
+          "tilt_deg": 2.1266742710761495
+        },
+        {
+          "time_s": 9.7335,
+          "tilt_deg": 1.8372575234808968
+        },
+        {
+          "time_s": 10.2545,
+          "tilt_deg": 1.5866957097210017
+        },
+        {
+          "time_s": 10.776,
+          "tilt_deg": 1.3698928844485483
+        },
+        {
+          "time_s": 11.2975,
+          "tilt_deg": 1.182399376963401
+        },
+        {
+          "time_s": 11.819,
+          "tilt_deg": 1.0203283810808346
+        }
+      ],
+      "max_drop_m": 2.609851230669688,
+      "final_horizontal_displacement_m": 57.38340048083117,
+      "final_horizontal_speed_m_s": 2.5708046545449954,
+      "min_motor_force_n": 0.0,
+      "max_motor_force_n": 0.8749999999803059,
+      "quaternion_norm_max_error": 3.3306690738754696e-16
+    }
+  },
+  "lag_sensitivity": {
+    "best": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.724,
+        "attitude_vertical_settled_s": 1.153,
+        "recovery_held_to_end_s": 1.539,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 0.985,
+            "tilt_deg": 4.312655258873974
+          },
+          {
+            "time_s": 1.649,
+            "tilt_deg": 0.3455302405697781
+          }
+        ],
+        "max_drop_m": 0.2504316654913555,
+        "final_horizontal_displacement_m": 35.08581648168899,
+        "final_horizontal_speed_m_s": 1.3001445778977474,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499999999999987,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.7225,
+        "attitude_vertical_settled_s": 1.149,
+        "recovery_held_to_end_s": 1.6665,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 0.971,
+            "tilt_deg": 4.623854630561591
+          },
+          {
+            "time_s": 1.6015,
+            "tilt_deg": 0.40097697254028786
+          }
+        ],
+        "max_drop_m": 0.29011564864626005,
+        "final_horizontal_displacement_m": 35.45950855455939,
+        "final_horizontal_speed_m_s": 1.3057217010117863,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499999990146875,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 0.7265,
+        "attitude_vertical_settled_s": 1.4325,
+        "recovery_held_to_end_s": 1.893,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 0.9550000000000001,
+            "tilt_deg": 5.127822584209949
+          },
+          {
+            "time_s": 1.5010000000000001,
+            "tilt_deg": 0.6067476426674007
+          }
+        ],
+        "max_drop_m": 0.3734976731410635,
+        "final_horizontal_displacement_m": 36.19377572571519,
+        "final_horizontal_speed_m_s": 1.3168603809258996,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 1.0499926297903823,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    },
+    "nominal": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.1635,
+        "attitude_vertical_settled_s": 3.8285,
+        "recovery_held_to_end_s": 4.418,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 1.5465,
+            "tilt_deg": 14.21215787397124
+          },
+          {
+            "time_s": 2.3115,
+            "tilt_deg": 2.3615504793183115
+          },
+          {
+            "time_s": 3.0755,
+            "tilt_deg": 0.3885136961581272
+          }
+        ],
+        "max_drop_m": 2.333814819991097,
+        "final_horizontal_displacement_m": 65.30376974902138,
+        "final_horizontal_speed_m_s": 2.7891769290505346,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999999989,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.169,
+        "attitude_vertical_settled_s": 3.904,
+        "recovery_held_to_end_s": 4.4935,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 1.571,
+            "tilt_deg": 16.15184348352128
+          },
+          {
+            "time_s": 2.325,
+            "tilt_deg": 2.8500540789557136
+          },
+          {
+            "time_s": 3.073,
+            "tilt_deg": 0.48892671289686945
+          }
+        ],
+        "max_drop_m": 2.472121760763323,
+        "final_horizontal_displacement_m": 64.8138803346694,
+        "final_horizontal_speed_m_s": 2.778961157537147,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999999977,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.1825,
+        "attitude_vertical_settled_s": 4.047,
+        "recovery_held_to_end_s": 4.6370000000000005,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 1.621,
+            "tilt_deg": 20.438928873405622
+          },
+          {
+            "time_s": 2.364,
+            "tilt_deg": 4.202605831852045
+          },
+          {
+            "time_s": 3.0785,
+            "tilt_deg": 0.7985589805514179
+          },
+          {
+            "time_s": 3.793,
+            "tilt_deg": 0.15156456050322065
+          }
+        ],
+        "max_drop_m": 2.750095103768903,
+        "final_horizontal_displacement_m": 63.45820277825051,
+        "final_horizontal_speed_m_s": 2.748203696894926,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999991281336,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    },
+    "worst": {
+      "0.5": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.133,
+        "attitude_vertical_settled_s": 4.827,
+        "recovery_held_to_end_s": 5.2825,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 1.6555,
+            "tilt_deg": 31.94127867299735
+          },
+          {
+            "time_s": 2.5175,
+            "tilt_deg": 15.350033159406271
+          },
+          {
+            "time_s": 3.1415,
+            "tilt_deg": 9.162104483827054
+          },
+          {
+            "time_s": 3.6725,
+            "tilt_deg": 6.58740649723224
+          },
+          {
+            "time_s": 4.189,
+            "tilt_deg": 4.948667128203187
+          },
+          {
+            "time_s": 4.7065,
+            "tilt_deg": 3.6770423862969532
+          },
+          {
+            "time_s": 5.224,
+            "tilt_deg": 2.744234521129488
+          },
+          {
+            "time_s": 5.7415,
+            "tilt_deg": 2.0450740912708363
+          },
+          {
+            "time_s": 6.259,
+            "tilt_deg": 1.525093132757436
+          },
+          {
+            "time_s": 6.777,
+            "tilt_deg": 1.1371675440477864
+          },
+          {
+            "time_s": 7.2945,
+            "tilt_deg": 0.8480406583684655
+          },
+          {
+            "time_s": 7.8125,
+            "tilt_deg": 0.6324431352628186
+          },
+          {
+            "time_s": 8.33,
+            "tilt_deg": 0.4716845202732515
+          },
+          {
+            "time_s": 8.848,
+            "tilt_deg": 0.3518019979932966
+          },
+          {
+            "time_s": 9.366,
+            "tilt_deg": 0.262397409914468
+          },
+          {
+            "time_s": 9.8835,
+            "tilt_deg": 0.19571914698272375
+          },
+          {
+            "time_s": 10.4015,
+            "tilt_deg": 0.14598805217857957
+          },
+          {
+            "time_s": 10.919500000000001,
+            "tilt_deg": 0.10889536774555585
+          }
+        ],
+        "max_drop_m": 2.400335708174411,
+        "final_horizontal_displacement_m": 58.82679445650136,
+        "final_horizontal_speed_m_s": 2.6278993970064497,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999999982,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "1.0": {
+        "ground_contact": false,
+        "first_under_5deg_s": 1.1495,
+        "attitude_vertical_settled_s": 7.2475000000000005,
+        "recovery_held_to_end_s": 8.2165,
+        "post_righting_tilt_peaks": [
+          {
+            "time_s": 1.696,
+            "tilt_deg": 36.212596498722775
+          },
+          {
+            "time_s": 2.6385,
+            "tilt_deg": 20.488206630683027
+          },
+          {
+            "time_s": 3.3605,
+            "tilt_deg": 13.086760329980288
+          },
+          {
+            "time_s": 3.9735,
+            "tilt_deg": 9.670201295389331
+          },
+          {
+            "time_s": 4.5235,
+            "tilt_deg": 7.847868692281553
+          },
+          {
+            "time_s": 5.047,
+            "tilt_deg": 6.741250604549714
+          },
+          {
+            "time_s": 5.567,
+            "tilt_deg": 5.85346725560958
+          },
+          {
+            "time_s": 6.087,
+            "tilt_deg": 5.069382893941653
+          },
+          {
+            "time_s": 6.6075,
+            "tilt_deg": 4.391849292504891
+          },
+          {
+            "time_s": 7.128,
+            "tilt_deg": 3.802242369579769
+          },
+          {
+            "time_s": 7.649,
+            "tilt_deg": 3.2904440081283983
+          },
+          {
+            "time_s": 8.17,
+            "tilt_deg": 2.846144538107899
+          },
+          {
+            "time_s": 8.691,
+            "tilt_deg": 2.4607549763267147
+          },
+          {
+            "time_s": 9.212,
+            "tilt_deg": 2.1266742710761495
+          },
+          {
+            "time_s": 9.7335,
+            "tilt_deg": 1.8372575234808968
+          },
+          {
+            "time_s": 10.2545,
+            "tilt_deg": 1.5866957097210017
+          },
+          {
+            "time_s": 10.776,
+            "tilt_deg": 1.3698928844485483
+          },
+          {
+            "time_s": 11.2975,
+            "tilt_deg": 1.182399376963401
+          },
+          {
+            "time_s": 11.819,
+            "tilt_deg": 1.0203283810808346
+          }
+        ],
+        "max_drop_m": 2.609851230669688,
+        "final_horizontal_displacement_m": 57.38340048083117,
+        "final_horizontal_speed_m_s": 2.5708046545449954,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749999999803059,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      },
+      "2.0": {
+        "ground_contact": true,
+        "first_under_5deg_s": null,
+        "attitude_vertical_settled_s": null,
+        "recovery_held_to_end_s": null,
+        "post_righting_tilt_peaks": [],
+        "max_drop_m": 3.000340246368734,
+        "final_horizontal_displacement_m": 6.781453948056433,
+        "final_horizontal_speed_m_s": 12.98732573898465,
+        "min_motor_force_n": 0.0,
+        "max_motor_force_n": 0.8749996438435015,
+        "quaternion_norm_max_error": 3.3306690738754696e-16
+      }
+    }
+  },
+  "convergence": {
+    "best": {
+      "same_contact_outcome": true,
+      "recovery_held_to_end_difference_s": 0.0,
+      "max_position_difference_m": 0.005085083706862824,
+      "max_tilt_difference_deg": 0.012467555196078589,
+      "max_drop_difference_m": 4.214956678638693e-05
+    },
+    "nominal": {
+      "same_contact_outcome": true,
+      "recovery_held_to_end_difference_s": 0.00025000000000030553,
+      "max_position_difference_m": 0.0034201911656047694,
+      "max_tilt_difference_deg": 0.025867776597376695,
+      "max_drop_difference_m": 0.00048571941637876037
+    },
+    "worst": {
+      "same_contact_outcome": true,
+      "recovery_held_to_end_difference_s": 0.012249999999999872,
+      "max_position_difference_m": 0.01506101627522567,
+      "max_tilt_difference_deg": 0.20347525685808399,
+      "max_drop_difference_m": 0.0005632211180088831
+    }
+  }
+}

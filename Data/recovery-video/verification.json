@@ -1,0 +1,59 @@
+{
+  "physics_tests": {
+    "command": "python -m unittest Analysis.tests.test_recovery_video -v",
+    "passed": 8
+  },
+  "case_relabel_check": {
+    "best": {
+      "historical_previous_label": "nominal",
+      "overlapping_samples_exactly_preserved": true
+    },
+    "nominal": {
+      "historical_previous_label": "worst",
+      "overlapping_samples_exactly_preserved": true
+    }
+  },
+  "all_cases_recovery_bounds_hold_to_end": true,
+  "motor_force_bounds_and_squared_speed_relation": "passed for all saved samples",
+  "display_state_check": {
+    "all_positions_and_quaternions_match_logged_samples": true,
+    "max_sample_time_error_s": 0.00016666666666687036,
+    "frame_count": 589,
+    "minimum_conservative_frame_margin_px": 2.512768898651302,
+    "geometry_floor_check": {
+      "minimum_vertex_ground_clearance_m_with_modifier_allowance": 0.06750656399846651,
+      "frame_case_time": [
+        62,
+        2,
+        1.0416666666666667
+      ]
+    }
+  },
+  "playback_profile": {
+    "constant_speed": 0.5,
+    "all_cases_share_clock": true,
+    "independent_clock_check_passed": true
+  },
+  "render_environment": {
+    "blender": "3.2.2",
+    "display_scene_files": 1753,
+    "retained_unchanged_scene_frames": 584,
+    "new_scene_renders": 1169
+  },
+  "encoded_video": {
+    "width": 1440,
+    "height": 1680,
+    "fps": "24/1",
+    "frame_count": 589,
+    "duration_s": 24.541667,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "full_decode_passed": true,
+    "sha256": "e19ca1b5520c28744c88e6ddb5cba0d17127e7a2de1bf709dd1946acb04210e7"
+  },
+  "analysis_suite": {
+    "command": "python -m unittest discover -s Analysis/tests -v",
+    "passed": 208,
+    "failed": 0
+  }
+}
