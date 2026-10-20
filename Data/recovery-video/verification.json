@@ -39,11 +39,18 @@
     "width": 1440,
     "height": 1680,
     "fps": "24/1",
-    "frame_count": 589,
-    "duration_s": 24.541667,
+    "frame_count": 535,
+    "duration_s": 22.291667,
     "codec": "h264",
     "pixel_format": "yuv420p",
     "full_decode_passed": true,
-    "sha256": "ce415d0697dcb970d30c748991a5838e0fb9b4ffed8836d170f2c73cd293fa71"
+    "sha256": "18311598993f9f6243a2e93489327e051948bc0c38bfcbd2d1fe94ec35cbe0a5"
+  },
+  "playback_profile": {
+    "real_time_startup_then_quarter_speed": true,
+    "all_cases_share_clock": true,
+    "independent_clock_check_passed": true,
+    "selected_source_frames": 535,
+    "simulation_arrays_unchanged": true
   }
 }

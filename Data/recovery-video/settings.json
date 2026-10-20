@@ -17,5 +17,6 @@
   "fps": 24,
   "playback_speed": 0.25,
   "initial_hold_s": 0.5,
-  "source_revision": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58"
+  "source_revision": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58",
+  "realtime_startup_until_s": 0.75
 }

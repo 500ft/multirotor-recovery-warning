@@ -34,8 +34,10 @@ into the historical aircraft parameters.
 ## Reading the video
 
 The blue trace follows the logged centre of mass. All cases use the same world
-scale, camera orientation and playback speed. The camera follows horizontal
-travel after the initial movement within the frame; camera height stays fixed.
+scale, camera orientation and playback timing. Startup plays at real speed,
+then slows to the configured playback speed. This makes the existing fast
+righting response visible without changing the simulated motion. The camera
+follows horizontal travel after the initial movement within the frame; camera height stays fixed.
 Floor motion and the departing release pad show that travel. Graphs use the
 same logged samples. Neither position nor attitude is amplified or eased.
 
