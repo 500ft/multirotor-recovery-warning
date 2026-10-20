@@ -1,6 +1,6 @@
 {
   "dt_s": 0.0005,
-  "duration_s": 6.0,
+  "duration_s": 12.0,
   "initial_tilt_deg": 60.0,
   "initial_rate_rad_s": 1.0,
   "arm_m": 0.06,
@@ -20,5 +20,17 @@
   "source_revision": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58",
   "display_airframe_scale": 3.6,
   "orientation_trail_duration_s": 0.12,
-  "orientation_trail_min_rotation_deg": 1.0
+  "orientation_trail_min_rotation_deg": 1.0,
+  "case_sources": {
+    "best": "historical nominal_params",
+    "nominal": "historical worst_params",
+    "worst": "historical worst_params with delayed rate feedback and slower motors"
+  },
+  "case_modifiers": {
+    "worst": {
+      "gyro_filter_tau_s": 0.24,
+      "motor_lag_multiplier": 1.5
+    }
+  },
+  "selection_scope": "Outcome-selected oscillatory recovery illustration. Filter and motor-response values are assumed stress conditions, not measured aircraft parameters."
 }

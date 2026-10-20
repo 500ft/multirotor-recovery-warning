@@ -2,7 +2,7 @@ import json
 from dataclasses import replace
 import unittest
 import numpy as np
-from Analysis.recovery_video import OUT, allocate, motor_step, simulate
+from Analysis.recovery_video import OUT, allocate, motor_step, simulate, metrics
 from Analysis.sim_release_recovery import nominal_params, G
 from Analysis.failure_allocation import healthy_wrench_map
 
@@ -56,6 +56,27 @@ class TestRecoveryVideoPhysics(unittest.TestCase):
         np.testing.assert_allclose(a['vel'][:, 2], -G * a['t'], atol=1e-12)
         np.testing.assert_array_equal(a['motor_force'], 0.)
         self.assertFalse(crashed)
+
+    def test_rate_feedback_matches_independent_linear_filter(self):
+        cfg = {**self.cfg, 'duration_s': .8, 'gyro_filter_tau_s': .12}
+        a, _ = simulate(self.p, cfg)
+        decay = np.exp(-cfg['dt_s'] / cfg['gyro_filter_tau_s'])
+        n = len(a['omega']) - 1
+        kernel = (1-decay)*decay**np.arange(n)
+        expected = np.column_stack([np.convolve(a['omega'][:-1, axis], kernel)[:n]
+                                    for axis in range(3)])
+        expected += decay**np.arange(1,n+1)[:,None]*a['omega'][0]
+        np.testing.assert_allclose(a['omega_feedback'][1:], expected, atol=1e-12)
+        self.assertGreater(np.max(abs(a['omega_feedback']-a['omega'])), .1)
+
+    def test_temporary_settling_does_not_count_as_held_recovery(self):
+        cfg = {**self.cfg, 'duration_s': 1.}
+        a, _ = simulate(self.p, cfg)
+        a['tilt'][:] = 0.; a['omega'][:] = 0.; a['vel'][:] = 0.; a['pos'][:] = 0.
+        a['tilt'][-1] = np.radians(10)
+        m = metrics(a, False, cfg, self.p)
+        self.assertIsNotNone(m['attitude_vertical_settled_s'])
+        self.assertIsNone(m['recovery_held_to_end_s'])
 
     def test_contact_is_reported_and_stops_integration(self):
         cfg = {**self.cfg, 'duration_s': 1.}

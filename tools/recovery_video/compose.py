@@ -21,13 +21,13 @@ rows=[];artists=[]
 for key,top in zip(D['keys'],[100,620,1140]):
  a=np.load(SOURCE/f'{key}.npz');parts=[]
  for metric,x,yl,ticks,title in [('tilt',885,(0,90),[0,45,90],'Tilt (°)'),('height',1195,(0,3.25),[0,1,2,3],'Height (m)')]:
-  ax=fig.add_axes([x/W,(H-top-435)/H,205/W,330/H]);ax.set_xlim(0,CFG['duration_s']);ax.set_ylim(*yl);ax.set_xticks([0,2,4,6]);ax.set_yticks(ticks)
+  ax=fig.add_axes([x/W,(H-top-435)/H,205/W,330/H]);ax.set_xlim(0,CFG['duration_s']);ax.set_ylim(*yl);ax.set_xticks(np.linspace(0,CFG['duration_s'],4));ax.set_yticks(ticks)
   ax.tick_params(labelsize=11,length=0,pad=7);ax.spines[['left','bottom']].set_color('#BAC2CC');ax.yaxis.grid(True,color=GRID,lw=.7)
   ax.set_title(title,loc='left',fontsize=14,pad=14)
   if key=='worst':ax.set_xlabel('Time (s)',fontsize=11,labelpad=10)
   if metric=='tilt':
    ax.axhline(5,color='#A7AFBB',ls=(0,(3,3)),lw=.7)
-   ax.text(5.8,7,'5°',fontsize=8,color=MUTED,ha='right')
+   ax.text(CFG['duration_s']*.9667,7,'5°',fontsize=8,color=MUTED,ha='right')
   else:ax.axhline(3,color='#A7AFBB',ls=(0,(3,3)),lw=.7)
   line,=ax.plot([],[],color=BLUE,lw=2.3,animated=True);dot,=ax.plot([],[],'o',color=BLUE,ms=5,animated=True)
   parts.append((line,dot,metric));artists.extend([line,dot])

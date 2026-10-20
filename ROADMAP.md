@@ -256,4 +256,6 @@ holds the result index. ROADMAP.md is the only active plan.
 
 The owner-requested [recovery replay](docs/recovery-video.md) adds an executed
 historical-model illustration with motor allocation and response assumptions.
+Its current display includes an outcome-selected oscillatory recovery with
+assumed slow angular-rate feedback; the search retains unsuccessful candidates.
 It leaves the current access prerequisite and measurement dependencies unchanged.

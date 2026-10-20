@@ -95,6 +95,7 @@ motor_points=[Vector((x,y,.026))*CFG['display_airframe_scale']
               for x,y in [(-.14,-.14),(.14,-.14),(-.14,.14),(.14,.14)]]
 history_frames=round(CFG['orientation_trail_duration_s']*DATA['fps']/CFG['playback_speed'])
 
+reuse=json.loads((BUILD/'reuse.json').read_text()) if '--reuse-existing' in sys.argv else {}
 manifest=[]; cache={}; start=time.time()
 # Display rotor indices (-x,-y),(+x,-y),(-x,+y),(+x,+y)
 # map to the allocation order (+x,+y),(-x,+y),(-x,-y),(+x,-y).
@@ -102,6 +103,8 @@ rotor_map=[2,3,1,0]
 for f in frames:
     s=DATA['timeline'][f]; files=[]
     for c,key in enumerate(DATA['keys']):
+        if f'{f}/{key}' in reuse:
+            files.append(reuse[f'{f}/{key}']); continue
         pos=Vector(s['pos'][c]); q=s['q'][c]; phases=s['phase'][c]
         state=tuple(round(v,8) for v in [*pos,*q,*phases])
         if state not in cache:
