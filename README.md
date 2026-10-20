@@ -13,8 +13,28 @@ outcomes are still needed to test the warning question.
 [![CI](https://github.com/500ft/multirotor-recovery-warning/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/500ft/multirotor-recovery-warning/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-[Current work](#current-work) · [Roadmap](ROADMAP.md) ·
+[Recovery video](#recovery-simulation) · [Current work](#current-work) · [Roadmap](ROADMAP.md) ·
 [History](docs/history/README.md) · [Quick start](#quick-start)
+
+## Recovery simulation
+
+[![Animated comparison of optimistic, nominal and pessimistic drone recovery, with synchronized tilt and altitude plots. Click to open the full-resolution video.](Figures/recovery-preview.gif)](Figures/recovery-physical-replay.mp4)
+
+**[Watch the full-resolution video](Figures/recovery-physical-replay.mp4)** ·
+[Model and reproduction](docs/recovery-video.md) ·
+[Executed results](Data/recovery-video/results.json)
+
+Three simulated releases use the same initial tilt, tumble rate and height.
+The optimistic case uses the historical nominal aircraft; the nominal case uses
+the historical pessimistic aircraft. The new pessimistic case adds slow
+angular-rate feedback and slower motor response. Maximum altitude losses are
+**0.29 m, 2.47 m and 2.61 m**. The last case reaches sustained attitude/altitude
+recovery at about **8.2 s** of simulation time; all three keep drifting sideways.
+
+The parameters are estimated. The oscillatory case was selected to illustrate
+successful recovery under assumed stress conditions; the
+[search record](Data/recovery-video/scenario-search.json) also includes failed
+candidates. Playback runs at a constant half-speed.
 
 ## Current work
 
@@ -70,12 +90,6 @@ outputs outside the checkout. See the [method and reproduction notes](docs/qdron
 for the full checks and interpretation.
 
 ## History and limits
-
-The [recovery replay](docs/recovery-video.md) adds motor-level allocation and
-rotor-speed response to the historical estimated aircraft. Its maximum simulated
-altitude losses are **0.29 m, 2.47 m and 2.61 m**; the aircraft continue drifting
-sideways. [Watch the video](Figures/recovery-physical-replay.mp4) or inspect the
-[executed results](Data/recovery-video/results.json).
 
 The [history index](docs/history/README.md) preserves the designed-aircraft
 simulations, V995/CAD/calibration assets and NanoBench development replay.
