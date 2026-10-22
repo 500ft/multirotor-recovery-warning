@@ -22,3 +22,7 @@ helpers retain their tests. These calculations do not accept the future aircraft
 
 The unused prototype state-diagram renderer and retired CAD task-ledger validator
 were removed; see [cleanup and retention](../docs/history/README.md#cleanup-and-retention).
+
+The owner-requested [large-tilt development comparison](../docs/large-tilt-recovery.md)
+executes the historical release simulator with the original and optional
+angle-error controller. Reproduction commands and model limits are in that report.

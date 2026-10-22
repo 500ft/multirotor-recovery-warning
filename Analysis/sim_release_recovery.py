@@ -169,7 +169,25 @@ def axis_angle_quat(axis: np.ndarray, angle: float) -> np.ndarray:
     return np.array([cos(angle / 2), *(axis * sin(angle / 2))])
 
 
-def _control(q, omega, pos, vel, p: DroneParams, descent_rate_m_s: float | None = None):
+def tilt_rotation_error(q: np.ndarray) -> np.ndarray:
+    """Shortest thrust-axis correction in body coordinates, with magnitude in radians.
+
+    At exactly inverted, every horizontal correction axis is equally short. Choose
+    body x deterministically there; the resulting discontinuity is intentional.
+    This is a simulation controller option, not a global stability guarantee.
+    """
+    R = quat_to_rotmat(q)
+    target_body = R.T @ np.array([0.0, 0.0, 1.0])
+    axis = np.array([-target_body[1], target_body[0], 0.0])
+    sine = float(np.linalg.norm(axis))
+    cosine = float(np.clip(target_body[2], -1.0, 1.0))
+    if sine > 1e-12:
+        return axis * (float(np.arctan2(sine, cosine)) / sine)
+    return np.array([np.pi, 0.0, 0.0]) if cosine < 0.0 else np.zeros(3)
+
+
+def _control(q, omega, pos, vel, p: DroneParams, descent_rate_m_s: float | None = None,
+             *, attitude_controller: str = "legacy", inverted_axis=None):
     """Saturated attitude + altitude controller. Returns (torque_body[3], thrust_collective).
 
     With ``descent_rate_m_s`` set, the altitude hold is replaced by a vertical-rate
@@ -181,6 +199,11 @@ def _control(q, omega, pos, vel, p: DroneParams, descent_rate_m_s: float | None 
     # attitude: drive body-up toward world-up; correcting rotation vector in the body frame
     e_world = np.cross(body_up_world, np.array([0.0, 0.0, 1.0]))
     e_body = R.T @ e_world
+    if attitude_controller == "tilt_angle":
+        e_body = (np.asarray(inverted_axis, float) * tilt
+                  if inverted_axis is not None else tilt_rotation_error(q))
+    elif attitude_controller != "legacy":
+        raise ValueError(f"unknown attitude controller {attitude_controller!r}")
     torque = KP_ATT * e_body - KD_ATT * omega
     torque = np.clip(torque, -p.max_torque_n_m, p.max_torque_n_m)
     # altitude: tilt-compensated hold. Command the vertical force (gravity + PD recovery), then
@@ -213,8 +236,14 @@ def simulate(p: DroneParams, initial_rate_rad_s: float, initial_tilt_rad: float,
              control_floor: bool = True,
              spin_aware: bool = False,
              scenario: str = "release_startup",
-             trim_thrusts=None) -> dict:
+             trim_thrusts=None,
+             attitude_controller: str = "legacy") -> dict:
     """Release the drone with an initial tumble + tilt and run closed-loop recovery.
+
+    ``attitude_controller="tilt_angle"`` replaces the legacy sine-of-tilt error
+    with a shortest rotation vector. Gains and actuator limits are unchanged.
+    A body-x axis chosen at exact inversion is latched until five degrees clear.
+    The default preserves all historical calculations.
 
     Motors are off for ``detection_latency + motor_start_latency`` (passive tumble + free
     fall), then the controller engages. The controller sees the MEASURED state: body rate
@@ -254,6 +283,8 @@ def simulate(p: DroneParams, initial_rate_rad_s: float, initial_tilt_rad: float,
     cancels its roll/pitch component using the MEASURED rate and the modeled inertia
     (the same idealization the gravity compensation already makes).
     """
+    if attitude_controller not in ("legacy", "tilt_angle"):
+        raise ValueError(f"unknown attitude controller {attitude_controller!r}")
     imp = imperfections or Imperfections()
     rng = np.random.default_rng(imp.seed)
     cg = np.asarray(imp.cg_offset_m, float)
@@ -293,6 +324,7 @@ def simulate(p: DroneParams, initial_rate_rad_s: float, initial_tilt_rad: float,
     t_switch_realized = None
     I = p.inertia
     e_int = np.zeros(3)                    # integral attitude trim state (mixer mode)
+    inverted_axis = None                  # choose once at the antipodal state
 
     T = int(t_max / dt)
     log = {k: np.empty(T) for k in ("t", "tilt", "omega_mag", "z", "vz", "thrust")}
@@ -318,8 +350,19 @@ def simulate(p: DroneParams, initial_rate_rad_s: float, initial_tilt_rad: float,
                 axis = rng.normal(size=3)
                 q_meas = quat_mul(q, axis_angle_quat(axis, rng.normal(0.0, imp.tilt_noise_rad)))
                 q_meas = q_meas / np.linalg.norm(q_meas)
+            if attitude_controller == "tilt_angle":
+                measured_cosine = quat_to_rotmat(q_meas)[2, 2]
+                # Exactly inverted has no unique correction axis. Keep a chosen
+                # body-x axis until five degrees clear; repeated normalization
+                # of roundoff-sized cross products would change the choice.
+                if inverted_axis is None and measured_cosine <= -1.0 + 1e-12:
+                    inverted_axis = np.array([1.0, 0.0, 0.0])
+                elif inverted_axis is not None and measured_cosine > -cos(np.radians(5.0)):
+                    inverted_axis = None
             torque, thrust, _ = _control(q_meas, omega_meas, pos, vel, p,
-                                         descent_rate_m_s=descent_rate_m_s)
+                                         descent_rate_m_s=descent_rate_m_s,
+                                         attitude_controller=attitude_controller,
+                                         inverted_axis=inverted_axis)
             thrust = min(thrust, max_thrust_avail)          # battery sag caps thrust
             if p.arm_m is not None:
                 # mixer authority: keep a quarter-collective control floor while the
