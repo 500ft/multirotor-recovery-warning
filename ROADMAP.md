@@ -252,7 +252,11 @@ instrumentation checks protect retained evidence, not new aircraft acceptance.
 The [history index](docs/history/README.md) records removed obsolete execution
 surfaces and retained reproduction sources. [Engineering data](Engineering%20Data/README.md)
 keeps numerical inputs separate by configuration; [current results](Analysis/current-results.md)
-holds the result index. ROADMAP.md is the only active plan.
+holds the result index. ROADMAP.md is the only active plan. The executed
+[allocator envelope check](Data/recovery-video/allocator-envelope.json) shows
+the recovery replay's motor allocation never exceeds the scenario C mixer
+bound on roll and pitch, so the replay and the Monte Carlo share one authority
+model on those axes.
 
 The owner-requested [recovery replay](docs/recovery-video.md) adds an executed
 historical-model illustration with motor allocation and response assumptions.
