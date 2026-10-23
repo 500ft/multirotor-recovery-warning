@@ -213,6 +213,18 @@ evaluated under those measured inputs; static thrust/arm data alone cannot
 validate dynamic recovery or motor response. Until then the summary is: *fails at placeholder
 authority, predicted to pass at mixer authority, measurement pending.*
 
+The [recovery replay](../docs/recovery-video.md) allocates four motor forces
+instead of applying this clip. The
+[allocator envelope record](../Data/recovery-video/allocator-envelope.json)
+(`python -m Analysis.allocator_envelope`) sweeps the allocator's achievable
+roll and pitch torque against `tau_rp(T)` at every collective: it equals the
+bound on the roll and pitch axes, falls below it off-axis, and the committed
+replay logs stay within it sample by sample. The replay is therefore not
+optimistic relative to scenario C on those axes. With a yaw request the
+allocator gives up roll and pitch headroom, which scenario C's separate yaw
+clip does not model; the logged yaw torque in the replay is a negligible
+fraction of the placeholder, so this did not act in the displayed cases.
+
 ## Frozen measured-authority verdict (registered 2026-07-17)
 
 The next result is no longer governed by “comfortably above” or “sufficient
