@@ -1,0 +1,1754 @@
+{
+  "date": "2026-10-23",
+  "committed": {
+    "results": "results.json",
+    "commit": "86b2e01c93d1780e54ccfbadfdfb8bafcaaec1a9",
+    "results_sha256": "4eaac71470d7643bf8ae037e5d72d676c27b7985ed2fb5a48f48995f2c78c3dd",
+    "settings_sha256": "098b3ad8ae562e4756145de4be10a8c64de91ac195192c87a21a5bef32c81216",
+    "rerun_results_sha256": "4eaac71470d7643bf8ae037e5d72d676c27b7985ed2fb5a48f48995f2c78c3dd"
+  },
+  "rerun": {
+    "command": "python -m Analysis.recovery_video",
+    "source_revision": "86b2e01c93d1780e54ccfbadfdfb8bafcaaec1a9",
+    "elapsed_s": 43.65,
+    "host": {
+      "platform": "macOS-14.7.3-arm64-arm-64bit",
+      "machine": "arm64",
+      "cpu": "Apple M1 Pro"
+    },
+    "python": "3.11.8",
+    "numpy": "2.1.1"
+  },
+  "summary": {
+    "identical": true,
+    "scalar_fields": 290,
+    "scalar_fields_differing": 0,
+    "unexpected_rerun_fields": [],
+    "max_abs_difference_all_scalars": 0.0,
+    "max_abs_difference_max_drop_m": 0.0,
+    "max_abs_difference_recovery_held_to_end_s": 0.0,
+    "committed_half_step_delta_max_drop_m": 0.0005632211180088831,
+    "committed_half_step_delta_recovery_held_to_end_s": 0.012249999999999872,
+    "max_drop_within_half_step_delta": true,
+    "recovery_held_within_half_step_delta": true,
+    "max_abs_difference_logged_arrays": 0.0
+  },
+  "fields": {
+    "settings": {
+      "committed": "settings.json",
+      "reproduced": "settings.json",
+      "equal": true
+    },
+    "cases/best/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "cases/best/first_under_5deg_s": {
+      "committed": 0.7225,
+      "reproduced": 0.7225,
+      "abs_difference": 0.0
+    },
+    "cases/best/attitude_vertical_settled_s": {
+      "committed": 1.149,
+      "reproduced": 1.149,
+      "abs_difference": 0.0
+    },
+    "cases/best/recovery_held_to_end_s": {
+      "committed": 1.6665,
+      "reproduced": 1.6665,
+      "abs_difference": 0.0
+    },
+    "cases/best/post_righting_tilt_peaks/0/time_s": {
+      "committed": 0.971,
+      "reproduced": 0.971,
+      "abs_difference": 0.0
+    },
+    "cases/best/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 4.623854630561591,
+      "reproduced": 4.623854630561591,
+      "abs_difference": 0.0
+    },
+    "cases/best/post_righting_tilt_peaks/1/time_s": {
+      "committed": 1.6015,
+      "reproduced": 1.6015,
+      "abs_difference": 0.0
+    },
+    "cases/best/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 0.40097697254028786,
+      "reproduced": 0.40097697254028786,
+      "abs_difference": 0.0
+    },
+    "cases/best/max_drop_m": {
+      "committed": 0.29011564864626005,
+      "reproduced": 0.29011564864626005,
+      "abs_difference": 0.0
+    },
+    "cases/best/final_horizontal_displacement_m": {
+      "committed": 35.45950855455939,
+      "reproduced": 35.45950855455939,
+      "abs_difference": 0.0
+    },
+    "cases/best/final_horizontal_speed_m_s": {
+      "committed": 1.3057217010117863,
+      "reproduced": 1.3057217010117863,
+      "abs_difference": 0.0
+    },
+    "cases/best/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "cases/best/max_motor_force_n": {
+      "committed": 1.0499999990146875,
+      "reproduced": 1.0499999990146875,
+      "abs_difference": 0.0
+    },
+    "cases/best/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "cases/nominal/first_under_5deg_s": {
+      "committed": 1.169,
+      "reproduced": 1.169,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/attitude_vertical_settled_s": {
+      "committed": 3.904,
+      "reproduced": 3.904,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/recovery_held_to_end_s": {
+      "committed": 4.4935,
+      "reproduced": 4.4935,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.571,
+      "reproduced": 1.571,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 16.15184348352128,
+      "reproduced": 16.15184348352128,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.325,
+      "reproduced": 2.325,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 2.8500540789557136,
+      "reproduced": 2.8500540789557136,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.073,
+      "reproduced": 3.073,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 0.48892671289686945,
+      "reproduced": 0.48892671289686945,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/max_drop_m": {
+      "committed": 2.472121760763323,
+      "reproduced": 2.472121760763323,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/final_horizontal_displacement_m": {
+      "committed": 64.8138803346694,
+      "reproduced": 64.8138803346694,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/final_horizontal_speed_m_s": {
+      "committed": 2.778961157537147,
+      "reproduced": 2.778961157537147,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/max_motor_force_n": {
+      "committed": 0.8749999999999977,
+      "reproduced": 0.8749999999999977,
+      "abs_difference": 0.0
+    },
+    "cases/nominal/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "cases/worst/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "cases/worst/first_under_5deg_s": {
+      "committed": 1.1495,
+      "reproduced": 1.1495,
+      "abs_difference": 0.0
+    },
+    "cases/worst/attitude_vertical_settled_s": {
+      "committed": 7.2475000000000005,
+      "reproduced": 7.2475000000000005,
+      "abs_difference": 0.0
+    },
+    "cases/worst/recovery_held_to_end_s": {
+      "committed": 8.2165,
+      "reproduced": 8.2165,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.696,
+      "reproduced": 1.696,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 36.212596498722775,
+      "reproduced": 36.212596498722775,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.6385,
+      "reproduced": 2.6385,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 20.488206630683027,
+      "reproduced": 20.488206630683027,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.3605,
+      "reproduced": 3.3605,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 13.086760329980288,
+      "reproduced": 13.086760329980288,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/3/time_s": {
+      "committed": 3.9735,
+      "reproduced": 3.9735,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/3/tilt_deg": {
+      "committed": 9.670201295389331,
+      "reproduced": 9.670201295389331,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/4/time_s": {
+      "committed": 4.5235,
+      "reproduced": 4.5235,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/4/tilt_deg": {
+      "committed": 7.847868692281553,
+      "reproduced": 7.847868692281553,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/5/time_s": {
+      "committed": 5.047,
+      "reproduced": 5.047,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/5/tilt_deg": {
+      "committed": 6.741250604549714,
+      "reproduced": 6.741250604549714,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/6/time_s": {
+      "committed": 5.567,
+      "reproduced": 5.567,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/6/tilt_deg": {
+      "committed": 5.85346725560958,
+      "reproduced": 5.85346725560958,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/7/time_s": {
+      "committed": 6.087,
+      "reproduced": 6.087,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/7/tilt_deg": {
+      "committed": 5.069382893941653,
+      "reproduced": 5.069382893941653,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/8/time_s": {
+      "committed": 6.6075,
+      "reproduced": 6.6075,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/8/tilt_deg": {
+      "committed": 4.391849292504891,
+      "reproduced": 4.391849292504891,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/9/time_s": {
+      "committed": 7.128,
+      "reproduced": 7.128,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/9/tilt_deg": {
+      "committed": 3.802242369579769,
+      "reproduced": 3.802242369579769,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/10/time_s": {
+      "committed": 7.649,
+      "reproduced": 7.649,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/10/tilt_deg": {
+      "committed": 3.2904440081283983,
+      "reproduced": 3.2904440081283983,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/11/time_s": {
+      "committed": 8.17,
+      "reproduced": 8.17,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/11/tilt_deg": {
+      "committed": 2.846144538107899,
+      "reproduced": 2.846144538107899,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/12/time_s": {
+      "committed": 8.691,
+      "reproduced": 8.691,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/12/tilt_deg": {
+      "committed": 2.4607549763267147,
+      "reproduced": 2.4607549763267147,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/13/time_s": {
+      "committed": 9.212,
+      "reproduced": 9.212,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/13/tilt_deg": {
+      "committed": 2.1266742710761495,
+      "reproduced": 2.1266742710761495,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/14/time_s": {
+      "committed": 9.7335,
+      "reproduced": 9.7335,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/14/tilt_deg": {
+      "committed": 1.8372575234808968,
+      "reproduced": 1.8372575234808968,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/15/time_s": {
+      "committed": 10.2545,
+      "reproduced": 10.2545,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/15/tilt_deg": {
+      "committed": 1.5866957097210017,
+      "reproduced": 1.5866957097210017,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/16/time_s": {
+      "committed": 10.776,
+      "reproduced": 10.776,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/16/tilt_deg": {
+      "committed": 1.3698928844485483,
+      "reproduced": 1.3698928844485483,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/17/time_s": {
+      "committed": 11.2975,
+      "reproduced": 11.2975,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/17/tilt_deg": {
+      "committed": 1.182399376963401,
+      "reproduced": 1.182399376963401,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/18/time_s": {
+      "committed": 11.819,
+      "reproduced": 11.819,
+      "abs_difference": 0.0
+    },
+    "cases/worst/post_righting_tilt_peaks/18/tilt_deg": {
+      "committed": 1.0203283810808346,
+      "reproduced": 1.0203283810808346,
+      "abs_difference": 0.0
+    },
+    "cases/worst/max_drop_m": {
+      "committed": 2.609851230669688,
+      "reproduced": 2.609851230669688,
+      "abs_difference": 0.0
+    },
+    "cases/worst/final_horizontal_displacement_m": {
+      "committed": 57.38340048083117,
+      "reproduced": 57.38340048083117,
+      "abs_difference": 0.0
+    },
+    "cases/worst/final_horizontal_speed_m_s": {
+      "committed": 2.5708046545449954,
+      "reproduced": 2.5708046545449954,
+      "abs_difference": 0.0
+    },
+    "cases/worst/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "cases/worst/max_motor_force_n": {
+      "committed": 0.8749999999803059,
+      "reproduced": 0.8749999999803059,
+      "abs_difference": 0.0
+    },
+    "cases/worst/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/best/0.5/first_under_5deg_s": {
+      "committed": 0.724,
+      "reproduced": 0.724,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/attitude_vertical_settled_s": {
+      "committed": 1.153,
+      "reproduced": 1.153,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/recovery_held_to_end_s": {
+      "committed": 1.539,
+      "reproduced": 1.539,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/post_righting_tilt_peaks/0/time_s": {
+      "committed": 0.985,
+      "reproduced": 0.985,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 4.312655258873974,
+      "reproduced": 4.312655258873974,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/post_righting_tilt_peaks/1/time_s": {
+      "committed": 1.649,
+      "reproduced": 1.649,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 0.3455302405697781,
+      "reproduced": 0.3455302405697781,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/max_drop_m": {
+      "committed": 0.2504316654913555,
+      "reproduced": 0.2504316654913555,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/final_horizontal_displacement_m": {
+      "committed": 35.08581648168899,
+      "reproduced": 35.08581648168899,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/final_horizontal_speed_m_s": {
+      "committed": 1.3001445778977474,
+      "reproduced": 1.3001445778977474,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/max_motor_force_n": {
+      "committed": 1.0499999999999987,
+      "reproduced": 1.0499999999999987,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/0.5/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/best/1.0/first_under_5deg_s": {
+      "committed": 0.7225,
+      "reproduced": 0.7225,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/attitude_vertical_settled_s": {
+      "committed": 1.149,
+      "reproduced": 1.149,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/recovery_held_to_end_s": {
+      "committed": 1.6665,
+      "reproduced": 1.6665,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/post_righting_tilt_peaks/0/time_s": {
+      "committed": 0.971,
+      "reproduced": 0.971,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 4.623854630561591,
+      "reproduced": 4.623854630561591,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/post_righting_tilt_peaks/1/time_s": {
+      "committed": 1.6015,
+      "reproduced": 1.6015,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 0.40097697254028786,
+      "reproduced": 0.40097697254028786,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/max_drop_m": {
+      "committed": 0.29011564864626005,
+      "reproduced": 0.29011564864626005,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/final_horizontal_displacement_m": {
+      "committed": 35.45950855455939,
+      "reproduced": 35.45950855455939,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/final_horizontal_speed_m_s": {
+      "committed": 1.3057217010117863,
+      "reproduced": 1.3057217010117863,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/max_motor_force_n": {
+      "committed": 1.0499999990146875,
+      "reproduced": 1.0499999990146875,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/1.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/best/2.0/first_under_5deg_s": {
+      "committed": 0.7265,
+      "reproduced": 0.7265,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/attitude_vertical_settled_s": {
+      "committed": 1.4325,
+      "reproduced": 1.4325,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/recovery_held_to_end_s": {
+      "committed": 1.893,
+      "reproduced": 1.893,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/post_righting_tilt_peaks/0/time_s": {
+      "committed": 0.9550000000000001,
+      "reproduced": 0.9550000000000001,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 5.127822584209949,
+      "reproduced": 5.127822584209949,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/post_righting_tilt_peaks/1/time_s": {
+      "committed": 1.5010000000000001,
+      "reproduced": 1.5010000000000001,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 0.6067476426674007,
+      "reproduced": 0.6067476426674007,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/max_drop_m": {
+      "committed": 0.3734976731410635,
+      "reproduced": 0.3734976731410635,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/final_horizontal_displacement_m": {
+      "committed": 36.19377572571519,
+      "reproduced": 36.19377572571519,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/final_horizontal_speed_m_s": {
+      "committed": 1.3168603809258996,
+      "reproduced": 1.3168603809258996,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/max_motor_force_n": {
+      "committed": 1.0499926297903823,
+      "reproduced": 1.0499926297903823,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/best/2.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/nominal/0.5/first_under_5deg_s": {
+      "committed": 1.1635,
+      "reproduced": 1.1635,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/attitude_vertical_settled_s": {
+      "committed": 3.8285,
+      "reproduced": 3.8285,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/recovery_held_to_end_s": {
+      "committed": 4.418,
+      "reproduced": 4.418,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.5465,
+      "reproduced": 1.5465,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 14.21215787397124,
+      "reproduced": 14.21215787397124,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.3115,
+      "reproduced": 2.3115,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 2.3615504793183115,
+      "reproduced": 2.3615504793183115,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.0755,
+      "reproduced": 3.0755,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 0.3885136961581272,
+      "reproduced": 0.3885136961581272,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/max_drop_m": {
+      "committed": 2.333814819991097,
+      "reproduced": 2.333814819991097,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/final_horizontal_displacement_m": {
+      "committed": 65.30376974902138,
+      "reproduced": 65.30376974902138,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/final_horizontal_speed_m_s": {
+      "committed": 2.7891769290505346,
+      "reproduced": 2.7891769290505346,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/max_motor_force_n": {
+      "committed": 0.8749999999999989,
+      "reproduced": 0.8749999999999989,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/0.5/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/nominal/1.0/first_under_5deg_s": {
+      "committed": 1.169,
+      "reproduced": 1.169,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/attitude_vertical_settled_s": {
+      "committed": 3.904,
+      "reproduced": 3.904,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/recovery_held_to_end_s": {
+      "committed": 4.4935,
+      "reproduced": 4.4935,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.571,
+      "reproduced": 1.571,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 16.15184348352128,
+      "reproduced": 16.15184348352128,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.325,
+      "reproduced": 2.325,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 2.8500540789557136,
+      "reproduced": 2.8500540789557136,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.073,
+      "reproduced": 3.073,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 0.48892671289686945,
+      "reproduced": 0.48892671289686945,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/max_drop_m": {
+      "committed": 2.472121760763323,
+      "reproduced": 2.472121760763323,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/final_horizontal_displacement_m": {
+      "committed": 64.8138803346694,
+      "reproduced": 64.8138803346694,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/final_horizontal_speed_m_s": {
+      "committed": 2.778961157537147,
+      "reproduced": 2.778961157537147,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/max_motor_force_n": {
+      "committed": 0.8749999999999977,
+      "reproduced": 0.8749999999999977,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/1.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/nominal/2.0/first_under_5deg_s": {
+      "committed": 1.1825,
+      "reproduced": 1.1825,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/attitude_vertical_settled_s": {
+      "committed": 4.047,
+      "reproduced": 4.047,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/recovery_held_to_end_s": {
+      "committed": 4.6370000000000005,
+      "reproduced": 4.6370000000000005,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.621,
+      "reproduced": 1.621,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 20.438928873405622,
+      "reproduced": 20.438928873405622,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.364,
+      "reproduced": 2.364,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 4.202605831852045,
+      "reproduced": 4.202605831852045,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.0785,
+      "reproduced": 3.0785,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 0.7985589805514179,
+      "reproduced": 0.7985589805514179,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/3/time_s": {
+      "committed": 3.793,
+      "reproduced": 3.793,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/post_righting_tilt_peaks/3/tilt_deg": {
+      "committed": 0.15156456050322065,
+      "reproduced": 0.15156456050322065,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/max_drop_m": {
+      "committed": 2.750095103768903,
+      "reproduced": 2.750095103768903,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/final_horizontal_displacement_m": {
+      "committed": 63.45820277825051,
+      "reproduced": 63.45820277825051,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/final_horizontal_speed_m_s": {
+      "committed": 2.748203696894926,
+      "reproduced": 2.748203696894926,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/max_motor_force_n": {
+      "committed": 0.8749999991281336,
+      "reproduced": 0.8749999991281336,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/nominal/2.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/worst/0.5/first_under_5deg_s": {
+      "committed": 1.133,
+      "reproduced": 1.133,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/attitude_vertical_settled_s": {
+      "committed": 4.827,
+      "reproduced": 4.827,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/recovery_held_to_end_s": {
+      "committed": 5.2825,
+      "reproduced": 5.2825,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.6555,
+      "reproduced": 1.6555,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 31.94127867299735,
+      "reproduced": 31.94127867299735,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.5175,
+      "reproduced": 2.5175,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 15.350033159406271,
+      "reproduced": 15.350033159406271,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.1415,
+      "reproduced": 3.1415,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 9.162104483827054,
+      "reproduced": 9.162104483827054,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/3/time_s": {
+      "committed": 3.6725,
+      "reproduced": 3.6725,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/3/tilt_deg": {
+      "committed": 6.58740649723224,
+      "reproduced": 6.58740649723224,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/4/time_s": {
+      "committed": 4.189,
+      "reproduced": 4.189,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/4/tilt_deg": {
+      "committed": 4.948667128203187,
+      "reproduced": 4.948667128203187,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/5/time_s": {
+      "committed": 4.7065,
+      "reproduced": 4.7065,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/5/tilt_deg": {
+      "committed": 3.6770423862969532,
+      "reproduced": 3.6770423862969532,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/6/time_s": {
+      "committed": 5.224,
+      "reproduced": 5.224,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/6/tilt_deg": {
+      "committed": 2.744234521129488,
+      "reproduced": 2.744234521129488,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/7/time_s": {
+      "committed": 5.7415,
+      "reproduced": 5.7415,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/7/tilt_deg": {
+      "committed": 2.0450740912708363,
+      "reproduced": 2.0450740912708363,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/8/time_s": {
+      "committed": 6.259,
+      "reproduced": 6.259,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/8/tilt_deg": {
+      "committed": 1.525093132757436,
+      "reproduced": 1.525093132757436,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/9/time_s": {
+      "committed": 6.777,
+      "reproduced": 6.777,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/9/tilt_deg": {
+      "committed": 1.1371675440477864,
+      "reproduced": 1.1371675440477864,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/10/time_s": {
+      "committed": 7.2945,
+      "reproduced": 7.2945,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/10/tilt_deg": {
+      "committed": 0.8480406583684655,
+      "reproduced": 0.8480406583684655,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/11/time_s": {
+      "committed": 7.8125,
+      "reproduced": 7.8125,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/11/tilt_deg": {
+      "committed": 0.6324431352628186,
+      "reproduced": 0.6324431352628186,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/12/time_s": {
+      "committed": 8.33,
+      "reproduced": 8.33,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/12/tilt_deg": {
+      "committed": 0.4716845202732515,
+      "reproduced": 0.4716845202732515,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/13/time_s": {
+      "committed": 8.848,
+      "reproduced": 8.848,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/13/tilt_deg": {
+      "committed": 0.3518019979932966,
+      "reproduced": 0.3518019979932966,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/14/time_s": {
+      "committed": 9.366,
+      "reproduced": 9.366,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/14/tilt_deg": {
+      "committed": 0.262397409914468,
+      "reproduced": 0.262397409914468,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/15/time_s": {
+      "committed": 9.8835,
+      "reproduced": 9.8835,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/15/tilt_deg": {
+      "committed": 0.19571914698272375,
+      "reproduced": 0.19571914698272375,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/16/time_s": {
+      "committed": 10.4015,
+      "reproduced": 10.4015,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/16/tilt_deg": {
+      "committed": 0.14598805217857957,
+      "reproduced": 0.14598805217857957,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/17/time_s": {
+      "committed": 10.919500000000001,
+      "reproduced": 10.919500000000001,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/post_righting_tilt_peaks/17/tilt_deg": {
+      "committed": 0.10889536774555585,
+      "reproduced": 0.10889536774555585,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/max_drop_m": {
+      "committed": 2.400335708174411,
+      "reproduced": 2.400335708174411,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/final_horizontal_displacement_m": {
+      "committed": 58.82679445650136,
+      "reproduced": 58.82679445650136,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/final_horizontal_speed_m_s": {
+      "committed": 2.6278993970064497,
+      "reproduced": 2.6278993970064497,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/max_motor_force_n": {
+      "committed": 0.8749999999999982,
+      "reproduced": 0.8749999999999982,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/0.5/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/ground_contact": {
+      "committed": false,
+      "reproduced": false,
+      "equal": true
+    },
+    "lag_sensitivity/worst/1.0/first_under_5deg_s": {
+      "committed": 1.1495,
+      "reproduced": 1.1495,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/attitude_vertical_settled_s": {
+      "committed": 7.2475000000000005,
+      "reproduced": 7.2475000000000005,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/recovery_held_to_end_s": {
+      "committed": 8.2165,
+      "reproduced": 8.2165,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/0/time_s": {
+      "committed": 1.696,
+      "reproduced": 1.696,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/0/tilt_deg": {
+      "committed": 36.212596498722775,
+      "reproduced": 36.212596498722775,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/1/time_s": {
+      "committed": 2.6385,
+      "reproduced": 2.6385,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/1/tilt_deg": {
+      "committed": 20.488206630683027,
+      "reproduced": 20.488206630683027,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/2/time_s": {
+      "committed": 3.3605,
+      "reproduced": 3.3605,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/2/tilt_deg": {
+      "committed": 13.086760329980288,
+      "reproduced": 13.086760329980288,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/3/time_s": {
+      "committed": 3.9735,
+      "reproduced": 3.9735,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/3/tilt_deg": {
+      "committed": 9.670201295389331,
+      "reproduced": 9.670201295389331,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/4/time_s": {
+      "committed": 4.5235,
+      "reproduced": 4.5235,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/4/tilt_deg": {
+      "committed": 7.847868692281553,
+      "reproduced": 7.847868692281553,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/5/time_s": {
+      "committed": 5.047,
+      "reproduced": 5.047,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/5/tilt_deg": {
+      "committed": 6.741250604549714,
+      "reproduced": 6.741250604549714,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/6/time_s": {
+      "committed": 5.567,
+      "reproduced": 5.567,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/6/tilt_deg": {
+      "committed": 5.85346725560958,
+      "reproduced": 5.85346725560958,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/7/time_s": {
+      "committed": 6.087,
+      "reproduced": 6.087,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/7/tilt_deg": {
+      "committed": 5.069382893941653,
+      "reproduced": 5.069382893941653,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/8/time_s": {
+      "committed": 6.6075,
+      "reproduced": 6.6075,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/8/tilt_deg": {
+      "committed": 4.391849292504891,
+      "reproduced": 4.391849292504891,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/9/time_s": {
+      "committed": 7.128,
+      "reproduced": 7.128,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/9/tilt_deg": {
+      "committed": 3.802242369579769,
+      "reproduced": 3.802242369579769,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/10/time_s": {
+      "committed": 7.649,
+      "reproduced": 7.649,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/10/tilt_deg": {
+      "committed": 3.2904440081283983,
+      "reproduced": 3.2904440081283983,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/11/time_s": {
+      "committed": 8.17,
+      "reproduced": 8.17,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/11/tilt_deg": {
+      "committed": 2.846144538107899,
+      "reproduced": 2.846144538107899,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/12/time_s": {
+      "committed": 8.691,
+      "reproduced": 8.691,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/12/tilt_deg": {
+      "committed": 2.4607549763267147,
+      "reproduced": 2.4607549763267147,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/13/time_s": {
+      "committed": 9.212,
+      "reproduced": 9.212,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/13/tilt_deg": {
+      "committed": 2.1266742710761495,
+      "reproduced": 2.1266742710761495,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/14/time_s": {
+      "committed": 9.7335,
+      "reproduced": 9.7335,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/14/tilt_deg": {
+      "committed": 1.8372575234808968,
+      "reproduced": 1.8372575234808968,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/15/time_s": {
+      "committed": 10.2545,
+      "reproduced": 10.2545,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/15/tilt_deg": {
+      "committed": 1.5866957097210017,
+      "reproduced": 1.5866957097210017,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/16/time_s": {
+      "committed": 10.776,
+      "reproduced": 10.776,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/16/tilt_deg": {
+      "committed": 1.3698928844485483,
+      "reproduced": 1.3698928844485483,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/17/time_s": {
+      "committed": 11.2975,
+      "reproduced": 11.2975,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/17/tilt_deg": {
+      "committed": 1.182399376963401,
+      "reproduced": 1.182399376963401,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/18/time_s": {
+      "committed": 11.819,
+      "reproduced": 11.819,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/post_righting_tilt_peaks/18/tilt_deg": {
+      "committed": 1.0203283810808346,
+      "reproduced": 1.0203283810808346,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/max_drop_m": {
+      "committed": 2.609851230669688,
+      "reproduced": 2.609851230669688,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/final_horizontal_displacement_m": {
+      "committed": 57.38340048083117,
+      "reproduced": 57.38340048083117,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/final_horizontal_speed_m_s": {
+      "committed": 2.5708046545449954,
+      "reproduced": 2.5708046545449954,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/max_motor_force_n": {
+      "committed": 0.8749999999803059,
+      "reproduced": 0.8749999999803059,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/1.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/ground_contact": {
+      "committed": true,
+      "reproduced": true,
+      "equal": true
+    },
+    "lag_sensitivity/worst/2.0/first_under_5deg_s": {
+      "committed": null,
+      "reproduced": null,
+      "equal": true
+    },
+    "lag_sensitivity/worst/2.0/attitude_vertical_settled_s": {
+      "committed": null,
+      "reproduced": null,
+      "equal": true
+    },
+    "lag_sensitivity/worst/2.0/recovery_held_to_end_s": {
+      "committed": null,
+      "reproduced": null,
+      "equal": true
+    },
+    "lag_sensitivity/worst/2.0/max_drop_m": {
+      "committed": 3.000340246368734,
+      "reproduced": 3.000340246368734,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/final_horizontal_displacement_m": {
+      "committed": 6.781453948056433,
+      "reproduced": 6.781453948056433,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/final_horizontal_speed_m_s": {
+      "committed": 12.98732573898465,
+      "reproduced": 12.98732573898465,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/min_motor_force_n": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/max_motor_force_n": {
+      "committed": 0.8749996438435015,
+      "reproduced": 0.8749996438435015,
+      "abs_difference": 0.0
+    },
+    "lag_sensitivity/worst/2.0/quaternion_norm_max_error": {
+      "committed": 3.3306690738754696e-16,
+      "reproduced": 3.3306690738754696e-16,
+      "abs_difference": 0.0
+    },
+    "convergence/best/same_contact_outcome": {
+      "committed": true,
+      "reproduced": true,
+      "equal": true
+    },
+    "convergence/best/recovery_held_to_end_difference_s": {
+      "committed": 0.0,
+      "reproduced": 0.0,
+      "abs_difference": 0.0
+    },
+    "convergence/best/max_position_difference_m": {
+      "committed": 0.005085083706862824,
+      "reproduced": 0.005085083706862824,
+      "abs_difference": 0.0
+    },
+    "convergence/best/max_tilt_difference_deg": {
+      "committed": 0.012467555196078589,
+      "reproduced": 0.012467555196078589,
+      "abs_difference": 0.0
+    },
+    "convergence/best/max_drop_difference_m": {
+      "committed": 4.214956678638693e-05,
+      "reproduced": 4.214956678638693e-05,
+      "abs_difference": 0.0
+    },
+    "convergence/nominal/same_contact_outcome": {
+      "committed": true,
+      "reproduced": true,
+      "equal": true
+    },
+    "convergence/nominal/recovery_held_to_end_difference_s": {
+      "committed": 0.00025000000000030553,
+      "reproduced": 0.00025000000000030553,
+      "abs_difference": 0.0
+    },
+    "convergence/nominal/max_position_difference_m": {
+      "committed": 0.0034201911656047694,
+      "reproduced": 0.0034201911656047694,
+      "abs_difference": 0.0
+    },
+    "convergence/nominal/max_tilt_difference_deg": {
+      "committed": 0.025867776597376695,
+      "reproduced": 0.025867776597376695,
+      "abs_difference": 0.0
+    },
+    "convergence/nominal/max_drop_difference_m": {
+      "committed": 0.00048571941637876037,
+      "reproduced": 0.00048571941637876037,
+      "abs_difference": 0.0
+    },
+    "convergence/worst/same_contact_outcome": {
+      "committed": true,
+      "reproduced": true,
+      "equal": true
+    },
+    "convergence/worst/recovery_held_to_end_difference_s": {
+      "committed": 0.012249999999999872,
+      "reproduced": 0.012249999999999872,
+      "abs_difference": 0.0
+    },
+    "convergence/worst/max_position_difference_m": {
+      "committed": 0.01506101627522567,
+      "reproduced": 0.01506101627522567,
+      "abs_difference": 0.0
+    },
+    "convergence/worst/max_tilt_difference_deg": {
+      "committed": 0.20347525685808399,
+      "reproduced": 0.20347525685808399,
+      "abs_difference": 0.0
+    },
+    "convergence/worst/max_drop_difference_m": {
+      "committed": 0.0005632211180088831,
+      "reproduced": 0.0005632211180088831,
+      "abs_difference": 0.0
+    }
+  },
+  "arrays": {
+    "best": {
+      "t": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "q": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "pos": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "vel": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "tilt": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_force": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_command": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_speed": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "phase": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega_feedback": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      }
+    },
+    "nominal": {
+      "t": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "q": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "pos": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "vel": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "tilt": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_force": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_command": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_speed": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "phase": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega_feedback": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      }
+    },
+    "worst": {
+      "t": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "q": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "pos": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "vel": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "tilt": {
+        "shape": [
+          24001
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_force": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_command": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "motor_speed": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "phase": {
+        "shape": [
+          24001,
+          4
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      },
+      "omega_feedback": {
+        "shape": [
+          24001,
+          3
+        ],
+        "same_shape": true,
+        "max_abs_difference": 0.0
+      }
+    }
+  }
+}

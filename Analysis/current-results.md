@@ -381,6 +381,30 @@ per-trial outcomes are in [`trials.jsonl`](../Data/scenario-02/trials.jsonl).
 
 The cases were selected using earlier simulation results and then evaluated
 with fresh draws. The conclusions apply to the historical model and its assumed
-landing limits. The next step in the [roadmap](../ROADMAP.md) is the
-Crazyflie model. The original `two_adjacent` impact-speed results remain
-in the earlier diagnostic; no additional study of that class is scheduled.
+landing limits. The [roadmap](../ROADMAP.md#current-step) is paused before
+component instrumentation while the M2 access choice is open. The original
+`two_adjacent` impact-speed results remain in the earlier diagnostic; no
+additional study of that class is scheduled.
+
+## Recovery replay with motor allocation
+
+The [recovery replay](../docs/recovery-video.md) runs the historical nominal
+and pessimistic aircraft with four feasible motor forces and first-order
+rotor-speed response; the displayed pessimistic case adds filtered angular-rate
+feedback and slower motors. Generator: `python -m Analysis.recovery_video`.
+The [result file](../Data/recovery-video/results.json) holds altitude loss,
+settling and held-recovery times, horizontal motion, the motor-response
+sensitivity runs and the half-step convergence deltas. The
+[settings](../Data/recovery-video/settings.json) pin the source revision and
+assumptions; the [search record](../Data/recovery-video/scenario-search.json)
+keeps every candidate behind the outcome-selected pessimistic case.
+
+A rerun of the generator on a second machine reproduced every scalar field
+and every logged array exactly, under the pinned NumPy
+([record](../Data/recovery-video/reproduction-numpy-2.4.6.json)) and under
+an older NumPy ([record](../Data/recovery-video/reproduction-numpy-2.1.1.json)).
+Each record lists host, versions, command and the per-field comparison;
+[`compare_reproduction.py`](../tools/recovery_video/compare_reproduction.py)
+writes it from a rerun in a separate checkout. The replay is a deterministic
+simulation on estimated parameters. It estimates no recovery probability and
+leaves the envelope and Monte Carlo results above unchanged.

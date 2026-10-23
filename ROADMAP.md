@@ -259,3 +259,10 @@ historical-model illustration with motor allocation and response assumptions.
 Its current display includes an outcome-selected oscillatory recovery with
 assumed slow angular-rate feedback; the search retains unsuccessful candidates.
 It leaves the current access prerequisite and measurement dependencies unchanged.
+
+A rerun of the replay generator on a second machine reproduced every result
+field and logged array exactly. The
+[reproduction records](Data/recovery-video/reproduction-numpy-2.4.6.json)
+hold host, versions, command and the per-field comparison, and the
+[result index](Analysis/current-results.md#recovery-replay-with-motor-allocation)
+now lists the replay. No result, prerequisite or dependency changes.
