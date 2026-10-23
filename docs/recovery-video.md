@@ -101,3 +101,10 @@ steps, filtered feedback against a separate linear-filter implementation,
 unpowered ballistic motion, contact termination and rejection of transient
 settling as held recovery. The run also halves the integration step for every displayed case. Values and deviations are in the
 result file, alongside all motor-response sensitivity outcomes.
+
+A rerun of the first command on a second machine matched the committed result
+file and logs byte for byte under the pinned NumPy and under NumPy 2.1.1.
+[`compare_reproduction.py`](../tools/recovery_video/compare_reproduction.py)
+compares a rerun from a separate checkout with the committed files and writes
+the [per-field record](../Data/recovery-video/reproduction-numpy-2.4.6.json)
+without touching them.
