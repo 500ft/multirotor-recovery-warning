@@ -1,8 +1,9 @@
 # Current results
 
-The [dependency roadmap](../ROADMAP.md) requires qualified propulsion measurements
-and a delay-aware physics comparator before warning evaluation. No new physical
-or warning result is supplied by the roadmap cleanup.
+This index separates public development observations and historical simulations
+from physical recovery-warning validation. The [roadmap](../ROADMAP.md) requires
+qualified propulsion measurements, a delay-aware physics comparator and
+independent maneuver outcomes before warning evaluation.
 
 ## QDrone2 public component response
 
