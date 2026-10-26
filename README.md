@@ -1,6 +1,6 @@
 # Multirotor Recovery Warning
 
-Can a maneuver-specific warning beat a physics feasibility baseline based on
+Does a maneuver-specific warning improve on a physics feasibility baseline based on
 thrust-to-weight and height to arrest descent, including delays, on unseen
 packs, payloads and guards? Compare voltage, sag-history and load baselines
 at the same false-alarm burden and report useful warning lead time.
@@ -24,17 +24,20 @@ outcomes are still needed to test the warning question.
 [Model and reproduction](docs/recovery-video.md) ·
 [Executed results](Data/recovery-video/results.json)
 
-Three simulated releases use the same initial tilt, tumble rate and height.
+Three simulations release variants of the historical estimated aircraft from
+the same initial tilt, tumble rate and height.
 The optimistic case uses the historical nominal aircraft; the nominal case uses
 the historical pessimistic aircraft. The new pessimistic case adds slow
 angular-rate feedback and slower motor response. Maximum altitude losses are
 **0.29 m, 2.47 m and 2.61 m**. The last case reaches sustained attitude/altitude
 recovery at about **8.2 s** of simulation time; all three keep drifting sideways.
 
-The parameters are estimated. The oscillatory case was selected to illustrate
-successful recovery under assumed stress conditions; the
+The aircraft and motor-response parameters are estimates. The oscillatory case
+was chosen after its outcome was observed to illustrate recovery under those
+assumptions; the
 [search record](Data/recovery-video/scenario-search.json) also includes failed
-candidates. Playback runs at a constant half-speed.
+candidates. The video therefore does not estimate recovery probability or show
+a tested aircraft. Playback runs at a constant half-speed.
 
 ## Current work
 
@@ -55,14 +58,15 @@ This repository computed the metrics and plot. Repeated steps
 share one discharge; voltage and elapsed time co-vary. The plot describes
 tracking under the source controller and provides no recovery-failure labels.
 
-The [dependency-roadmap decision](docs/decisions/dependency-roadmap.md) adopts
-the component qualification and physics-baseline prerequisites. The
-[roadmap](ROADMAP.md#dependency-order) shows what each later result depends on.
-The project is paused until the owner chooses concrete borrowed or self-funded
-hardware, its configuration, site and budget. Experimental qualification needs
-physical equipment; closure is recommended while access remains unset. This is
-a recommendation, and the repository remains open. The physical maneuver and
-safety responsibility remain [owner decisions](OPEN_QUESTIONS.md#pending-owner-decisions).
+The [roadmap](ROADMAP.md#dependency-order) requires qualified component
+measurements before the physics feasibility baseline, then independently
+observed recovery outcomes before a warning comparison. Physical component
+qualification is paused until a specific borrowed or self-funded motor, propeller,
+ESC, battery, instrument chain, mounting and containment setup, site and budget
+are chosen and approved for powered work. The recovery maneuver and safety
+responsibility remain open in the [decision list](OPEN_QUESTIONS.md#pending-owner-decisions).
+The [physical access decision](docs/decisions/dependency-roadmap.md#physical-access-disposition)
+recommends closure while no access route is selected; the repository remains open.
 
 The [full-text prior-work comparison](literature/notes/07-loss-of-control-prediction.md)
 corrects the nearest-paper positioning and compares the pending access options.
@@ -91,15 +95,17 @@ for the full checks and interpretation.
 
 ## History and limits
 
-The [history index](docs/history/README.md) preserves the designed-aircraft
-simulations, V995/CAD/calibration assets and NanoBench development replay.
+The [history index](docs/history/README.md) preserves the unbuilt designed-aircraft
+simulations, V995 CAD and calibration assets, and NanoBench development replay.
 NanoBench collection timing and deployed configuration remain unresolved at
-[G1](docs/nanobench-g1.md). Its frozen split and final-test files are preserved;
-this task does not resume identification or inspect held-out outcomes.
+[source gate G1](docs/nanobench-g1.md). Its whole-flight split stays fixed and
+final-test files remain unopened.
 
-The [result report](docs/qdrone-response.md#limits-and-next-evidence) states the
-current data limits. No physical platform is validated by combining QDrone2,
-NanoBench and NeuroBEM observations. No powered test or purchase is authorized.
+The [QDrone2 report](docs/qdrone-response.md#limits-and-next-evidence) explains
+why one discharge cannot establish warning performance across packs or provide
+recovery-failure labels. QDrone2, NanoBench and NeuroBEM describe different
+vehicles; their observations do not validate a shared physical platform. No
+powered test or purchase is authorized.
 The [safety procedure](Safety/README.md) needs review for the eventual aircraft
 and facility before physical work.
 
@@ -107,12 +113,12 @@ and facility before physical work.
 
 | Document | Purpose |
 | --- | --- |
-| [Roadmap](ROADMAP.md) | Finish line, completed step and remaining gates |
+| [Roadmap](ROADMAP.md) | Finish line, completed work and remaining prerequisites |
 | [Current results](Analysis/current-results.md) | Current response result and prior study results |
 | [Reading guide](docs/START_HERE.md) | Reproduction and repository navigation |
 | [Data and figures](docs/data-and-figures.md) | Sources, generators and figure scope |
 | [Engineering data](Engineering%20Data/README.md) | Configuration-specific inputs |
-| [Open questions](OPEN_QUESTIONS.md) | Data gaps and unanswered owner decisions |
+| [Open questions](OPEN_QUESTIONS.md) | Data gaps and pending physical choices |
 | [Traceability](docs/TRACEABILITY.md) | Current decision and historical audit links |
 
 ## Contributing and license

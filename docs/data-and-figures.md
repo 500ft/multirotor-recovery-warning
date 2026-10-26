@@ -31,8 +31,9 @@ Inputs remain in the [platform register](../Engineering%20Data/platform_crazyfli
 | [Excerpt audit](../Data/nanobench-baseline/excerpt-audit.json) | Independent arithmetic on the previously exposed development excerpt; preserves the observed mismatch |
 | [Timing qualification](../Data/nanobench-g1/qualification.json) | Pinned source inspection and excerpt reproduction; [command and interpretation](nanobench-g1.md#reproduce) |
 
-The [split](../Data/nanobench-baseline/split.json) remains frozen. Final-test
-predictions are unopened, and G1 remains incomplete. Battery telemetry describes
+The [whole-flight split](../Data/nanobench-baseline/split.json) remains fixed.
+Final-test predictions are unopened, and source timing/configuration gate G1
+remains incomplete. Battery telemetry describes
 the recorded configuration; it contains no current channel from which to
 establish a general electrical-energy model.
 

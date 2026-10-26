@@ -3,7 +3,7 @@
 The [dependency decision](decisions/dependency-roadmap.md) adopts the warning
 question's qualification sequence and mandatory delay-aware physics baseline. The [QDrone2 report](qdrone-response.md)
 links the source/license, registered protocol, executed result and figure.
-Physical [owner decisions](../OPEN_QUESTIONS.md#pending-owner-decisions) remain
+Physical [access and test choices](../OPEN_QUESTIONS.md#pending-owner-decisions) remain
 unanswered. The [roadmap](../ROADMAP.md) is the active plan.
 
 The [history index](history/README.md) preserves the NanoBench replay,
@@ -69,7 +69,9 @@ it supplies no physical validation of recovery or warnings.
 
 ## Bench (V995 demonstrator, retired 2026-10-04)
 
-The platform is now the Bitcraze Crazyflie ([roadmap](../ROADMAP.md)). Rows below are kept as history.
+The earlier simulation-first study used Bitcraze Crazyflie data; physical
+hardware for the warning study remains undecided under M2 ([roadmap](../ROADMAP.md)).
+Rows below describe the retired V995 work.
 
 
 | Decision | Reasoning lives in | Validation | Status |
