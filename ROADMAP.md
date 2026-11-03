@@ -36,6 +36,15 @@ assets do not establish a calibrated or safely contained stand.
 while no access route is chosen; no closure or archive decision has been made.
 New measurements and recovery trials still require the approvals below.
 
+## Requested simulation development
+
+The owner requested a controller and height comparison for the historical
+release-recovery video. The [large-tilt study](docs/large-tilt-recovery.md) adds
+an optional angle-error controller and executes matched controller/height cases.
+This simulation branch preserves the physical pause above and uses the historical
+estimated plant; it supplies no new propulsion calibration or maneuver labels.
+The next physical step remains the M2 access decision.
+
 ## Dependency order
 
 ```mermaid

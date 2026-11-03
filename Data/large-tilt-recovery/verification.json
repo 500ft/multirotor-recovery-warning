@@ -1,0 +1,29 @@
+{
+  "model_sha256": "681820ca93f3ea3ded95bab6d7d8194045a758eaa04a57ca8081296184814ef7",
+  "case_count": 24,
+  "all_outcomes_retained_on_step_halving": true,
+  "angle_controller_ground_limited_cases_pass": true,
+  "legacy_nominal_trace_matches_untouched_head": true,
+  "baseline_commit": "d64ab33284f9e1b4bc1bc2b3513fe21908ed8e58",
+  "focused_controller_tests": {
+    "passed": 5
+  },
+  "instrumentation_tests": {
+    "passed": 7
+  },
+  "presentation_tests": {
+    "passed": 4
+  },
+  "analysis_suite_initial": {
+    "executed": 188,
+    "errors": 2,
+    "reason": "PyYAML and openpyxl absent in initial local environment"
+  },
+  "failed_import_modules_rerun": {
+    "executed": 18,
+    "passed": 18,
+    "dependency_install_scope": "isolated temporary target directory"
+  },
+  "initial_axis_choice_revision": "before-axis-latch-results.json",
+  "scope": "Development deterministic simulations; no physical validation or reserved cases."
+}
