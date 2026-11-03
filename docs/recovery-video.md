@@ -19,6 +19,12 @@ factories, attitude/altitude gains and controller from
 allocator solves the full healthy-quad wrench map. It scales an infeasible
 differential force uniformly and shifts collective to fit the rotor limits.
 Thrust and all three moments therefore come from the same four motor forces.
+The allocator's roll and pitch authority was swept against the mixer bound
+that scenario C of the Monte Carlo clips to; the
+[envelope record](../Data/recovery-video/allocator-envelope.json), written by
+`python -m Analysis.allocator_envelope`, shows it never exceeds that bound and
+equals it on the roll and pitch axes at every collective. The two results share
+one roll/pitch authority model.
 
 Rotor speed follows an exact first-order step between commands. Rotor force is
 proportional to squared normalized speed. Mid-interval motor forces drive rigid

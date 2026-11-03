@@ -86,6 +86,25 @@ class TestRecoveryVideoPhysics(unittest.TestCase):
         self.assertLess(a['t'][-1], cfg['duration_s'])
         self.assertLessEqual(a['pos'][-1, 2], -.01)
 
+    def test_allocator_never_exceeds_scenario_c_mixer_bound(self):
+        # Live coarse sweep: at every collective the allocator's roll/pitch
+        # torque equals the scenario C bound on the axes and never exceeds it;
+        # requests beyond the envelope stay within the bound at the realized
+        # collective. The committed fine sweep must agree.
+        from Analysis import allocator_envelope
+        rows = allocator_envelope.sweep(self.p, self.cfg['arm_m'], 0.1, 15.0)
+        ratios = [r['axis_ratio'] for r in rows if r['axis_ratio'] is not None]
+        self.assertLessEqual(max(ratios), 1 + 1e-9)
+        self.assertGreaterEqual(min(ratios), 1 - 1e-9)
+        self.assertLessEqual(max(r['saturated_axis_excess_n_m'] for r in rows), 1e-9)
+        committed = json.loads((OUT / 'allocator-envelope.json').read_text())
+        for parameter_set in committed['parameter_sets'].values():
+            self.assertLessEqual(parameter_set['zero_yaw']['max_axis_ratio'], 1 + 1e-9)
+            self.assertLessEqual(parameter_set['yaw_at_placeholder']['max_axis_ratio'], 1 + 1e-9)
+            self.assertLessEqual(parameter_set['zero_yaw']['max_saturated_axis_excess_n_m'], 1e-9)
+            for logged in parameter_set['logged_replay'].values():
+                self.assertLessEqual(logged['max_axis_ratio'], 1 + 1e-9)
+
 
 if __name__ == '__main__':
     unittest.main()
