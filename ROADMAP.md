@@ -26,6 +26,12 @@ pack identities and recovery-failure labels are unavailable in that recording.
 corrects the earlier warning positioning and compares access options for M2.
 The added recovery comparison remains untested; access/funding is still pending.
 
+**Done:** the [4TU propeller-damage metadata qualification](docs/4tu-propeller-data-qualification.md)
+pins reuse rights, source files and channel definitions. Its archived flights lack
+independently timed recovery outcomes and pack identities, so they cannot
+support this roadmap's warning comparison. Native timing and configuration
+remain unqualified; no flight arrays were opened.
+
 **Current:** paused before component instrumentation and propulsion qualification.
 The [adopted access decision](docs/decisions/dependency-roadmap.md#physical-access-disposition)
 requires borrowed or bought physical hardware even for a qualification-only
@@ -146,7 +152,9 @@ controller alone cannot establish that recovery is physically impossible.
 
 ## P. Optional public-data checks
 
-Status: selected QDrone2 descriptive check done; other checks conditional.
+Status: QDrone2 descriptive check and 4TU source qualification done; other
+checks conditional. The 4TU archive is ineligible for the recovery-warning
+comparison on its published metadata and outcome definitions.
 
 Prerequisites: permission for reuse, source identity, command/state semantics,
 configuration, timing and an endpoint appropriate to the proposed check.

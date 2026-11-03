@@ -1,0 +1,28 @@
+{
+    "rotor config": {
+        "front left": 4,
+        "front right": 2,
+        "aft right": 1,
+        "aft left": 3
+    },
+    "rotor1 rotation direction": "CW",
+    "rotor radius": "0.0381",
+    "b": "0.0775",
+    "optitrack marker cg offset": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+    },
+    "optitrack ground axes correction": {
+        "x": "0",
+        "y": "0",
+        "z": "0",
+        "order": "XYZ"
+    },
+    "idle RPM": "200",
+    "max RPM": "2100",
+    "moment of inertia": "[0.000465387641529044, 0, 0; 0, 0.000587498895900119, 0; 0, 0, 0.000809195582024122]",
+    "betaflight raw acceleration correction factor": "2048",
+    "flight controller": "BetaFlight",
+    "mass": "0.494"
+}
