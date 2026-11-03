@@ -50,8 +50,9 @@ retain every detected step and the incomplete window.
 Observations collected by Borbolla-Burillo et al.,
 [Experimental Setup and Experimental Results](https://doi.org/10.5281/zenodo.19464105),
 under CC BY 4.0. [Vector figure](Figures/qdrone-development-response.pdf) ·
+[Caption](Figures/qdrone-development-response.caption.md) ·
 [Response table](docs/qdrone-response-table.md) · [CSV](docs/qdrone-response.csv).
-This repository computed the metrics and plot. Repeated steps
+This repository computed the metrics; [MATLAB draws the figure](Analysis/matlab/README.md). Repeated steps
 share one discharge; voltage and elapsed time co-vary. The plot describes
 tracking under the source controller and provides no recovery-failure labels.
 
@@ -80,7 +81,7 @@ python -m pip install -r requirements.txt
 python -m Analysis.qdrone_response --fetch \
   --cache /tmp/multirotor-qdrone-source \
   --output /tmp/multirotor-qdrone-results.json \
-  --figure /tmp/multirotor-qdrone-response.png
+  --figure /tmp/multirotor-qdrone-traces.csv
 python -m unittest Analysis.tests.test_qdrone_response -v
 ```
 

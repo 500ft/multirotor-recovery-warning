@@ -6,56 +6,68 @@
       "id": "qdrone-development-response",
       "evidence_type": "continuous response from public development observations",
       "scope": "QDrone2 original MPC, selected discharge; no recovery labels",
-      "generator": "Analysis/plot_qdrone_response.py",
-      "command": "python -m Analysis.plot_qdrone_response --cache /tmp/multirotor-qdrone-source --figure Figures/qdrone-development-response.png --tables docs",
+      "generator": "Analysis/matlab/make_qdrone_response.m",
+      "command": "python -m Analysis.plot_qdrone_response --cache /tmp/multirotor-qdrone-source --plot-data /tmp/multirotor-qdrone-source/qdrone-traces.csv --tables docs && QDRONE_TRACES=/tmp/multirotor-qdrone-source/qdrone-traces.csv matlab -batch \"addpath('Analysis/matlab'); render_figures\"",
       "inputs": [
         "Data/qdrone-response/sources.json",
         "Data/qdrone-response/protocol.json",
         "Data/qdrone-response/results.json",
-        "Analysis/figure_style.py"
+        "Analysis/plot_qdrone_response.py",
+        "Analysis/matlab/make_qdrone_response.m",
+        "Analysis/matlab/fig_style.m"
       ],
       "outputs": [
         "Figures/qdrone-development-response.png",
         "Figures/qdrone-development-response.pdf",
         "docs/qdrone-response-table.md",
-        "docs/qdrone-response.csv"
+        "docs/qdrone-response.csv",
+        "Figures/qdrone-development-response.caption.md"
       ],
       "data_outputs": [],
       "attribution": "Borbolla-Burillo et al., Experimental Setup and Experimental Results, doi:10.5281/zenodo.19464105, CC BY 4.0; metrics and plot derived here",
-      "notes": "Stored result is read-only. Time traces read the SHA-256-pinned Fig13a workbook in the external cache; no metric recomputation or holdout access."
+      "notes": "Stored result is read-only. Time traces read the SHA-256-pinned Fig13a workbook in the external cache; no metric recomputation or holdout access. Python writes the plotted values; MATLAB R2025b draws the PNG and PDF (Analysis/matlab/README.md)."
     },
     {
       "id": "release-recovery-simulation",
       "evidence_type": "deterministic 6-DoF simulation",
-      "generator": "Analysis/run_release_recovery.py",
-      "command": "python -m Analysis.run_release_recovery",
+      "generator": "Analysis/matlab/make_release_timeseries.m, Analysis/matlab/make_release_envelope.m",
+      "command": "python -m Analysis.run_release_recovery && matlab -batch \"addpath('Analysis/matlab'); render_figures\"",
       "inputs": [
         "Analysis/sim_release_recovery.py",
         "Analysis/run_release_recovery.py",
-        "Analysis/figure_style.py"
+        "Analysis/matlab/make_release_timeseries.m",
+        "Analysis/matlab/make_release_envelope.m",
+        "Analysis/matlab/fig_style.m"
       ],
       "outputs": [
         "Figures/release_recovery_timeseries.png",
         "Figures/release_recovery_timeseries.pdf",
         "Figures/release_recovery_envelope.png",
-        "Figures/release_recovery_envelope.pdf"
+        "Figures/release_recovery_envelope.pdf",
+        "Figures/release_recovery_timeseries.caption.md",
+        "Figures/release_recovery_envelope.caption.md"
       ],
       "data_outputs": [
-        "Data/release_recovery_results.json"
+        "Data/release_recovery_results.json",
+        "Data/figure-data/release_recovery_timeseries.csv",
+        "Data/figure-data/release_recovery_envelope.csv",
+        "Data/figure-data/release_recovery_figure.json"
       ],
-      "notes": "Uses encoded parameter tiers and placeholder or catalog-derived values; it is not based on assembled-hardware measurements.",
+      "notes": "Uses encoded parameter tiers and placeholder or catalog-derived values; it is not based on assembled-hardware measurements. Python writes the plotted values; MATLAB R2025b draws the PNG and PDF (Analysis/matlab/README.md).",
       "scope": "Historical designed aircraft"
     },
     {
       "id": "survivable-set-figures",
       "evidence_type": "Monte Carlo simulation",
-      "generator": "Analysis/run_survivable_set.py",
-      "command": "python -m Analysis.run_survivable_set --figures-only",
+      "generator": "Analysis/matlab/make_survivable_psafe.m, Analysis/matlab/make_survivable_policy.m",
+      "command": "python -m Analysis.run_survivable_set --figures-only && matlab -batch \"addpath('Analysis/matlab'); render_figures\"",
       "inputs": [
         "Data/survivable_set_results.json",
         "Data/survivable_set_results_a2.json",
         "Analysis/run_survivable_set.py",
-        "Analysis/figure_style.py"
+        "Analysis/matlab/make_survivable_psafe.m",
+        "Analysis/matlab/make_survivable_policy.m",
+        "Analysis/matlab/fig_style.m"
       ],
       "outputs": [
         "Figures/survivable_set_psafe.png",
@@ -65,10 +77,19 @@
         "Figures/survivable_set_psafe.caption.md",
         "Figures/survivable_set_policy.caption.md",
         "Figures/survivable_set_psafe_a2.caption.md",
-        "Figures/survivable_set_policy_a2.caption.md"
+        "Figures/survivable_set_policy_a2.caption.md",
+        "Figures/survivable_set_psafe.pdf",
+        "Figures/survivable_set_policy.pdf",
+        "Figures/survivable_set_psafe_a2.pdf",
+        "Figures/survivable_set_policy_a2.pdf"
       ],
-      "data_outputs": [],
-      "notes": "Redraws the figures from the committed results without running the sweep. The full sweep (python -m Analysis.run_survivable_set) writes the same figures together with the results.",
+      "data_outputs": [
+        "Data/figure-data/survivable_set_psafe.csv",
+        "Data/figure-data/survivable_set_policy.csv",
+        "Data/figure-data/survivable_set_psafe_a2.csv",
+        "Data/figure-data/survivable_set_policy_a2.csv"
+      ],
+      "notes": "The --figures-only step writes the plot tables and captions from the committed results without running the sweep. The full sweep (python -m Analysis.run_survivable_set) writes the same tables together with the results. Python writes the plotted values; MATLAB R2025b draws the PNG and PDF (Analysis/matlab/README.md).",
       "scope": "Historical designed aircraft"
     },
     {
@@ -109,6 +130,51 @@
         "Figures/release-rig-safety.svg"
       ],
       "scope": "Historical designed aircraft"
+    },
+    {
+      "id": "nanobench-baseline",
+      "evidence_type": "open-loop replay error on public development observations",
+      "scope": "Crazyflie NanoBench development flights",
+      "generator": "Analysis/matlab/make_nanobench_baseline.m",
+      "command": "python -m Analysis.plot_nanobench_baseline --results Data/nanobench-baseline/development-errors.csv --output Data/figure-data/nanobench-baseline.csv && matlab -batch \"addpath('Analysis/matlab'); render_figures\"",
+      "inputs": [
+        "Data/nanobench-baseline/development-errors.csv",
+        "Analysis/plot_nanobench_baseline.py",
+        "Analysis/matlab/make_nanobench_baseline.m",
+        "Analysis/matlab/fig_style.m"
+      ],
+      "outputs": [
+        "Figures/nanobench-baseline.png",
+        "Figures/nanobench-baseline.pdf",
+        "Figures/nanobench-baseline.caption.md"
+      ],
+      "data_outputs": [
+        "Data/figure-data/nanobench-baseline.csv"
+      ],
+      "attribution": "NanoBench observations collected by Ullah and Baca, BSD-3-Clause",
+      "notes": "Per-horizon means of the committed development errors; no rescoring."
+    },
+    {
+      "id": "current-results-tables",
+      "evidence_type": "calculation, deterministic and Monte Carlo simulation tables",
+      "scope": "Historical designed aircraft",
+      "generator": "Analysis/matlab/make_results_tables.m",
+      "command": "python -m Analysis.export_results_tables && matlab -batch \"addpath('Analysis/matlab'); render_figures\" && python Analysis/matlab/typeset_tables.py Figures/tables",
+      "inputs": [
+        "Data/figure-data/current-results-tables.json",
+        "Data/release_recovery_results.json",
+        "Data/monte_carlo_results.json",
+        "Analysis/export_results_tables.py"
+      ],
+      "outputs": [
+        "Figures/tables/*.tex",
+        "Figures/tables/*.pdf",
+        "Figures/tables/*.png"
+      ],
+      "data_outputs": [
+        "Data/figure-data/current-results-tables.json"
+      ],
+      "notes": "Typeset views of the tables in Analysis/current-results.md; the Markdown text stays under each image."
     }
   ]
 }

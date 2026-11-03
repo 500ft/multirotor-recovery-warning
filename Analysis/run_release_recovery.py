@@ -1,93 +1,89 @@
 #!/usr/bin/env python3
 """Lane A deliverable runner: produce the release-to-stabilization demonstration.
 
-Generates (1) a time-series figure of a successful recovery (release -> passive tumble/fall ->
+Generates the data for (1) a time-series figure of a successful recovery (release -> passive tumble/fall ->
 controller engages -> arrests tumble -> rights -> hovers) and (2) the recovery envelope across
 the three locked-BOM tiers, plus a results JSON. This is the demonstrable result that converts
 the project from "plan" to "characterized control result".
 
 Run from the repo root:  python -m Analysis.run_release_recovery
-Outputs: Figures/release_recovery_timeseries.{png,pdf}, Figures/release_recovery_envelope.{png,pdf},
-         Data/release_recovery_results.json
+Outputs: Data/release_recovery_results.json, the plotted series in Data/figure-data/
+         (release_recovery_timeseries.csv, release_recovery_envelope.csv,
+         release_recovery_figure.json) and the two captions in Figures/*.caption.md.
+         Analysis/matlab/render_figures.m draws Figures/release_recovery_{timeseries,envelope}.{png,pdf}
+         from those files.
 """
 
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 
 import numpy as np
 
-from Analysis import figure_style as fs
 from Analysis.sim_release_recovery import (best_params, max_recoverable_rate,
                                            nominal_params, simulate, worst_params)
 
 REPO = Path(__file__).resolve().parents[1]
 FIGS = REPO / "Figures"
 DATA = REPO / "Data"
+PLOT_DATA = DATA / "figure-data"
 TIERS = [("best", best_params()), ("nominal", nominal_params()), ("worst", worst_params())]
 INIT_TILT = np.radians(60.0)
 
 
-def timeseries_figure(plt, p, rate, name):
+# Every fourth 0.5 ms solver sample (2 ms spacing) is enough to draw the traces.
+TRACE_STRIDE = 4
+UPRIGHT_DEG = 5.0
+
+
+def timeseries_data(p, rate, name):
+    """Simulate the demo case and write its plotted traces; returns the run."""
     r = simulate(p, rate, INIT_TILT)
     log = r["log"]
+    PLOT_DATA.mkdir(parents=True, exist_ok=True)
+    with (PLOT_DATA / "release_recovery_timeseries.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["t_s", "tilt_deg", "body_rate_rad_s", "height_change_m", "thrust_n"])
+        for k in range(0, len(log["t"]), TRACE_STRIDE):
+            w.writerow([f"{log['t'][k]:.4f}", f"{np.degrees(log['tilt'][k]):.6g}",
+                        f"{log['omega_mag'][k]:.6g}", f"{log['z'][k]:.6g}",
+                        f"{log['thrust'][k]:.6g}"])
     passive = p.detection_latency_s + p.motor_start_latency_s
-    color = fs.TIER[name]
-    with fs.style():
-        fig, ax = plt.subplots(4, 1, figsize=(7.0, 7.4), sharex=True,
-                               gridspec_kw={"left": .12, "right": .97, "top": .835,
-                                            "bottom": .075, "hspace": .55})
-        on = log["t"] >= passive
-        tracks = [(np.degrees(log["tilt"]), "Tilt (deg)", "Tilt falls below the 5° upright threshold"),
-                  (log["omega_mag"], "Body rate (rad/s)",
-                   f"Body rate peaks at {log['omega_mag'][on].max():.1f} rad/s while righting, then settles"),
-                  (log["z"], "Height\nchange (m)", "The descent stops well above the ground"),
-                  (log["thrust"], "Thrust (N)", "Collective thrust saturates, then settles at hover")]
-        for a, (y, label, title) in zip(ax, tracks):
-            a.axvspan(0, passive, color=fs.LIGHT, lw=0)
-            a.plot(log["t"], y, color=color, lw=1.6)
-            a.set_ylabel(label)
-            a.set_title(title)
-            a.margins(x=.01, y=.08)
-        ref = dict(color=fs.GRAY, ls=":", lw=1)
-        ax[0].axhline(5, **ref)
-        ax[0].text(.99, 5, "5° upright", transform=ax[0].get_yaxis_transform(),
-                   ha="right", va="bottom", fontsize=fs.SMALL, color=fs.GRAY)
-        ax[2].axhline(-p.available_height_m, **ref)
-        ax[2].text(.99, -p.available_height_m, f"ground, {p.available_height_m:g} m below release",
-                   transform=ax[2].get_yaxis_transform(), ha="right", va="bottom",
-                   fontsize=fs.SMALL, color=fs.GRAY)
-        ax[3].axhline(p.max_thrust_n, **ref)
-        ax[3].text(.99, p.max_thrust_n, f"maximum {p.max_thrust_n:g} N",
-                   transform=ax[3].get_yaxis_transform(), ha="right", va="bottom",
-                   fontsize=fs.SMALL, color=fs.GRAY)
-        ax[2].text(passive + .05, -1.5, "motors off\n(detect + spool)",
-                   va="center", fontsize=fs.SMALL, color=fs.GRAY)
-        if r["recovery_time_s"]:
-            for a in ax:
-                a.axvline(r["recovery_time_s"], color=color, ls="--", lw=.9)
-            ax[1].text(r["recovery_time_s"] + .05, .9,
-                       f"stabilized at {r['recovery_time_s']:.2f} s",
-                       transform=ax[1].get_xaxis_transform(), va="top",
-                       fontsize=fs.SMALL, color=color)
-        ax[-1].set_xlabel("Time after release (s)")
-        for a, letter in zip(ax, "abcd"):
-            fs.panel_letter(fig, a, letter, dx=-.11, dy=.012)
-        rt = (f"stabilizes in {r['recovery_time_s']:.2f} s" if r["recovery_time_s"]
-              else "does not stabilize")
-        fig.text(.02, .975, f"The {name} tier {rt} after a {np.degrees(INIT_TILT):.0f}° tilt and "
-                 f"{rate:g} rad/s tumble, losing {r['max_descent_m']:.2f} m of "
-                 f"{p.available_height_m:g} m", va="top")
-        fig.text(.02, .94, "Deterministic 6-DoF simulation of the historical designed aircraft "
-                 "with estimated\nparameters, not measured hardware. Shaded: all motors off for "
-                 "detection and spool latency.", va="top", fontsize=fs.SMALL, color=fs.GRAY)
-        fs.save(fig, FIGS / "release_recovery_timeseries.png", ("png", "pdf"))
-    plt.close(fig)
-    return r
+    on = log["t"] >= passive
+    meta = {"tier": name, "initial_rate_rad_s": rate,
+            "initial_tilt_deg": float(np.degrees(INIT_TILT)),
+            "motors_off_s": passive, "recovery_time_s": r["recovery_time_s"],
+            "altitude_lost_m": r["max_descent_m"],
+            "peak_body_rate_after_motor_start_rad_s": float(log["omega_mag"][on].max()),
+            "upright_deg": UPRIGHT_DEG, "available_height_m": p.available_height_m,
+            "max_thrust_n": p.max_thrust_n, "sample_stride": TRACE_STRIDE,
+            "solver_dt_s": float(log["t"][1] - log["t"][0])}
+    return r, meta
 
 
-def envelope_figure(plt):
+def timeseries_caption(meta) -> str:
+    rt = (f"stabilizes in {meta['recovery_time_s']:.2f} s" if meta["recovery_time_s"]
+          else "does not stabilize")
+    return (
+        f"The {meta['tier']} tier {rt} after a {meta['initial_tilt_deg']:.0f}° tilt and "
+        f"{meta['initial_rate_rad_s']:g} rad/s tumble, losing {meta['altitude_lost_m']:.2f} m of "
+        f"{meta['available_height_m']:g} m. Deterministic 6-DoF simulation of the historical "
+        "designed aircraft with estimated parameters; no measured hardware. "
+        f"(a) Tilt [deg] falls below the {meta['upright_deg']:g}° upright line. "
+        f"(b) Body rate [rad/s] peaks at {meta['peak_body_rate_after_motor_start_rad_s']:.1f} rad/s "
+        "while righting, then settles. "
+        f"(c) Height change [m]: the descent stops well above the ground, "
+        f"{meta['available_height_m']:g} m below release. "
+        f"(d) Collective thrust [N] saturates at the {meta['max_thrust_n']:g} N maximum, then "
+        "settles at hover. Grey band: all motors off for detection and spool latency "
+        f"({meta['motors_off_s']:g} s). Dashed line: stabilized time. Values: "
+        "Data/figure-data/release_recovery_timeseries.csv."
+    )
+
+
+def envelope_data():
     rates = np.arange(0.0, 12.01, 0.5)
     summary, scans = {}, {}
     for name, p in TIERS:
@@ -105,105 +101,77 @@ def envelope_figure(plt):
                          "max_torque_n_m": p.max_torque_n_m, "max_thrust_n": p.max_thrust_n,
                          "available_height_m": p.available_height_m}
         scans[name] = (np.array(descent), np.array(ok_rate))
-    _draw_envelope(plt, rates, scans, summary)
-    return summary
+    return summary, rates, scans
 
 
-def _draw_envelope(plt, rates, scans, summary):
-    """Plot the scan already computed above; no simulation happens here."""
-    names = [n for n, _ in TIERS]
-    budget = TIERS[1][1].available_height_m
-    gyro = TIERS[0][1].gyro_limit_rad_s
-    first_fail = {n: rates[~scans[n][1]].min() if (~scans[n][1]).any() else None for n in names}
-    with fs.style():
-        fig = plt.figure(figsize=(7.0, 4.9))
-        grid = fig.add_gridspec(2, 2, width_ratios=[1.75, 1], height_ratios=[.42, 1],
-                                left=.13, right=.97, top=.76, bottom=.14,
-                                hspace=.3, wspace=.38)
-        strip = fig.add_subplot(grid[0, 0])
-        lost = fig.add_subplot(grid[1, 0], sharex=strip)
-        edge_ax = fig.add_subplot(grid[:, 1])
-        for i, name in enumerate(names):
+def write_envelope_data(rates, scans, summary):
+    """Write the scan already computed above; no simulation happens here."""
+    PLOT_DATA.mkdir(parents=True, exist_ok=True)
+    with (PLOT_DATA / "release_recovery_envelope.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["tier", "initial_rate_rad_s", "recovered", "altitude_lost_m"])
+        for name, _ in TIERS:
             descent, ok = scans[name]
-            c = fs.TIER[name]
-            lost.plot(rates, descent, "o-", ms=3.5, lw=1.5, color=c)
-            strip.plot(rates[~ok], np.full((~ok).sum(), i), "x", ms=4.5, mew=1.3, color=c)
-            # Direct label at the last recovered rate before the first failure,
-            # or mid-scan for a tier that never fails.
-            fails = (~ok).any()
-            j = np.flatnonzero(~ok)[0] - 1 if fails else len(rates) * 2 // 3
-            lost.annotate(name, (rates[j], descent[j]), xytext=(4, 2) if fails else (-6, 6),
-                          textcoords="offset points", ha="left" if fails else "right",
-                          va="bottom", fontsize=fs.SMALL, color=c)
-        strip.set_yticks(range(len(names)), names)
-        strip.set_ylim(len(names) - .4, -.6)
-        strip.tick_params(labelbottom=False, length=0)
-        strip.spines[["left", "bottom"]].set_visible(False)
-        strip.set_title("Tumble rates with no recovery (x)")
-        strip.grid(axis="x")
-        lost.axhline(budget, color=fs.GRAY, ls=":", lw=1)
-        lost.text(4.25, budget, f"{budget:g} m height budget", ha="left", va="bottom",
-                  fontsize=fs.SMALL, color=fs.GRAY)
-        lost.set_ylim(0, budget * 1.12)
-        lost.set_xlim(rates[0] - .4, rates[-1] + .4)
-        lost.set_xlabel("Initial tumble rate (rad/s)")
-        lost.set_ylabel("Altitude lost when\nrecovered (m)")
-        within = all(np.nanmax(scans[n][0]) < budget for n in names)
-        lost.set_title(f"Every recovery stays within the {budget:g} m budget" if within
-                       else "Altitude lost on recovered releases")
-        for i, name in enumerate(names):
-            s = summary[name]
-            c = fs.TIER[name]
-            gyro_edge = s["envelope_edge"] == "gyro_limit"
-            rate = s["max_recoverable_rate_rad_s"]
-            edge_ax.plot(rate, i, "o", ms=7, mew=1.5, color=c, mfc="white" if gyro_edge else c)
-            note = ("no failure up to\nthe gyro range" if gyro_edge
-                    else f"fails at {rate + rates[1] - rates[0]:g} rad/s")
-            edge_ax.annotate(f"{rate:g} rad/s\n{note}", (rate, i),
-                             xytext=(-8, 0) if gyro_edge else (0, -8), textcoords="offset points",
-                             ha="right" if gyro_edge else "center",
-                             va="center" if gyro_edge else "top", fontsize=fs.SMALL, color=c)
-        edge_ax.axvline(gyro, color=fs.GRAY, ls=":", lw=1)
-        edge_ax.text(gyro / 1.18, len(names) - .2, f"gyro range\n{np.degrees(gyro):.0f}°/s",
-                     ha="right", va="center", fontsize=fs.SMALL, color=fs.GRAY)
-        edge_ax.set_xscale("log")
-        edge_ax.set_xlim(.3, 70)
-        edge_ax.set_xticks([1, 3, 10, 30], ["1", "3", "10", "30"])
-        edge_ax.minorticks_off()
-        edge_ax.set_yticks(range(len(names)), names)
-        edge_ax.set_ylim(len(names) + .1, -.6)
-        edge_ax.tick_params(axis="y", length=0)
-        edge_ax.spines["left"].set_visible(False)
-        edge_ax.grid(axis="y")
-        edge_ax.set_xlabel("Highest rate recovered\nbefore first failure (rad/s)")
-        only = [n for n in names if summary[n]["envelope_edge"] == "gyro_limit"]
-        edge_ax.set_title(f"Only the {only[0]} tier reaches\nthe gyro range" if len(only) == 1
-                          else "Envelope edge per tier")
-        fs.panel_letter(fig, strip, "a", dx=-.08)
-        fs.panel_letter(fig, edge_ax, "b", dx=-.07)
-        failing = sorted((first_fail[n], n) for n in names if first_fail[n] is not None)
-        never = [n for n in names if first_fail[n] is None]
-        headline = "; ".join(f"{n.capitalize() if k == 0 else n} tier first fails at {r:g} rad/s"
-                             if k == 0 else f"{n} at {r:g}" for k, (r, n) in enumerate(failing))
-        if never:
-            headline += f"; {' and '.join(never)} never fails in the scan"
-        fig.text(.02, .975, headline, va="top")
-        fig.text(.02, .925, f"Deterministic 6-DoF simulation with estimated parameter tiers; "
-                 f"{np.degrees(INIT_TILT):.0f}° initial tilt,\n{budget:g} m height budget, "
-                 f"{rates[1] - rates[0]:g} rad/s scan steps.", va="top",
-                 fontsize=fs.SMALL, color=fs.GRAY)
-        fs.save(fig, FIGS / "release_recovery_envelope.png", ("png", "pdf"))
-    plt.close(fig)
+            for rt, d, good in zip(rates, descent, ok):
+                w.writerow([name, f"{rt:g}", int(bool(good)), f"{d:.6g}" if good else ""])
+    return {"rates_step_rad_s": float(rates[1] - rates[0]),
+            "gyro_limit_rad_s": TIERS[0][1].gyro_limit_rad_s,
+            "available_height_m": TIERS[1][1].available_height_m,
+            "initial_tilt_deg": float(np.degrees(INIT_TILT)),
+            "tiers": [n for n, _ in TIERS]}
+
+
+def read_envelope_csv(path=PLOT_DATA / "release_recovery_envelope.csv"):
+    with Path(path).open() as fh:
+        return list(csv.DictReader(fh))
+
+
+def envelope_caption(rows, meta, summary) -> str:
+    """Words for the envelope figure, from the plotted scan and the results JSON."""
+    names = meta["tiers"]
+    first_fail = {}
+    for n in names:
+        failed = [float(r["initial_rate_rad_s"]) for r in rows
+                  if r["tier"] == n and r["recovered"] == "0"]
+        first_fail[n] = min(failed) if failed else None
+    failing = sorted((first_fail[n], n) for n in names if first_fail[n] is not None)
+    never = [n for n in names if first_fail[n] is None]
+    head = "; ".join(f"{n.capitalize() if k == 0 else n} tier first fails at {r:g} rad/s"
+                     if k == 0 else f"{n} at {r:g}" for k, (r, n) in enumerate(failing))
+    if never:
+        head += f"; {' and '.join(never)} never fails in the scan"
+    budget = meta["available_height_m"]
+    lost = [float(r["altitude_lost_m"]) for r in rows if r["recovered"] == "1"]
+    within = max(lost) < budget
+    gyro = [n for n in names if summary[n]["envelope_edge"] == "gyro_limit"]
+    return (
+        f"{head}. Deterministic 6-DoF simulation with estimated parameter tiers; "
+        f"{meta['initial_tilt_deg']:.0f}° initial tilt, {budget:g} m height budget, "
+        f"{meta['rates_step_rad_s']:g} rad/s scan steps. (a) Top strip: tumble rates with no "
+        "recovery (crosses). Lower panel: altitude lost [m] on recovered releases against "
+        "initial tumble rate [rad/s]; "
+        + (f"every recovery stays within the {budget:g} m budget (dotted line). " if within
+           else f"dotted line: {budget:g} m budget. ")
+        + "(b) Highest rate recovered before the first failure [rad/s], log scale. A filled "
+        "marker is a dynamic failure edge; a hollow marker means no failure up to the gyro "
+        f"range ({np.degrees(meta['gyro_limit_rad_s']):.0f}°/s, dotted line)"
+        + (f", which only the {gyro[0]} tier reaches" if len(gyro) == 1 else "")
+        + ". Values: Data/figure-data/release_recovery_envelope.csv and "
+        "Data/release_recovery_results.json."
+    )
 
 
 def main():
     FIGS.mkdir(exist_ok=True); DATA.mkdir(exist_ok=True)
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
-    demo = timeseries_figure(plt, nominal_params(), rate=2.0, name="nominal")
-    envelope = envelope_figure(plt)
+    demo, ts_meta = timeseries_data(nominal_params(), rate=2.0, name="nominal")
+    envelope, rates, scans = envelope_data()
+    env_meta = write_envelope_data(rates, scans, envelope)
+    with (PLOT_DATA / "release_recovery_figure.json").open("w") as fh:
+        json.dump({"timeseries": ts_meta, "envelope": env_meta}, fh, indent=2)
+        fh.write("\n")
+    (FIGS / "release_recovery_timeseries.caption.md").write_text(timeseries_caption(ts_meta) + "\n")
+    (FIGS / "release_recovery_envelope.caption.md").write_text(
+        envelope_caption(read_envelope_csv(), env_meta, envelope) + "\n")
 
     results = {
         "scenario": {"initial_tilt_deg": 60.0, "available_height_m": 3.0,
@@ -223,7 +191,8 @@ def main():
     for name, s in envelope.items():
         print(f"  {name:8s} max recoverable tumble: {s['max_recoverable_rate_rad_s']:.1f} rad/s "
               f"({s['max_recoverable_rate_deg_s']:.0f} deg/s)")
-    print(f"figures -> {FIGS}/  results -> {DATA}/release_recovery_results.json")
+    print(f"plot data -> {PLOT_DATA}/  results -> {DATA}/release_recovery_results.json; "
+          "draw the figures with Analysis/matlab/render_figures.m")
 
 
 if __name__ == "__main__":

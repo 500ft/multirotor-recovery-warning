@@ -1,20 +1,19 @@
-"""The NanoBench replay figure shows only stored values, and its words live in the caption."""
+"""The NanoBench plot table carries only stored values, and its words live in the caption.
+
+MATLAB draws the figure from Data/figure-data/nanobench-baseline.csv
+(Analysis/matlab/render_figures.m); these tests pin that table to the error CSV.
+"""
 import csv
 import math
 import unittest
 from collections import defaultdict
 from pathlib import Path
 
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.text import Text  # noqa: E402
-
-from Analysis import figure_style as fs  # noqa: E402
-from Analysis import plot_nanobench_baseline as plot  # noqa: E402
+from Analysis import plot_nanobench_baseline as plot
 
 ROOT = Path(__file__).resolve().parents[2]
 CSV = ROOT / 'Data/nanobench-baseline/development-errors.csv'
+TABLE = ROOT / 'Data/figure-data/nanobench-baseline.csv'
 CAPTION = ROOT / 'Figures/nanobench-baseline.caption.md'
 
 
@@ -35,34 +34,22 @@ class NanoBenchFigure(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.rows = plot.read_rows(CSV)
-        cls.fig = plot.figure(cls.rows)
+        cls.table = plot.plot_table(cls.rows)
 
-    @classmethod
-    def tearDownClass(cls):
-        plt.close(cls.fig)
-
-    def test_lines_carry_stored_means(self):
+    def test_points_carry_stored_means(self):
         want = expected()
         panels = [(m, n) for m, _, _ in plot.METRICS for n in plot.MODELS]
-        self.assertEqual(len(self.fig.axes), len(panels))
-        for ax, (metric, model) in zip(self.fig.axes, panels):
-            persistence, curve = ax.lines
-            self.assertEqual(curve.get_marker(), plot.MODELS[model]['marker'])
-            self.assertEqual(persistence.get_marker(), plot.PERSISTENCE['marker'])
-            for line, name in ((curve, model), (persistence, 'persistence')):
-                for got, ref in zip(line.get_ydata(), want[metric, name], strict=True):
-                    self.assertAlmostEqual(got, ref, places=12)
+        for k, (metric, model) in enumerate(panels):
+            letter = plot.LETTERS[k]
+            for name in (model, 'persistence'):
+                got = [float(r['mean_error']) for r in self.table
+                       if r['panel'] == letter and r['model'] == name]
+                for g, ref in zip(got, want[metric, name], strict=True):
+                    self.assertAlmostEqual(g, ref, places=12)
 
-    def test_canvas_holds_only_axes_text_letters_and_legend(self):
-        printed = {t.get_text() for t in self.fig.findobj(Text) if t.get_visible() and t.get_text().strip()}
-        allowed = {f'({c})' for c in plot.LETTERS} | {label for _, label, _ in plot.METRICS}
-        allowed |= {'Open-loop horizon [s]'}
-        allowed |= {t.get_text() for leg in self.fig.legends for t in leg.get_texts()}
-        allowed |= {t.get_text() for ax in self.fig.axes for t in ax.get_xticklabels() + ax.get_yticklabels()}
-        self.assertLessEqual(printed, allowed, printed - allowed)
-
-    def test_nothing_printed_touches_anything(self):
-        self.assertEqual(fs.audit(self.fig), [])
+    def test_committed_table_matches(self):
+        with TABLE.open() as f:
+            self.assertEqual(list(csv.DictReader(f)), self.table)
 
     def test_caption_matches_file_and_report(self):
         text = plot.caption(self.rows)
@@ -70,6 +57,10 @@ class NanoBenchFigure(unittest.TestCase):
         squash = lambda s: ' '.join(s.split())  # noqa: E731
         self.assertIn(squash(text), squash((ROOT / 'docs/nanobench-baseline.md').read_text()))
         self.assertIn('nanobench-baseline.caption.md', (ROOT / 'docs/data-and-figures.md').read_text())
+
+    def test_rendered_figure_is_committed(self):
+        for ext in ('png', 'pdf'):
+            self.assertTrue((ROOT / f'Figures/nanobench-baseline.{ext}').is_file())
 
 
 if __name__ == '__main__':

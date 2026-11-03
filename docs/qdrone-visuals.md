@@ -1,7 +1,8 @@
 # QDrone2 visual inventory and reproduction
 
-The active scientific figure is the QDrone2 development response. The
-[renderer](../Analysis/plot_qdrone_response.py) reads the existing
+The active scientific figure is the QDrone2 development response.
+[plot_qdrone_response.py](../Analysis/plot_qdrone_response.py) and the MATLAB
+[renderer](../Analysis/matlab/make_qdrone_response.m) read the existing
 [result](../Data/qdrone-response/results.json) and pinned source workbook;
 [reproduction commands](qdrone-response.md#reproduce) separate rendering from
 calculation. The numerical result remains the single source for response metrics.
@@ -54,3 +55,12 @@ The figure is inspected at GitHub reading width for labels, overlap, clipping,
 line/marker distinction and axis interpretation. The previous figure remains
 available at the [pre-redesign revision](https://github.com/500ft/multirotor-recovery-dynamics/blob/d20c5295d133d9bf26abb6aee52e510ca630d8f7/Figures/qdrone-development-response.png).
 No NanoBench final files or additional recordings are opened for this work.
+
+## MATLAB redraw
+
+MATLAB R2025b now draws the figure in the repository's LaTeX style. Observed
+altitude, voltage and up steps are MATLAB blue; down steps are orange; the
+reference is grey and dashed. Panel titles moved to the
+[caption file](../Figures/qdrone-development-response.caption.md). The plotted
+values are unchanged: traces from the pinned workbook, RMSE points from the
+stored events.

@@ -12,6 +12,9 @@ the source qualification; [data and figures](../docs/data-and-figures.md) maps
 these outputs to their generators and limits. Full downloaded flights remain
 outside git, apart from the attributed development test excerpt.
 
+[figure-data/](figure-data/README.md) holds the plotted values that MATLAB draws
+the committed figures and tables from. Python writes them from the results above.
+
 Other existing result files and the physical-test layout below belong to the
 historical aircraft. The warning study follows the [roadmap](../ROADMAP.md);
 the old tasks and thresholds do not transfer to it.

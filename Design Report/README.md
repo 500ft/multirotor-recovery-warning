@@ -153,18 +153,18 @@ Fixed requirements are stored in [requirements.csv](../Engineering%20Data/requir
 
 Core sizing equations are maintained in [calculations.md](calculations.md). The main equations are:
 
-- weight: `W = m g`
-- total thrust-to-weight: `T/W = T_total / W`
-- required thrust per motor: `T_motor = T_total / 4`
-- hover thrust per motor: `T_hover_motor = m / 4`
-- electrical power: `P = V I`
-- estimated flight time: `t_min = 60 * C_usable / I_avg`
-- prop guard inner diameter: `D_inner = D_prop + 2 c`
-- prop guard outer diameter: `D_outer = D_inner + 2 t_wall`
-- frozen maximum mass: `roundup_to_5g(Sigma worst + 5 g)`
-- nominal mass margin: `frozen maximum - Sigma nominal`
-- guard elastic deflection: `delta = sqrt(2 E_impact / k)`
-- guard equivalent force: `F_eq = sqrt(2 E_impact k)`
+- weight: $W = m g$
+- total thrust-to-weight: $T/W = T_{\text{total}}/W$
+- required thrust per motor: $T_{\text{motor}} = T_{\text{total}}/4$
+- hover thrust per motor: $T_{\text{hover, motor}} = m/4$
+- electrical power: $P = V I$
+- estimated flight time: $t_{\min} = 60\, C_{\text{usable}}/I_{\text{avg}}$
+- prop guard inner diameter: $D_{\text{inner}} = D_{\text{prop}} + 2c$
+- prop guard outer diameter: $D_{\text{outer}} = D_{\text{inner}} + 2t_{\text{wall}}$
+- frozen maximum mass: $\operatorname{roundup}_{5\,\text{g}}(\Sigma_{\text{worst}} + 5\ \text{g})$
+- nominal mass margin: $m_{\text{frozen}} - \Sigma_{\text{nominal}}$
+- guard elastic deflection: $\delta = \sqrt{2 E_{\text{impact}}/k}$
+- guard equivalent force: $F_{\text{eq}} = \sqrt{2 E_{\text{impact}} k}$
 
 ### Parametric Analysis
 

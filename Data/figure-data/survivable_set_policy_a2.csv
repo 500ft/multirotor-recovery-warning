@@ -1,0 +1,97 @@
+row,column,class,class_name,cell,release_height_m,vertical_speed_m_s,tumble_rate_rad_s,delay_s,best_action,marker,kind,best_p_safe_95_lower,label,primary
+1,1,one_out,One rotor out,h1.5_vz0_w2_d0.11,1.5,0.0,2.0,0.11,realloc_only,o,overlap,0.22105944984601372,0.22,0
+2,1,one_out,One rotor out,h1.5_vz0_w2_d0.3,1.5,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+3,1,one_out,One rotor out,h1.5_vz0_w6_d0.11,1.5,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+4,1,one_out,One rotor out,h1.5_vz0_w6_d0.3,1.5,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+5,1,one_out,One rotor out,h1.5_vz-1.5_w2_d0.11,1.5,-1.5,2.0,0.11,realloc_only,o,overlap,0.011975800965209185,0.01,0
+6,1,one_out,One rotor out,h1.5_vz-1.5_w2_d0.3,1.5,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,1
+7,1,one_out,One rotor out,h1.5_vz-1.5_w6_d0.11,1.5,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+8,1,one_out,One rotor out,h1.5_vz-1.5_w6_d0.3,1.5,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+9,1,one_out,One rotor out,h3_vz0_w2_d0.11,3.0,0.0,2.0,0.11,realloc_only,o,overlap,0.1933084211205933,0.19,0
+10,1,one_out,One rotor out,h3_vz0_w2_d0.3,3.0,0.0,2.0,0.3,realloc_only,o,overlap,0.11498689556973896,0.11,0
+11,1,one_out,One rotor out,h3_vz0_w6_d0.11,3.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,1
+12,1,one_out,One rotor out,h3_vz0_w6_d0.3,3.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+13,1,one_out,One rotor out,h3_vz-1.5_w2_d0.11,3.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.16632595561321192,0.17,0
+14,1,one_out,One rotor out,h3_vz-1.5_w2_d0.3,3.0,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+15,1,one_out,One rotor out,h3_vz-1.5_w6_d0.11,3.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+16,1,one_out,One rotor out,h3_vz-1.5_w6_d0.3,3.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+17,1,one_out,One rotor out,h6_vz0_w2_d0.11,6.0,0.0,2.0,0.11,realloc_only,o,overlap,0.33889266160951514,0.34,0
+18,1,one_out,One rotor out,h6_vz0_w2_d0.3,6.0,0.0,2.0,0.3,realloc_only,o,overlap,0.2786695738416112,0.28,0
+19,1,one_out,One rotor out,h6_vz0_w6_d0.11,6.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+20,1,one_out,One rotor out,h6_vz0_w6_d0.3,6.0,0.0,6.0,0.3,realloc_only,o,overlap,0.0017083156444657305,$<$0.01,0
+21,1,one_out,One rotor out,h6_vz-1.5_w2_d0.11,6.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.33889266160951514,0.34,0
+22,1,one_out,One rotor out,h6_vz-1.5_w2_d0.3,6.0,-1.5,2.0,0.3,realloc_only,o,overlap,0.3699475551161938,0.37,0
+23,1,one_out,One rotor out,h6_vz-1.5_w6_d0.11,6.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+24,1,one_out,One rotor out,h6_vz-1.5_w6_d0.3,6.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+1,2,partial_authority,Partial authority (60%),h1.5_vz0_w2_d0.11,1.5,0.0,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+2,2,partial_authority,Partial authority (60%),h1.5_vz0_w2_d0.3,1.5,0.0,2.0,0.3,realloc_only,o,overlap,0.14018509946776792,0.14,0
+3,2,partial_authority,Partial authority (60%),h1.5_vz0_w6_d0.11,1.5,0.0,6.0,0.11,realloc_only,o,overlap,0.4016289473646547,0.40,0
+4,2,partial_authority,Partial authority (60%),h1.5_vz0_w6_d0.3,1.5,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+5,2,partial_authority,Partial authority (60%),h1.5_vz-1.5_w2_d0.11,1.5,-1.5,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+6,2,partial_authority,Partial authority (60%),h1.5_vz-1.5_w2_d0.3,1.5,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+7,2,partial_authority,Partial authority (60%),h1.5_vz-1.5_w6_d0.11,1.5,-1.5,6.0,0.11,realloc_only,o,overlap,0.04685482691460088,0.05,0
+8,2,partial_authority,Partial authority (60%),h1.5_vz-1.5_w6_d0.3,1.5,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+9,2,partial_authority,Partial authority (60%),h3_vz0_w2_d0.11,3.0,0.0,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+10,2,partial_authority,Partial authority (60%),h3_vz0_w2_d0.3,3.0,0.0,2.0,0.3,realloc_only,o,overlap,0.9049661471446958,0.90,0
+11,2,partial_authority,Partial authority (60%),h3_vz0_w6_d0.11,3.0,0.0,6.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+12,2,partial_authority,Partial authority (60%),h3_vz0_w6_d0.3,3.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+13,2,partial_authority,Partial authority (60%),h3_vz-1.5_w2_d0.11,3.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+14,2,partial_authority,Partial authority (60%),h3_vz-1.5_w2_d0.3,3.0,-1.5,2.0,0.3,realloc_only,o,overlap,0.3084640271933943,0.31,0
+15,2,partial_authority,Partial authority (60%),h3_vz-1.5_w6_d0.11,3.0,-1.5,6.0,0.11,realloc_only,o,overlap,0.6060525774776371,0.61,0
+16,2,partial_authority,Partial authority (60%),h3_vz-1.5_w6_d0.3,3.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+17,2,partial_authority,Partial authority (60%),h6_vz0_w2_d0.11,6.0,0.0,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+18,2,partial_authority,Partial authority (60%),h6_vz0_w2_d0.3,6.0,0.0,2.0,0.3,realloc_only,o,overlap,0.9049661471446958,0.90,0
+19,2,partial_authority,Partial authority (60%),h6_vz0_w6_d0.11,6.0,0.0,6.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+20,2,partial_authority,Partial authority (60%),h6_vz0_w6_d0.3,6.0,0.0,6.0,0.3,realloc_only,o,overlap,0.0017083156444657305,$<$0.01,0
+21,2,partial_authority,Partial authority (60%),h6_vz-1.5_w2_d0.11,6.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+22,2,partial_authority,Partial authority (60%),h6_vz-1.5_w2_d0.3,6.0,-1.5,2.0,0.3,realloc_only,o,overlap,0.9049661471446958,0.90,0
+23,2,partial_authority,Partial authority (60%),h6_vz-1.5_w6_d0.11,6.0,-1.5,6.0,0.11,realloc_only,o,overlap,0.9049661471446958,0.90,0
+24,2,partial_authority,Partial authority (60%),h6_vz-1.5_w6_d0.3,6.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+1,3,two_adjacent,Two adjacent rotors out,h1.5_vz0_w2_d0.11,1.5,0.0,2.0,0.11,realloc_only,,none,0.0,0.00,0
+2,3,two_adjacent,Two adjacent rotors out,h1.5_vz0_w2_d0.3,1.5,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+3,3,two_adjacent,Two adjacent rotors out,h1.5_vz0_w6_d0.11,1.5,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+4,3,two_adjacent,Two adjacent rotors out,h1.5_vz0_w6_d0.3,1.5,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+5,3,two_adjacent,Two adjacent rotors out,h1.5_vz-1.5_w2_d0.11,1.5,-1.5,2.0,0.11,realloc_only,,none,0.0,0.00,0
+6,3,two_adjacent,Two adjacent rotors out,h1.5_vz-1.5_w2_d0.3,1.5,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,1
+7,3,two_adjacent,Two adjacent rotors out,h1.5_vz-1.5_w6_d0.11,1.5,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+8,3,two_adjacent,Two adjacent rotors out,h1.5_vz-1.5_w6_d0.3,1.5,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+9,3,two_adjacent,Two adjacent rotors out,h3_vz0_w2_d0.11,3.0,0.0,2.0,0.11,realloc_only,,none,0.0,0.00,0
+10,3,two_adjacent,Two adjacent rotors out,h3_vz0_w2_d0.3,3.0,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+11,3,two_adjacent,Two adjacent rotors out,h3_vz0_w6_d0.11,3.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,1
+12,3,two_adjacent,Two adjacent rotors out,h3_vz0_w6_d0.3,3.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+13,3,two_adjacent,Two adjacent rotors out,h3_vz-1.5_w2_d0.11,3.0,-1.5,2.0,0.11,realloc_only,,none,0.0,0.00,0
+14,3,two_adjacent,Two adjacent rotors out,h3_vz-1.5_w2_d0.3,3.0,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+15,3,two_adjacent,Two adjacent rotors out,h3_vz-1.5_w6_d0.11,3.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+16,3,two_adjacent,Two adjacent rotors out,h3_vz-1.5_w6_d0.3,3.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+17,3,two_adjacent,Two adjacent rotors out,h6_vz0_w2_d0.11,6.0,0.0,2.0,0.11,realloc_only,,none,0.0,0.00,0
+18,3,two_adjacent,Two adjacent rotors out,h6_vz0_w2_d0.3,6.0,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+19,3,two_adjacent,Two adjacent rotors out,h6_vz0_w6_d0.11,6.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+20,3,two_adjacent,Two adjacent rotors out,h6_vz0_w6_d0.3,6.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+21,3,two_adjacent,Two adjacent rotors out,h6_vz-1.5_w2_d0.11,6.0,-1.5,2.0,0.11,realloc_only,,none,0.0,0.00,0
+22,3,two_adjacent,Two adjacent rotors out,h6_vz-1.5_w2_d0.3,6.0,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+23,3,two_adjacent,Two adjacent rotors out,h6_vz-1.5_w6_d0.11,6.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+24,3,two_adjacent,Two adjacent rotors out,h6_vz-1.5_w6_d0.3,6.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+1,4,two_opposite,Two opposite rotors out,h1.5_vz0_w2_d0.11,1.5,0.0,2.0,0.11,realloc_only,o,overlap,0.0017083156444657305,$<$0.01,0
+2,4,two_opposite,Two opposite rotors out,h1.5_vz0_w2_d0.3,1.5,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+3,4,two_opposite,Two opposite rotors out,h1.5_vz0_w6_d0.11,1.5,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+4,4,two_opposite,Two opposite rotors out,h1.5_vz0_w6_d0.3,1.5,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+5,4,two_opposite,Two opposite rotors out,h1.5_vz-1.5_w2_d0.11,1.5,-1.5,2.0,0.11,mechanism,s,overlap,0.04685482691460088,0.05,0
+6,4,two_opposite,Two opposite rotors out,h1.5_vz-1.5_w2_d0.3,1.5,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+7,4,two_opposite,Two opposite rotors out,h1.5_vz-1.5_w6_d0.11,1.5,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+8,4,two_opposite,Two opposite rotors out,h1.5_vz-1.5_w6_d0.3,1.5,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+9,4,two_opposite,Two opposite rotors out,h3_vz0_w2_d0.11,3.0,0.0,2.0,0.11,realloc_only,o,overlap,0.0680555735803846,0.07,0
+10,4,two_opposite,Two opposite rotors out,h3_vz0_w2_d0.3,3.0,0.0,2.0,0.3,realloc_only,,none,0.0,0.00,0
+11,4,two_opposite,Two opposite rotors out,h3_vz0_w6_d0.11,3.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+12,4,two_opposite,Two opposite rotors out,h3_vz0_w6_d0.3,3.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+13,4,two_opposite,Two opposite rotors out,h3_vz-1.5_w2_d0.11,3.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.011975800965209185,0.01,0
+14,4,two_opposite,Two opposite rotors out,h3_vz-1.5_w2_d0.3,3.0,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+15,4,two_opposite,Two opposite rotors out,h3_vz-1.5_w6_d0.11,3.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+16,4,two_opposite,Two opposite rotors out,h3_vz-1.5_w6_d0.3,3.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
+17,4,two_opposite,Two opposite rotors out,h6_vz0_w2_d0.11,6.0,0.0,2.0,0.11,realloc_only,o,clear,0.3084640271933943,0.31,0
+18,4,two_opposite,Two opposite rotors out,h6_vz0_w2_d0.3,6.0,0.0,2.0,0.3,realloc_only,o,overlap,0.0017083156444657305,$<$0.01,0
+19,4,two_opposite,Two opposite rotors out,h6_vz0_w6_d0.11,6.0,0.0,6.0,0.11,realloc_only,,none,0.0,0.00,0
+20,4,two_opposite,Two opposite rotors out,h6_vz0_w6_d0.3,6.0,0.0,6.0,0.3,realloc_only,,none,0.0,0.00,0
+21,4,two_opposite,Two opposite rotors out,h6_vz-1.5_w2_d0.11,6.0,-1.5,2.0,0.11,realloc_only,o,overlap,0.11498689556973896,0.11,0
+22,4,two_opposite,Two opposite rotors out,h6_vz-1.5_w2_d0.3,6.0,-1.5,2.0,0.3,realloc_only,,none,0.0,0.00,0
+23,4,two_opposite,Two opposite rotors out,h6_vz-1.5_w6_d0.11,6.0,-1.5,6.0,0.11,realloc_only,,none,0.0,0.00,0
+24,4,two_opposite,Two opposite rotors out,h6_vz-1.5_w6_d0.3,6.0,-1.5,6.0,0.3,realloc_only,,none,0.0,0.00,0
