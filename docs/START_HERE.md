@@ -1,7 +1,8 @@
 # Start here: Multirotor Recovery Warning
 
-The [README](../README.md) is the overview and the [roadmap](../ROADMAP.md) is
-the plan. This guide is for reading the work quickly or rerunning it.
+The [README](../README.md) states the research question and current evidence.
+The [roadmap](../ROADMAP.md) lists the remaining prerequisites. This guide points
+to results and reproduction commands.
 
 ## Reading paths
 
@@ -10,10 +11,10 @@ the plan. This guide is for reading the work quickly or rerunning it.
 | Two minutes | [Current work](../README.md#current-work), then the [roadmap](../ROADMAP.md) |
 | Half an hour | The [QDrone2 response report](qdrone-response.md), [open questions](../OPEN_QUESTIONS.md), then [data and figures](data-and-figures.md) |
 | A current result to review | The [response result](../Data/qdrone-response/results.json) and [registered protocol](../Data/qdrone-response/protocol.json) |
-| Prior development replay | The [NanoBench replay](nanobench-baseline.md), [G1 qualification](nanobench-g1.md) and [history index](history/README.md) |
+| Prior development replay | The [NanoBench replay](nanobench-baseline.md), [source timing/configuration check G1](nanobench-g1.md) and [history index](history/README.md) |
 | Historical recovery work | The [survivable-set design](specs/survivable-set/design.md) and historical [review index](REVIEW_READY.md) |
 | Development dependencies | [Roadmap prerequisites and completion evidence](../ROADMAP.md#dependency-order); instrumentation and propulsion qualification precede the physics baseline |
-| Physical platform choice | Still pending in [M2](../OPEN_QUESTIONS.md#pending-owner-decisions); public datasets describe separate vehicles |
+| Physical platform choice | The hardware, site and budget choice (M2) remains [pending](../OPEN_QUESTIONS.md#pending-owner-decisions); public datasets describe separate vehicles |
 | Bench hardware | The [bench wiring and bring-up](bench-acquisition.md); the retired [V995 fixture notes](../cad/v995/README.md) are history |
 
 ## Configurations
@@ -23,10 +24,16 @@ flight controller, 2S battery). It was never built. Its numbers live in
 `Engineering Data/`, `cad/bench/` and the analysis code, with its own gates
 (7.0 V, six motors, 0.020 N·m).
 
-The previous study selected the Bitcraze Crazyflie. Its documented values,
-each with its source, are in `Engineering Data/platform_crazyflie.csv`, and no
-values are copied from the designed vehicle. The stock V995 (2026-09-27 to
-2026-10-04) is retired; its register in `cad/v995/` is kept as history.
+The earlier simulation-first study selected the Bitcraze Crazyflie. Its sourced
+values are in `Engineering Data/platform_crazyflie.csv`; the warning study has
+not selected physical hardware under M2. No values carry over from the designed
+vehicle. The stock V995 demonstrator is retired; its register in `cad/v995/`
+remains as history.
+
+In the linked reports, M2–M4 name pending physical access, maneuver and facility
+choices; G5 is the separate purchase restriction. OQ IDs identify open or
+historical research questions. DR IDs identify recorded study decisions and do
+not authorize physical work.
 
 ## Software checks — Python 3.11
 
@@ -40,7 +47,8 @@ python -m unittest discover -s Instrumentation/tests -v
 ```
 
 [CI](../.github/workflows/ci.yml) runs analysis and instrumentation tests,
-the historical simulation smoke and presentation checks. Crazyflie inputs belong in its [platform register](../Engineering%20Data/platform_crazyflie.csv).
+the historical simulation smoke and presentation checks. Crazyflie inputs belong
+in its [platform register](../Engineering%20Data/platform_crazyflie.csv).
 The designed-vehicle and V995 input checks remain historical regression checks.
 
 ## CAD — pinned environment
@@ -55,7 +63,7 @@ python -m pytest cad/tests -q
 ```
 
 The [CAD workflow](../.github/workflows/cad-geometry.yml) regenerates the
-retained motor-envelope geometry and uploads it for inspection. V995 CAD stays
+historical motor-envelope geometry and uploads it for inspection. V995 CAD stays
 available as a historical asset with its tests; automatic generation of its
 unreleased fixture has been removed. Completing it is outside the roadmap.
 
@@ -76,11 +84,12 @@ alone.
 
 ## Before any powered work
 
-Nothing in this guide authorises powering anything. Go through
+Nothing in this guide authorizes powering anything. Before physical work, review
 [Safety](../Safety/README.md) and the
 [bench checklist](../Instrumentation/propulsion-bench-safety-checklist.md)
-with the person responsible, and start the bench bring-up with the power-off
-continuity check in [bench-acquisition.md](bench-acquisition.md).
+with the responsible person for the actual setup. The proposed
+[bench bring-up](bench-acquisition.md) begins with a power-off continuity check;
+powered operation still requires its own approval.
 
 The September 11 [completion correction](COMPLETION_RECONCILIATION.md)
 explains which early deliverables were preparation rather than finished work.

@@ -1,18 +1,18 @@
 # Bench acquisition — wiring, settings and bring-up (R2, 2026-09-21)
 
-Status: **proposed topology**, to be checked against the delivered board revisions
-before any wire is placed. Sources are the vendor pinout pages cited in the
-2026-09-20 hardware plan (S1–S11); nothing below is a measurement. Firmware and
-host capture now exist ([`Instrumentation/firmware/code.py`](../Instrumentation/firmware/code.py),
-[`Instrumentation/bench_capture.py`](../Instrumentation/bench_capture.py)) and implement
-this wiring, the settings in §3 and the fail-closed run semantics in §4b — they have
-**not** run against real hardware; §4 bring-up is still owner work, one step at a
-time, starting with the power-off continuity check. Analysis scripts that consume a
-completed run are a later slice.
+Status: **proposed topology** for the retired V995 setup. Check it against delivered
+board revisions before wiring. Vendor pinout pages S1–S11, cited in the hardware
+plan, are the sources; this page records no measurements. The
+[firmware](../Instrumentation/firmware/code.py) and
+[host capture](../Instrumentation/bench_capture.py) implement the proposed wiring,
+§3 settings and §4b incomplete-run handling. They have **not** run against real
+hardware. The §4 checks start with power-off continuity; any powered step needs
+a separately approved physical setup. Analysis of a completed run is later work.
 
-Platform: this proposed chain originated with the retired V995 demonstrator.
-It is retained as an acquisition asset; the current propulsion configuration and
-its installed capacity, calibration, timing and containment remain unqualified.
+The proposed chain originated with the retired V995 demonstrator and remains
+available for a future configuration-specific acquisition design. The current
+propulsion configuration, installed capacity, calibration, timing and containment
+have not been established.
 [Roadmap A](../ROADMAP.md#a-qualify-component-instrumentation-and-propulsion) sets
 those prerequisites. Neither this force channel nor the INA260 measures torque;
 RPM and measured component temperature need qualified channels.

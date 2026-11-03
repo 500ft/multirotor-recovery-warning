@@ -7,12 +7,13 @@ based on thrust-to-weight and height to arrest descent, including delays, on
 unseen packs, payloads and guard conditions? Compare voltage, sag-history and
 load baselines at the same false-alarm burden and report useful warning lead time.
 
-Finish with qualified component measurements, a reproducible physics baseline,
-independent outcomes for an approved fixed controller and maneuver, a frozen
-warning comparison and a scoped write-up. If the measurements or outcomes cannot
-support that comparison, report the failed qualification and narrow the claim.
-The [owner decision](docs/decisions/dependency-roadmap.md) adopts these
-dependencies and repository cleanup. It does not authorize their physical execution.
+The finish line is qualified component measurements, a reproducible physics
+baseline, independently observed outcomes for an approved fixed controller and maneuver,
+and a warning comparison whose features and thresholds were fixed before its
+reserved evaluation. The report must show the conditions under which the comparison
+holds. If measurements or outcomes cannot support it, report the failed
+qualification and narrow the claim. The [study decision](docs/decisions/dependency-roadmap.md)
+sets this order; physical execution still requires separate approval.
 
 ## Current step
 
@@ -32,9 +33,10 @@ requires borrowed or bought physical hardware even for a qualification-only
 experiment. Existing ownership, wiring plans, synthetic capture tests and CAD
 assets do not establish a calibrated or safely contained stand.
 
-**Blocked:** M2 has no selected hardware, site or budget. Closure is recommended
-while no access route is chosen; no closure or archive decision has been made.
-New measurements and recovery trials still require the approvals below.
+**Blocked:** the physical access choice (M2) has no selected hardware, site or
+budget. Closure is recommended while no access route is chosen; no closure or
+archive decision has been made. New measurements and recovery trials still
+require the approvals below.
 
 ## Dependency order
 
@@ -58,12 +60,13 @@ qualification steps.
 
 ## A. Qualify component instrumentation and propulsion
 
-Status: paused prerequisite, blocked on the M2 access choice and powered-bench approval.
+Status: physical work paused pending the M2 access choice and powered-bench approval.
 
-Prerequisites: owner identifies the accessible motor, propeller, ESC, battery,
-load cell, acquisition chain and mounting/containment arrangement. Resolve
-[M2 and M4](OPEN_QUESTIONS.md#pending-owner-decisions) for this bench scope;
-retain G5 purchase approval if anything must be bought.
+Prerequisites: identify the accessible motor, propeller, ESC, battery, load cell,
+acquisition chain and mounting/containment arrangement. Resolve the physical
+access and safety-responsibility choices
+([M2 and M4](OPEN_QUESTIONS.md#pending-owner-decisions)) for this bench scope;
+retain separate G5 approval for any purchase.
 
 - A.1 Record configuration, component revisions, ranges and installed load paths.
   Assess stand capacity and resolution with fixture mass, preload and off-axis
@@ -135,7 +138,7 @@ Status: future; depends on B and measured mass/configuration for each comparison
   justified optimistic bound can exclude modeled feasibility; passing a bound
   does not guarantee that a controller recovers. Check limiting cases and an
   independent calculation before using the comparator.
-- C.3 Freeze the baseline's assumptions, domain, input availability and handling
+- C.3 Fix the baseline's assumptions, domain, input availability and handling
   of unresolved cases. Keep the measured configuration separate from each public
   dataset vehicle; do not pool them into a validated plant.
 
@@ -163,8 +166,8 @@ configuration, timing and an endpoint appropriate to the proposed check.
   observables within that dataset's configuration and report exclusions.
 
 Completion evidence for any added check: inspected permission and source record,
-qualified observables/timing/configuration, frozen development designation and
-reproducible result. Public component checks cannot validate unseen recovery
+qualified observables, timing and configuration, a development designation fixed
+before evaluation, and a reproducible result. Public component checks cannot validate unseen recovery
 failure labels.
 
 ## D. Approve platform, controller, maneuver and facility
@@ -214,13 +217,13 @@ Status: future; depends on C and E, with an approved final evaluation scope.
   baselines under identical information availability.
 - F.2 Assign whole packs and payload/guard conditions to development and final
   evaluation before exposure. Learn processing only from development data;
-  freeze the fitted model and thresholds before opening reserved outcomes.
+  fix the fitted model and thresholds before opening reserved outcomes.
 - F.3 Evaluate the reserved split once. Report missed failures, false alarms,
   lead time, uncertainty and every exclusion. A noisy restatement of the physics
   comparator is grounds to simplify the warning or narrow its claim.
 
-Completion evidence: committed preregistration and frozen model, auditable split,
-reproducible comparison and condition-specific errors. No independent recovery
+Completion evidence: committed preregistration, a model fixed before evaluation,
+an auditable split, reproducible comparison and condition-specific errors. No independent recovery
 claim follows from simulations alone.
 
 ## G. Write up and stop
@@ -238,10 +241,12 @@ External publication remains an owner decision.
 
 ## Cost, safety and publication
 
-The owner adopted the [physical access disposition](docs/decisions/dependency-roadmap.md#physical-access-disposition).
+The [physical access decision](docs/decisions/dependency-roadmap.md#physical-access-disposition)
+keeps experimental qualification paused.
 No purchase, powered test, outreach, paid compute or external publication is
-authorized. The next owner action is to choose concrete borrowed or self-funded
-hardware, its configuration, site and budget. M3–M4 and G5 remain open. The
+authorized. The next action is to choose concrete borrowed or self-funded
+hardware, its configuration, site and budget under M2. The maneuver and facility
+choices (M3–M4) and purchase restriction (G5) remain open. The
 [safety material](Safety/README.md) needs configuration-specific review before
 any physical operation.
 

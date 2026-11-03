@@ -39,11 +39,11 @@ into the historical aircraft parameters.
 
 ## Scenario selection
 
-The [search record](../Data/recovery-video/scenario-search.json) retains all
-executed candidates, including ground contact and unsuccessful settling. The
-owner requested a more oscillatory case that still recovers, so the displayed
-pessimistic case was selected after observing those outcomes. It illustrates a
-possible model response and provides no estimate of recovery probability.
+The [search record](../Data/recovery-video/scenario-search.json) includes every
+executed candidate, including ground contact and unsuccessful settling. The
+displayed pessimistic case was chosen after its outcome was observed because it
+shows a more oscillatory recovery. It illustrates a possible model response and
+provides no estimate of recovery probability.
 Settings contain the selected filter and motor-response assumptions. The search
 can be reproduced with `python tools/recovery_video/search.py`.
 
@@ -71,12 +71,13 @@ The removed header/footer text and "Recovered" badge stay absent.
 
 ## Limits
 
-These are estimated-aircraft simulations, with unmeasured inertia, propulsion,
-drag, geometry and response parameters. The motor model has no electrical or
-battery dynamics; the run has no wind, measurement noise or estimator delay
-apart from the retained activation delay and selected angular-rate filter.
-Ground contact uses centre height. This replay is neither a PX4 flight-stack run nor hardware validation. It does not
-advance the component-measurement gates in [ROADMAP.md](../ROADMAP.md).
+These simulations use estimated inertia, propulsion, drag, geometry and response
+parameters for an aircraft that was never built. The motor model omits electrical
+and battery dynamics. The runs omit wind, measurement noise and estimator delay;
+they include the existing activation delay and, in the pessimistic case, the
+selected angular-rate filter. Ground contact uses centre height. The replay does
+not run the PX4 flight stack or validate hardware. Physical component measurement
+and recovery-outcome prerequisites remain in [ROADMAP.md](../ROADMAP.md).
 
 ## Reproduce
 

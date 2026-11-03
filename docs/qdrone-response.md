@@ -40,14 +40,14 @@ no paper-only shutdown claim or result is used.
 
 ## Development designation and method
 
-The earlier project audit had already inspected Fig13a. It was explicitly
-assigned to development in commit
-[de72981](https://github.com/500ft/multirotor-recovery-dynamics/commit/de72981),
-before calculating response metrics. That commit freezes the
-[protocol](../Data/qdrone-response/protocol.json), source identity, metric window
-and command-detection rule. The code was then committed before the full run.
-Other QDrone2 response workbooks and all NanoBench final-test files were left
-unopened. This task has no new confirmation set or fitted predictor.
+The earlier project audit had already inspected Fig13a. Commit
+[de72981](https://github.com/500ft/multirotor-recovery-dynamics/commit/de72981)
+assigned it to development before response metrics were calculated. The same
+commit fixed the [protocol](../Data/qdrone-response/protocol.json), source
+identity, metric window and command-detection rule. The code was committed
+before the full run. Other QDrone2 response workbooks and all NanoBench
+final-test files remain unopened. This result has no new confirmation set or
+fitted predictor.
 
 [Analysis/qdrone_response.py](../Analysis/qdrone_response.py) verifies the pinned
 source hashes and literal workbook header. `Time`, `zd`, `zw` and battery
@@ -88,10 +88,10 @@ window includes the commanded transition and is not a settling-time or physical
 damage criterion. No acceptance threshold has been invented.
 
 This result cannot test warning lead time, false alarms, available maximum
-thrust, cold operation, payload transfer or upset recovery. Independent maneuver
-outcomes, pack identities, adequate synchronized state/command telemetry and
-owner-approved physical scope would change that assessment. The [roadmap](../ROADMAP.md)
-records the remaining gates.
+thrust, cold operation, payload transfer or upset recovery. Such a comparison
+requires independent maneuver outcomes and pack identities, adequate synchronized
+state and command telemetry, and approved physical scope. The [roadmap](../ROADMAP.md)
+records those prerequisites.
 
 [NeuroBEM's source description](https://rpg.ifi.uzh.ch/neuro_bem/Readme.html)
 provides processed motor speed and voltage channels. Its processed time grid
