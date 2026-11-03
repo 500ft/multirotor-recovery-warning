@@ -1,0 +1,73 @@
+panel,class,class_name,action,action_name,release_height_m,tumble_rate_rad_s,p_safe_95_lower,label,n,primary
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,1.5,2.0,0.22105944984601372,0.22,30,0
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,1.5,6.0,0.0,0.00,30,0
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,3.0,2.0,0.22105944984601372,0.22,30,0
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,3.0,6.0,0.0,0.00,300,1
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,6.0,2.0,0.33889266160951514,0.34,30,0
+a,one_out,One rotor out,realloc_only,Thrust reallocation only,6.0,6.0,0.0,0.00,30,0
+b,one_out,One rotor out,mechanism,Guard mechanism,1.5,2.0,0.1933084211205933,0.19,30,0
+b,one_out,One rotor out,mechanism,Guard mechanism,1.5,6.0,0.0,0.00,30,0
+b,one_out,One rotor out,mechanism,Guard mechanism,3.0,2.0,0.16632595561321192,0.17,30,0
+b,one_out,One rotor out,mechanism,Guard mechanism,3.0,6.0,0.0,0.00,300,1
+b,one_out,One rotor out,mechanism,Guard mechanism,6.0,2.0,0.3084640271933943,0.31,30,0
+b,one_out,One rotor out,mechanism,Guard mechanism,6.0,6.0,0.0,0.00,30,0
+c,one_out,One rotor out,parachute,Parachute-like device,1.5,2.0,0.0,0.00,2000,0
+c,one_out,One rotor out,parachute,Parachute-like device,1.5,6.0,0.0,0.00,2000,0
+c,one_out,One rotor out,parachute,Parachute-like device,3.0,2.0,0.0,0.00,2000,0
+c,one_out,One rotor out,parachute,Parachute-like device,3.0,6.0,0.0,0.00,2000,0
+c,one_out,One rotor out,parachute,Parachute-like device,6.0,2.0,0.0,0.00,2000,0
+c,one_out,One rotor out,parachute,Parachute-like device,6.0,6.0,0.0,0.00,2000,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,1.5,2.0,0.9049661471446958,0.90,30,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,1.5,6.0,0.4016289473646547,0.40,30,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,3.0,2.0,0.9049661471446958,0.90,30,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,3.0,6.0,0.9049661471446958,0.90,30,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,6.0,2.0,0.9049661471446958,0.90,30,0
+d,partial_authority,Partial authority (60%),realloc_only,Thrust reallocation only,6.0,6.0,0.9049661471446958,0.90,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,1.5,2.0,0.9049661471446958,0.90,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,1.5,6.0,0.33889266160951514,0.34,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,3.0,2.0,0.9049661471446958,0.90,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,3.0,6.0,0.9049661471446958,0.90,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,6.0,2.0,0.9049661471446958,0.90,30,0
+e,partial_authority,Partial authority (60%),mechanism,Guard mechanism,6.0,6.0,0.9049661471446958,0.90,30,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,1.5,2.0,0.0,0.00,2000,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,1.5,6.0,0.0,0.00,2000,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,3.0,2.0,0.0,0.00,2000,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,3.0,6.0,0.0,0.00,2000,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,6.0,2.0,0.0,0.00,2000,0
+f,partial_authority,Partial authority (60%),parachute,Parachute-like device,6.0,6.0,0.0,0.00,2000,0
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,1.5,2.0,0.0,0.00,30,0
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,1.5,6.0,0.0,0.00,30,0
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,3.0,2.0,0.0,0.00,30,0
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,3.0,6.0,0.0,0.00,300,1
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,6.0,2.0,0.0,0.00,30,0
+g,two_adjacent,Two adjacent rotors out,realloc_only,Thrust reallocation only,6.0,6.0,0.0,0.00,30,0
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,1.5,2.0,0.0,0.00,30,0
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,1.5,6.0,0.0,0.00,30,0
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,3.0,2.0,0.0,0.00,30,0
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,3.0,6.0,0.0,0.00,300,1
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,6.0,2.0,0.0,0.00,30,0
+h,two_adjacent,Two adjacent rotors out,mechanism,Guard mechanism,6.0,6.0,0.0,0.00,30,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,1.5,2.0,0.0,0.00,2000,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,1.5,6.0,0.0,0.00,2000,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,3.0,2.0,0.0,0.00,2000,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,3.0,6.0,0.0,0.00,2000,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,6.0,2.0,0.0,0.00,2000,0
+i,two_adjacent,Two adjacent rotors out,parachute,Parachute-like device,6.0,6.0,0.0,0.00,2000,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,1.5,2.0,0.0017083156444657305,$<$0.01,30,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,1.5,6.0,0.0,0.00,30,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,3.0,2.0,0.09087405970502152,0.09,30,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,3.0,6.0,0.0,0.00,30,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,6.0,2.0,0.33889266160951514,0.34,30,0
+j,two_opposite,Two opposite rotors out,realloc_only,Thrust reallocation only,6.0,6.0,0.0,0.00,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,1.5,2.0,0.0017083156444657305,$<$0.01,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,1.5,6.0,0.0,0.00,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,3.0,2.0,0.04685482691460088,0.05,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,3.0,6.0,0.0,0.00,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,6.0,2.0,0.14018509946776792,0.14,30,0
+k,two_opposite,Two opposite rotors out,mechanism,Guard mechanism,6.0,6.0,0.0,0.00,30,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,1.5,2.0,0.0,0.00,2000,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,1.5,6.0,0.0,0.00,2000,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,3.0,2.0,0.0,0.00,2000,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,3.0,6.0,0.0,0.00,2000,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,6.0,2.0,0.0,0.00,2000,0
+l,two_opposite,Two opposite rotors out,parachute,Parachute-like device,6.0,6.0,0.0,0.00,2000,0

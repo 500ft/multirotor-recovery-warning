@@ -1,0 +1,37 @@
+panel,metric,model,label,marker,horizon_s,mean_error
+a,velocity,cf21plus_firmware,2.1+ curve,o,0.1,0.16535624095962975
+a,velocity,cf21plus_firmware,2.1+ curve,o,0.25,1.573810591787882
+a,velocity,cf21plus_firmware,2.1+ curve,o,0.5,3.8639426414384537
+a,velocity,persistence,Persistence (hold state),D,0.1,0.10089890622571362
+a,velocity,persistence,Persistence (hold state),D,0.25,0.238614923992466
+a,velocity,persistence,Persistence (hold state),D,0.5,0.42183771807495546
+b,velocity,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.1,0.982291698327062
+b,velocity,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.25,2.302562200155268
+b,velocity,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.5,3.859714714724058
+b,velocity,persistence,Persistence (hold state),D,0.1,0.10089890622571362
+b,velocity,persistence,Persistence (hold state),D,0.25,0.238614923992466
+b,velocity,persistence,Persistence (hold state),D,0.5,0.42183771807495546
+c,velocity,legacy_propellers_firmware,Legacy-propeller curve,^,0.1,0.2289064244120208
+c,velocity,legacy_propellers_firmware,Legacy-propeller curve,^,0.25,1.6856360451869232
+c,velocity,legacy_propellers_firmware,Legacy-propeller curve,^,0.5,3.8749244837448997
+c,velocity,persistence,Persistence (hold state),D,0.1,0.10089890622571362
+c,velocity,persistence,Persistence (hold state),D,0.25,0.238614923992466
+c,velocity,persistence,Persistence (hold state),D,0.5,0.42183771807495546
+d,body_rate,cf21plus_firmware,2.1+ curve,o,0.1,7.93979759211144
+d,body_rate,cf21plus_firmware,2.1+ curve,o,0.25,18.868558520559123
+d,body_rate,cf21plus_firmware,2.1+ curve,o,0.5,36.79405521322372
+d,body_rate,persistence,Persistence (hold state),D,0.1,0.6959313278741761
+d,body_rate,persistence,Persistence (hold state),D,0.25,0.7847182851707935
+d,body_rate,persistence,Persistence (hold state),D,0.5,0.8282263832385155
+e,body_rate,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.1,13.703144525974876
+e,body_rate,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.25,32.35728944433233
+e,body_rate,thrust_upgrade_firmware,Thrust-upgrade curve,s,0.5,62.59232006643111
+e,body_rate,persistence,Persistence (hold state),D,0.1,0.6959313278741761
+e,body_rate,persistence,Persistence (hold state),D,0.25,0.7847182851707935
+e,body_rate,persistence,Persistence (hold state),D,0.5,0.8282263832385155
+f,body_rate,legacy_propellers_firmware,Legacy-propeller curve,^,0.1,8.875028213461587
+f,body_rate,legacy_propellers_firmware,Legacy-propeller curve,^,0.25,21.062241559829932
+f,body_rate,legacy_propellers_firmware,Legacy-propeller curve,^,0.5,40.90630172783657
+f,body_rate,persistence,Persistence (hold state),D,0.1,0.6959313278741761
+f,body_rate,persistence,Persistence (hold state),D,0.25,0.7847182851707935
+f,body_rate,persistence,Persistence (hold state),D,0.5,0.8282263832385155

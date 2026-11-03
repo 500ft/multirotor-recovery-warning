@@ -104,8 +104,8 @@ unknown public files exist. Runtime is recorded in the result JSON.
 
 Use `first_row` in the [excerpt audit](../Data/nanobench-baseline/excerpt-audit.json)
 to reproduce one causal increment. Starting from its measured initial body
-rate, form each motor's `r cross F` and signed reaction torque, sum the moments,
-then calculate `omega_dot = J^-1 (tau - omega cross (J omega))`. Multiply by the
+rate, form each motor's $\mathbf{r} \times \mathbf{F}$ and signed reaction torque, sum the moments,
+then calculate $\dot{\boldsymbol{\omega}} = J^{-1}\left(\boldsymbol{\tau} - \boldsymbol{\omega} \times J\boldsymbol{\omega}\right)$. Multiply by the
 first timestamp interval for the forward-Euler diagnostic and compare with the
 recorded next-row increment; the audit also supplies the integrated prediction.
 Only the start state and available command history belong in the prediction.

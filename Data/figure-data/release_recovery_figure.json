@@ -1,0 +1,27 @@
+{
+  "timeseries": {
+    "tier": "nominal",
+    "initial_rate_rad_s": 2.0,
+    "initial_tilt_deg": 59.99999999999999,
+    "motors_off_s": 0.11,
+    "recovery_time_s": 1.54,
+    "altitude_lost_m": 0.4446009278569268,
+    "peak_body_rate_after_motor_start_rad_s": 3.048294721191038,
+    "upright_deg": 5.0,
+    "available_height_m": 3.0,
+    "max_thrust_n": 4.2,
+    "sample_stride": 4,
+    "solver_dt_s": 0.0005
+  },
+  "envelope": {
+    "rates_step_rad_s": 0.5,
+    "gyro_limit_rad_s": 34.906585039886586,
+    "available_height_m": 3.0,
+    "initial_tilt_deg": 59.99999999999999,
+    "tiers": [
+      "best",
+      "nominal",
+      "worst"
+    ]
+  }
+}

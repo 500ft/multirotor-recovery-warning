@@ -10,7 +10,7 @@ exclusions, numerical failures through the metric table, input hashes and runtim
 No parameters were fitted and no final-test predictions were evaluated.
 
 Figure caption ([caption file](../Figures/nanobench-baseline.caption.md)):
-NanoBench development replay: open-loop rollout error of the documented motor models against the persistence comparator. Panels (a) to (c): mean world velocity error [m/s] for (a) 2.1+ curve, (b) Thrust-upgrade curve, (c) Legacy-propeller curve. Panels (d), (e), (f): mean body angular rate error [rad/s] for the same models in the same order. Each panel repeats persistence (hold state, diamonds, dashed line) so the panels share one scale per row. Horizons 0.1, 0.25, 0.5 s; same starts for all models; 12 development flights per point; mean of within-flight vector RMSE with equal flight weighting; no uncertainty interval. Persistence has the lowest error at every horizon for both quantities. The three motor-curve velocity errors meet by 0.5 s. The thrust-upgrade curve has the largest body rate error at every horizon. NanoBench observations collected by Ullah and Baca. Per-axis and per-flight values: Data/nanobench-baseline/development-errors.csv.
+NanoBench development replay: open-loop rollout error of the documented motor models against the persistence comparator. Panels (a) to (c): mean world velocity error [m/s] for (a) 2.1+ curve, (b) Thrust-upgrade curve, (c) Legacy-propeller curve. Panels (d), (e), (f): mean body angular rate error [rad/s] for the same models in the same order. Each panel repeats persistence (hold state, orange diamonds, dashed line) so the panels share one scale per row. Horizons 0.1, 0.25, 0.5 s; same starts for all models; 12 development flights per point; mean of within-flight vector RMSE with equal flight weighting; no uncertainty interval. Persistence has the lowest error at every horizon for both quantities. The three motor-curve velocity errors meet by 0.5 s. The thrust-upgrade curve has the largest body rate error at every horizon. NanoBench observations collected by Ullah and Baca. Per-axis and per-flight values: Data/nanobench-baseline/development-errors.csv.
 
 ## Reproduce
 
@@ -24,7 +24,7 @@ python -m pip install -r requirements.txt
 python -m Analysis.nanobench_data acquire --cache ../nanobench-cache
 python -m Analysis.nanobench_data inventory --cache ../nanobench-cache
 python -m Analysis.nanobench_replay --cache ../nanobench-cache --split development --output ../nanobench-replay
-python -m Analysis.plot_nanobench_baseline --results ../nanobench-replay/development-errors.csv --output ../nanobench-replay/development.png
+python -m Analysis.plot_nanobench_baseline --results ../nanobench-replay/development-errors.csv --output ../nanobench-replay/development-plot.csv --caption ../nanobench-replay/development.caption.md
 python -m unittest Analysis.tests.test_nanobench_replay -v
 ```
 
@@ -82,7 +82,7 @@ the separately pinned revision in the
 | --- | --- |
 | `motor_motor_m1` through `m4` | The collection [stabilizer](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/modules/src/stabilizer.c#L208-L260) compensates battery voltage and caps commands before `motorsSetRatio`. The [driver](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/drivers/src/motors.c#L474-L511) stores the final ratio, including overrides; its [log variables](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/drivers/src/motors.c#L754-L770) reference that stored ratio. These are post-compensation PWM. Apply the voltage-to-thrust curve once. |
 | Other commands | Position/yaw setpoints and legacy PID outputs are inventoried. The PID thrust request and legacy pitch/yaw signs are not substituted for motor PWM or physical torques. |
-| Motor geometry | With body x forward, y left and z up, positions for M1 through M4 are `(d,-d)`, `(-d,-d)`, `(-d,d)`, `(d,d)`, where `d=arm/sqrt(2)`. The collection [SI mixer](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/modules/src/power_distribution_quadrotor.c#L94-L115) gives body yaw-reaction signs `-,+,-,+`. Thus M1/M3 rotor spin is positive about z and M2/M4 negative under the standard reaction-torque interpretation. Tests independently check roll/pitch with `r cross F` and invert the SI mixer. |
+| Motor geometry | With body x forward, y left and z up, positions for M1 through M4 are $(d, -d)$, $(-d, -d)$, $(-d, d)$, $(d, d)$, where $d = \mathrm{arm}/\sqrt{2}$. The collection [SI mixer](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/modules/src/power_distribution_quadrotor.c#L94-L115) gives body yaw-reaction signs `-,+,-,+`. Thus M1/M3 rotor spin is positive about z and M2/M4 negative under the standard reaction-torque interpretation. Tests independently check roll/pitch with $\mathbf{r} \times \mathbf{F}$ and invert the SI mixer. |
 | `qx,qy,qz,qw` | Scalar-last Hamilton quaternion, interpreted as body to world. World z points up. Rotation and gravity tests include tilted thrust and free fall. The `frame_check` rows compare published Vicon world angular rate, rotated into body axes, with body gyro on development flights. They check consistency without estimating a correction. |
 | `imu_acc_*` | Body specific force in g. Convert using the protocol gravity constant. The prediction is total thrust divided by mass along body z; gravity is added only after rotation for world acceleration. |
 | `imu_gyro_*` | Body rate already in rad/s in the distributed CSV. Collection [firmware logs](https://github.com/bitcraze/crazyflie-firmware/blob/252b41341a078c29662ff7bd580985befce42a6c/src/modules/src/stabilizer.c#L632-L646) are deg/s; do not convert the CSV a second time. |
@@ -100,7 +100,7 @@ loader's stock-mass fallback. Instrumented mass with stock-model inertia is an
 explicit hybrid assumption; the charging deck and markers have no sourced
 inertia tensor in these inputs.
 
-For each motor, `v_motor = v_battery * PWM / 65535`. Evaluate the candidate
+For each motor, $v_{\text{motor}} = v_{\text{battery}}\,\mathrm{PWM}/65535$. Evaluate the candidate
 cubic at that voltage, force exactly zero at stopped PWM, and clip negative
 polynomial thrust to zero. A nonzero intercept never starts a stopped motor.
 `THRUST_MIN` is an inversion bound; `THRUST_MAX` scales firmware commands.
@@ -191,7 +191,7 @@ single-flight discrepancy to a cause.
 
 The [executed audit](../Data/nanobench-baseline/excerpt-audit.json) establishes
 no replay implementation defect. Explicit polynomial arithmetic, per-motor
-`r cross F` moments and componentwise Euler equations agree with the replay to
+$\mathbf{r} \times \mathbf{F}$ moments and componentwise Euler equations agree with the replay to
 floating-point rounding. The selected measured rate increment still differs
 substantially from the conditional prediction. The original error tables,
 figure, source manifest, split and protocol are unchanged. No new regression

@@ -6,8 +6,8 @@ Entry point:  python -m Analysis.run_survivable_set  [options]
 Default runs BOTH controller variants — ``a`` (baseline PD) and ``a2``
 (spin-aware: gyroscopic feedforward + EST yaw rotational drag, see
 ``docs/specs/survivable-set/design-a2.md``) — and writes one results file and one
-figure pair per variant: ``Data/survivable_set_results{,_a2}.json``,
-``Figures/survivable_set_{psafe,policy}{,_a2}.png``. The parachute action does not
+figure pair per variant: ``Data/survivable_set_results{,_a2}.json`` and the plot
+tables behind ``Figures/survivable_set_{psafe,policy}{,_a2}.png``. The parachute action does not
 use the controller, so its rows are computed once and shared across variants.
 
 Other modes:
@@ -16,8 +16,9 @@ Other modes:
 * ``--smoke``      : minimal pipeline exercise for CI (primary cells, two classes,
                      a handful of trials, variant a2, no files written; exit 0 on
                      structural success).
-* ``--figures-only``: redraw the four committed figures from the committed
-                     results JSON. Runs no simulation and writes only Figures/.
+* ``--figures-only``: rewrite the four plot tables (Data/figure-data/) and
+                     captions from the committed results JSON. Runs no simulation.
+                     Analysis/matlab/render_figures.m draws the PNG and PDF files.
 * ``--convergence``: integrator diagnostic — repeats a few primary-cell trials at
                      dt = 5e-4 (production) and 2.5e-4 (halved), reports impact-
                      state deviations, writes ``Data/survivable_set_convergence.json``.
@@ -30,6 +31,7 @@ totals independent of scheduling and worker count.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import os
 import tempfile
@@ -38,9 +40,6 @@ from concurrent.futures import ProcessPoolExecutor
 from itertools import product
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 
 from Analysis import figure_style as fs
@@ -133,21 +132,20 @@ def _trial_note(rows):
     return note + "."
 
 
-# Data-only canvas: words live in <stem>.caption.md (figures/v6 rules in figure_style).
+# Data-only canvas: words live in <stem>.caption.md. Analysis/matlab/render_figures.m draws
+# the figures from the plot tables written below (Data/figure-data/survivable_set_*.csv).
 PSAFE_H, PSAFE_W = (1.5, 3.0, 6.0), (2.0, 6.0)
 # One marker per design package; filled means the interval is clear of the others.
 PACKAGE = {"realloc_only": {"label": "Reallocation", "marker": "o"},
            "mechanism": {"label": "Mechanism", "marker": "s"},
            "parachute": {"label": "Parachute-like device", "marker": "^"}}
-# Grey ramp so black cell numbers stay legible at every value.
-FIELD = matplotlib.colors.LinearSegmentedColormap.from_list("field", ["white", "0.55"])
 LETTERS = "abcdefghijkl"
 
 
 def _bound(v):
     """Two decimals, except a positive bound that would print as 0.00.
 
-    cmr10 has no "<" glyph, so the sign is set in mathtext.
+    The "<" is set in math mode for the LaTeX interpreter.
     """
     return r"$<$0.01" if 0 < v < .005 else f"{v:.2f}"
 
@@ -186,55 +184,51 @@ def psafe_caption(rows, variant: str) -> str:
     )
 
 
-def make_psafe_figure(rows):
-    """Exact-lower-bound heatmaps over (h, omega) at the vz=0, delay=0.11 slice."""
+PSAFE_FIELDS = ["panel", "class", "class_name", "action", "action_name", "release_height_m",
+                "tumble_rate_rad_s", "p_safe_95_lower", "label", "n", "primary"]
+POLICY_FIELDS = ["row", "column", "class", "class_name", "cell", "release_height_m",
+                 "vertical_speed_m_s", "tumble_rate_rad_s", "delay_s", "best_action",
+                 "marker", "kind", "best_p_safe_95_lower", "label", "primary"]
+
+
+def _write_csv(path: Path, fields, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+
+
+def psafe_table(rows):
+    """Plotted cells of the heatmaps over (h, omega) at the vz=0, delay=0.11 slice.
+
+    One row per cell, panels in reading order: failure classes down, actions across.
+    A cell is primary when its trial count exceeds the panel's base count.
+    """
     classes = sorted(FAILURE_CLASSES)
     by_key = {(r["class"], r["cell"], r["action"]): r for r in rows}
-    fs.apply()
-    fig, axes = plt.subplots(len(classes), len(ss.ACTIONS), figsize=(7.0, 7.6),
-                             sharex=True, sharey=True,
-                             gridspec_kw={"left": .09, "right": .85, "top": .92,
-                                          "bottom": .075, "hspace": .38, "wspace": .1})
-    primary_n = None
+    out = []
     for i, cls in enumerate(classes):
         for j, action in enumerate(ss.ACTIONS):
-            grid = np.full((len(PSAFE_W), len(PSAFE_H)), np.nan)
-            ns = {}
-            for (a, h), (b, w) in product(enumerate(PSAFE_H), enumerate(PSAFE_W)):
+            cells = []
+            for h, w in product(PSAFE_H, PSAFE_W):
                 r = by_key.get((cls, ss.Cell(h, 0.0, w, 0.11).label(), action))
                 if r:
-                    grid[b, a] = r["p_safe_95_lower"]
-                    ns[(a, b)] = r["n"]
-            ax = axes[i, j]
-            im = ax.imshow(grid, vmin=0.0, vmax=1.0, cmap=FIELD, origin="lower", aspect="auto")
-            base_n = min(ns.values()) if ns else None
-            for (a, b), n in ns.items():
-                ax.text(a, b, _bound(grid[b, a]), ha="center", va="center", size=fs.TICK_SIZE)
-                if action != "parachute" and n != base_n:
-                    primary_n = n
-                    ax.add_patch(plt.Rectangle((a - .44, b - .42), .88, .84, fill=False,
-                                               ec=fs.RULE_INK, lw=1.0))
-            ax.set_xticks(range(len(PSAFE_H)), [f"{h:g}" for h in PSAFE_H])
-            ax.set_yticks(range(len(PSAFE_W)), [f"{w:g}" for w in PSAFE_W])
-            ax.tick_params(length=2)
-            fs.letter(ax, f"({LETTERS[i * len(ss.ACTIONS) + j]})")
-    fig.supxlabel("Release height [m]", y=.012, size=fs.LABEL_SIZE)
-    fig.supylabel("Tumble rate at failure [rad/s]", x=.012, size=fs.LABEL_SIZE)
-    cax = fig.add_axes([.875, .3, .022, .4])
-    cb = fig.colorbar(im, cax=cax)
-    cb.set_label("Survival probability, exact 95% lower bound")
-    cb.ax.tick_params(length=2)
-    if primary_n:
-        fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, fill=False, ec=fs.RULE_INK, lw=1.0)],
-                   labels=[f"Primary cell, {primary_n} trials"], loc="upper center",
-                   bbox_to_anchor=(.47, .995), borderaxespad=0, handlelength=1.4)
-    return fig
+                    cells.append((h, w, r))
+            base_n = min(r["n"] for _, _, r in cells) if cells else None
+            for h, w, r in cells:
+                out.append({"panel": LETTERS[i * len(ss.ACTIONS) + j], "class": cls,
+                            "class_name": fs.FAILURE_NAME[cls], "action": action,
+                            "action_name": fs.ACTION_NAME[action], "release_height_m": h,
+                            "tumble_rate_rad_s": w, "p_safe_95_lower": r["p_safe_95_lower"],
+                            "label": _bound(r["p_safe_95_lower"]), "n": r["n"],
+                            "primary": int(action != "parachute" and r["n"] != base_n)})
+    return out
 
 
 def psafe_figure(rows, path: Path, variant: str):
-    fig = make_psafe_figure(rows)
-    fs.save_audited(fig, path.with_suffix(""))
-    plt.close(fig)
+    """Write the plot table for Figures/<stem>.png and its caption."""
+    _write_csv(path.parents[1] / "Data" / "figure-data" / f"{path.stem}.csv", PSAFE_FIELDS, psafe_table(rows))
     path.with_suffix(".caption.md").write_text(psafe_caption(rows, variant) + "\n")
 
 
@@ -264,7 +258,7 @@ def policy_caption(policy, variant: str) -> str:
              f"A design package is clearly best in {clear} of {len(rows)} failure-state cells.")
     shown = [a for a in ss.ACTIONS
              if any(r["best_action"] == a and _policy_kind(r) != "none" for r in rows.values())]
-    shapes = {"o": "circle", "s": "square", "^": "triangle"}
+    shapes = {"o": "blue circle", "s": "orange square", "^": "triangle"}
     return (
         "Ranks aircraft design packages by exact 95% lower bound on survival probability; "
         f"it is not a runtime policy (design.md 6b). {SIM_NOTE} {VARIANT_NAME[variant]}. "
@@ -284,69 +278,38 @@ def policy_caption(policy, variant: str) -> str:
     )
 
 
-def make_policy_figure(policy):
-    """Study B decision map: best package per (class, cell), hollow where ambiguous."""
+def policy_table(policy):
+    """Plotted cells of the decision map: best package per (class, cell)."""
     classes = sorted(FAILURE_CLASSES)
     cells, rows = _policy_rows(policy)
     primary = {c.label() for c in ss.PRIMARY_CELLS}
-    fs.apply()
-    fig, ax = plt.subplots(figsize=(7.0, 8.0))
-    fig.subplots_adjust(left=.25, right=.98, top=.905, bottom=.02)
-    seen = set()
+    out = []
     for j, cls in enumerate(classes):
         for i, cell in enumerate(cells):
             r = rows.get((cls, cell))
             if r is None:
                 continue
+            h, vz, w, d = _cell_factors(cell)
             kind = _policy_kind(r)
-            if kind != "none":
-                seen.add(r["best_action"])
-                ax.plot(j + .3, i + .5, marker=PACKAGE[r["best_action"]]["marker"], ls="none",
-                        mfc=fs.FILL[kind == "clear"], **fs.MARKER)
-            ax.text(j + .62, i + .5, _bound(r["best_p_safe_95_lower"]), ha="center",
-                    va="center", size=fs.TICK_SIZE)
-            if cls in ss.PRIMARY_CLASSES and cell in primary:
-                ax.add_patch(plt.Rectangle((j + .08, i + .1), .84, .8, fill=False,
-                                           ec=fs.RULE_INK, lw=.9))
-    previous = None
-    for i, cell in enumerate(cells):
-        height = _cell_factors(cell)[0]
-        if previous is not None and height != previous:
-            ax.axhline(i, color=fs.RULE_INK, lw=.6)
-        previous = height
-    ax.set_xlim(0, len(classes))
-    ax.set_ylim(len(cells), 0)
-    ax.set_xticks([j + .5 for j in range(len(classes))],
-                  [fs.FAILURE_NAME[c].replace(" rotors out", "\nrotors out")
-                   .replace(" authority ", " authority\n").replace(" rotor out", "\nrotor out")
-                   for c in classes])
-    ax.set_yticks([i + .5 for i in range(len(cells))],
-                  [", ".join(f"{v:g}" for v in _cell_factors(c)) for c in cells])
-    ax.xaxis.tick_top()
-    ax.tick_params(length=0)
-    ax.spines[:].set_visible(False)
-    ax.set_ylabel("Height [m], vertical speed [m/s], tumble rate [rad/s], delay [s]")
-    handles = [matplotlib.lines.Line2D([], [], marker=PACKAGE[a]["marker"], ls="none",
-                                       mfc=fs.FILL[True], label=PACKAGE[a]["label"], **fs.MARKER)
-               for a in ss.ACTIONS if a in seen]
-    handles.append(matplotlib.lines.Line2D([], [], marker="o", ls="none", mfc=fs.FILL[False],
-                                           label="Hollow: within uncertainty", **fs.MARKER))
-    handles.append(plt.Rectangle((0, 0), 1, 1, fill=False, ec=fs.RULE_INK, lw=.9,
-                                 label="Primary cell"))
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(.5, .995),
-               ncol=len(handles), columnspacing=1.2, handletextpad=.5, borderaxespad=0)
-    return fig
+            out.append({"row": i + 1, "column": j + 1, "class": cls,
+                        "class_name": fs.FAILURE_NAME[cls], "cell": cell,
+                        "release_height_m": h, "vertical_speed_m_s": vz,
+                        "tumble_rate_rad_s": w, "delay_s": d, "best_action": r["best_action"],
+                        "marker": PACKAGE[r["best_action"]]["marker"] if kind != "none" else "",
+                        "kind": kind, "best_p_safe_95_lower": r["best_p_safe_95_lower"],
+                        "label": _bound(r["best_p_safe_95_lower"]),
+                        "primary": int(cls in ss.PRIMARY_CLASSES and cell in primary)})
+    return out
 
 
 def policy_figure(policy, path: Path, variant: str):
-    fig = make_policy_figure(policy)
-    fs.save_audited(fig, path.with_suffix(""))
-    plt.close(fig)
+    """Write the plot table for Figures/<stem>.png and its caption."""
+    _write_csv(path.parents[1] / "Data" / "figure-data" / f"{path.stem}.csv", POLICY_FIELDS, policy_table(policy))
     path.with_suffix(".caption.md").write_text(policy_caption(policy, variant) + "\n")
 
 
 def render_committed_figures(repo: Path):
-    """Redraw the four figures from the committed results; runs no simulation."""
+    """Write the four plot tables and captions from the committed results; no simulation."""
     for variant in ss.VARIANTS:
         suffix = "" if variant == "a" else f"_{variant}"
         data = json.loads((repo / "Data" / f"survivable_set_results{suffix}.json").read_text())
@@ -354,7 +317,8 @@ def render_committed_figures(repo: Path):
                      variant)
         policy_figure(data["policy"], repo / "Figures" / f"survivable_set_policy{suffix}.png",
                       variant)
-        print(f"[written] Figures/survivable_set_{{psafe,policy}}{suffix}.png")
+        print(f"[written] Data/figure-data/survivable_set_{{psafe,policy}}{suffix}.csv "
+              "and captions; draw with Analysis/matlab/render_figures.m")
 
 
 def paired_action_comparisons(rows, variant):
@@ -555,7 +519,7 @@ def main(argv=None):
                     help="dt-halving diagnostic on primary-cell trials")
     ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     ap.add_argument("--figures-only", action="store_true",
-                    help="redraw Figures/ from the committed results JSON; no simulation")
+                    help="write plot tables and captions from the committed results JSON; no simulation")
     ap.add_argument("--output-dir", default=None,
                     help="write results here (required-safe for --quick: "
                          "defaults to a scratch dir, never the repo)")
@@ -618,7 +582,7 @@ def main(argv=None):
                           out_dir / "Figures" / f"survivable_set_policy{suffix}.png",
                           variant)
     if not args.quick:
-        print("[written] Figures/survivable_set_{psafe,policy}{,_a2}.png")
+        print("[written] plot tables for Figures/survivable_set_{psafe,policy}{,_a2}.png")
 
 
 if __name__ == "__main__":

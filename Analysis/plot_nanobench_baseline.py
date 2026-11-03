@@ -1,21 +1,16 @@
-"""Plot the executed development CSV; no data acquisition or scoring.
+"""Prepare the NanoBench replay figure from the executed development CSV.
 
-The canvas shows only the stored per-horizon means. Everything in words is
-written by ``caption()`` to a file beside the image and copied into the report
-under it.
+No data acquisition or scoring. ``plot_table()`` writes the per-horizon means
+that the figure shows to Data/figure-data/nanobench-baseline.csv, and
+``caption()`` writes the words to a file beside the image; the report copies
+the caption under the figure. Analysis/matlab/render_figures.m draws the PNG
+and PDF from the plot table.
 """
 import argparse
 import csv
 from pathlib import Path
 
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib.ticker import MaxNLocator
 import numpy as np
-
-from Analysis import figure_style as fs
 
 # One marker per model; the shape carries the distinction in every panel.
 MODELS = {'cf21plus_firmware': {'label': '2.1+ curve', 'marker': 'o'},
@@ -26,11 +21,6 @@ NAMES = [*MODELS, 'persistence']
 METRICS = [('velocity', 'Velocity error [m/s]', 'world velocity'),
            ('body_rate', 'Body rate error [rad/s]', 'body angular rate')]
 LETTERS = 'abcdef'
-
-# Layout in inches: 178 mm wide like the other repo figures, two rows of three panels, legend above.
-WIDTH, HEIGHT = 7.0, 4.4
-MARGINS = {'left': .085, 'right': .99, 'top': .87, 'bottom': .11, 'wspace': .45, 'hspace': .42}
-
 
 def summarize(rows):
     """Within-flight vector RMSE, then unweighted mean over flights."""
@@ -77,7 +67,7 @@ def caption(rows) -> str:
         'models against the persistence comparator. Panels (a) to (c): mean world velocity '
         f'error [m/s] for {panels}. Panels {rate}: mean body angular rate error [rad/s] '
         'for the same models in the same order. Each panel repeats persistence (hold state, '
-        'diamonds, dashed line) so the panels share one scale per row. Horizons '
+        'orange diamonds, dashed line) so the panels share one scale per row. Horizons '
         f'{", ".join(f"{h:g}" for h in horizons)} s; same starts for all models; '
         f'{n_note}; mean of within-flight vector RMSE with equal flight weighting; no '
         f'uncertainty interval. {" ".join(findings(horizons, values))} '
@@ -86,36 +76,22 @@ def caption(rows) -> str:
     )
 
 
-def figure(rows):
+PLOT_FIELDS = ['panel', 'metric', 'model', 'label', 'marker', 'horizon_s', 'mean_error']
+
+
+def plot_table(rows):
+    """One row per plotted point: each model panel carries its curve and persistence."""
     horizons, values, _ = summarize(rows)
-    fs.apply()
-    fig, axes = plt.subplots(len(METRICS), len(MODELS), figsize=(WIDTH, HEIGHT))
-    fig.subplots_adjust(**MARGINS)
-    for i, (metric, label, _) in enumerate(METRICS):
-        top = max(values[metric, n].max() for n in NAMES)
+    out = []
+    for i, (metric, _, _) in enumerate(METRICS):
         for j, name in enumerate(MODELS):
-            ax = axes[i, j]
-            ax.plot(horizons, values[metric, 'persistence'], marker=PERSISTENCE['marker'],
-                    ls=fs.DASHED, zorder=2, **fs.MARKER, lw=fs.LINE['lw'])
-            ax.plot(horizons, values[metric, name], marker=MODELS[name]['marker'],
-                    ls='-', zorder=3, **fs.MARKER, lw=fs.LINE['lw'])
-            ax.set(xlim=(0, horizons[-1] * 1.12), ylim=(0, top * 1.15))
-            ax.set_xticks(horizons, [f'{h:g}' for h in horizons])
-            ax.tick_params(axis='x', labelbottom=i == len(METRICS) - 1, length=3)
-            ax.tick_params(axis='y', labelleft=j == 0, length=3)
-            ax.yaxis.set_major_locator(MaxNLocator(nbins=4))
-            if j == 0:
-                ax.set_ylabel(label)
-            if i == len(METRICS) - 1:
-                ax.set_xlabel('Open-loop horizon [s]')
-            fs.letter(ax, f'({LETTERS[i * len(MODELS) + j]})')
-    handles = [Line2D([], [], marker=m['marker'], ls='-', label=m['label'], **fs.MARKER,
-                      lw=fs.LINE['lw']) for m in MODELS.values()]
-    handles.append(Line2D([], [], marker=PERSISTENCE['marker'], ls=fs.DASHED,
-                          label=PERSISTENCE['label'], **fs.MARKER, lw=fs.LINE['lw']))
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.5, .995), ncol=len(handles),
-               columnspacing=1.4, handletextpad=.5, borderaxespad=0)
-    return fig
+            for series, meta in ((name, MODELS[name]), ('persistence', PERSISTENCE)):
+                for h, v in zip(horizons, values[metric, series]):
+                    out.append({'panel': LETTERS[i * len(MODELS) + j], 'metric': metric,
+                                'model': series, 'label': meta['label'],
+                                'marker': meta['marker'], 'horizon_s': f'{h:g}',
+                                'mean_error': repr(float(v))})
+    return out
 
 
 def read_rows(results: Path):
@@ -123,16 +99,19 @@ def read_rows(results: Path):
         return list(csv.DictReader(f))
 
 
-def plot(results: Path, output: Path):
+def plot(results: Path, output: Path, caption_path: Path):
     rows = read_rows(results)
-    fig = figure(rows)
-    fs.save_audited(fig, output)
-    plt.close(fig)
-    output.with_suffix('.caption.md').write_text(caption(rows) + '\n')
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=PLOT_FIELDS, lineterminator='\n')
+        w.writeheader()
+        w.writerows(plot_table(rows))
+    caption_path.write_text(caption(rows) + '\n')
 
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--results', required=True, type=Path)
-    p.add_argument('--output', required=True, type=Path)
-    a = p.parse_args(); plot(a.results, a.output)
+    p.add_argument('--output', required=True, type=Path, help='plot table CSV')
+    p.add_argument('--caption', type=Path, default=Path('Figures/nanobench-baseline.caption.md'))
+    a = p.parse_args(); plot(a.results, a.output, a.caption)

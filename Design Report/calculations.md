@@ -15,9 +15,11 @@ The maximum mass is not frozen. Current planning rollup:
 
 Freeze rule:
 
-```text
-frozen maximum mass = roundup_to_5g(Sigma worst + 5 g)
-nominal margin = frozen maximum mass - Sigma nominal
+```math
+\begin{aligned}
+\text{frozen maximum mass} &= \operatorname{roundup}_{5\,\text{g}}\left(\Sigma_{\text{worst}} + 5\ \text{g}\right)\\
+\text{nominal margin} &= \text{frozen maximum mass} - \Sigma_{\text{nominal}}
+\end{aligned}
 ```
 
 ### Decision: the 225 g abort threshold and its 25 g buffer (REQ-MASS-002)
@@ -31,16 +33,18 @@ at 225 g. What must the 25 g difference absorb, and is 25 g the right size?
 
 | Symbol | Value | Units | Provenance |
 | --- | --- | --- | --- |
-| `m_reg` | 250 | g | *requirement* — regulatory class boundary (FAA Part 107 Category 1 takeoff mass; see `literature/notes/03` §4) |
-| `m_abort` | 225 | g | *selected design value* — `ABORT_THRESHOLD_G`, `Analysis/budget.py:12` |
-| `m_frozen` | 165 | g | *calculated result* — `roundup_to_5g(Σworst + 5 g)` |
-| `Σworst` | 156.0 | g | *calculated result* from `mass_budget.csv` |
+| $m_{\text{reg}}$ | 250 | g | *requirement* — regulatory class boundary (FAA Part 107 Category 1 takeoff mass; see `literature/notes/03` §4) |
+| $m_{\text{abort}}$ | 225 | g | *selected design value* — `ABORT_THRESHOLD_G`, `Analysis/budget.py:12` |
+| $m_{\text{frozen}}$ | 165 | g | *calculated result* — $\operatorname{roundup}_{5\,\text{g}}(\Sigma_{\text{worst}} + 5\ \text{g})$ |
+| $\Sigma_{\text{worst}}$ | 156.0 | g | *calculated result* from `mass_budget.csv` |
 
 **Model.** The threshold is a buffer, not a computation:
 
-```text
-buffer = m_reg − m_abort = 250 − 225 = 25 g   (10 % of the regulatory limit)
-current headroom = m_abort − m_frozen = 225 − 165 = 60 g
+```math
+\begin{aligned}
+\text{buffer} &= m_{\text{reg}} - m_{\text{abort}} = 250 - 225 = \text{25 g} \quad (10\,\%\ \text{of the regulatory limit})\\
+\text{current headroom} &= m_{\text{abort}} - m_{\text{frozen}} = 225 - 165 = \text{60 g}
+\end{aligned}
 ```
 
 **Unit check.** All terms in grams. ✓
@@ -78,9 +82,11 @@ Status: **unresolved allocation.**
 
 At the current proposed 165 g maximum:
 
-```text
-T_required_total = 2.0 * 165 g = 330 g
-T_required_motor = 330 g / 4 = 82.5 g
+```math
+\begin{aligned}
+T_{\text{required, total}} &= 2.0 \times \text{165 g} = \text{330 g}\\
+T_{\text{required, motor}} &= \text{330 g} / 4 = \text{82.5 g}
+\end{aligned}
 ```
 
 This is only the static requirement. The recovery case may require greater thrust and torque.
@@ -99,50 +105,50 @@ the collective that gives the most roll/pitch authority?
 
 | Symbol | Value | Units | Provenance |
 | --- | --- | --- | --- |
-| `T_max` | 4× per-motor static thrust | N | *selected design value*, gated by the propulsion bench (OQ-001) |
-| `arm` | 0.060 | m | *provisional estimate* — ASSUMED until CAD (audit Tier C) |
-| `m g` | hover thrust | N | *calculated result* from the mass rollup |
+| $T_{\max}$ | 4× per-motor static thrust | N | *selected design value*, gated by the propulsion bench (OQ-001) |
+| $\mathrm{arm}$ | 0.060 | m | *provisional estimate* — ASSUMED until CAD (audit Tier C) |
+| $m g$ | hover thrust | N | *calculated result* from the mass rollup |
 
 **Assumptions**
 
-- Four-rotor X mixer, per-rotor thrust bounded to `[0, T_max/4]`.
-- Differential pairs: raise one pair by `d`, lower the other by `d`, holding
+- Four-rotor X mixer, per-rotor thrust bounded to $[0,\ T_{\max}/4]$.
+- Differential pairs: raise one pair by $d$, lower the other by $d$, holding
   collective. This is the model already used in `sim_release_recovery.py`.
 - Static case; no aerodynamic or battery-sag terms.
 
-**Model.** Roll/pitch differential torque available at collective `T` is
+**Model.** Roll/pitch differential torque available at collective $T$ is
 
-```text
-tau_rp(T) = 2 * sqrt(2) * arm * d_max,   d_max = min( T/4 , T_max/4 - T/4 )
+```math
+\tau_{\text{rp}}(T) = 2\sqrt{2}\,\mathrm{arm}\,d_{\max}, \qquad d_{\max} = \min\left(\frac{T}{4},\ \frac{T_{\max}}{4} - \frac{T}{4}\right)
 ```
 
-`d_max` is the smaller of the headroom below the upper bound and the room above
+$d_{\max}$ is the smaller of the headroom below the upper bound and the room above
 zero, so it is maximised where the two are equal:
 
-```text
-T/4 = T_max/4 - T/4   =>   T = T_max / 2
+```math
+\frac{T}{4} = \frac{T_{\max}}{4} - \frac{T}{4} \quad\Rightarrow\quad T = \frac{T_{\max}}{2}
 ```
 
-**Substitution.** Hover requires `T_hover = m g`. Placing hover at the authority
+**Substitution.** Hover requires $T_{\text{hover}} = m g$. Placing hover at the authority
 optimum therefore requires
 
-```text
-m g = T_max / 2   =>   T_max / (m g) = 2.0
+```math
+m g = \frac{T_{\max}}{2} \quad\Rightarrow\quad \frac{T_{\max}}{m g} = 2.0
 ```
 
-**Unit check.** `T_max/(mg)` is N/N — dimensionless, as a thrust-to-weight ratio
-must be. `tau_rp` is (m)(N) = N·m. ✓
+**Unit check.** $T_{\max}/(m g)$ is N/N — dimensionless, as a thrust-to-weight ratio
+must be. $\tau_{\text{rp}}$ is (m)(N) = N·m. ✓
 
 **Result.** **T/W = 2.0 places hover exactly at the collective of maximum
 roll/pitch authority.** Verified numerically against `mixer_torque_limit()`:
-the peak sits at 0.5000 of `T_max` (peak 0.0891 N·m at `T_max` = 4.2 N,
-`arm` = 60 mm), i.e. T/W = 2.0000.
+the peak sits at 0.5000 of $T_{\max}$ (peak 0.0891 N·m at $T_{\max}$ = 4.2 N,
+$\mathrm{arm}$ = 60 mm), i.e. T/W = 2.0000.
 
 **Sensitivity.** Authority falls away on both sides of the optimum, and it
-vanishes at both `T = 0` and `T = T_max`. A vehicle at T/W = 1.5 hovers at 67 %
+vanishes at both $T = 0$ and $T = T_{\max}$. A vehicle at T/W = 1.5 hovers at 67 %
 collective and a vehicle at T/W = 4 hovers at 25 % — both on the falling flank.
-Because `d_max` is piecewise linear, authority at hover is
-`tau_rp = 2√2·arm·(T_max/4)·min(1/(T/W), 1 − 1/(T/W))`, so it degrades roughly
+Because $d_{\max}$ is piecewise linear, authority at hover is
+$\tau_{\text{rp}} = 2\sqrt{2}\,\mathrm{arm}\,(T_{\max}/4)\,\min\left(\frac{1}{T/W},\ 1 - \frac{1}{T/W}\right)$, so it degrades roughly
 linearly in the distance from T/W = 2.
 
 **Decision.** Retain T/W ≥ 2.0. It is not an arbitrary round number: under the
@@ -152,7 +158,7 @@ recovery study is limited by.
 
 **Caveats.** This justifies the ratio under the *mixer* authority model with an
 *assumed* 60 mm arm. It says nothing about whether the locked propulsion set
-achieves the required absolute thrust (OQ-001, bench-gated), and the `≥` form
+achieves the required absolute thrust (OQ-001, bench-gated), and the $\geq$ form
 means higher T/W is permitted even though it moves hover off the optimum — if
 that matters, the requirement should become a band, which is a change this audit
 does **not** make.
@@ -162,8 +168,8 @@ arm from CAD; recompute. Status: **predicted, not measured.**
 
 Hover thrust per motor:
 
-```text
-T_hover_motor = mass / 4
+```math
+T_{\text{hover, motor}} = \frac{\text{mass}}{4}
 ```
 
 | Mass | Hover Thrust Per Motor |
@@ -192,9 +198,11 @@ Planning interpretation:
 The bench sweep is performed at 8.4 V, 7.6 V, and **7.0 V at the ESC input under
 load**. The uncertainty-adjusted 7.0 V value controls acceptance:
 
-```text
-T_required_per_motor = 2 * vehicle_mass / 4
-M_allowable = 2 * measured_per_motor_thrust
+```math
+\begin{aligned}
+T_{\text{required per motor}} &= \frac{2 \times \text{vehicle mass}}{4}\\
+M_{\text{allowable}} &= 2 \times \text{measured per-motor thrust}
+\end{aligned}
 ```
 
 At 225 g, the full-reserve threshold is 112.5 gf/motor. At the current 135.66 g
@@ -205,31 +213,31 @@ reduces the frozen mass; it does not automatically trigger a prop change.
 
 Estimated flight time:
 
-```text
-t_min = 60 * C_usable / I_avg
+```math
+t_{\min} = \frac{60\, C_{\text{usable}}}{I_{\text{avg}}}
 ```
 
 Where:
 
-- `C_usable = nominal capacity * 0.8`
-- `I_avg = average current during flight`
+- $C_{\text{usable}} = 0.8 \times \text{nominal capacity}$
+- $I_{\text{avg}}$ = average current during flight
 
 Example for a 2S 550 mAh pack:
 
-```text
-C_usable = 0.550 Ah * 0.8 = 0.440 Ah
+```math
+C_{\text{usable}} = 0.550\ \text{Ah} \times 0.8 = 0.440\ \text{Ah}
 ```
 
 If average hover current is 9 A:
 
-```text
-t_min = 60 * 0.440 / 9 = 2.93 min
+```math
+t_{\min} = \frac{60 \times 0.440}{9} = 2.93\ \text{min}
 ```
 
 If average hover current is 7 A:
 
-```text
-t_min = 60 * 0.440 / 7 = 3.77 min
+```math
+t_{\min} = \frac{60 \times 0.440}{7} = 3.77\ \text{min}
 ```
 
 Expected early prototype flight time:
@@ -244,34 +252,33 @@ Longer flight time should not be pursued by adding battery mass until hover and 
 
 Guard inner diameter:
 
-```text
-D_inner = D_prop + 2c
+```math
+D_{\text{inner}} = D_{\text{prop}} + 2c
 ```
 
 Where:
 
-- `D_prop` is propeller diameter
-- `c` is radial clearance, target `2-3 mm`
+- $D_{\text{prop}}$ is propeller diameter
+- $c$ is radial clearance, target `2-3 mm`
 
 Guard outer diameter:
 
-```text
-D_outer = D_inner + 2t_wall
+```math
+D_{\text{outer}} = D_{\text{inner}} + 2t_{\text{wall}}
 ```
 
 Where:
 
-- `t_wall` is guard wall thickness, starting target `1.5-2.5 mm`
+- $t_{\text{wall}}$ is guard wall thickness, starting target `1.5-2.5 mm`
 
 Example for a 2.0 in prop:
 
-```text
-D_prop = 50.8 mm
-c = 2.5 mm
-t_wall = 2.0 mm
-
-D_inner = 50.8 + 2(2.5) = 55.8 mm
-D_outer = 55.8 + 2(2.0) = 59.8 mm
+```math
+\begin{aligned}
+D_{\text{prop}} &= 50.8\ \text{mm}, \quad c = 2.5\ \text{mm}, \quad t_{\text{wall}} = 2.0\ \text{mm}\\
+D_{\text{inner}} &= 50.8 + 2(2.5) = 55.8\ \text{mm}\\
+D_{\text{outer}} &= 55.8 + 2(2.0) = 59.8\ \text{mm}
+\end{aligned}
 ```
 
 With four circular guards in an X layout, a 90-100 mm diagonal motor wheelbase gives a compact but plausible 125-140 mm outer footprint depending on guard spacing.
@@ -280,21 +287,25 @@ With four circular guards in an X layout, a 90-100 mm diagonal motor wheelbase g
 
 Define:
 
-- `k`: radial guard stiffness, `N/m`
-- `c_sigma`: stress per unit force, `Pa/N`
-- `E_impact`: conservatively assigned impact energy, `J`
+- $k$: radial guard stiffness, `N/m`
+- $c_\sigma$: stress per unit force, `Pa/N`
+- $E_{\text{impact}}$: conservatively assigned impact energy, `J`
 
-```text
-delta_impact = sqrt(2 E_impact / k)
-F_equivalent = sqrt(2 E_impact k)
-sigma_impact = c_sigma F_equivalent
+```math
+\begin{aligned}
+\delta_{\text{impact}} &= \sqrt{2 E_{\text{impact}} / k}\\
+F_{\text{equivalent}} &= \sqrt{2 E_{\text{impact}} k}\\
+\sigma_{\text{impact}} &= c_\sigma F_{\text{equivalent}}
+\end{aligned}
 ```
 
 Acceptance:
 
-```text
-available clearance / delta_impact >= 2
-elastic allowable stress / sigma_impact >= 3
+```math
+\begin{aligned}
+\text{available clearance} / \delta_{\text{impact}} &\geq 2\\
+\text{elastic allowable stress} / \sigma_{\text{impact}} &\geq 3
+\end{aligned}
 ```
 
 This is a low-energy linear-elastic functional check only. It cannot establish high-energy fracture survival.
@@ -303,8 +314,8 @@ This is a low-energy linear-elastic functional check only. It cannot establish h
 
 Recovery cannot be specified only as "stable within 3 seconds." During ideal free fall, distance grows with the square of time:
 
-```text
-d = 0.5 * g * t^2
+```math
+d = \tfrac{1}{2}\, g\, t^2
 ```
 
 | Unarrested Fall Time | Ideal Fall Distance |

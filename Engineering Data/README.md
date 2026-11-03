@@ -27,9 +27,13 @@ propulsion from different airframes must not be combined silently.
 
 The pinned Bitcraze defaults define a per-motor cubic:
 
-`v_motor = v_battery * PWM / 65535`
+```math
+v_{\text{motor}} = v_{\text{battery}} \cdot \frac{\mathrm{PWM}}{65535}
+```
 
-`T = c0 + c1*v_motor + c2*v_motor**2 + c3*v_motor**3`
+```math
+T = c_0 + c_1 v_{\text{motor}} + c_2 v_{\text{motor}}^2 + c_3 v_{\text{motor}}^3
+```
 
 The coefficient rows and their source revision are in the CSV. These curves
 are candidates for replay after checking the dataset's motor-command semantics,

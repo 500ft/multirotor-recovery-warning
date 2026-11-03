@@ -40,13 +40,19 @@ unsent request are recorded with that result.
 
 ## Historical designed aircraft
 
-All results below use the earlier estimated aircraft. Their old bench gates
+All results below use the earlier estimated aircraft. MATLAB writes the typeset
+tables from the result files ([how to regenerate](matlab/README.md)); each one
+keeps its Markdown text below the image. Their old bench gates
 are retained for reproduction and do not govern Crazyflie work.
 
 Generated from the locked Stage 1 catalog selection on June 21, 2026. These are
 not validated design results.
 
 ## Mass Budget
+
+![Mass budget: best, nominal and worst case, allowance, proposed frozen maximum and nominal margin in grams](../Figures/tables/mass_budget.png)
+
+<details><summary>Table as text</summary>
 
 | Quantity | Mass (g) |
 | :--- | ---: |
@@ -56,6 +62,8 @@ not validated design results.
 | Unmodeled-hardware allowance | 5.00 |
 | Proposed frozen maximum | 165.00 |
 | Nominal margin to proposed maximum | 29.34 |
+
+</details>
 
 The proposed maximum is below the 225 g abort threshold (PASS).
 
@@ -75,6 +83,10 @@ delivered components are weighed and the complete CAD mass model exists.
 
 ## Preliminary Recovery Envelope
 
+![First-order recovery envelope: minimum and available height per placeholder case](../Figures/tables/recovery_envelope_first_order.png)
+
+<details><summary>Table as text</summary>
+
 | Case | Minimum height (m) | Available height (m) | Testable now |
 | :--- | ---: | ---: | :--- |
 | Best placeholder case | 0.88 | 3.00 | Yes |
@@ -82,11 +94,17 @@ delivered components are weighed and the complete CAD mass model exists.
 | Worst placeholder case | 58.42 | 3.00 | No |
 | Nominal no-drag bound | 11.16 | 3.00 | No |
 
+</details>
+
 The model is first-order and uses estimated inertia, torque, thrust, latency, and drag. These results demonstrate why recovery cannot be assumed to work at low height. They do not predict the final vehicle.
 
 ## Guard Functional Check
 
-All current placeholder guard cases fail the required clearance-to-deflection safety factor of `>=2`.
+All current placeholder guard cases fail the required clearance-to-deflection safety factor of $\geq 2$.
+
+![Guard functional check: deflection, clearance and stress safety factors per placeholder case](../Figures/tables/guard_check.png)
+
+<details><summary>Table as text</summary>
 
 | Case | Predicted deflection (mm) | Clearance safety factor | Elastic stress safety factor | Functional result |
 | :--- | ---: | ---: | ---: | :--- |
@@ -94,14 +112,22 @@ All current placeholder guard cases fail the required clearance-to-deflection sa
 | Nominal placeholder case | 10.54 | 0.24 | 7.50 | Fail |
 | Worst placeholder case | 20.00 | 0.10 | 4.00 | Fail |
 
+</details>
+
 This does not prove a real guard will fail. It proves that the assumed stiffness and energy values do not close and must be replaced by analysis and test data.
 
 ## Classifier Confidence Bounds
+
+![Classifier confidence bounds: exact 95% upper bound on the false-positive rate after 300 and 1,000 clean trials](../Figures/tables/classifier_bounds.png)
+
+<details><summary>Table as text</summary>
 
 | Observation | Exact 95% upper bound (%) |
 | :--- | ---: |
 | 0 false positives in 300 trials | 0.994 |
 | 0 false positives in 1,000 trials | 0.299 |
+
+</details>
 
 An observation of zero is not reported as a true false-positive rate of zero.
 
@@ -115,11 +141,17 @@ is labeled by what it actually is.
 Highest recovered tumble rate before the first failure, at 60° tilt and a 3 m
 height budget:
 
+![Closed-loop envelope: highest recovered tumble rate per tier and what limits it](../Figures/tables/closed_loop_envelope.png)
+
+<details><summary>Table as text</summary>
+
 | Tier | Rate (rad/s) | Rate (°/s) | Envelope edge |
 | :--- | ---: | ---: | :--- |
 | Best | 34.5 | 1977 | Gyro limit: no failure up to the sensor range |
 | Nominal | 3.5 | 201 | Dynamic failure |
 | Worst | 1.0 | 57 | Dynamic failure |
+
+</details>
 
 The previously reported "best ≥ 40 rad/s" was the scan cap of the search loop — an
 artifact, not a physical boundary — and exceeded the gyro range. Corrected.
@@ -135,22 +167,34 @@ motor-mismatch torque bias ≤ 10% of budget, gyro noise 0.02 rad/s, attitude-es
 
 Recovered releases out of trials (success rate), by initial tumble rate:
 
+![Monte Carlo dispersion sweep: recovered releases out of trials by tumble rate, as-toleranced and balance-controlled CG offset](../Figures/tables/monte_carlo_dispersion.png)
+
+<details><summary>Table as text</summary>
+
 | Scenario | 1.0 rad/s | 2.0 rad/s | 3.0 rad/s |
 | :--- | ---: | ---: | ---: |
 | As-toleranced (CG offset ≤ 5 mm) | 3/75 (4.0%) | 6/150 (4.0%) | 1/75 (1.3%) |
 | Balance-controlled (CG offset ≤ 1 mm) | 45/75 (60.0%) | 115/150 (76.7%) | 32/75 (42.7%) |
 
+</details>
+
 Success rates carry exact Clopper–Pearson 95% lower bounds in the JSON (same
 zero-inflation-proof convention as the classifier stats above).
 
-**Root cause.** The thrust-line-offset disturbance torque is `cg × thrust`. Against the
+**Root cause.** The thrust-line-offset disturbance torque is $\tau_{\text{cg}} = r_{\text{cg}} \times T$ (CG offset times thrust). Against the
 placeholder 0.004 N·m per-axis budget (EST-REC-007 — explicitly a placeholder,
 "replace with measured thrust and arm length"):
+
+![CG offset that uses the placeholder torque budget at hover and at recovery peak thrust](../Figures/tables/cg_offset_budget.png)
+
+<details><summary>Table as text</summary>
 
 | Thrust condition | CG offset using 100% of budget (mm) | CG offset at 50% margin (mm) |
 | :--- | ---: | ---: |
 | Hover (1.27 N) | 3.15 | 1.57 |
 | Recovery peak (4.2 N) | 0.95 | 0.48 |
+
+</details>
 
 A thrust cap during righting does not rescue it: protecting torque margin trades directly
 against the 3 m altitude budget and the vehicle hits the ground instead.
@@ -172,15 +216,15 @@ unverifiable until measured. Derived actions:
 
 The follow-up the FAIL demanded: replace the placeholder torque clip with the
 **physically-derived 4-motor mixer authority** (`with_mixer`,
-`Analysis/sim_release_recovery.py`) — per-motor thrust in [0, T_max/4],
-differential headroom `d_max = min(T/4, T_max/4 − T/4)`, giving
-`τ_rp(T) = 2√2·arm·d_max` (zero at zero AND full collective — the coupling the
+`Analysis/sim_release_recovery.py`) — per-motor thrust in $[0,\ T_{\max}/4]$,
+differential headroom $d_{\max} = \min(T/4,\ T_{\max}/4 - T/4)$, giving
+$\tau_{\text{rp}}(T) = 2\sqrt{2}\,\mathrm{arm}\,d_{\max}$ (zero at zero AND full collective — the coupling the
 placeholder ignored). Arm = **60 mm, ASSUMED** until CAD/bench. Making the
 authority real exposed three controller gaps, each fixed with the standard
 technique and stated in-code:
 
 1. **Integral trim** (clamped, upright-only): a PD loop trims a constant CG
-   disturbance with a steady tilt of `τ/KP ≈ 30°` at 2 mm offset — the classic
+   disturbance with a steady tilt of $\tau/K_P \approx 30^\circ$ at 2 mm offset — the classic
    reason attitude stacks carry an I-term.
 2. **Attitude-priority desaturation ("airmode")**: collective capped at 75% so
    differential headroom can never vanish at full thrust.
@@ -196,10 +240,16 @@ dispersions as scenario A (cg ≤ 5 mm; the torque multiplier now scales the arm
 
 Recovered releases out of trials (success rate; exact 95% lower bound for C):
 
+![Scenario A against scenario C: recovered releases by tumble rate under placeholder and mixer authority](../Figures/tables/mixer_authority.png)
+
+<details><summary>Table as text</summary>
+
 | Scenario | 1.0 rad/s | 2.0 rad/s | 3.0 rad/s |
 | :--- | ---: | ---: | ---: |
 | A: placeholder authority | 3/75 (4.0%) | 6/150 (4.0%) | 1/75 (1.3%) |
 | C: mixer authority (ASSUMED 60 mm arm) | 75/75 (100.0%; ≥ 96.1%) | 150/150 (100.0%; ≥ 98.0%) | 75/75 (100.0%; ≥ 96.1%) |
+
+</details>
 
 Worst altitude loss in scenario C: 1.01 m of the 3.0 m budget (3 rad/s case).
 
@@ -216,7 +266,7 @@ authority, predicted to pass at mixer authority, measurement pending.*
 ## Frozen measured-authority verdict (registered 2026-07-17)
 
 The next result is no longer governed by “comfortably above” or “sufficient
-trials.” At 7.0 V, the empirical fifth-percentile `tau_rp(T)` must be at least
+trials.” At 7.0 V, the empirical fifth-percentile $\tau_{\text{rp}}(T)$ must be at least
 **0.020 N·m at every registered point from 25–75% collective**. If that passes,
 the measured-distribution simulation runs 1,000 primary trials at 2 rad/s,
 60° tilt, and CG ≤5 mm. PASS requires at least **962/1,000** recoveries, exact
@@ -374,8 +424,8 @@ adjustment across the case-package comparisons. H-L and I-H show how the
 retained-thrust history and transition timing contribute.
 
 For each paired comparison, b counts passes only in the first scenario and c
-counts passes only in the second. The pass-rate change is `(b-c)/N`. The exact
-interval describes `b/(b+c)`, the share of disagreements favouring the first
+counts passes only in the second. The pass-rate change is $(b-c)/N$. The exact
+interval describes $b/(b+c)$, the share of disagreements favouring the first
 scenario. These are different quantities, and the output reports both. Raw
 per-trial outcomes are in [`trials.jsonl`](../Data/scenario-02/trials.jsonl).
 

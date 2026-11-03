@@ -109,7 +109,7 @@ the repository root:
 python -m Analysis.qdrone_response --fetch \
   --cache /tmp/multirotor-qdrone-source \
   --output /tmp/multirotor-qdrone-results.json \
-  --figure /tmp/multirotor-qdrone-response.png
+  --figure /tmp/multirotor-qdrone-traces.csv
 python -m unittest Analysis.tests.test_qdrone_response -v
 ```
 
@@ -117,19 +117,22 @@ python -m unittest Analysis.tests.test_qdrone_response -v
 when absent, then verifies SHA-256 against the committed source record. It
 rejects a changed or partial input. The JSON records the original calculation's
 code/protocol hashes and runtime. That record stays unchanged during visual
-redesign. The compatibility `--figure` option now delegates to the renderer.
+redesign. The `--figure` option writes the plotted traces as CSV for the MATLAB renderer.
 
 To regenerate only the tracked figure and table views from the stored result:
 
 ```sh
 python -m Analysis.plot_qdrone_response \
   --cache /tmp/multirotor-qdrone-source \
-  --figure Figures/qdrone-development-response.png \
+  --plot-data /tmp/multirotor-qdrone-source/qdrone-traces.csv \
   --tables docs
+QDRONE_TRACES=/tmp/multirotor-qdrone-source/qdrone-traces.csv \
+  matlab -batch "addpath('Analysis/matlab'); render_figures"
 ```
 
 This reads the same pinned development workbook for the time-series traces and
-`results.json` for event metrics. It writes PNG/PDF plus generated Markdown/CSV,
+`results.json` for event metrics. It writes the trace CSV outside the checkout, the caption and the generated
+Markdown/CSV; [MATLAB](../Analysis/matlab/README.md) then writes the PNG and PDF,
 without recomputing or rewriting the result. Tables show chronological rows,
 units in headings and explicit missing values. Display precision is formatting;
 the CSV retains the stored floats. Regenerate these views instead of editing
