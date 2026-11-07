@@ -1,0 +1,29 @@
+{
+  "mass": 0.163406,
+  "diagonal_size": 0.0603,
+  "refSpd": 8.0,
+  "refAngle": 25.0,
+  "refVoltage": 7.4,
+  "refCurrent": 9.0,
+  "refAlt": 10,
+  "refTempC": 20,
+  "refBatRes": 0.029,
+  "maxVoltage": 8.4,
+  "battCapacityAh": 0.65,
+  "propExpo": 0.55,
+  "refRotRate": 360,
+  "hoverThrOut": 0.29333,
+  "pwmMin": 1000,
+  "pwmMax": 2000,
+  "spin_min": 0.1,
+  "spin_max": 0.95,
+  "slew_max": 30,
+  "disc_area": 0.009809856795327556,
+  "mdrag_coef": 0.2,
+  "moment_inertia": [
+    0.0001846712715359756,
+    0.0001987925733234518,
+    0.0003053068309052878
+  ],
+  "num_motors": 4
+}

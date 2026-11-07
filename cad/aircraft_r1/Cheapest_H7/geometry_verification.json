@@ -1,0 +1,9 @@
+{
+  "valid_parts": 37,
+  "part_count": 37,
+  "invalid_parts": [],
+  "rotor_sweep_clashes": [],
+  "rotor_sweep_scope": "Full nominal blade radius, blade thickness plus 0.5 mm each axial side; purchased geometry is enveloped",
+  "mass_and_battery_model_match": true,
+  "passed": true
+}

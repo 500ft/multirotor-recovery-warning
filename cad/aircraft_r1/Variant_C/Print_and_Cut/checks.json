@@ -1,0 +1,494 @@
+{
+ "variant": "C - maxed-out (highest ballast range)",
+ "pareto_ref": "pareto_paper row 59 (SITL row 65 run)",
+ "material": "3K carbon plate (quasi-iso)",
+ "plate_t_mm": 3.0,
+ "diagonal_mm": 128.9,
+ "arm_w_mm": 10.0,
+ "plate_mass_g": 18.06,
+ "guard_kind": "duct",
+ "guard_material": "TPU",
+ "guard_mass_g_each": 12.72,
+ "guard_valid_solid": true,
+ "cradle_mass_g_TPU_or_PETG": 8.82,
+ "full_thrust_g_vendor": 223,
+ "arm_free_length_mm": 42.0,
+ "arm_tilt_deg_at_full_thrust": 0.109,
+ "arm_flap_mode_Hz": 238,
+ "arm_torsion_mode_Hz": 299,
+ "mode_target_gt_150Hz": true,
+ "tilt_target_lt_1deg": true,
+ "prop_radial_clearance_mm": 2.5,
+ "guard_to_guard_gap_mm": 13.15,
+ "guard_to_esc_board_gap_mm": 1.99,
+ "guard_top_to_fc_board_gap_mm": 2.92,
+ "pack": "BETAFPV LAVA 2S 450 75C 63.0x15.5x13.5 mm",
+ "pack_corner_to_guard_plan_gap_mm": 1.36,
+ "pack_must_sit_above_guard_tops": true,
+ "min_pack_bottom_z_above_plate_mm": 23.0,
+ "stack_hole_edge_margin_mm": 6.4,
+ "motor_hole_pad_margin_mm": 3.9,
+ "ear_hole_vs_guard_foot_id_mm": 1.18,
+ "plate_centroid_xy_mm": [
+  -0.0,
+  0.0
+ ],
+ "min_web_rule_2t_mm": 6.0,
+ "arm_meets_min_web": true,
+ "plate_valid_solid": true,
+ "alt_guard": {
+  "kind": "ring",
+  "mass_g_each": 11.79,
+  "valid": true,
+  "note": "start with these; the duct is the later experiment. Modes/clearances above use the heavier, wider duct"
+ },
+ "motor_jig": "generated (valid)",
+ "stack_jig": "reuse ../RevS/manufacturing/RevS_Drill_Jig_Stack_x1.stl (same core hole layout)",
+ "holes_to_drill_after_waterjet": 26,
+ "drill_list": [
+  [
+   48.755,
+   48.755,
+   2.2,
+   "M1 M2"
+  ],
+  [
+   42.391,
+   48.755,
+   2.2,
+   "M1 M2"
+  ],
+  [
+   42.391,
+   42.391,
+   2.2,
+   "M1 M2"
+  ],
+  [
+   48.755,
+   42.391,
+   2.2,
+   "M1 M2"
+  ],
+  [
+   53.351,
+   37.795,
+   2.2,
+   "M1 guard M2"
+  ],
+  [
+   37.795,
+   53.351,
+   2.2,
+   "M1 guard M2"
+  ],
+  [
+   -48.755,
+   48.755,
+   2.2,
+   "M2 M2"
+  ],
+  [
+   -48.755,
+   42.391,
+   2.2,
+   "M2 M2"
+  ],
+  [
+   -42.391,
+   42.391,
+   2.2,
+   "M2 M2"
+  ],
+  [
+   -42.391,
+   48.755,
+   2.2,
+   "M2 M2"
+  ],
+  [
+   -37.795,
+   53.351,
+   2.2,
+   "M2 guard M2"
+  ],
+  [
+   -53.351,
+   37.795,
+   2.2,
+   "M2 guard M2"
+  ],
+  [
+   -48.755,
+   -48.755,
+   2.2,
+   "M3 M2"
+  ],
+  [
+   -42.391,
+   -48.755,
+   2.2,
+   "M3 M2"
+  ],
+  [
+   -42.391,
+   -42.391,
+   2.2,
+   "M3 M2"
+  ],
+  [
+   -48.755,
+   -42.391,
+   2.2,
+   "M3 M2"
+  ],
+  [
+   -53.351,
+   -37.795,
+   2.2,
+   "M3 guard M2"
+  ],
+  [
+   -37.795,
+   -53.351,
+   2.2,
+   "M3 guard M2"
+  ],
+  [
+   48.755,
+   -48.755,
+   2.2,
+   "M4 M2"
+  ],
+  [
+   48.755,
+   -42.391,
+   2.2,
+   "M4 M2"
+  ],
+  [
+   42.391,
+   -42.391,
+   2.2,
+   "M4 M2"
+  ],
+  [
+   42.391,
+   -48.755,
+   2.2,
+   "M4 M2"
+  ],
+  [
+   37.795,
+   -53.351,
+   2.2,
+   "M4 guard M2"
+  ],
+  [
+   53.351,
+   -37.795,
+   2.2,
+   "M4 guard M2"
+  ],
+  [
+   0.0,
+   14.5,
+   2.2,
+   "MTF-01 / zip tie front"
+  ],
+  [
+   0.0,
+   -14.5,
+   2.2,
+   "RX antenna / zip tie rear"
+  ]
+ ],
+ "notes": [
+  "motor pattern 4x M2 on a 9 mm circle and 1.5 mm prop shaft from retailer listings (Rotorama, GetFPV): measure the delivered motor before drilling (T1)",
+  "bell diameter 15.5 mm is an ASSUMPTION for the guard foot: measure and re-run if the bell is larger than 16.5 mm",
+  "Aikon AK32PIN board outline not published (36x36 assumed): measure; 8-pin order not verified against the Matek (T8)",
+  "start rate gains at x0.5 of RevS (SITL: 0.03 P/I, 0.00075 D) and AutoTune before trials (T12)"
+ ],
+ "files": [
+  "Print_Frame_Plate_3mm.dxf",
+  "Print_Frame_Plate_3mm_WATERJET_min3p2.dxf",
+  "Print_Frame_Plate_3mm.step",
+  "Print_Guard_Duct_FDM_TPU_x4.stl",
+  "Print_Guard_Duct_FDM_TPU.step",
+  "Print_Guard_Ring_FDM_TPU_x4.stl",
+  "Print_Guard_Ring_FDM_TPU.step",
+  "Print_Battery_Cradle.stl",
+  "Print_Drill_Jig_MotorPad_PCD9p0_4hole.stl",
+  "Print_preview.png"
+ ],
+ "parameters": {
+  "key": "Print_and_Cut",
+  "title": "C - maxed-out (highest ballast range)",
+  "cost_usd": 325.88,
+  "pareto_ref": "pareto_paper row 59 (SITL row 65 run)",
+  "material": "cf_plate",
+  "plate_t": 3.0,
+  "motor_r": 64.45,
+  "arm_w": 10.0,
+  "core": 36.0,
+  "fillet": 1.0,
+  "stack_pitch": 20.0,
+  "stack_hole": 3.2,
+  "stack_label": "stack M3 20x20",
+  "motor": "RCinPower GTS V2 1202.5 11500KV",
+  "prop": "GF 65R",
+  "prop_d": 65.0,
+  "motor_pcd": 9.0,
+  "motor_holes": 4,
+  "motor_hole_d": 2.2,
+  "motor_hole_label": "M2",
+  "shaft_clr": 3.5,
+  "pad_d": 19.0,
+  "ear_r": 11.0,
+  "bell_d": 15.95,
+  "guard_kind": "duct",
+  "guard_h": 20.0,
+  "esc_board": [
+   36.0,
+   36.0
+  ],
+  "fc_board": [
+   36.0,
+   28.0
+  ],
+  "pack_name": "BETAFPV LAVA 2S 450 75C",
+  "pack": [
+   63.0,
+   15.5,
+   13.5
+  ],
+  "reuse_revs_jig": false,
+  "guard_material": "TPU",
+  "guard_wall": 2.0,
+  "alt_ring": true
+ },
+ "holes": [
+  {
+   "x": 45.573,
+   "y": 45.573,
+   "d": 3.5,
+   "use": "M1 shaft/circlip"
+  },
+  {
+   "x": 48.755,
+   "y": 48.755,
+   "d": 2.2,
+   "use": "M1 M2"
+  },
+  {
+   "x": 42.391,
+   "y": 48.755,
+   "d": 2.2,
+   "use": "M1 M2"
+  },
+  {
+   "x": 42.391,
+   "y": 42.391,
+   "d": 2.2,
+   "use": "M1 M2"
+  },
+  {
+   "x": 48.755,
+   "y": 42.391,
+   "d": 2.2,
+   "use": "M1 M2"
+  },
+  {
+   "x": 53.351,
+   "y": 37.795,
+   "d": 2.2,
+   "use": "M1 guard M2"
+  },
+  {
+   "x": 37.795,
+   "y": 53.351,
+   "d": 2.2,
+   "use": "M1 guard M2"
+  },
+  {
+   "x": -45.573,
+   "y": 45.573,
+   "d": 3.5,
+   "use": "M2 shaft/circlip"
+  },
+  {
+   "x": -48.755,
+   "y": 48.755,
+   "d": 2.2,
+   "use": "M2 M2"
+  },
+  {
+   "x": -48.755,
+   "y": 42.391,
+   "d": 2.2,
+   "use": "M2 M2"
+  },
+  {
+   "x": -42.391,
+   "y": 42.391,
+   "d": 2.2,
+   "use": "M2 M2"
+  },
+  {
+   "x": -42.391,
+   "y": 48.755,
+   "d": 2.2,
+   "use": "M2 M2"
+  },
+  {
+   "x": -37.795,
+   "y": 53.351,
+   "d": 2.2,
+   "use": "M2 guard M2"
+  },
+  {
+   "x": -53.351,
+   "y": 37.795,
+   "d": 2.2,
+   "use": "M2 guard M2"
+  },
+  {
+   "x": -45.573,
+   "y": -45.573,
+   "d": 3.5,
+   "use": "M3 shaft/circlip"
+  },
+  {
+   "x": -48.755,
+   "y": -48.755,
+   "d": 2.2,
+   "use": "M3 M2"
+  },
+  {
+   "x": -42.391,
+   "y": -48.755,
+   "d": 2.2,
+   "use": "M3 M2"
+  },
+  {
+   "x": -42.391,
+   "y": -42.391,
+   "d": 2.2,
+   "use": "M3 M2"
+  },
+  {
+   "x": -48.755,
+   "y": -42.391,
+   "d": 2.2,
+   "use": "M3 M2"
+  },
+  {
+   "x": -53.351,
+   "y": -37.795,
+   "d": 2.2,
+   "use": "M3 guard M2"
+  },
+  {
+   "x": -37.795,
+   "y": -53.351,
+   "d": 2.2,
+   "use": "M3 guard M2"
+  },
+  {
+   "x": 45.573,
+   "y": -45.573,
+   "d": 3.5,
+   "use": "M4 shaft/circlip"
+  },
+  {
+   "x": 48.755,
+   "y": -48.755,
+   "d": 2.2,
+   "use": "M4 M2"
+  },
+  {
+   "x": 48.755,
+   "y": -42.391,
+   "d": 2.2,
+   "use": "M4 M2"
+  },
+  {
+   "x": 42.391,
+   "y": -42.391,
+   "d": 2.2,
+   "use": "M4 M2"
+  },
+  {
+   "x": 42.391,
+   "y": -48.755,
+   "d": 2.2,
+   "use": "M4 M2"
+  },
+  {
+   "x": 37.795,
+   "y": -53.351,
+   "d": 2.2,
+   "use": "M4 guard M2"
+  },
+  {
+   "x": 53.351,
+   "y": -37.795,
+   "d": 2.2,
+   "use": "M4 guard M2"
+  },
+  {
+   "x": -10.0,
+   "y": -10.0,
+   "d": 3.2,
+   "use": "stack M3 20x20"
+  },
+  {
+   "x": -10.0,
+   "y": 10.0,
+   "d": 3.2,
+   "use": "stack M3 20x20"
+  },
+  {
+   "x": 10.0,
+   "y": -10.0,
+   "d": 3.2,
+   "use": "stack M3 20x20"
+  },
+  {
+   "x": 10.0,
+   "y": 10.0,
+   "d": 3.2,
+   "use": "stack M3 20x20"
+  },
+  {
+   "x": 0.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "ballast post M3 (thrust axis)"
+  },
+  {
+   "x": -13.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "offset ballast M3"
+  },
+  {
+   "x": 13.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "offset ballast M3"
+  },
+  {
+   "x": 0.0,
+   "y": 14.5,
+   "d": 2.2,
+   "use": "MTF-01 / zip tie front"
+  },
+  {
+   "x": 0.0,
+   "y": -14.5,
+   "d": 2.2,
+   "use": "RX antenna / zip tie rear"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+SOLIDWORKS 34.2.1
+Assembly: Cheapest_H7_R1.SLDASM
+Components: 37
+Separate imported-body parts, fixed at their modeled positions. Parametric source is build_drone_release.py.

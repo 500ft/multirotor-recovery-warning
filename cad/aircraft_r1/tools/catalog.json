@@ -1,0 +1,1074 @@
+{
+ "note": "Build catalog.json for evolve_drone.py from the sourced research (2026-11-06).\n\nSources: two research agents (URLs kept in frames_raw.json and EVOLVE_REPORT.md) plus pages read\ndirectly: BetaFPV 1103 load-performance image (screenshot), HappyModel EX1103 bench table,\nArduPilot hwdef for TMotorH743 (AP_SCRIPTING_ENABLED 0) and KakuteH7Mini (2 MB + littlefs).\nRows with no verified mass, size or price are left out rather than guessed.\n",
+ "fc_esc": [
+  {
+   "name": "Matek H743-MINI V3",
+   "type": "fc_only",
+   "mount": "20x20 M3",
+   "mass_g": 7.0,
+   "price_usd": 95.99,
+   "vbat_min_v": 6.3,
+   "vbat_max_s": 8,
+   "min_s": 2,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "MatekH743-bdshot",
+   "ardupilot_lua": "yes",
+   "logging": "microSD",
+   "receiver_builtin": false,
+   "note": "EOL; in stock at Flying Tech UK / RDQ snippet"
+  },
+  {
+   "name": "Holybro Kakute H7 Mini",
+   "type": "fc_only",
+   "mount": "20x20 M3",
+   "mass_g": 5.5,
+   "price_usd": 62.99,
+   "vbat_min_v": 7.0,
+   "vbat_max_s": 6,
+   "min_s": 2,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "KakuteH7Mini",
+   "ardupilot_lua": "yes (2 MB flash + littlefs, hwdef checked)",
+   "logging": "dataflash 16 MB",
+   "receiver_builtin": false,
+   "note": "ArduPilot lists v1.5 unavailable since mid-2025; 7 V documented minimum"
+  },
+  {
+   "name": "Flywoo GOKU H743 Pro Mini",
+   "type": "fc_only",
+   "mount": "20x20 M2",
+   "mass_g": 5.8,
+   "price_usd": 59.99,
+   "vbat_min_v": 7.4,
+   "vbat_max_s": 6,
+   "min_s": 2,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "FlywooH743Pro",
+   "ardupilot_lua": "yes",
+   "logging": "512 MB flash as SD",
+   "receiver_builtin": false,
+   "note": "out of stock (MyFPV, Rotorama)"
+  },
+  {
+   "name": "T-Motor H7 Mini",
+   "type": "fc_only",
+   "mount": "20x20 M3",
+   "mass_g": 5.0,
+   "price_usd": 106.9,
+   "vbat_min_v": null,
+   "vbat_max_s": 6,
+   "min_s": 2,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "TMotorH743",
+   "ardupilot_lua": "no (hwdef: AP_SCRIPTING_ENABLED 0)",
+   "logging": "dataflash 16 MB",
+   "receiver_builtin": false
+  },
+  {
+   "name": "SpeedyBee F405 Mini",
+   "type": "fc_only",
+   "mount": "20x20 M3",
+   "mass_g": 9.6,
+   "price_usd": 40.99,
+   "vbat_min_v": null,
+   "vbat_max_s": 6,
+   "min_s": 3,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "SpeedyBeeF405Mini",
+   "ardupilot_lua": "no",
+   "logging": "dataflash 8 MB",
+   "receiver_builtin": false
+  },
+  {
+   "name": "Diatone Mamba MK4 F405 Mini",
+   "type": "fc_only",
+   "mount": "20x20 M2",
+   "mass_g": 6.0,
+   "price_usd": 46.99,
+   "vbat_min_v": null,
+   "vbat_max_s": 6,
+   "min_s": 3,
+   "current_sensor": "via ESC",
+   "ardupilot_target": "MambaF405-2022",
+   "ardupilot_lua": "no",
+   "logging": "dataflash",
+   "receiver_builtin": false
+  },
+  {
+   "name": "Flywoo GOKU F405 HD 1-2S 12A ELRS AIO V2",
+   "type": "aio",
+   "mount": "25.5x25.5 M2",
+   "mass_g": 4.9,
+   "price_usd": 62.99,
+   "vbat_min_v": 3.0,
+   "vbat_max_s": 2,
+   "min_s": 1,
+   "esc_cont_a_per_motor": 12,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "FlywooF405HD-AIOv2",
+   "ardupilot_lua": "no (F405 1 MB)",
+   "logging": "dataflash 8 MB",
+   "receiver_builtin": true
+  },
+  {
+   "name": "HappyModel CrazyF405HD ELRS 1-2S AIO",
+   "type": "aio",
+   "mount": "25.5x25.5 M2",
+   "mass_g": 4.8,
+   "price_usd": 59.99,
+   "vbat_min_v": 2.9,
+   "vbat_max_s": 2,
+   "min_s": 1,
+   "esc_cont_a_per_motor": 12,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "CrazyF405",
+   "ardupilot_lua": "no (F405 1 MB)",
+   "logging": "dataflash 8 MB",
+   "receiver_builtin": true,
+   "note": "no bidirectional DShot in the ArduPilot hwdef"
+  },
+  {
+   "name": "MicoAir743v2-AIO-35A",
+   "type": "aio",
+   "mount": "25.5x25.5 M3",
+   "mass_g": 10.0,
+   "price_usd": 64.99,
+   "vbat_min_v": 6.3,
+   "vbat_max_s": 6,
+   "min_s": 2,
+   "esc_cont_a_per_motor": 35,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "MicoAir743v2",
+   "ardupilot_lua": "yes (H743 2 MB)",
+   "logging": "microSD",
+   "receiver_builtin": false,
+   "board_mm": [
+    36,
+    36
+   ],
+   "note": "vbat_min_v assumed 6.3 V; needs an external UART ELRS receiver"
+  },
+  {
+   "name": "BETAFPV F4 2-3S 20A AIO V1",
+   "type": "aio",
+   "mount": "25.5x25.5 M2",
+   "mass_g": 5.58,
+   "price_usd": 65.9,
+   "vbat_min_v": null,
+   "vbat_max_s": 3,
+   "min_s": 2,
+   "esc_cont_a_per_motor": 20,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "BETAFPV-F405",
+   "ardupilot_lua": "no",
+   "logging": "dataflash 16 MB",
+   "receiver_builtin": true
+  },
+  {
+   "name": "JHEMCU GSF405A 1-2S 5A AIO",
+   "type": "aio",
+   "mount": "25.5x25.5 M2",
+   "mass_g": 3.3,
+   "price_usd": 67.99,
+   "vbat_min_v": null,
+   "vbat_max_s": 2,
+   "min_s": 1,
+   "esc_cont_a_per_motor": 5,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "JHEMCU-GSF405A",
+   "ardupilot_lua": "no",
+   "logging": "dataflash 8 MB",
+   "receiver_builtin": true
+  },
+  {
+   "name": "iFlight BLITZ Whoop F7 AIO 55A",
+   "type": "aio",
+   "mount": "25.5x25.5 M2",
+   "mass_g": 8.5,
+   "price_usd": 147.9,
+   "vbat_min_v": null,
+   "vbat_max_s": 6,
+   "min_s": 2,
+   "esc_cont_a_per_motor": 55,
+   "current_sensor": "yes onboard",
+   "ardupilot_target": "BlitzF745AIO",
+   "ardupilot_lua": "no (F745 1 MB)",
+   "logging": "dataflash 16 MB",
+   "receiver_builtin": false
+  }
+ ],
+ "esc": [
+  {
+   "name": "Lumenier Mini Razor Pro 45A AM32",
+   "mount": "20x20 M3",
+   "mass_g": 12.5,
+   "price_usd": 77.99,
+   "min_s": 2,
+   "max_s": 6,
+   "cont_a": 45,
+   "current_sensor": "yes",
+   "firmware": "AM32",
+   "pinout_matches_matek": true,
+   "board_mm": [
+    46,
+    33
+   ]
+  },
+  {
+   "name": "SEQURE Blueson A1 65A AM32",
+   "mount": "20x20 M3",
+   "mass_g": 19.0,
+   "price_usd": 38.99,
+   "min_s": 2,
+   "max_s": 6,
+   "cont_a": 65,
+   "current_sensor": "yes",
+   "firmware": "AM32",
+   "pinout_matches_matek": null,
+   "board_mm": [
+    42.5,
+    36
+   ]
+  },
+  {
+   "name": "Aikon AK32PIN 35A V2",
+   "mount": "20x20 M3",
+   "mass_g": 10.0,
+   "price_usd": 64.99,
+   "min_s": 2,
+   "max_s": 6,
+   "cont_a": 35,
+   "current_sensor": "yes",
+   "firmware": "BLHeli_32",
+   "pinout_matches_matek": null,
+   "board_mm": [
+    36,
+    36
+   ],
+   "board_mm_note": "not published; 20x20 boards are typically 30-36 mm, worst case used"
+  },
+  {
+   "name": "HAKRC 15A BB2",
+   "mount": "20x20",
+   "mass_g": 4.8,
+   "price_usd": 33.16,
+   "min_s": 2,
+   "max_s": 4,
+   "cont_a": 15,
+   "current_sensor": null,
+   "firmware": "BLHeli_S",
+   "board_mm": [
+    30,
+    30
+   ]
+  },
+  {
+   "name": "Flywoo GOKU BS 20A V3",
+   "mount": "16x16 M2",
+   "mass_g": 4.5,
+   "price_usd": 38.99,
+   "min_s": 2,
+   "max_s": 4,
+   "cont_a": 20,
+   "current_sensor": null,
+   "firmware": "BLHeli_S",
+   "board_mm": [
+    25,
+    25
+   ]
+  }
+ ],
+ "motors": [
+  {
+   "name": "BetaFPV 1103 10500KV",
+   "mass_g": 3.5,
+   "price_usd_each": 8.99,
+   "in_production": true,
+   "source": "betafpv.com load-performance image, screenshot 2026-11-06",
+   "thrust_table": [
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.94,
+     "throttle_pct": 20,
+     "thrust_g": 11,
+     "current_a": 0.29
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.93,
+     "throttle_pct": 30,
+     "thrust_g": 26,
+     "current_a": 0.8
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.92,
+     "throttle_pct": 40,
+     "thrust_g": 42,
+     "current_a": 1.62
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.91,
+     "throttle_pct": 50,
+     "thrust_g": 60,
+     "current_a": 2.66
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.9,
+     "throttle_pct": 60,
+     "thrust_g": 80,
+     "current_a": 3.85
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.88,
+     "throttle_pct": 70,
+     "thrust_g": 97,
+     "current_a": 5.16
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.87,
+     "throttle_pct": 80,
+     "thrust_g": 113,
+     "current_a": 6.57
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.85,
+     "throttle_pct": 90,
+     "thrust_g": 128,
+     "current_a": 8.1
+    },
+    {
+     "prop": "GF 2218-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.82,
+     "throttle_pct": 100,
+     "thrust_g": 142,
+     "current_a": 9.9
+    }
+   ]
+  },
+  {
+   "name": "HappyModel EX1103 11000KV",
+   "mass_g": 3.8,
+   "price_usd_each": 10.5,
+   "in_production": false,
+   "source": "happymodel.cn bench data, read 2026-11-06",
+   "thrust_table": [
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 23,
+     "current_a": 1.07
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 40.9,
+     "current_a": 2.12
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 56.6,
+     "current_a": 3.17
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 68.6,
+     "current_a": 4.05
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 81.8,
+     "current_a": 5.04
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 95,
+     "current_a": 6.19
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 106.5,
+     "current_a": 7.23
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": null,
+     "thrust_g": 115.3,
+     "current_a": 8.27
+    },
+    {
+     "prop": "Gemfan 2023R",
+     "prop_in": 2.0,
+     "voltage_v": 7.4,
+     "throttle_pct": 100,
+     "thrust_g": 121.9,
+     "current_a": 9.2
+    }
+   ]
+  },
+  {
+   "name": "GEPRC SPEEDX2 1102 10000KV",
+   "mass_g": 2.83,
+   "price_usd_each": 10.99,
+   "in_production": true,
+   "source": "agent (geprc.com); 7.45 A peak confirmed on the page",
+   "thrust_table": [
+    {
+     "prop": "HQ DT51x4",
+     "prop_in": 2.0,
+     "voltage_v": 8,
+     "throttle_pct": 50,
+     "thrust_g": 39,
+     "current_a": 1.63
+    },
+    {
+     "prop": "HQ DT51x4",
+     "prop_in": 2.0,
+     "voltage_v": 8,
+     "throttle_pct": 100,
+     "thrust_g": 88,
+     "current_a": 7.45
+    }
+   ]
+  },
+  {
+   "name": "FlashHobby A1106 6500KV",
+   "mass_g": 6.2,
+   "price_usd_each": 11.99,
+   "in_production": true,
+   "source": "flashhobby.com",
+   "thrust_table": [
+    {
+     "prop": "GF2540-3",
+     "prop_in": 2.5,
+     "voltage_v": 8.0,
+     "throttle_pct": 50,
+     "thrust_g": 65,
+     "current_a": 2.56
+    },
+    {
+     "prop": "GF2540-3",
+     "prop_in": 2.5,
+     "voltage_v": 8.0,
+     "throttle_pct": 100,
+     "thrust_g": 163,
+     "current_a": 8.51
+    },
+    {
+     "prop": "GF3028-3",
+     "prop_in": 3.0,
+     "voltage_v": 8.0,
+     "throttle_pct": 50,
+     "thrust_g": 85,
+     "current_a": 3.1
+    },
+    {
+     "prop": "GF3028-3",
+     "prop_in": 3.0,
+     "voltage_v": 8.0,
+     "throttle_pct": 100,
+     "thrust_g": 203,
+     "current_a": 10.41
+    },
+    {
+     "prop": "GF2040-3",
+     "prop_in": 2.0,
+     "voltage_v": 8.0,
+     "throttle_pct": 50,
+     "thrust_g": 32,
+     "current_a": 1.82
+    },
+    {
+     "prop": "GF2040-3",
+     "prop_in": 2.0,
+     "voltage_v": 8.0,
+     "throttle_pct": 100,
+     "thrust_g": 96,
+     "current_a": 5.95
+    }
+   ]
+  },
+  {
+   "name": "GEPRC SPEEDX2 1104 7500KV",
+   "mass_g": 5.2,
+   "price_usd_each": 10.99,
+   "in_production": true,
+   "source": "geprc.com",
+   "thrust_table": [
+    {
+     "prop": "Gemfan 2219-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.52,
+     "throttle_pct": 50,
+     "thrust_g": 52.61,
+     "current_a": 2.273
+    },
+    {
+     "prop": "Gemfan 2219-3",
+     "prop_in": 2.2,
+     "voltage_v": 7.43,
+     "throttle_pct": 100,
+     "thrust_g": 148.82,
+     "current_a": 7.688
+    }
+   ]
+  },
+  {
+   "name": "GEPRC SPEEDX2 1202.5 10000KV",
+   "mass_g": 4.53,
+   "price_usd_each": 12.99,
+   "in_production": true,
+   "source": "geprc.com",
+   "thrust_table": [
+    {
+     "prop": "GF 65R",
+     "prop_in": 2.56,
+     "voltage_v": 7.4,
+     "throttle_pct": 50,
+     "thrust_g": 81,
+     "current_a": 2.3
+    },
+    {
+     "prop": "GF 65R",
+     "prop_in": 2.56,
+     "voltage_v": 7.4,
+     "throttle_pct": 100,
+     "thrust_g": 211,
+     "current_a": 9.2
+    }
+   ]
+  },
+  {
+   "name": "GEPRC SPEEDX2 1303.5 5500KV",
+   "mass_g": 6.5,
+   "price_usd_each": 15.99,
+   "in_production": true,
+   "source": "geprc.com",
+   "thrust_table": [
+    {
+     "prop": "GF2540",
+     "prop_in": 2.5,
+     "voltage_v": 7.4,
+     "throttle_pct": 50,
+     "thrust_g": 64,
+     "current_a": 0.9
+    },
+    {
+     "prop": "GF2540",
+     "prop_in": 2.5,
+     "voltage_v": 7.4,
+     "throttle_pct": 100,
+     "thrust_g": 167,
+     "current_a": 5.2
+    },
+    {
+     "prop": "HQ 3x2.5x3",
+     "prop_in": 3.0,
+     "voltage_v": 7.4,
+     "throttle_pct": 50,
+     "thrust_g": 77,
+     "current_a": 1.3
+    },
+    {
+     "prop": "HQ 3x2.5x3",
+     "prop_in": 3.0,
+     "voltage_v": 7.4,
+     "throttle_pct": 100,
+     "thrust_g": 199,
+     "current_a": 6.2
+    }
+   ]
+  },
+  {
+   "name": "T-Motor F1204 6500KV",
+   "mass_g": 6.9,
+   "price_usd_each": 15.9,
+   "in_production": true,
+   "source": "t-hobby.com",
+   "thrust_table": [
+    {
+     "prop": "GF3016",
+     "prop_in": 3.0,
+     "voltage_v": 8.43,
+     "throttle_pct": 50,
+     "thrust_g": 55.05,
+     "current_a": 1.72
+    },
+    {
+     "prop": "GF3016",
+     "prop_in": 3.0,
+     "voltage_v": 8.38,
+     "throttle_pct": 70,
+     "thrust_g": 97.52,
+     "current_a": 3.43
+    },
+    {
+     "prop": "GF3016",
+     "prop_in": 3.0,
+     "voltage_v": 8.27,
+     "throttle_pct": 100,
+     "thrust_g": 153.53,
+     "current_a": 6.9
+    }
+   ]
+  },
+  {
+   "name": "T-Motor M1103 11000KV",
+   "mass_g": 4.61,
+   "price_usd_each": 11.9,
+   "in_production": true,
+   "source": "t-hobby.com",
+   "thrust_table": [
+    {
+     "prop": "GF2023-3",
+     "prop_in": 2.0,
+     "voltage_v": 8.4,
+     "throttle_pct": 60,
+     "thrust_g": 70.8,
+     "current_a": 4.9
+    },
+    {
+     "prop": "GF2023-3",
+     "prop_in": 2.0,
+     "voltage_v": 8.2,
+     "throttle_pct": 100,
+     "thrust_g": 131.2,
+     "current_a": 12.4
+    },
+    {
+     "prop": "GF65MMS-2",
+     "prop_in": 2.56,
+     "voltage_v": 8.4,
+     "throttle_pct": 60,
+     "thrust_g": 90.8,
+     "current_a": 4.5
+    },
+    {
+     "prop": "GF65MMS-2",
+     "prop_in": 2.56,
+     "voltage_v": 8.2,
+     "throttle_pct": 100,
+     "thrust_g": 173.8,
+     "current_a": 11.3
+    }
+   ]
+  },
+  {
+   "name": "T-Motor M1103 8000KV",
+   "mass_g": 4.64,
+   "price_usd_each": 11.9,
+   "in_production": true,
+   "source": "t-hobby.com",
+   "thrust_table": [
+    {
+     "prop": "GF3018-2",
+     "prop_in": 3.0,
+     "voltage_v": 8.4,
+     "throttle_pct": 60,
+     "thrust_g": 69.4,
+     "current_a": 3.9
+    },
+    {
+     "prop": "GF3018-2",
+     "prop_in": 3.0,
+     "voltage_v": 8.3,
+     "throttle_pct": 100,
+     "thrust_g": 139.8,
+     "current_a": 10.4
+    }
+   ]
+  },
+  {
+   "name": "RCinPower GTS V2 1202.5 11500KV",
+   "mass_g": 3.9,
+   "price_usd_each": 14.26,
+   "in_production": true,
+   "source": "rcinpower.com",
+   "thrust_table": [
+    {
+     "prop": "GF 65R",
+     "prop_in": 2.56,
+     "voltage_v": 7.4,
+     "throttle_pct": 50,
+     "thrust_g": 86,
+     "current_a": 2.4
+    },
+    {
+     "prop": "GF 65R",
+     "prop_in": 2.56,
+     "voltage_v": 7.4,
+     "throttle_pct": 100,
+     "thrust_g": 223,
+     "current_a": 9.6
+    }
+   ]
+  }
+ ],
+ "props": [
+  {
+   "name": "GF 2218-3",
+   "diameter_in": 2.2,
+   "mass_g": 1.0,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "Gemfan 2023R",
+   "diameter_in": 2.0,
+   "mass_g": 0.88,
+   "price_per_set": 2.49
+  },
+  {
+   "name": "GF2023-3",
+   "diameter_in": 2.0,
+   "mass_g": 0.88,
+   "price_per_set": 2.49
+  },
+  {
+   "name": "HQ DT51x4",
+   "diameter_in": 2.0,
+   "mass_g": 0.6,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "GF2540-3",
+   "diameter_in": 2.5,
+   "mass_g": 1.2,
+   "price_per_set": 3.5
+  },
+  {
+   "name": "GF2540",
+   "diameter_in": 2.5,
+   "mass_g": 1.2,
+   "price_per_set": 3.5
+  },
+  {
+   "name": "GF3028-3",
+   "diameter_in": 3.0,
+   "mass_g": 1.5,
+   "price_per_set": 3.5
+  },
+  {
+   "name": "GF2040-3",
+   "diameter_in": 2.0,
+   "mass_g": 0.9,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "Gemfan 2219-3",
+   "diameter_in": 2.2,
+   "mass_g": 1.0,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "GF 65R",
+   "diameter_in": 2.56,
+   "mass_g": 1.2,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "HQ 3x2.5x3",
+   "diameter_in": 3.0,
+   "mass_g": 1.35,
+   "price_per_set": 2.29
+  },
+  {
+   "name": "GF3016",
+   "diameter_in": 3.0,
+   "mass_g": 1.18,
+   "price_per_set": 2.99
+  },
+  {
+   "name": "GF65MMS-2",
+   "diameter_in": 2.56,
+   "mass_g": 0.9,
+   "price_per_set": 3.0
+  },
+  {
+   "name": "GF3018-2",
+   "diameter_in": 3.0,
+   "mass_g": 0.75,
+   "price_per_set": 5.99
+  }
+ ],
+ "batteries": [
+  {
+   "name": "GNB 2S 450 HV 80C",
+   "cells": 2,
+   "capacity_mah": 450,
+   "mass_g": 27.5,
+   "price_usd": 7.99
+  },
+  {
+   "name": "GNB 2S 550 HV 100C",
+   "cells": 2,
+   "capacity_mah": 550,
+   "mass_g": 29,
+   "price_usd": 9.49
+  },
+  {
+   "name": "GNB 2S 650 HV 120C",
+   "cells": 2,
+   "capacity_mah": 650,
+   "mass_g": 36,
+   "price_usd": 8.99
+  },
+  {
+   "name": "GNB 2S 850 HV 60C",
+   "cells": 2,
+   "capacity_mah": 850,
+   "mass_g": 38,
+   "price_usd": 9.99
+  },
+  {
+   "name": "Tattu 2S 650 75C",
+   "cells": 2,
+   "capacity_mah": 650,
+   "mass_g": 43,
+   "price_usd": 8.19
+  },
+  {
+   "name": "Tattu R-Line 2S 850 HV 95C",
+   "cells": 2,
+   "capacity_mah": 850,
+   "mass_g": 40,
+   "price_usd": 10.99
+  },
+  {
+   "name": "BETAFPV LAVA 2S 450 75C",
+   "cells": 2,
+   "capacity_mah": 450,
+   "mass_g": 26.1,
+   "price_usd": 10.0
+  },
+  {
+   "name": "CNHL MiniStar HV 2S 450 70C",
+   "cells": 2,
+   "capacity_mah": 450,
+   "mass_g": 32,
+   "price_usd": 6.6
+  },
+  {
+   "name": "CNHL MiniStar 2S 650 70C",
+   "cells": 2,
+   "capacity_mah": 650,
+   "mass_g": 49,
+   "price_usd": 5.99
+  },
+  {
+   "name": "GNB 1S 550 HV 100C",
+   "cells": 1,
+   "capacity_mah": 550,
+   "mass_g": 13.5,
+   "price_usd": 7.49
+  },
+  {
+   "name": "GNB 1S 660 HV 90C",
+   "cells": 1,
+   "capacity_mah": 660,
+   "mass_g": 15,
+   "price_usd": 13.49
+  }
+ ],
+ "frames": [
+  {
+   "name": "BetaFPV Pavo Pico",
+   "kind": "commercial_plastic_whoop",
+   "prop_size_in": 1.8,
+   "wheelbase_mm": 80.8,
+   "stack_mount": "25.5x25.5",
+   "guards": "integrated",
+   "notes": "duct",
+   "mass_g": 12.7,
+   "price_usd": 10.5,
+   "confidence": "medium",
+   "source_urls": [
+    "https://firstquadcopter.com/reviews/betafpv-pavo-pico/"
+   ]
+  },
+  {
+   "name": "BetaFPV Meteor75 Pro",
+   "kind": "commercial_plastic_whoop",
+   "prop_size_in": 1.8,
+   "wheelbase_mm": 80.8,
+   "stack_mount": "25.5x25.5",
+   "guards": "integrated",
+   "notes": "duct; 1S 08xx class",
+   "mass_g": 7.73,
+   "price_usd": 8.0,
+   "confidence": "medium-high",
+   "source_urls": [
+    "https://betafpv.com/products/meteor75-pro-brushless-whoop-frame"
+   ]
+  },
+  {
+   "name": "BetaFPV Meteor85",
+   "kind": "commercial_plastic_whoop",
+   "prop_size_in": 2.0,
+   "wheelbase_mm": 87.7,
+   "stack_mount": "25.5x25.5",
+   "guards": "integrated",
+   "notes": "duct; soft PP, hoops flex into props; 2S 450 slot",
+   "mass_g": 11.32,
+   "price_usd": 6.5,
+   "confidence": "medium-high",
+   "source_urls": [
+    "https://betafpv.com/products/meteor85-brushless-whoop-frame"
+   ]
+  },
+  {
+   "name": "HappyModel Mobula8",
+   "kind": "commercial_plastic_whoop",
+   "prop_size_in": 2.0,
+   "wheelbase_mm": 85,
+   "stack_mount": "25.5x25.5",
+   "guards": "integrated",
+   "notes": "duct; stiff PP; reports of posts cracking",
+   "mass_g": 11.5,
+   "price_usd": 6.0,
+   "confidence": "high",
+   "source_urls": [
+    "https://www.getfpv.com/happymodel-mobula8-85mm-frame.html"
+   ]
+  },
+  {
+   "name": "HappyModel Crux35",
+   "kind": "commercial_cf",
+   "prop_size_in": 3.5,
+   "wheelbase_mm": 150,
+   "stack_mount": null,
+   "guards": "none",
+   "mass_g": 26,
+   "price_usd": 24.0,
+   "confidence": "medium",
+   "source_urls": [
+    "https://pyrodrone.com/products/happymodel-crux35-micro-freestyle-fpv-drone-frame-kit-1"
+   ]
+  },
+  {
+   "name": "HGLRC Draknight 2in",
+   "kind": "commercial_cf",
+   "prop_size_in": 2.0,
+   "wheelbase_mm": 91,
+   "stack_mount": null,
+   "guards": "none",
+   "mass_g": 17,
+   "price_usd": 14.99,
+   "confidence": "medium",
+   "source_urls": [
+    "https://www.getfpv.com/hglrc-draknight-2-inch-frame.html"
+   ]
+  },
+  {
+   "name": "TCMMRC TC02 2.5in toothpick",
+   "kind": "commercial_cf",
+   "prop_size_in": 2.5,
+   "wheelbase_mm": 100,
+   "stack_mount": null,
+   "guards": "none",
+   "mass_g": 25,
+   "price_usd": 27.88,
+   "confidence": "low-medium",
+   "source_urls": [
+    "https://rcdrone.top/products/2-5-inch-fpv-drone-frame-kit-tc02"
+   ]
+  },
+  {
+   "name": "GEPRC Smart16",
+   "kind": "commercial_cf",
+   "prop_size_in": 1.6,
+   "wheelbase_mm": 78,
+   "stack_mount": null,
+   "guards": "none",
+   "mass_g": 8.5,
+   "price_usd": 18.0,
+   "confidence": "medium-high",
+   "source_urls": [
+    "https://www.racedayquads.com/products/geprc-smart-16-1-6-nano-freestyle-frame-kit"
+   ]
+  },
+  {
+   "name": "GEPRC CineLog20",
+   "kind": "commercial_plastic_whoop",
+   "prop_size_in": 2.0,
+   "wheelbase_mm": 100,
+   "stack_mount": "25.5x25.5",
+   "guards": "integrated",
+   "notes": "duct",
+   "mass_g": 53.4,
+   "price_usd": 40.0,
+   "confidence": "high",
+   "source_urls": [
+    "https://pyrodrone.com/products/geprc-cinelog20-gep-cl20-2-cinewhoop-frame-kit"
+   ]
+  }
+ ],
+ "seed_designs": [
+  {
+   "name": "RevS as specified (Matek + Lumenier, EX1103 + 2023, GNB 550, 3 mm CF 124 mm, TPU rings)",
+   "genome": {
+    "fc": 0,
+    "esc": 0,
+    "pair": "HappyModel EX1103 11000KV|Gemfan 2023R",
+    "batt": 1,
+    "frame_kind": "custom",
+    "frame": 0,
+    "material": "cf_plate",
+    "plate_t": 3.0,
+    "arm_w": 12.0,
+    "extra_diag": 0.0,
+    "guard": "tpu_ring"
+   }
+  },
+  {
+   "name": "RevS with BetaFPV 1103 (primary motor) on its published 2218 prop",
+   "genome": {
+    "fc": 0,
+    "esc": 0,
+    "pair": "BetaFPV 1103 10500KV|GF 2218-3",
+    "batt": 1,
+    "frame_kind": "custom",
+    "frame": 0,
+    "material": "cf_plate",
+    "plate_t": 3.0,
+    "arm_w": 12.0,
+    "extra_diag": 0.0,
+    "guard": "tpu_ring"
+   }
+  }
+ ]
+}

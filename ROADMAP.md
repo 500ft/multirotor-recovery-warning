@@ -16,6 +16,8 @@ dependencies and repository cleanup. It does not authorize their physical execut
 
 ## Current step
 
+**Aircraft CAD:** the owner selected [Variant C and the MicoAir H7 layout](docs/decisions/aircraft-layouts.md). Their [component CAD, BOMs and executed geometry/SITL checks](cad/aircraft_r1/README.md) are retained. RevS remains the reference build; physical component qualification is still required.
+
 **Done:** the licensed [QDrone2 development response](docs/qdrone-response.md)
 and its [registered protocol](Data/qdrone-response/protocol.json) reproduce
 continuous altitude tracking under the source authors' controller. Numerical
@@ -32,7 +34,7 @@ requires borrowed or bought physical hardware even for a qualification-only
 experiment. Existing ownership, wiring plans, synthetic capture tests and CAD
 assets do not establish a calibrated or safely contained stand.
 
-**Blocked:** M2 has no selected hardware, site or budget. Closure is recommended
+**Blocked:** M2 has no confirmed physical hardware access, site or budget. Closure is recommended
 while no access route is chosen; no closure or archive decision has been made.
 New measurements and recovery trials still require the approvals below.
 

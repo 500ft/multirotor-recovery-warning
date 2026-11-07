@@ -1,0 +1,17 @@
+﻿ref,item,quantity_installed,recommended_spares,unit_price_usd,extended_usd,price_status,source_url,notes,make_or_buy,checked_date
+FC1,Matek H743-MINI V3,1,0,120.0,120.0,prior supplier/FX estimate; EOL; quote before purchase,https://www.flyingtech.co.uk/product/matek-h743-mini-20x20-flight-controller/,,BUY,2026-11-07
+ESC1,Aikon AK32PIN 35A V2 2-6S,1,0,59.99,59.99,retailer listed; checkout stock unconfirmed,https://reduxair.com/products/aikon-ak32pin-v2-4-in-1-35a-6s,Manufacturer 10 g with wires: https://aikon-electronics.com/index.php?id=28 . Outline and pinout unverified,BUY,2026-11-07
+RX1,RadioMaster RP1 V2 ELRS,1,0,18.99,18.99,planning estimate,https://radiomasterrc.com/products/rp1-expresslrs-2-4ghz-nano-receiver,,BUY,2026-11-07
+M1-M4,RCinPower GTS V2 1202.5 11500KV,4,2,13.49,53.96,planning estimate,https://rotorgeeks.com/download/GTS%20V2%201202.5-11500.pdf,3.9 g trimmed / 4.3 g with long wires; mounting pattern verify delivered motor,BUY,2026-11-07
+P1-P4,GF 65R 1.5 mm shaft (2 CW + 2 CCW),1,2,3.0,3.0,planning estimate,https://www.gemfanhobby.com/,One set of four; verify exact 65R SKU/shaft for C,BUY,2026-11-07
+BAT1,BETAFPV LAVA 2S 450 75C,1,3,8.995,8.99,manufacturer $17.99 per two-pack; allocated,https://betafpv.com/products/lava-2s-3s-4s-450mah-75c-battery-2pcs,Budget a two-pack cash purchase for LAVA,BUY,2026-11-07
+S1,MicoAir MTF-01 optical flow / ToF,1,0,22.9,22.9,planning estimate,https://micoair.com/optical_range_sensor_mtf-01/,"29.3 x 17 x 14.5 mm; 24.3 x 12 mount; onboard sensor, not independent height truth",BUY,2026-11-07
+LOG1,microSD card,1,0,5.0,5.0,planning estimate,,One installed card; confirm manufacturer-supported media,BUY,2026-11-07
+HW1,"Motor, stack, guard and sensor fasteners + spacers",1,0,6.0,6.0,planning estimate,,M2 motor screws: check engagement; 4x M2x30 + 4x M2x10 guards; M2.5 sensor screws/spacers sized to delivered flange,BUY,2026-11-07
+WIRE1,"XT30 pigtail, 470uF capacitor, wire, strap",1,0,4.0,4.0,planning estimate,,Trim leads and route clear of rotors; current rating/temperature to qualify,BUY,2026-11-07
+FRAME1,Frame plate: 3.0 mm carbon,1,0,quote,quote,planning estimate,makerspace,Zero printing charge assumed by owner; carbon cutting price excluded until quoted,MAKE,2026-11-07
+G1-G4,TPU ducts,4,2,0,0,planning estimate,makerspace,Impact and thrust testing required; full-skirt cheap guard retained for comparison,MAKE,2026-11-07
+CRADLE1,ABS battery cradle,1,0,0,0,planning estimate,makerspace,,MAKE,2026-11-07
+FEET1-4,20 mm ABS landing feet,4,0,0,0,planning estimate,makerspace,Protects full-height MTF-01 with 3.5 mm nominal level-ground clearance,MAKE,2026-11-07
+BUZZ1,5 V active buzzer and sync LED,1,0,2.0,2.0,planning estimate,,,BUY,2026-11-07
+BALLAST1,Weighed centred ballast and attachment hardware,1,0,8.0,8.0,planning estimate,,No approved load rating; qualify mount before loading,BUY,2026-11-07

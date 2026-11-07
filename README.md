@@ -38,6 +38,18 @@ candidates. Playback runs at a constant half-speed.
 
 ## Current work
 
+### Aircraft CAD and BOMs
+
+The [current aircraft package](cad/aircraft_r1/README.md) contains the owner's selected fully equipped Variant C and low-cost MicoAir H7 layouts. Each has a SOLIDWORKS 2026 assembly, separate component parts, STEP files, a bill of materials and executed geometry checks. The physical-model records own their mass, battery and propulsion estimates.
+
+[![Variant C carbon aircraft assembly CAD](cad/aircraft_r1/Variant_C/assembled.png)](cad/aircraft_r1/Variant_C/Variant_C_Assembly.step)
+
+[![Low-cost MicoAir H7 ABS aircraft assembly CAD](cad/aircraft_r1/Cheapest_H7/assembled.png)](cad/aircraft_r1/Cheapest_H7/Cheapest_H7_Assembly.step)
+
+These are unbuilt aircraft designs. The [layout decision](docs/decisions/aircraft-layouts.md) preserves RevS as the reference build and keeps physical qualification gates in force.
+
+### Public-data response analysis
+
 The [QDrone2 response result](docs/qdrone-response.md) uses the dataset authors'
 original-MPC discharge recording. It pairs each response with the last recorded
 battery voltage before its command, separates upward and downward steps, and

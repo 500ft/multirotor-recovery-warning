@@ -1,0 +1,302 @@
+{
+ "variant": "Cheapest drone (ABS, bulk electronics)",
+ "pareto_ref": "cheapest_drone.py",
+ "material": "ABS FDM (Stratasys F170/F370), printed flat, solid",
+ "plate_t_mm": 7.0,
+ "diagonal_mm": 120.6,
+ "arm_w_mm": 8.5,
+ "plate_mass_g": 23.86,
+ "guard_kind": "ring",
+ "guard_material": "ABS",
+ "guard_mass_g_each": 10.46,
+ "guard_valid_solid": true,
+ "cradle_mass_g_TPU_or_PETG": 11.37,
+ "full_thrust_g_vendor": 142,
+ "arm_free_length_mm": 39.2,
+ "arm_tilt_deg_at_full_thrust": 0.126,
+ "arm_flap_mode_Hz": 199,
+ "arm_torsion_mode_Hz": 207,
+ "mode_target_gt_150Hz": true,
+ "tilt_target_lt_1deg": true,
+ "prop_radial_clearance_mm": 2.5,
+ "guard_to_guard_gap_mm": 19.6,
+ "guard_to_esc_board_gap_mm": 2.0,
+ "guard_top_to_fc_board_gap_mm": 2.0,
+ "pack": "CNHL MiniStar 2S 650 70C 58.0x30.0x15.0 mm",
+ "pack_corner_to_guard_plan_gap_mm": -2.02,
+ "pack_must_sit_above_guard_tops": true,
+ "min_pack_bottom_z_above_plate_mm": 22.0,
+ "stack_hole_edge_margin_mm": 2.7,
+ "motor_hole_pad_margin_mm": 4.4,
+ "ear_hole_vs_guard_foot_id_mm": 0.9,
+ "plate_centroid_xy_mm": [
+  0.0,
+  0.0
+ ],
+ "plate_valid_solid": true,
+ "motor_jig": "generated (valid)",
+ "stack_jig": "not needed: all core holes printed",
+ "holes_to_drill_after_waterjet": 0,
+ "drill_list": [],
+ "notes": [
+  "ABS on the Stratasys F170/F370: solid fill, printed flat",
+  "ABS guards are less tough than TPU: run T9 (guard drop test) before trials; TPU rings are the fallback",
+  "Current release uses a windowed ABS guard; validate printed stiffness and impact performance."
+ ],
+ "files": [
+  "Print_Frame_Plate_7mm.dxf",
+  "Print_Frame_Plate_7mm.step",
+  "Print_Frame_Plate_7mm_PRINT.stl",
+  "Print_Guard_Ring_FDM_ABS_x4.stl",
+  "Print_Guard_Ring_FDM_ABS.step",
+  "Print_Battery_Cradle.stl",
+  "Print_Drill_Jig_MotorPad_PCD6p6_3hole.stl",
+  "Print_preview.png"
+ ],
+ "parameters": {
+  "key": "Print_and_Cut",
+  "title": "Cheapest drone (ABS, bulk electronics)",
+  "cost_usd": 0.0,
+  "pareto_ref": "cheapest_drone.py",
+  "material": "abs_print",
+  "plate_t": 7.0,
+  "motor_r": 60.3,
+  "arm_w": 8.5,
+  "core": 34.1,
+  "fillet": 4.0,
+  "stack_pitch": 25.5,
+  "stack_hole": 3.2,
+  "stack_label": "AIO M2 25.5x25.5",
+  "motor": "BetaFPV 1103 10500KV",
+  "prop": "GF 2218-3",
+  "prop_d": 55.88,
+  "motor_pcd": 6.6,
+  "motor_holes": 3,
+  "motor_hole_d": 1.6,
+  "motor_hole_label": "M1.4",
+  "shaft_clr": 3.5,
+  "pad_d": 17.0,
+  "ear_r": 9.5,
+  "bell_d": 13.5,
+  "guard_kind": "ring",
+  "guard_h": 19.0,
+  "esc_board": [
+   36.0,
+   36.0
+  ],
+  "fc_board": [
+   36.0,
+   36.0
+  ],
+  "pack_name": "CNHL MiniStar 2S 650 70C",
+  "pack": [
+   58.0,
+   30.0,
+   15.0
+  ],
+  "reuse_revs_jig": false,
+  "guard_material": "ABS",
+  "guard_wall": 2.4,
+  "alt_ring": false
+ },
+ "holes": [
+  {
+   "x": 42.639,
+   "y": 42.639,
+   "d": 3.5,
+   "use": "M1 shaft/circlip"
+  },
+  {
+   "x": 44.972,
+   "y": 44.972,
+   "d": 1.6,
+   "use": "M1 M1.4"
+  },
+  {
+   "x": 39.451,
+   "y": 43.493,
+   "d": 1.6,
+   "use": "M1 M1.4"
+  },
+  {
+   "x": 43.493,
+   "y": 39.451,
+   "d": 1.6,
+   "use": "M1 M1.4"
+  },
+  {
+   "x": 49.356,
+   "y": 35.921,
+   "d": 2.2,
+   "use": "M1 guard M2"
+  },
+  {
+   "x": 35.921,
+   "y": 49.356,
+   "d": 2.2,
+   "use": "M1 guard M2"
+  },
+  {
+   "x": -42.639,
+   "y": 42.639,
+   "d": 3.5,
+   "use": "M2 shaft/circlip"
+  },
+  {
+   "x": -44.972,
+   "y": 44.972,
+   "d": 1.6,
+   "use": "M2 M1.4"
+  },
+  {
+   "x": -43.493,
+   "y": 39.451,
+   "d": 1.6,
+   "use": "M2 M1.4"
+  },
+  {
+   "x": -39.451,
+   "y": 43.493,
+   "d": 1.6,
+   "use": "M2 M1.4"
+  },
+  {
+   "x": -35.921,
+   "y": 49.356,
+   "d": 2.2,
+   "use": "M2 guard M2"
+  },
+  {
+   "x": -49.356,
+   "y": 35.921,
+   "d": 2.2,
+   "use": "M2 guard M2"
+  },
+  {
+   "x": -42.639,
+   "y": -42.639,
+   "d": 3.5,
+   "use": "M3 shaft/circlip"
+  },
+  {
+   "x": -44.972,
+   "y": -44.972,
+   "d": 1.6,
+   "use": "M3 M1.4"
+  },
+  {
+   "x": -39.451,
+   "y": -43.493,
+   "d": 1.6,
+   "use": "M3 M1.4"
+  },
+  {
+   "x": -43.493,
+   "y": -39.451,
+   "d": 1.6,
+   "use": "M3 M1.4"
+  },
+  {
+   "x": -49.356,
+   "y": -35.921,
+   "d": 2.2,
+   "use": "M3 guard M2"
+  },
+  {
+   "x": -35.921,
+   "y": -49.356,
+   "d": 2.2,
+   "use": "M3 guard M2"
+  },
+  {
+   "x": 42.639,
+   "y": -42.639,
+   "d": 3.5,
+   "use": "M4 shaft/circlip"
+  },
+  {
+   "x": 44.972,
+   "y": -44.972,
+   "d": 1.6,
+   "use": "M4 M1.4"
+  },
+  {
+   "x": 43.493,
+   "y": -39.451,
+   "d": 1.6,
+   "use": "M4 M1.4"
+  },
+  {
+   "x": 39.451,
+   "y": -43.493,
+   "d": 1.6,
+   "use": "M4 M1.4"
+  },
+  {
+   "x": 35.921,
+   "y": -49.356,
+   "d": 2.2,
+   "use": "M4 guard M2"
+  },
+  {
+   "x": 49.356,
+   "y": -35.921,
+   "d": 2.2,
+   "use": "M4 guard M2"
+  },
+  {
+   "x": -12.75,
+   "y": -12.75,
+   "d": 3.2,
+   "use": "AIO M2 25.5x25.5"
+  },
+  {
+   "x": -12.75,
+   "y": 12.75,
+   "d": 3.2,
+   "use": "AIO M2 25.5x25.5"
+  },
+  {
+   "x": 12.75,
+   "y": -12.75,
+   "d": 3.2,
+   "use": "AIO M2 25.5x25.5"
+  },
+  {
+   "x": 12.75,
+   "y": 12.75,
+   "d": 3.2,
+   "use": "AIO M2 25.5x25.5"
+  },
+  {
+   "x": 0.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "ballast post M3 (thrust axis)"
+  },
+  {
+   "x": -13.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "offset ballast M3"
+  },
+  {
+   "x": 13.0,
+   "y": 0.0,
+   "d": 3.2,
+   "use": "offset ballast M3"
+  },
+  {
+   "x": 0.0,
+   "y": 14.5,
+   "d": 2.2,
+   "use": "MTF-01 / zip tie front"
+  },
+  {
+   "x": 0.0,
+   "y": -14.5,
+   "d": 2.2,
+   "use": "RX antenna / zip tie rear"
+  }
+ ]
+}
