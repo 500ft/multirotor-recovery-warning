@@ -1,0 +1,9 @@
+*.step binary
+*.stl binary
+*.dxf binary
+*.SLDPRT binary
+*.SLDASM binary
+*.png binary
+*.xlsx binary
+*.json -text
+*.lua -text
