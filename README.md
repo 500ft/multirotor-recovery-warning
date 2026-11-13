@@ -38,6 +38,18 @@ candidates. Playback runs at a constant half-speed.
 
 ## Current work
 
+### Recovery-study source review
+
+The [new source/result packet](studies/recovery-r1-900/README.md) contains a
+completed comparison of three estimated plants with feasible rotor forces.
+It is a draft integration alongside the source revision named inside the packet. Original code, cohort, models, per-case outputs and hashes
+are preserved. A path/loading wrapper reproduced the declared selected case
+for each plant; the packet records the protocol, comparisons and scalar traces.
+The original copied drivers still require care because importing them writes
+files and refers to the old host checkout.
+Research remains open for review. Physical qualification and warning evaluation
+retain the requirements below.
+
 ### Aircraft CAD and BOMs
 
 The [current aircraft package](cad/aircraft_r1/README.md) contains the owner's selected fully equipped Variant C and low-cost MicoAir H7 layouts. Each has a SOLIDWORKS 2026 assembly, separate component parts, STEP files, a bill of materials and executed geometry checks. The physical-model records own their mass, battery and propulsion estimates.
@@ -71,10 +83,10 @@ tracking under the source controller and provides no recovery-failure labels.
 The [dependency-roadmap decision](docs/decisions/dependency-roadmap.md) adopts
 the component qualification and physics-baseline prerequisites. The
 [roadmap](ROADMAP.md#dependency-order) shows what each later result depends on.
-The project is paused until the owner chooses concrete borrowed or self-funded
-hardware, its configuration, site and budget. Experimental qualification needs
-physical equipment; closure is recommended while access remains unset. This is
-a recommendation, and the repository remains open. The physical maneuver and
+Physical qualification is paused until the owner chooses concrete borrowed or
+self-funded hardware, its configuration, site and budget. Experimental
+qualification needs physical equipment. The owner keeps the recovery research
+open for source/model review and possible professor feedback. The physical maneuver and
 safety responsibility remain [owner decisions](OPEN_QUESTIONS.md#pending-owner-decisions).
 
 The [full-text prior-work comparison](literature/notes/07-loss-of-control-prediction.md)

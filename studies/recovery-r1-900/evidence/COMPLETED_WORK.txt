@@ -1,0 +1,48 @@
+COMPLETED DRONE WORK — 13 NOVEMBER 2026
+
+1. Audited the pinned historical controller and actual plant. Corrected the
+   planning-versus-executed mass distinction:129.76g,not135.66g, and actual
+   historical thrust4.2N. Baseline archived10/300=3.33%,not4%. Detection/startup
+   are dead times, not a continuous actuator lag. No measured firmware cascade
+   or hardware stability margin is established.
+
+2. Compared frozen R1 mass,full inertia,CG,motor centers,estimated propulsion,
+   guard mass,pack/vendor voltage and mass headroom. Retained full SPD tensors;
+   no silent scalar inertia reduction. Identified imported-body CAD provenance
+   and H7 BOM bookkeeping issues without editing originals.
+
+3. Found an exact joint-moment infeasibility in the scalar healthy mixer.
+   Stopped and preserved the approved scalar campaign after106historical cases;
+   noR1 scalar cases started. That subset is unqualified and not a headline.
+
+4. Prepared an isolated full-inertia,bounded-four-rotor model with actual R1
+   motor xy,unchanged gains/floor/ceiling/dead times and explicit assumed yaw.
+   Parent reviewed and approved the v2 protocol/pilot. Checks cover bounds,
+   pure/simultaneous moments,force/moment closure,hover,freefall,full Euler,
+   known CG sign and selected1/.5/.25ms refinement with the same10mm allocation.
+
+5. Completed the one approved serial900case campaign. Owned exec11465 returned
+   exit0 after3214.9s. Independent audit verified all900 raw cases,IDs,strata,
+   finite values,force diagnostics,summaries and unchanged frozen hashes.
+   Each plant recorded300 recovery episodes and300 terminal stabilizations,
+   with0crashes. Worst descents:historical1.093m,C.747m,H7 1.145m.
+   Mean paired descent contrasts: C-.161m [-.169,-.153];H7+.009m [.006,.012].
+   These are computational sensitivity results,not flight or authority passes.
+   Saturated binary outcomes do not imply equivalence or zero failure risk.
+   H7's9mm contrast is below the selected10mm numerical allocation; no robust
+   H7-versus-historical physical or numerical ordering is established.
+
+6. Wrote the IEEE conference-style review source under conference_paper/,
+   verified primary references,science figures,per-rate outcomes and paired
+   interval table. Mergen is the only author; actual13November2026revision.
+   No claimed submission,acceptance,coauthorship or professor approval.
+
+7. Revised only the authorized working detailed report and its new assets under
+   reports_revision/reports/multirotor-recovery-warning/. Preserved original
+   ENGINEERING_REPORTS source and historical/public-data sections. Added early
+   audit/methods,new result tables/figure,qualifications and3future directions.
+   Both deliverables remain OPEN research. Parent compiles and checks PDFs.
+
+No original repository/CAD files were edited;no hardware,SOLIDWORKS,ANSYS,
+physical test,purchase,public-data holdout or measured-authority gate was used.
+No publication or deployment was performed by this child.

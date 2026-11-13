@@ -1,0 +1,169 @@
+{
+  "parent_approval": "2026-11-13 one serial paired900case v2 campaign",
+  "scope": "Unbuilt CAD/catalog computational sensitivity; no measured authority or warning qualification",
+  "dt_s": 0.0005,
+  "n_each": 300,
+  "plant_order": [
+    "historical_actual_code",
+    "Variant_C",
+    "Cheapest_H7"
+  ],
+  "models": {
+    "historical_actual_code": {
+      "mass_kg": 0.12976,
+      "inertia_tensor": [
+        [
+          0.00035,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.00035,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0005600000000000001
+        ]
+      ],
+      "max_thrust_n": 4.2,
+      "thrust_to_weight": 3.2994340056637146,
+      "arm_m": 0.06,
+      "nominal_thrust_line_offset_xy_m": [
+        0,
+        0
+      ],
+      "basis": "Actual nominal_params used by historical monte_carlo_recovery, not catalog budget"
+    },
+    "Variant_C": {
+      "mass_kg": 0.1633,
+      "inertia_tensor": [
+        [
+          0.00024375055605156259,
+          -9.457325115816193e-12,
+          -1.5873482871947902e-09
+        ],
+        [
+          -9.457325115816193e-12,
+          0.00025717272971786725,
+          2.0477251079940013e-07
+        ],
+        [
+          -1.5873482871947902e-09,
+          2.0477251079940013e-07,
+          0.00044267335947623045
+        ]
+      ],
+      "max_thrust_n": 7.437942,
+      "thrust_to_weight": 4.642988364972443,
+      "arm_m": 0.06445000000000001,
+      "nominal_thrust_line_offset_xy_m": [
+        -0.0,
+        0.000131
+      ],
+      "vendor_reference_voltage_v": 7.4,
+      "guard_retention_assumed": 0.85,
+      "guard_mass_g": 50.876,
+      "mass_headroom_to_165g_g": 1.6999999999999886,
+      "extra_wiring_fasteners_mass_g": 7.0,
+      "max_normalized_offdiagonal": 0.0006069005133191401,
+      "physical_model_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Variant_C\\physical_model.json",
+      "physical_model_sha256": "3c157e8073d9c6c2c1de4b7896e5938f843f9fae81d407cddfb14600dbe83d28",
+      "basis": "CAD/estimated masses, vendor thrust at its stated voltage, assumed guard retention; no measured plant"
+    },
+    "Cheapest_H7": {
+      "mass_kg": 0.16341,
+      "inertia_tensor": [
+        [
+          0.0001846712715359756,
+          -1.3126825147065736e-12,
+          -1.8490043912144291e-10
+        ],
+        [
+          -1.3126825147065736e-12,
+          0.0001987925733234518,
+          5.1489419055142085e-09
+        ],
+        [
+          -1.8490043912144291e-10,
+          5.1489419055142085e-09,
+          0.0003053068309052878
+        ]
+      ],
+      "max_thrust_n": 4.736268,
+      "thrust_to_weight": 2.9545315464169883,
+      "arm_m": 0.0603,
+      "nominal_thrust_line_offset_xy_m": [
+        -0.0,
+        0.000131
+      ],
+      "vendor_reference_voltage_v": 7.82,
+      "guard_retention_assumed": 0.85,
+      "guard_mass_g": 33.476,
+      "mass_headroom_to_165g_g": 1.5900000000000034,
+      "extra_wiring_fasteners_mass_g": 5.0,
+      "max_normalized_offdiagonal": 2.090016204654213e-05,
+      "physical_model_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Cheapest_H7\\physical_model.json",
+      "physical_model_sha256": "b891f454b0279a86bc97edd4569de3650c6877df8ecbbf19ddc7c3b83fb42f48",
+      "basis": "CAD/estimated masses, vendor thrust at its stated voltage, assumed guard retention; no measured plant"
+    }
+  },
+  "force_bounds": "all0<=fi<=availableTmax/4 eachstep",
+  "wrench_closure_absolute_limit": 1e-12,
+  "finite_outputs_required": true,
+  "stop_first_numerical_failure": true,
+  "fixed_actual_CAD_rotor_xy": true,
+  "placeholder_torque_draw_unused": true,
+  "files": [
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\r1_bounded_v2.py",
+      "sha256": "79b2dc96d3f328659d09f19ade440fe06ec963a560650b8a0c9b919e6e28dce6"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\sim_release_recovery_bounded_v2.py",
+      "sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\sim_release_recovery_tensor.py",
+      "sha256": "ef8fff11ddc56e699bd361535eae7e8fd16f79ddba2711ee9bfbd2178157179a"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\r1_recovery_runner.py",
+      "sha256": "101722775ca11682cd7fc48eaf28d81b05ea86a466a78cef3b041ae9f4789c9b"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\frozen_cohort.json",
+      "sha256": "6b85969da991c27edcf2c93cceb211622b94ad35d4670db0d2fbf3bf362f4868"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_pilot.json",
+      "sha256": "2c5c1cf72009c708fbd681cdc9c2218ddaccbce000e371d84618814f4314c5a9"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\BOUNDED_V2_PROTOCOL.txt",
+      "sha256": "d58b2062471f9e4355678d7a7f920551585b2c8a6be07e7773d29fd2a17849f8"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\sim_release_recovery.py",
+      "sha256": "a9966d4bae71fc7361233a18507841f335c7e4041e96b444c6df71374d61b3d8"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\monte_carlo_recovery.py",
+      "sha256": "04044b1c77a9335bc0fac46f0c1e98c0318cd7a8012bac44bdae5c4d9339a7a3"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\rigid_body.py",
+      "sha256": "5f9df5cc9dccd67b19be4cbb11bdef0011d5d8af8677cd0b21fdbf597b3fe0b0"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Variant_C\\physical_model.json",
+      "sha256": "3c157e8073d9c6c2c1de4b7896e5938f843f9fae81d407cddfb14600dbe83d28"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Cheapest_H7\\physical_model.json",
+      "sha256": "b891f454b0279a86bc97edd4569de3650c6877df8ecbbf19ddc7c3b83fb42f48"
+    }
+  ]
+}

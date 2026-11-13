@@ -1,0 +1,10 @@
+{
+  "status": "ALL900_RAW_CASES_AND_FROZEN_HASHES_AUDITED",
+  "case_counts": {
+    "historical_actual_code": 300,
+    "Variant_C": 300,
+    "Cheapest_H7": 300
+  },
+  "note": "Per-step motor and wrench checks enforced by frozen allocator; moment error maximum was not separately serialized.",
+  "scope": "Synthetic computational sensitivity only; not measured authority or flight validation"
+}

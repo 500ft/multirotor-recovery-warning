@@ -34,9 +34,15 @@ requires borrowed or bought physical hardware even for a qualification-only
 experiment. Existing ownership, wiring plans, synthetic capture tests and CAD
 assets do not establish a calibrated or safely contained stand.
 
-**Blocked:** M2 has no confirmed physical hardware access, site or budget. Closure is recommended
-while no access route is chosen; no closure or archive decision has been made.
-New measurements and recovery trials still require the approvals below.
+**Blocked:** M2 has no confirmed physical hardware access, site or budget.
+The owner keeps the research open. New measurements and recovery trials still
+require the approvals below.
+
+The [computational review packet](studies/recovery-r1-900/README.md)
+preserves the completed rotor-force comparison and its original evidence.
+Source/result inspection and the selected-case path/loading replay are available.
+This computational branch does not satisfy the measured-propulsion or
+warning-comparison prerequisites. Research stays open.
 
 ## Dependency order
 

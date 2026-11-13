@@ -1,0 +1,26 @@
+{
+  "question": "Are simultaneous independently clipped maximum roll/pitch torques feasible for four bounded rotors?",
+  "collective_N": 2.1,
+  "per_rotor_cap_N": 1.05,
+  "independent_scalar_RP_limit_Nm": 0.08909545442950499,
+  "requested_wrench_T_tx_ty_tz": [
+    2.1,
+    0.08909545442950499,
+    0.08909545442950499,
+    0.0
+  ],
+  "zero_yaw_inverse_rotor_forces_N": [
+    0.5249999999999999,
+    1.5750000000000002,
+    0.525,
+    -0.5250000000000001
+  ],
+  "per_rotor_box_feasible": false,
+  "yaw_free_hand_reference": {
+    "equation": "tau_x+tau_y=2*a*(f2-f4); for0<=fi<=cap,abs(sum)<=2*a*cap",
+    "requested_sum_Nm": 0.17819090885900998,
+    "maximum_possible_sum_Nm": 0.08909545442950498
+  },
+  "conclusion": "The independent roll/pitch box admits physically unrealizable simultaneous wrenches. This is a structural idealization of the healthy scalar-mixer model; it limits physical interpretation of historical and unchanged-controller R1 sensitivity successes.",
+  "no_campaign_change": "The approved frozen sensitivity campaign is not modified by this check."
+}

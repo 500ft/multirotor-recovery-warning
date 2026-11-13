@@ -1,0 +1,330 @@
+{
+  "status": "LOCAL INSPECTION CANDIDATE; research OPEN",
+  "public_repository": "https://github.com/500ft/multirotor-recovery-warning",
+  "base_HEAD": "e7661b24a8d8b981c649b435ea5cd46dc9e33233",
+  "report_pin": "e7661b24a8d8b981c649b435ea5cd46dc9e33233",
+  "original_freeze_unchanged": true,
+  "records": [
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\r1_bounded_v2.py",
+      "review_path": "studies/recovery-r1-900/frozen/r1_bounded_v2.py",
+      "sha256": "79b2dc96d3f328659d09f19ade440fe06ec963a560650b8a0c9b919e6e28dce6",
+      "bytes": 17985,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "79b2dc96d3f328659d09f19ade440fe06ec963a560650b8a0c9b919e6e28dce6"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\sim_release_recovery_bounded_v2.py",
+      "review_path": "studies/recovery-r1-900/frozen/sim_release_recovery_bounded_v2.py",
+      "sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee",
+      "bytes": 27029,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\sim_release_recovery_tensor.py",
+      "review_path": "studies/recovery-r1-900/frozen/sim_release_recovery_tensor.py",
+      "sha256": "ef8fff11ddc56e699bd361535eae7e8fd16f79ddba2711ee9bfbd2178157179a",
+      "bytes": 27084,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "ef8fff11ddc56e699bd361535eae7e8fd16f79ddba2711ee9bfbd2178157179a"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\r1_recovery_runner.py",
+      "review_path": "studies/recovery-r1-900/frozen/r1_recovery_runner.py",
+      "sha256": "101722775ca11682cd7fc48eaf28d81b05ea86a466a78cef3b041ae9f4789c9b",
+      "bytes": 15181,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "101722775ca11682cd7fc48eaf28d81b05ea86a466a78cef3b041ae9f4789c9b"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\frozen_cohort.json",
+      "review_path": "studies/recovery-r1-900/frozen/frozen_cohort.json",
+      "sha256": "6b85969da991c27edcf2c93cceb211622b94ad35d4670db0d2fbf3bf362f4868",
+      "bytes": 258471,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "6b85969da991c27edcf2c93cceb211622b94ad35d4670db0d2fbf3bf362f4868"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_pilot.json",
+      "review_path": "studies/recovery-r1-900/frozen/bounded_v2_pilot.json",
+      "sha256": "2c5c1cf72009c708fbd681cdc9c2218ddaccbce000e371d84618814f4314c5a9",
+      "bytes": 9297,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "2c5c1cf72009c708fbd681cdc9c2218ddaccbce000e371d84618814f4314c5a9"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\BOUNDED_V2_PROTOCOL.txt",
+      "review_path": "studies/recovery-r1-900/frozen/BOUNDED_V2_PROTOCOL.txt",
+      "sha256": "d58b2062471f9e4355678d7a7f920551585b2c8a6be07e7773d29fd2a17849f8",
+      "bytes": 6127,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "d58b2062471f9e4355678d7a7f920551585b2c8a6be07e7773d29fd2a17849f8"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\sim_release_recovery.py",
+      "review_path": "studies/recovery-r1-900/inputs/base_analysis/sim_release_recovery.py",
+      "sha256": "a9966d4bae71fc7361233a18507841f335c7e4041e96b444c6df71374d61b3d8",
+      "bytes": 26989,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "a9966d4bae71fc7361233a18507841f335c7e4041e96b444c6df71374d61b3d8"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\monte_carlo_recovery.py",
+      "review_path": "studies/recovery-r1-900/inputs/base_analysis/monte_carlo_recovery.py",
+      "sha256": "04044b1c77a9335bc0fac46f0c1e98c0318cd7a8012bac44bdae5c4d9339a7a3",
+      "bytes": 11916,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "04044b1c77a9335bc0fac46f0c1e98c0318cd7a8012bac44bdae5c4d9339a7a3"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\Analysis\\rigid_body.py",
+      "review_path": "studies/recovery-r1-900/inputs/base_analysis/rigid_body.py",
+      "sha256": "5f9df5cc9dccd67b19be4cbb11bdef0011d5d8af8677cd0b21fdbf597b3fe0b0",
+      "bytes": 2360,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "5f9df5cc9dccd67b19be4cbb11bdef0011d5d8af8677cd0b21fdbf597b3fe0b0"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Variant_C\\physical_model.json",
+      "review_path": "studies/recovery-r1-900/inputs/aircraft_r1/Variant_C/physical_model.json",
+      "sha256": "3c157e8073d9c6c2c1de4b7896e5938f843f9fae81d407cddfb14600dbe83d28",
+      "bytes": 11614,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "3c157e8073d9c6c2c1de4b7896e5938f843f9fae81d407cddfb14600dbe83d28"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\Research\\multirotor-recovery-warning\\cad\\aircraft_r1\\Cheapest_H7\\physical_model.json",
+      "review_path": "studies/recovery-r1-900/inputs/aircraft_r1/Cheapest_H7/physical_model.json",
+      "sha256": "b891f454b0279a86bc97edd4569de3650c6877df8ecbbf19ddc7c3b83fb42f48",
+      "bytes": 10148,
+      "basis": "Original pre-outcome frozen source/input",
+      "frozen_expected_sha256": "b891f454b0279a86bc97edd4569de3650c6877df8ecbbf19ddc7c3b83fb42f48"
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\historical_actual_code.json",
+      "review_path": "studies/recovery-r1-900/results/historical_actual_code.json",
+      "sha256": "38910a59f90a206b08c38e88bc81978b6f7573519a08bdff80285685bd039f55",
+      "bytes": 244386,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\Variant_C.json",
+      "review_path": "studies/recovery-r1-900/results/Variant_C.json",
+      "sha256": "631418de832942f524eeb2d287ed60a6436b72d0875409c46e4a73c4c3d12f49",
+      "bytes": 244796,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\Cheapest_H7.json",
+      "review_path": "studies/recovery-r1-900/results/Cheapest_H7.json",
+      "sha256": "053c4e3a5cca602056a2bcc5c65c92928f9c83618ce1926ba18483b404e1a5e7",
+      "bytes": 244894,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\summary.json",
+      "review_path": "studies/recovery-r1-900/results/summary.json",
+      "sha256": "ea542ac5d4c6cec9214d369c39fb71508313ef2981ba70638566d0f5c7010270",
+      "bytes": 4049,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\FROZEN_BEFORE_OUTCOMES.json",
+      "review_path": "studies/recovery-r1-900/results/FROZEN_BEFORE_OUTCOMES.json",
+      "sha256": "43299cefe85d249bc3f45f10a1ce311aa4c02df04f8b5b8e0c69dbaec6248571",
+      "bytes": 6564,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\INDEPENDENT_OUTPUT_AUDIT.json",
+      "review_path": "studies/recovery-r1-900/results/INDEPENDENT_OUTPUT_AUDIT.json",
+      "sha256": "135f84e0e658ee6e308b55e5ecc174f465cc1424329163cf6a50acd5ed649abd",
+      "bytes": 401,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\progress.json",
+      "review_path": "studies/recovery-r1-900/results/progress.json",
+      "sha256": "e0e8f753a4fe39bacfe012504aa853fee6acad02e2b4c0849bd08d4738c30972",
+      "bytes": 113,
+      "basis": "Completed frozen campaign output/metadata, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\bounded_recovery_comparison.png",
+      "review_path": "studies/recovery-r1-900/figures/bounded_recovery_comparison.png",
+      "sha256": "2be3b1115cb1c1757c8b63aaba768f4b9745803d0f29ebc29e647100d48c03cd",
+      "bytes": 145457,
+      "basis": "Previously generated campaign figure; no redraw",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\bounded_recovery_comparison.svg",
+      "review_path": "studies/recovery-r1-900/figures/bounded_recovery_comparison.svg",
+      "sha256": "e41f63207fdf2c8424ade103b05ca564d4d22025fbb738a032d2fba34fdd4d65",
+      "bytes": 68098,
+      "basis": "Previously generated campaign figure; no redraw",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_campaign_01\\bounded_recovery_comparison.caption.txt",
+      "review_path": "studies/recovery-r1-900/figures/bounded_recovery_comparison.caption.txt",
+      "sha256": "e659b2934dc96abc02462315fcfdfaa5344546288e3176a04f291cf8caa5e628",
+      "bytes": 471,
+      "basis": "Previously generated campaign figure; no redraw",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2.diff",
+      "review_path": "studies/recovery-r1-900/evidence/bounded_v2.diff",
+      "sha256": "ffab5fcbe24107b529231c7adc219d7b184dee3a3935cf5c3e1501cfe44bd0b2",
+      "bytes": 1385,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\tensor_adapter.diff",
+      "review_path": "studies/recovery-r1-900/evidence/tensor_adapter.diff",
+      "sha256": "50b372fb306c4c77138fbf9e0f5a287baeb8bf3110ba135f52e8f20d55358422",
+      "bytes": 1815,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_checks.json",
+      "review_path": "studies/recovery-r1-900/evidence/bounded_v2_checks.json",
+      "sha256": "bc1c63502f87675300315c7ece45090f5c1b0e2d21dc2bc1090cf3cf65699493",
+      "bytes": 4433,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\bounded_v2_acceptance_frozen.json",
+      "review_path": "studies/recovery-r1-900/evidence/bounded_v2_acceptance_frozen.json",
+      "sha256": "992543c75c038b9bae2792f76c3874b1ffcbb0a0cecbd15945da5029559bde88",
+      "bytes": 267,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\SAMPLER_AND_INTEGRAL_CLARIFICATION.txt",
+      "review_path": "studies/recovery-r1-900/evidence/SAMPLER_AND_INTEGRAL_CLARIFICATION.txt",
+      "sha256": "99ebdb671eeb10a15cbb0e13ffd59b909fb3872097bda47436c2b4bcf2e17720",
+      "bytes": 1783,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\full_euler_nonlinear_check.json",
+      "review_path": "studies/recovery-r1-900/evidence/full_euler_nonlinear_check.json",
+      "sha256": "9722b3fd62cbc3a7b6d23a7c2db95432d22e5d21a17eecd01a223e2339207234",
+      "bytes": 3257,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\numerical_acceptance_frozen.json",
+      "review_path": "studies/recovery-r1-900/evidence/numerical_acceptance_frozen.json",
+      "sha256": "e5f0c1a6fff37f4d5d82383ea69c52c6674330927c537247df2816f686eecf06",
+      "bytes": 753,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\numerical_check.json",
+      "review_path": "studies/recovery-r1-900/evidence/numerical_check.json",
+      "sha256": "727757f4753439982c2829769ec49eb5bf9879774296fb18469e4f78f6e235b4",
+      "bytes": 8377,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\mixer_feasibility_counterexample.json",
+      "review_path": "studies/recovery-r1-900/evidence/mixer_feasibility_counterexample.json",
+      "sha256": "778c8b82804027fa69ccd7fab0757322dd3dcab7824662e3ce12a1bc25cc4b68",
+      "bytes": 1099,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\CAMPAIGN_STOP_STATUS.txt",
+      "review_path": "studies/recovery-r1-900/evidence/CAMPAIGN_STOP_STATUS.txt",
+      "sha256": "093df9a2a3140d677c246095977be71855a134874b8d1feabf94311bbc2accd2",
+      "bytes": 1341,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\COORDINATOR_DELIVERY_CHECK.json",
+      "review_path": "studies/recovery-r1-900/evidence/COORDINATOR_DELIVERY_CHECK.json",
+      "sha256": "cfc7b2dc76af01b144b72cfed8c7624efe06a11ac932c0c41be0fd1444144986",
+      "bytes": 1512,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\DELIVERY_STATUS.json",
+      "review_path": "studies/recovery-r1-900/evidence/DELIVERY_STATUS.json",
+      "sha256": "7e76777d16283670bb827b4bce52b49403101ab94cad6824ba4a657b0aaad9a5",
+      "bytes": 632,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\COMPLETED_WORK.txt",
+      "review_path": "studies/recovery-r1-900/evidence/COMPLETED_WORK.txt",
+      "sha256": "cb82b8f783fee9fd0d7da3a8adb0047876eace00d35c0dbe995d140ca94f1cbb",
+      "bytes": 2989,
+      "basis": "Existing supporting audit record or original diff, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\audit_completed_v2.py",
+      "review_path": "studies/recovery-r1-900/frozen/audit_completed_v2.py",
+      "sha256": "0c9f78cbe304eb29d733677bdcd28b4e05efc07a9e4e124c94eda2471e86b35b",
+      "bytes": 5722,
+      "basis": "Existing audit/diagnostic source, inspect only; no import or execution",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\check_full_euler_nonlinear.py",
+      "review_path": "studies/recovery-r1-900/frozen/check_full_euler_nonlinear.py",
+      "sha256": "f9553108688cee84063ce4a9d9f886d4782ea502dfbd7c643fcb8da6c950f09d",
+      "bytes": 3242,
+      "basis": "Existing audit/diagnostic source, inspect only; no import or execution",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\drone_audit\\check_mixer_feasibility.py",
+      "review_path": "studies/recovery-r1-900/frozen/check_mixer_feasibility.py",
+      "sha256": "dabae02be398d3df566e8d95b8c61c8c7885d3f84fed9bcdef221925e687417c",
+      "bytes": 1727,
+      "basis": "Existing audit/diagnostic source, inspect only; no import or execution",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\repo_focus_reviews\\multirotor-recovery-warning\\LICENSE",
+      "review_path": "studies/recovery-r1-900/notices/ORIGINAL_MIT_LICENSE.txt",
+      "sha256": "953ff0ed9b3808abfa7048eacf145c718e25e18feca41eabfbdd1306c0d78cc3",
+      "bytes": 1095,
+      "basis": "Primary repository copyright/license notice, unchanged",
+      "frozen_expected_sha256": null
+    },
+    {
+      "original_path": "C:\\Users\\Admin\\Documents\\ChatGPT\\PIVOT_CLOSURE_2026-11-13\\repo_focus_reviews\\multirotor-recovery-warning\\Analysis\\failure_allocation.py",
+      "review_path": "studies/recovery-r1-900/inputs/base_analysis/failure_allocation.py",
+      "sha256": "a260165ee1ff402a0c2cd854873c3ac45659ed63ff7553dbebc55ff48f478bfa",
+      "bytes": 10103,
+      "basis": "Public-HEAD runtime source dependency; outside original12-file freeze",
+      "frozen_expected_sha256": null
+    }
+  ],
+  "notice": "Original Windows paths identify original evidence provenance. They are not portable execution paths. No original private source contents outside this authorized drone package, CUSP research or reserved public-data outcomes were copied."
+}

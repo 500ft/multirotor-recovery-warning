@@ -1,0 +1,184 @@
+{
+  "scope": "Pre-campaign v2 engineering checks; no hardware qualification",
+  "checks": {
+    "pure_axis_0": {
+      "pass": true,
+      "detail": {
+        "forces_n": [
+          1.05,
+          1.0499999999999998,
+          0.0,
+          1.1102230246251565e-16
+        ],
+        "cap_n": 1.05,
+        "requested_T_n": 2.1,
+        "requested_torque_n_m": [
+          0.08909545442950498,
+          0.0,
+          0.0
+        ],
+        "achieved_wrench": [
+          2.0999999999999996,
+          0.08909545442950496,
+          -1.3877787807814457e-17,
+          4.336808689942018e-19
+        ],
+        "lambda_scale": 1.0
+      }
+    },
+    "pure_axis_1": {
+      "pass": true,
+      "detail": {
+        "forces_n": [
+          1.1102230246251565e-16,
+          1.05,
+          1.0499999999999998,
+          1.1102230246251565e-16
+        ],
+        "cap_n": 1.05,
+        "requested_T_n": 2.1,
+        "requested_torque_n_m": [
+          0.0,
+          0.08909545442950498,
+          0.0
+        ],
+        "achieved_wrench": [
+          2.1,
+          6.938893903907228e-18,
+          0.08909545442950495,
+          -4.336808689942018e-19
+        ],
+        "lambda_scale": 1.0
+      }
+    },
+    "simultaneous_RP_realizable": {
+      "pass": true,
+      "detail": {
+        "forces_n": [
+          0.5250000000000001,
+          1.05,
+          0.5249999999999999,
+          0.0
+        ],
+        "cap_n": 1.05,
+        "requested_T_n": 2.1,
+        "requested_torque_n_m": [
+          0.08909545442950498,
+          0.08909545442950498,
+          0.0
+        ],
+        "achieved_wrench": [
+          2.1,
+          0.0445477272147525,
+          0.044547727214752475,
+          0.0
+        ],
+        "lambda_scale": 0.5000000000000001
+      }
+    },
+    "collective_saturation": {
+      "pass": true,
+      "detail": {
+        "forces_n": [
+          1.05,
+          1.05,
+          1.0499999999999998,
+          1.05
+        ],
+        "cap_n": 1.05,
+        "requested_T_n": 4.2,
+        "requested_torque_n_m": [
+          10,
+          -20,
+          3
+        ],
+        "achieved_wrench": [
+          4.199999999999999,
+          6.938893903907228e-18,
+          -6.938893903907228e-18,
+          0.0
+        ],
+        "lambda_scale": 0.0
+      }
+    },
+    "arbitrary_10000_demands_force_bounds_and_wrench_closure": {
+      "pass": true,
+      "detail": {
+        "rotor_lower_margin_N": 0.0,
+        "rotor_upper_margin_N": 0.0,
+        "collective_closure_N": 1.7763568394002505e-15,
+        "moment_closure_Nm": 4.7704895589362195e-17
+      }
+    },
+    "historical_actual_code_hover": {
+      "pass": true,
+      "detail": {
+        "calls": 200,
+        "saturated_calls": 0,
+        "min_lambda": 1.0,
+        "min_force_n": 0.0,
+        "max_force_fraction": 0.3030822857142857,
+        "max_collective_error_n": 0.0
+      }
+    },
+    "historical_actual_code_freefall": {
+      "pass": true,
+      "detail": null
+    },
+    "historical_actual_code_full_Euler_first_step": {
+      "pass": true,
+      "detail": null
+    },
+    "historical_actual_code_CG_sign": {
+      "pass": true,
+      "detail": null
+    },
+    "Variant_C_hover": {
+      "pass": true,
+      "detail": {
+        "calls": 200,
+        "saturated_calls": 0,
+        "min_lambda": 1.0,
+        "min_force_n": 0.0,
+        "max_force_fraction": 0.21537852809285155,
+        "max_collective_error_n": 0.0
+      }
+    },
+    "Variant_C_freefall": {
+      "pass": true,
+      "detail": null
+    },
+    "Variant_C_full_Euler_first_step": {
+      "pass": true,
+      "detail": null
+    },
+    "Variant_C_CG_sign": {
+      "pass": true,
+      "detail": null
+    },
+    "Cheapest_H7_hover": {
+      "pass": true,
+      "detail": {
+        "calls": 200,
+        "saturated_calls": 0,
+        "min_lambda": 1.0,
+        "min_force_n": 0.0,
+        "max_force_fraction": 0.338463131731566,
+        "max_collective_error_n": 2.220446049250313e-16
+      }
+    },
+    "Cheapest_H7_freefall": {
+      "pass": true,
+      "detail": null
+    },
+    "Cheapest_H7_full_Euler_first_step": {
+      "pass": true,
+      "detail": null
+    },
+    "Cheapest_H7_CG_sign": {
+      "pass": true,
+      "detail": null
+    }
+  },
+  "status": "ALL_ANALYTICAL_ALLOCATION_CHECKS_PASS"
+}

@@ -1,0 +1,23 @@
+SCALAR ALLOCATOR CAMPAIGN STOPPED — 13 NOVEMBER 2026
+
+Classification: UNQUALIFIED_legacy_scalar_allocator_sensitivity
+
+Parent instructed stopping the owned campaign session 57729 after an offline
+counterexample showed the independent roll/pitch limits admit an infeasible
+four-rotor wrench. Ctrl-C returned process exit 1. The incremental raw file is
+preserved as campaign_historical_actual_code.json: 106 completed cases, IDs
+0–105. Variant C and H7 were not started. This incomplete, structurally
+unqualified subset is not a headline success rate or an R1 result.
+
+At Tmax=4.2 N, T=2.1 N, arm=.060 m, each independently allowed RP moment is
+.0890954544 N m. Asking for both simultaneously with zero yaw requires rotor
+forces [.525,1.575,.525,-.525] N, outside [0,1.05] N. Even with free yaw,
+tau_x+tau_y cannot exceed .0890954544 N m, whereas the request is .1781909089.
+See mixer_feasibility_counterexample.json and check_mixer_feasibility.py.
+
+The existing historical 300/300 mixer/controller result is an archived output
+of that idealization, not a physically established healthy-quad capability.
+No original historical result, source file, CAD, or hardware has been changed.
+
+A separate bounded-per-rotor v2 is prepared for parent review. It does not
+authorize another 900-case run until the parent reviews its pilot and protocol.

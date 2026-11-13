@@ -1,0 +1,12 @@
+{
+  "columns": {
+    "t": "s",
+    "tilt": "rad",
+    "omega_mag": "rad/s",
+    "z": "m",
+    "vz": "m/s",
+    "thrust": "N"
+  },
+  "samples": 12000,
+  "scope": "Six logged scalar trajectories already exposed by unchanged kernel; not complete quaternion/body-state telemetry."
+}

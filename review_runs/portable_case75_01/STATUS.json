@@ -1,0 +1,12 @@
+{
+  "status": "THREE_CASE75_REPLAYS_MATCH_SAVED_RESULTS",
+  "selected_case_id": 75,
+  "dt_s": 0.0005,
+  "completed": [
+    "historical_actual_code",
+    "Variant_C",
+    "Cheapest_H7"
+  ],
+  "original_40_files_unchanged": true,
+  "qualification": "Path/loading reproduction only; no900-case rerun or new physical conclusion"
+}

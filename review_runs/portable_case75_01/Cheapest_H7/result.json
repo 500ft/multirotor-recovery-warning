@@ -1,0 +1,25 @@
+{
+  "scenario": "release_startup",
+  "t_switch_requested_s": 0.13042390859586284,
+  "t_switch_realized_s": 0.1305,
+  "initial_rate_rad_s": 2.0,
+  "success": true,
+  "crashed": false,
+  "recovery_time_s": 2.282076091404137,
+  "max_descent_m": 0.5912658588753763,
+  "available_height_m": 3.0,
+  "final_tilt_deg": 1.6274697500263582,
+  "peak_thrust_n": 3.052233711397119,
+  "case_id": 75,
+  "dt_s": 0.0005,
+  "elapsed_s": 2.92735840000023,
+  "terminal_stabilized": true,
+  "allocator": {
+    "calls": 11739,
+    "saturated_calls": 33,
+    "min_lambda": 0.7166573806293631,
+    "min_force_n": 0.0,
+    "max_force_fraction": 1.0,
+    "max_collective_error_n": 4.440892098500626e-16
+  }
+}
