@@ -1,0 +1,24 @@
+--- tensor_v1
++++ sim_release_recovery_bounded_v2.py
+@@ -210,6 +210,7 @@
+              initial_vz_m_s: float = 0.0,
+              descent_rate_m_s: float | None = None,
+              motor_alloc=None,
++             allocator_v2=None,
+              control_floor: bool = True,
+              spin_aware: bool = False,
+              scenario: str = "release_startup",
+@@ -363,10 +364,9 @@
+                 if motor_alloc is not None:
+                     torque, thrust = motor_alloc.apply(torque, thrust, max_thrust_avail)
+                 else:
+-                    tau_rp = mixer_torque_limit(thrust, max_thrust_avail, p.arm_m)
+-                    torque[:2] = np.clip(torque[:2], -tau_rp, tau_rp)
+-                    yaw_lim = p.yaw_torque_n_m if p.yaw_torque_n_m is not None else tau_rp
+-                    torque[2] = np.clip(torque[2], -yaw_lim, yaw_lim)
++                    if allocator_v2 is None:
++                        raise ValueError("v2 requires an explicit bounded rotor allocator")
++                    torque, thrust = allocator_v2.apply(torque, thrust, max_thrust_avail)
+             # actuation imperfections: thrust line offset from CG -> disturbance torque
+             # tau = r_cg x F_body (F_body = [0,0,thrust]); plus motor-mismatch bias.
+             torque = torque + np.array([cg[1] * thrust, -cg[0] * thrust, 0.0]) + torque_bias

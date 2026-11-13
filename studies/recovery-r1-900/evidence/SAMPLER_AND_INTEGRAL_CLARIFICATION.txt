@@ -1,0 +1,31 @@
+CLARIFICATION WITHOUT ALTERING FROZEN CAMPAIGN — 13 NOVEMBER 2026
+
+No input, controller, acceptance limit or executed code changes here.
+
+The phrase "placeholder torque multiplier drawn but unused" means that its
+standalone value is not reapplied as an effective motor arm, force cap or yaw
+constant in v2. The original sampler already used that draw when forming the
+frozen per-axis torque-bias disturbance: bias_i=U(-1,1)*.10*.004*m_tau N m.
+Those realized bias values are preserved identically across plants. Therefore,
+the torque multiplier still has an indirect statistical influence through the
+frozen bias. It is inaccurate to say it has zero influence on the trajectories.
+
+Distribution assumptions copied from draw_case (not measured tolerances):
+- Mass multiplier U(.95,1.10).
+- Whole inertia tensor multiplier U(.85,1.25).
+- Maximum thrust multiplier U(.85,1.05).
+- Independent detection and startup multipliers U(.8,1.5) each.
+- Thrust-sag scale U(.90,1.00), additionally multiplying available maximum.
+- Thrust-line uncertainty uniform over a disk of5mm radius.
+- Per-axis external torque bias U(-1,1)*.10*.004*m_tau, m_tau=U(.85,1.10).
+- Gyro noise standard deviation .02rad/s per axis per integration step.
+- Attitude perturbation has a random axis and normal angle with2deg standard
+  deviation, per integration step. This is not measured sensor bandwidth.
+- Same realized draws/seeds are used across allthree plants.
+
+The source's integral attitude error state can continue to accumulate when the
+vehicle is upright-ish. Only its output torque is clamped. Call this integral
+trim with an output clamp, not a demonstrated anti-windup implementation.
+
+Source: Analysis/monte_carlo_recovery.py draw_case and
+Analysis/sim_release_recovery.py simulate, pinned e7661b2.

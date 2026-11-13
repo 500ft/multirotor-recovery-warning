@@ -1,0 +1,13 @@
+{
+  "frozen_before_v2_outcomes": true,
+  "case_id": 75,
+  "dt_s": [
+    0.001,
+    0.0005,
+    0.00025
+  ],
+  "same_legacy_episode_success": true,
+  "last_step_max_descent_limit_m": 0.01,
+  "stop_first_failure": true,
+  "no_gain_or_limit_retuning": true
+}

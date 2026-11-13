@@ -1,0 +1,147 @@
+{
+  "scope": "Unbuilt CAD/catalog computational sensitivity; no measured authority or warning qualification",
+  "status": "ALL900_FINITE_BOUNDED_CASES_COMPLETE",
+  "models": {
+    "historical_actual_code": {
+      "n": 300,
+      "legacy_episode_recovery": 300,
+      "one_sided_95pct_binomial_lower": 0.9900639180555423,
+      "terminal_stabilized": 300,
+      "crashes": 0,
+      "max_descent_m": 1.0934297785728309,
+      "min_allocation_lambda": 0.4653614548097605,
+      "max_rotor_fraction": 1.0,
+      "max_collective_closure_N": 4.440892098500626e-16,
+      "by_rate": {
+        "1.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        },
+        "2.0": {
+          "n": 150,
+          "episode_recovery": 150,
+          "terminal_stabilized": 150,
+          "crashes": 0
+        },
+        "3.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        }
+      }
+    },
+    "Variant_C": {
+      "n": 300,
+      "legacy_episode_recovery": 300,
+      "one_sided_95pct_binomial_lower": 0.9900639180555423,
+      "terminal_stabilized": 300,
+      "crashes": 0,
+      "max_descent_m": 0.7473248287140178,
+      "min_allocation_lambda": 0.7792023724729424,
+      "max_rotor_fraction": 1.0,
+      "max_collective_closure_N": 8.881784197001252e-16,
+      "by_rate": {
+        "1.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        },
+        "2.0": {
+          "n": 150,
+          "episode_recovery": 150,
+          "terminal_stabilized": 150,
+          "crashes": 0
+        },
+        "3.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        }
+      }
+    },
+    "Cheapest_H7": {
+      "n": 300,
+      "legacy_episode_recovery": 300,
+      "one_sided_95pct_binomial_lower": 0.9900639180555423,
+      "terminal_stabilized": 300,
+      "crashes": 0,
+      "max_descent_m": 1.1447770202586875,
+      "min_allocation_lambda": 0.4990416544159098,
+      "max_rotor_fraction": 1.0,
+      "max_collective_closure_N": 8.881784197001252e-16,
+      "by_rate": {
+        "1.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        },
+        "2.0": {
+          "n": 150,
+          "episode_recovery": 150,
+          "terminal_stabilized": 150,
+          "crashes": 0
+        },
+        "3.0": {
+          "n": 75,
+          "episode_recovery": 75,
+          "terminal_stabilized": 75,
+          "crashes": 0
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "Variant_C_minus_historical": {
+      "success": {
+        "mean_paired_difference": 0.0,
+        "empirical_paired_bootstrap_95pct_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_stabilized": {
+        "mean_paired_difference": 0.0,
+        "empirical_paired_bootstrap_95pct_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "max_descent_m": {
+        "mean_paired_difference": -0.1610439596532558,
+        "empirical_paired_bootstrap_95pct_interval": [
+          -0.16913419222004472,
+          -0.1533366892224222
+        ]
+      }
+    },
+    "Cheapest_H7_minus_historical": {
+      "success": {
+        "mean_paired_difference": 0.0,
+        "empirical_paired_bootstrap_95pct_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_stabilized": {
+        "mean_paired_difference": 0.0,
+        "empirical_paired_bootstrap_95pct_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "max_descent_m": {
+        "mean_paired_difference": 0.00909477404139172,
+        "empirical_paired_bootstrap_95pct_interval": [
+          0.0057269056146900055,
+          0.012322345804360606
+        ]
+      }
+    }
+  }
+}

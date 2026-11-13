@@ -1,0 +1,506 @@
+{
+  "historical_actual_code": [
+    {
+      "field": "historical_actual_code.scenario",
+      "expected": "release_startup",
+      "measured": "release_startup",
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.t_switch_requested_s",
+      "expected": 0.13042390859586284,
+      "measured": 0.13042390859586284,
+      "absolute_error": 0.0,
+      "limit": 1.1304239085958627e-11,
+      "margin": 1.1304239085958627e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.t_switch_realized_s",
+      "expected": 0.1305,
+      "measured": 0.1305,
+      "absolute_error": 0.0,
+      "limit": 1.1305e-11,
+      "margin": 1.1305e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.initial_rate_rad_s",
+      "expected": 2.0,
+      "measured": 2.0,
+      "absolute_error": 0.0,
+      "limit": 3e-11,
+      "margin": 3e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.success",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.crashed",
+      "expected": false,
+      "measured": false,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.recovery_time_s",
+      "expected": 1.7855760914041374,
+      "measured": 1.7855760914041374,
+      "absolute_error": 0.0,
+      "limit": 2.7855760914041372e-11,
+      "margin": 2.7855760914041372e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.max_descent_m",
+      "expected": 0.5712728081332726,
+      "measured": 0.5712728081332726,
+      "absolute_error": 0.0,
+      "limit": 1.5712728081332725e-11,
+      "margin": 1.5712728081332725e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.available_height_m",
+      "expected": 3.0,
+      "measured": 3.0,
+      "absolute_error": 0.0,
+      "limit": 4e-11,
+      "margin": 4e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.final_tilt_deg",
+      "expected": 1.2120185866451716,
+      "measured": 1.2120185866451716,
+      "absolute_error": 0.0,
+      "limit": 2.2120185866451717e-11,
+      "margin": 2.2120185866451717e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.peak_thrust_n",
+      "expected": 2.7066419357747273,
+      "measured": 2.7066419357747273,
+      "absolute_error": 0.0,
+      "limit": 3.7066419357747274e-11,
+      "margin": 3.7066419357747274e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.case_id",
+      "expected": 75,
+      "measured": 75,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.dt_s",
+      "expected": 0.0005,
+      "measured": 0.0005,
+      "absolute_error": 0.0,
+      "limit": 1.0004999999999999e-11,
+      "margin": 1.0004999999999999e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.terminal_stabilized",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.calls",
+      "expected": 11739,
+      "measured": 11739,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.saturated_calls",
+      "expected": 94,
+      "measured": 94,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.min_lambda",
+      "expected": 0.6015680346514771,
+      "measured": 0.6015680346514771,
+      "absolute_error": 0.0,
+      "limit": 1.601568034651477e-11,
+      "margin": 1.601568034651477e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.min_force_n",
+      "expected": 0.0,
+      "measured": 0.0,
+      "absolute_error": 0.0,
+      "limit": 1e-11,
+      "margin": 1e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.max_force_fraction",
+      "expected": 1.0,
+      "measured": 1.0,
+      "absolute_error": 0.0,
+      "limit": 2e-11,
+      "margin": 2e-11,
+      "pass": true
+    },
+    {
+      "field": "historical_actual_code.allocator.max_collective_error_n",
+      "expected": 4.440892098500626e-16,
+      "measured": 4.440892098500626e-16,
+      "absolute_error": 0.0,
+      "limit": 1.0000000000000004e-11,
+      "margin": 1.0000000000000004e-11,
+      "pass": true
+    }
+  ],
+  "Variant_C": [
+    {
+      "field": "Variant_C.scenario",
+      "expected": "release_startup",
+      "measured": "release_startup",
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.t_switch_requested_s",
+      "expected": 0.13042390859586284,
+      "measured": 0.13042390859586284,
+      "absolute_error": 0.0,
+      "limit": 1.1304239085958627e-11,
+      "margin": 1.1304239085958627e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.t_switch_realized_s",
+      "expected": 0.1305,
+      "measured": 0.1305,
+      "absolute_error": 0.0,
+      "limit": 1.1305e-11,
+      "margin": 1.1305e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.initial_rate_rad_s",
+      "expected": 2.0,
+      "measured": 2.0,
+      "absolute_error": 0.0,
+      "limit": 3e-11,
+      "margin": 3e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.success",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.crashed",
+      "expected": false,
+      "measured": false,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.recovery_time_s",
+      "expected": 2.5910760914041373,
+      "measured": 2.5910760914041373,
+      "absolute_error": 0.0,
+      "limit": 3.591076091404137e-11,
+      "margin": 3.591076091404137e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.max_descent_m",
+      "expected": 0.35309478201304223,
+      "measured": 0.35309478201304223,
+      "absolute_error": 0.0,
+      "limit": 1.3530947820130421e-11,
+      "margin": 1.3530947820130421e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.available_height_m",
+      "expected": 3.0,
+      "measured": 3.0,
+      "absolute_error": 0.0,
+      "limit": 4e-11,
+      "margin": 4e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.final_tilt_deg",
+      "expected": 1.7546387258494283,
+      "measured": 1.7546387258494283,
+      "absolute_error": 0.0,
+      "limit": 2.7546387258494284e-11,
+      "margin": 2.7546387258494284e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.peak_thrust_n",
+      "expected": 4.7932966031095585,
+      "measured": 4.7932966031095585,
+      "absolute_error": 0.0,
+      "limit": 5.793296603109558e-11,
+      "margin": 5.793296603109558e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.case_id",
+      "expected": 75,
+      "measured": 75,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.dt_s",
+      "expected": 0.0005,
+      "measured": 0.0005,
+      "absolute_error": 0.0,
+      "limit": 1.0004999999999999e-11,
+      "margin": 1.0004999999999999e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.terminal_stabilized",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.calls",
+      "expected": 11739,
+      "measured": 11739,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.saturated_calls",
+      "expected": 0,
+      "measured": 0,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.min_lambda",
+      "expected": 1.0,
+      "measured": 1.0,
+      "absolute_error": 0.0,
+      "limit": 2e-11,
+      "margin": 2e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.min_force_n",
+      "expected": 0.0,
+      "measured": 0.0,
+      "absolute_error": 0.0,
+      "limit": 1e-11,
+      "margin": 1e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.max_force_fraction",
+      "expected": 0.9750187664471758,
+      "measured": 0.9750187664471758,
+      "absolute_error": 0.0,
+      "limit": 1.9750187664471757e-11,
+      "margin": 1.9750187664471757e-11,
+      "pass": true
+    },
+    {
+      "field": "Variant_C.allocator.max_collective_error_n",
+      "expected": 8.881784197001252e-16,
+      "measured": 8.881784197001252e-16,
+      "absolute_error": 0.0,
+      "limit": 1.0000000000000007e-11,
+      "margin": 1.0000000000000007e-11,
+      "pass": true
+    }
+  ],
+  "Cheapest_H7": [
+    {
+      "field": "Cheapest_H7.scenario",
+      "expected": "release_startup",
+      "measured": "release_startup",
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.t_switch_requested_s",
+      "expected": 0.13042390859586284,
+      "measured": 0.13042390859586284,
+      "absolute_error": 0.0,
+      "limit": 1.1304239085958627e-11,
+      "margin": 1.1304239085958627e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.t_switch_realized_s",
+      "expected": 0.1305,
+      "measured": 0.1305,
+      "absolute_error": 0.0,
+      "limit": 1.1305e-11,
+      "margin": 1.1305e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.initial_rate_rad_s",
+      "expected": 2.0,
+      "measured": 2.0,
+      "absolute_error": 0.0,
+      "limit": 3e-11,
+      "margin": 3e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.success",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.crashed",
+      "expected": false,
+      "measured": false,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.recovery_time_s",
+      "expected": 2.282076091404137,
+      "measured": 2.282076091404137,
+      "absolute_error": 0.0,
+      "limit": 3.282076091404137e-11,
+      "margin": 3.282076091404137e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.max_descent_m",
+      "expected": 0.5912658588753763,
+      "measured": 0.5912658588753763,
+      "absolute_error": 0.0,
+      "limit": 1.5912658588753762e-11,
+      "margin": 1.5912658588753762e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.available_height_m",
+      "expected": 3.0,
+      "measured": 3.0,
+      "absolute_error": 0.0,
+      "limit": 4e-11,
+      "margin": 4e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.final_tilt_deg",
+      "expected": 1.6274697500263582,
+      "measured": 1.6274697500263582,
+      "absolute_error": 0.0,
+      "limit": 2.6274697500263577e-11,
+      "margin": 2.6274697500263577e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.peak_thrust_n",
+      "expected": 3.052233711397119,
+      "measured": 3.052233711397119,
+      "absolute_error": 0.0,
+      "limit": 4.0522337113971185e-11,
+      "margin": 4.0522337113971185e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.case_id",
+      "expected": 75,
+      "measured": 75,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.dt_s",
+      "expected": 0.0005,
+      "measured": 0.0005,
+      "absolute_error": 0.0,
+      "limit": 1.0004999999999999e-11,
+      "margin": 1.0004999999999999e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.terminal_stabilized",
+      "expected": true,
+      "measured": true,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.calls",
+      "expected": 11739,
+      "measured": 11739,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.saturated_calls",
+      "expected": 33,
+      "measured": 33,
+      "exact": true,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.min_lambda",
+      "expected": 0.7166573806293631,
+      "measured": 0.7166573806293631,
+      "absolute_error": 0.0,
+      "limit": 1.716657380629363e-11,
+      "margin": 1.716657380629363e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.min_force_n",
+      "expected": 0.0,
+      "measured": 0.0,
+      "absolute_error": 0.0,
+      "limit": 1e-11,
+      "margin": 1e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.max_force_fraction",
+      "expected": 1.0,
+      "measured": 1.0,
+      "absolute_error": 0.0,
+      "limit": 2e-11,
+      "margin": 2e-11,
+      "pass": true
+    },
+    {
+      "field": "Cheapest_H7.allocator.max_collective_error_n",
+      "expected": 4.440892098500626e-16,
+      "measured": 4.440892098500626e-16,
+      "absolute_error": 0.0,
+      "limit": 1.0000000000000004e-11,
+      "margin": 1.0000000000000004e-11,
+      "pass": true
+    }
+  ]
+}

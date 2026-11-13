@@ -1,0 +1,268 @@
+{
+  "scope": "One selected case per plant at three time steps; no population rate",
+  "allocation": {
+    "frozen_before_v2_outcomes": true,
+    "case_id": 75,
+    "dt_s": [
+      0.001,
+      0.0005,
+      0.00025
+    ],
+    "same_legacy_episode_success": true,
+    "last_step_max_descent_limit_m": 0.01,
+    "stop_first_failure": true,
+    "no_gain_or_limit_retuning": true
+  },
+  "models": {
+    "historical_actual_code": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.793576091404137,
+          "max_descent_m": 0.5752103759857273,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.180520801186198,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "dt_s": 0.001,
+          "elapsed_s": 1.4687039999998888,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 5869,
+            "saturated_calls": 46,
+            "min_lambda": 0.6140649771321,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.7855760914041374,
+          "max_descent_m": 0.5712728081332726,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.2120185866451716,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "dt_s": 0.0005,
+          "elapsed_s": 3.512680900000305,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 11739,
+            "saturated_calls": 94,
+            "min_lambda": 0.6015680346514771,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.7858260914041373,
+          "max_descent_m": 0.5709352239895266,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.210501843251894,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "dt_s": 0.00025,
+          "elapsed_s": 7.401095199999872,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 23478,
+            "saturated_calls": 185,
+            "min_lambda": 0.5954670488603583,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        }
+      ],
+      "last_step_max_descent_change_m": 0.0003375841437460725,
+      "limit_m": 0.01,
+      "margin_m": 0.009662415856253928,
+      "pass": true
+    },
+    "Variant_C": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.7265760914041373,
+          "max_descent_m": 0.3549584294645316,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7343827922979917,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "dt_s": 0.001,
+          "elapsed_s": 1.8754123999997319,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 5869,
+            "saturated_calls": 0,
+            "min_lambda": 1.0,
+            "min_force_n": 0.0,
+            "max_force_fraction": 0.9676858552498246,
+            "max_collective_error_n": 8.881784197001252e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.5910760914041373,
+          "max_descent_m": 0.35309478201304223,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7546387258494283,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "dt_s": 0.0005,
+          "elapsed_s": 3.746357999999418,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 11739,
+            "saturated_calls": 0,
+            "min_lambda": 1.0,
+            "min_force_n": 0.0,
+            "max_force_fraction": 0.9750187664471758,
+            "max_collective_error_n": 8.881784197001252e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.602826091404137,
+          "max_descent_m": 0.3535019599026367,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7638726026021343,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "dt_s": 0.00025,
+          "elapsed_s": 7.40420450000056,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 23478,
+            "saturated_calls": 0,
+            "min_lambda": 1.0,
+            "min_force_n": 0.0,
+            "max_force_fraction": 0.978852555873822,
+            "max_collective_error_n": 8.881784197001252e-16
+          }
+        }
+      ],
+      "last_step_max_descent_change_m": 0.00040717788959448997,
+      "limit_m": 0.01,
+      "margin_m": 0.00959282211040551,
+      "pass": true
+    },
+    "Cheapest_H7": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.200576091404137,
+          "max_descent_m": 0.5934657412326706,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.5820398154813815,
+          "peak_thrust_n": 3.052233711397119,
+          "case_id": 75,
+          "dt_s": 0.001,
+          "elapsed_s": 1.9020493999996688,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 5869,
+            "saturated_calls": 16,
+            "min_lambda": 0.744795971991616,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.282076091404137,
+          "max_descent_m": 0.5912658588753763,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.6274697500263582,
+          "peak_thrust_n": 3.052233711397119,
+          "case_id": 75,
+          "dt_s": 0.0005,
+          "elapsed_s": 3.628848399999697,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 11739,
+            "saturated_calls": 33,
+            "min_lambda": 0.7166573806293631,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.291076091404137,
+          "max_descent_m": 0.5911303774075104,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.6342407784085644,
+          "peak_thrust_n": 3.052233711397119,
+          "case_id": 75,
+          "dt_s": 0.00025,
+          "elapsed_s": 7.3427019999999175,
+          "terminal_stabilized": true,
+          "allocator": {
+            "calls": 23478,
+            "saturated_calls": 59,
+            "min_lambda": 0.7003739243347358,
+            "min_force_n": 0.0,
+            "max_force_fraction": 1.0,
+            "max_collective_error_n": 4.440892098500626e-16
+          }
+        }
+      ],
+      "last_step_max_descent_change_m": 0.00013548146786590554,
+      "limit_m": 0.01,
+      "margin_m": 0.009864518532134095,
+      "pass": true
+    }
+  },
+  "status": "READY_FOR_PARENT_REVIEW_NOT_CAMPAIGN_AUTHORIZATION"
+}

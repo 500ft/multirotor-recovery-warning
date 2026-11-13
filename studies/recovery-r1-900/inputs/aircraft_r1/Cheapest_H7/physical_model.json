@@ -1,0 +1,451 @@
+{
+  "title": "MicoAir H7 / ABS research aircraft",
+  "revision": "R1",
+  "date": "2026-11-07",
+  "status": "CAD and planning model; not built or flown",
+  "total_mass_g": 163.41,
+  "cg_mm": [
+    0.0,
+    -0.131,
+    14.01
+  ],
+  "battery_shift_mm": [
+    -1.49,
+    0.0,
+    0.0
+  ],
+  "inertia_kgm2_about_cg": [
+    [
+      0.0001846712715359756,
+      -1.3126825147065736e-12,
+      -1.8490043912144291e-10
+    ],
+    [
+      -1.3126825147065736e-12,
+      0.0001987925733234518,
+      5.1489419055142085e-09
+    ],
+    [
+      -1.8490043912144291e-10,
+      5.1489419055142085e-09,
+      0.0003053068309052878
+    ]
+  ],
+  "inertia_note": "Purchased masses distributed uniformly over envelope solids; wiring/fasteners are estimates",
+  "motor_diagonal_mm": 120.6,
+  "plate_thickness_mm": 7.0,
+  "guard_mass_each_g": 8.37,
+  "guard_full_skirt_reference_mass_each_g": 10.46,
+  "sensor_dimensions_mm": [
+    29.3,
+    17,
+    14.5
+  ],
+  "sensor_ground_clearance_mm": 3.5,
+  "pack": {
+    "capacity_ah": 0.65,
+    "max_voltage_v": 8.4,
+    "nominal_voltage_v": 7.4,
+    "mass_g": 49.0
+  },
+  "propulsion": {
+    "vendor_thrust_per_motor_g": 142.0,
+    "vendor_test_voltage_v": 7.82,
+    "guard_thrust_retention_assumed": 0.85,
+    "tw_at_vendor_voltage": 2.95,
+    "tw_at_full_pack_v2_scaling": 3.41,
+    "thrust_limited_extra_mass_at_7v_tw_1p3_g": 134.2,
+    "guard_factor_sensitivity": [
+      0.75,
+      1.0
+    ],
+    "ballast_note": "Lift-only estimate; mount capacity, current, thermal and recovery limits require measurement"
+  },
+  "modelled_parts": [
+    {
+      "name": "Frame_plate",
+      "mass_g": 23.441,
+      "cg_mm": [
+        -1.8479775520298937e-14,
+        -6.171589011687732e-15,
+        -3.483843108599673
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Guard_1",
+      "mass_g": 8.369,
+      "cg_mm": [
+        42.63853890554824,
+        42.638538905548224,
+        9.661095441943827
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Motor_1",
+      "mass_g": 3.5,
+      "cg_mm": [
+        42.63853890554881,
+        42.638538905548806,
+        5.1357112996948295
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Propeller_1",
+      "mass_g": 1.0,
+      "cg_mm": [
+        42.638538905548806,
+        42.63853890554881,
+        12.219052227841653
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Landing_foot_1",
+      "mass_g": 0.768,
+      "cg_mm": [
+        35.921024484276614,
+        49.35605332682101,
+        -16.999999999999996
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Guard_2",
+      "mass_g": 8.369,
+      "cg_mm": [
+        -42.638538905548245,
+        42.63853890554826,
+        9.66109544194385
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Motor_2",
+      "mass_g": 3.5,
+      "cg_mm": [
+        -42.63853890554883,
+        42.638538905548806,
+        5.1357112996948295
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Propeller_2",
+      "mass_g": 1.0,
+      "cg_mm": [
+        -42.63853890554881,
+        42.638538905548806,
+        12.21905222784165
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Landing_foot_2",
+      "mass_g": 0.768,
+      "cg_mm": [
+        -49.356053326821026,
+        35.921024484276614,
+        -16.999999999999996
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Guard_3",
+      "mass_g": 8.369,
+      "cg_mm": [
+        -42.63853890554822,
+        -42.63853890554821,
+        9.661095441943834
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Motor_3",
+      "mass_g": 3.5,
+      "cg_mm": [
+        -42.63853890554882,
+        -42.6385389055488,
+        5.135711299694828
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Propeller_3",
+      "mass_g": 1.0,
+      "cg_mm": [
+        -42.63853890554882,
+        -42.63853890554881,
+        12.219052227841654
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Landing_foot_3",
+      "mass_g": 0.768,
+      "cg_mm": [
+        -35.92102448427663,
+        -49.356053326821026,
+        -16.999999999999996
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Guard_4",
+      "mass_g": 8.369,
+      "cg_mm": [
+        42.63853890554821,
+        -42.63853890554825,
+        9.661095441943859
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Motor_4",
+      "mass_g": 3.5,
+      "cg_mm": [
+        42.638538905548806,
+        -42.63853890554882,
+        5.1357112996948295
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Propeller_4",
+      "mass_g": 1.0,
+      "cg_mm": [
+        42.638538905548806,
+        -42.63853890554879,
+        12.219052227841654
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Landing_foot_4",
+      "mass_g": 0.768,
+      "cg_mm": [
+        49.35605332682101,
+        -35.92102448427662,
+        -16.999999999999996
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Lower_standoff_-12.75_-12.75",
+      "mass_g": 0.1,
+      "cg_mm": [
+        -12.750000000000009,
+        -12.75,
+        2.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Upper_standoff_-12.75_-12.75",
+      "mass_g": 0.35,
+      "cg_mm": [
+        -12.750000000000005,
+        -12.75,
+        13.799999999999999
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Lower_standoff_-12.75_12.75",
+      "mass_g": 0.1,
+      "cg_mm": [
+        -12.750000000000009,
+        12.75,
+        2.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Upper_standoff_-12.75_12.75",
+      "mass_g": 0.35,
+      "cg_mm": [
+        -12.750000000000005,
+        12.75,
+        13.799999999999999
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Lower_standoff_12.75_-12.75",
+      "mass_g": 0.1,
+      "cg_mm": [
+        12.749999999999993,
+        -12.75,
+        2.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Upper_standoff_12.75_-12.75",
+      "mass_g": 0.35,
+      "cg_mm": [
+        12.749999999999993,
+        -12.75,
+        13.799999999999999
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Lower_standoff_12.75_12.75",
+      "mass_g": 0.1,
+      "cg_mm": [
+        12.749999999999993,
+        12.75,
+        2.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Upper_standoff_12.75_12.75",
+      "mass_g": 0.35,
+      "cg_mm": [
+        12.749999999999993,
+        12.75,
+        13.799999999999999
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "MicoAir743v2_AIO",
+      "mass_g": 10,
+      "cg_mm": [
+        -6.93772197662076e-17,
+        -4.162806311333906e-16,
+        7.565999375218126
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "ELRS_receiver",
+      "mass_g": 2.2,
+      "cg_mm": [
+        -1.982541115402065e-18,
+        -6.0,
+        14.25
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Receiver_antenna",
+      "mass_g": 0.3,
+      "cg_mm": [
+        -1.0001799803853565e-17,
+        -27.500000000000004,
+        14.250000000000002
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Sensor_spacer_-12.15_-6.0",
+      "mass_g": 0.04,
+      "cg_mm": [
+        -12.150000000000006,
+        -6.0,
+        -8.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Sensor_spacer_-12.15_6.0",
+      "mass_g": 0.04,
+      "cg_mm": [
+        -12.150000000000006,
+        6.0,
+        -8.0
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Sensor_spacer_12.15_-6.0",
+      "mass_g": 0.04,
+      "cg_mm": [
+        12.149999999999991,
+        -6.0,
+        -8.000000000000002
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Sensor_spacer_12.15_6.0",
+      "mass_g": 0.04,
+      "cg_mm": [
+        12.149999999999991,
+        6.0,
+        -8.000000000000002
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "MTF01_sensor_envelope",
+      "mass_g": 4.5,
+      "cg_mm": [
+        -2.1302732820570093e-16,
+        1.720605343199892e-16,
+        -16.250000000000007
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Battery_cradle",
+      "mass_g": 9.457,
+      "cg_mm": [
+        2.625523815017771e-16,
+        7.814058973267176e-16,
+        24.69015406773043
+      ],
+      "source": "CAD density"
+    },
+    {
+      "name": "Battery_pack",
+      "mass_g": 49.0,
+      "cg_mm": [
+        -1.4900000000000009,
+        1.3999019057629846e-16,
+        32.5
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "XT30_connector",
+      "mass_g": 2.0,
+      "cg_mm": [
+        36.51000000000001,
+        -4.232725281383411e-18,
+        32.50000000000001
+      ],
+      "source": "vendor or estimate"
+    },
+    {
+      "name": "Battery_strap",
+      "mass_g": 1.0,
+      "cg_mm": [
+        -1.767519243184331e-16,
+        -2.496620930997869e-16,
+        31.00000000000001
+      ],
+      "source": "vendor or estimate"
+    }
+  ],
+  "extra_wiring_fasteners_mass_g": 5.0,
+  "unverified": [
+    "propeller thrust/current with installed guard",
+    "battery resistance and FC brownout margin",
+    "printed material stiffness and impact strength",
+    "motor dimensions and screw engagement on receipt",
+    "all cable routing and connector access",
+    "independent stop during a Lua fault",
+    "physical ballast attachment and structural rating"
+  ],
+  "arm_beam_estimate_hz": [
+    214.2,
+    231.9,
+    166.1
+  ]
+}

@@ -1,0 +1,9 @@
+frozen/** -text
+inputs/** -text
+results/** -text
+evidence/** -text
+figures/** -text
+notices/** -text
+source-map.json -text
+portable_replay.py -text
+PORTABLE_CASE75_PROTOCOL.json -text

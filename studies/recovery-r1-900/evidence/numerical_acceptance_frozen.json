@@ -1,0 +1,15 @@
+{
+  "approved_by_parent": "2026-11-13, before these numerical outcomes",
+  "case_id": 75,
+  "rate_rad_s": 2.0,
+  "dt_s": [
+    0.001,
+    0.0005,
+    0.00025
+  ],
+  "same_legacy_success_classification": true,
+  "final_step_max_descent_absolute_change_limit_m": 0.01,
+  "basis": ".01m is 0.33% of the3m height budget allocated to this selected time-step check; no global error bound or stochastic-population convergence claim",
+  "measurement_noise": "Original pilot imperfections and per-step noise convention retained; changing dt changes the physical noise sampling interpretation, explicitly a limitation.",
+  "stop": "Stop on first failed analytical,finite-output,classification or final-increment check. No limits or gains retuned."
+}

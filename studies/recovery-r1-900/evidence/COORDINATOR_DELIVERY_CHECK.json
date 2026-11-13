@@ -1,0 +1,51 @@
+{
+  "scope": "Coordinator re-count of all900 saved per-case outcome/allocator diagnostic records. Full state trajectories are not retained in these JSON files; this is not a second trajectory reduction or physical validation.",
+  "models": {
+    "historical_actual_code": {
+      "counts": {
+        "episode": 300,
+        "terminal": 300,
+        "crashes": 0
+      },
+      "rate_strata": {
+        "1.0": 75,
+        "2.0": 150,
+        "3.0": 75
+      },
+      "worst_descent_m": 1.0934297785728309,
+      "file_sha256": "38910a59f90a206b08c38e88bc81978b6f7573519a08bdff80285685bd039f55",
+      "all_saved_diagnostic_bounds_pass": true
+    },
+    "Variant_C": {
+      "counts": {
+        "episode": 300,
+        "terminal": 300,
+        "crashes": 0
+      },
+      "rate_strata": {
+        "1.0": 75,
+        "2.0": 150,
+        "3.0": 75
+      },
+      "worst_descent_m": 0.7473248287140178,
+      "file_sha256": "631418de832942f524eeb2d287ed60a6436b72d0875409c46e4a73c4c3d12f49",
+      "all_saved_diagnostic_bounds_pass": true
+    },
+    "Cheapest_H7": {
+      "counts": {
+        "episode": 300,
+        "terminal": 300,
+        "crashes": 0
+      },
+      "rate_strata": {
+        "1.0": 75,
+        "2.0": 150,
+        "3.0": 75
+      },
+      "worst_descent_m": 1.1447770202586875,
+      "file_sha256": "053c4e3a5cca602056a2bcc5c65c92928f9c83618ce1926ba18483b404e1a5e7",
+      "all_saved_diagnostic_bounds_pass": true
+    }
+  },
+  "status": "PASS"
+}

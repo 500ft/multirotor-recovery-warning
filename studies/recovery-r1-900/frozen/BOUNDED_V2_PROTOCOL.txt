@@ -1,0 +1,93 @@
+BOUNDED FOUR-ROTOR R1 SENSITIVITY — V2, 13 NOVEMBER 2026
+
+Research question
+With a physically realizable healthy-quad allocation and the retained controller,
+how sensitive are modeled release-recovery outcomes to the historical plant and
+the two frozen R1 catalog/CAD plants? This is a computational sensitivity study.
+It does not qualify measured propulsion authority, a platform or a learned warning.
+
+Status and scope
+The scalar-box campaign was stopped and its partial106 historical cases remain
+unqualified; see CAMPAIGN_STOP_STATUS.txt. No R1 campaign result exists. Parent
+authorized isolated v2 implementation and a single selected pilot per plant with
+three time steps. After passing checks and review, parent approved one serial
+900-case v2 campaign on13November2026. No CAD/ANSYS or physical
+testing is performed here. Drone research stays OPEN for owner/professor review.
+
+Source and plants
+Research/multirotor-recovery-warning pin e7661b2; source/CAD preserved unchanged.
+Historical nominal uses actual executed-code mass129.76g, diagonal inertia
+(.00035,.00035,.00056)kg m2 and Tmax4.2N, not the separate135.66g catalog budget.
+C/H7 use frozen R1 physical_model.json mass and full SPD inertia. Tmax equals
+four vendor thrusts at their stated test voltage times assumed guard factor.85.
+No voltage-squared uplift. Source motor centre xy for Motor_1..4 sets R1 lever
+arms. Historical plant uses explicitly assumed idealX60mm radius. Actual CAD
+rotor xy remain fixed. The original cohort's max_torque multiplier is retained
+in frozen_cohort.json but drawn-and-unused in v2; it changes neither rotor
+geometry nor yaw constant. Thrust variation coherently changes force/moment caps.
+
+Allocation: exact realized forces, not independent axis clips
+For motor i at(x_i,y_i), spin vector(+,-,+,-), define
+  B = [1; y_i; -x_i; kappa*spin_i], w=(T,tau_x,tau_y,tau_z)=B f.
+Assumed kappa=.004/(nominal_Tmax/2), following the historical placeholder yaw
+bound convention and existing failure_allocation.py. This is unmeasured, and
+spin assignment is a conventional assumption, not a confirmed wiring layout.
+At demanded collective T, compute f0=B^-1(T,0,0,0), df=B^-1(0,tau_cmd).
+Find the largest common lambda in[0,1] satisfying0<=f0+lambda*df<=Tmax_available/4.
+Return the actual B f wrench. Collective is preserved; all3 requested moments
+share one direction-preserving scaling. This is a conservative healthy allocation
+policy, not a torque-optimal or rotor-failure allocator. Yaw demand can consume
+roll/pitch headroom. No force is silently clipped into feasibility beyond1e-12
+floating-point boundary cleanup. Every integration step checks bounds, finite
+values, force closure and moment closure. External torque_bias remains a sampled
+disturbance approximation, not measured rotor-to-rotor effectiveness mismatch.
+
+Retained controller and dynamics
+Keep original attitude PD gains plus gated integral, original altitude PD,
+25% inverted control floor and75% collective ceiling. No gain/limit retuning.
+Use full Euler I*omega_dot=tau-omega cross(I*omega) and quaternion kinematics.
+Nominal50ms detection and60ms motor-start dead times remain unchanged. There
+is NO continuous actuator lag. CG moment uses negative CAD CGxy plus uncertainty
+offset: r cross(0,0,T). No descent inflow/ground effect/voltage dynamics is added.
+
+Frozen paired cohort and outcomes
+Same frozen300 normalized draw rows/measurement noise seeds per plant:75/150/75
+at1/2/3rad/s,60deg initial tilt,6s horizon,3m height budget. Seed20260704.
+The placeholder torque multiplier exception is stated above. Legacy success is
+a0.25s stabilization episode (<5deg,<.3rad/s,|vz|<.2m/s); record it separately
+from terminal stabilization and crash counts. Finite outcomes are mandatory;
+failed recovery is an outcome, not grounds for discarding or changing a sample.
+Never feed these synthetic cases to the measured_authority_gate or relabel the
+300-case comparison as a passed1000-case primary measured-authority gate.
+
+Predeclared checks; stop at first failed numerical check
+1. Input tensors SPD; source text-match patch guards and hashes.
+2. Source full-tensor adapter checks preserve original diagonal trajectory.
+3. IdealX pure-axis limits and simultaneousRP counterexample resolved exactly.
+4. Collective saturation and10000 deterministic arbitrary wrench demands:
+   all4 f_i in[0,cap], absolute T closure and moment closure<=1e-12 in SI units.
+5. Per-plant zero-offset hover and exact semi-implicit freefall to1e-12.
+6. Per-plant full-tensor first-step constant-moment response to1e-12.
+7. Hand CG reference r=(.002,-.003,0)m,F=(0,0,2)N=>tau=(-.006,-.004,0)Nm.
+8. Selected case75 per plant at dt1/.5/.25ms: same legacy episode classification;
+   last.5->.25ms max-descent change<=.01m (0.33% of3m budget), unchanged limit.
+   This tests one stochastic realization, not global/asymptotic convergence.
+   Original white noise is drawn per integration step; its physical sampling
+   interpretation changes with dt and is a stated limitation.
+
+Execution and review
+Command r1_bounded_v2.py --pilot performs the checks and selected cases only.
+Parent approved its --campaign option for one serial paired900case run in
+bounded_v2_campaign_01. Freeze code/input hashes before outcomes. Preserve raw outputs,
+parameters, bounds diagnostics, exception logs, hashes and terminal outcomes.
+The initial pilot had an output serialization bug (NumPy accumulator integer),
+corrected to Python int without changing dynamics, gains or acceptance limits.
+The first campaign preflight compared tuple/list representations unequally,
+before any episode. All300 rows proved equivalent after JSON canonicalization;
+parent approved that comparison repair and a relaunch. The exact diff and
+zero-episode preflight record are retained. No experiment input changed.
+
+Future work: qualify installed force/current/RPM and actuator step response;
+test controller/allocator and dead-time/inflow sensitivity under measured plant
+uncertainty; assess warning lead time at fixed false-alarm rate on independent
+approved data. No hardware validation or publication acceptance is claimed.

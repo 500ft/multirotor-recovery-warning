@@ -1,0 +1,242 @@
+{
+  "allocation": {
+    "approved_by_parent": "2026-11-13, before these numerical outcomes",
+    "case_id": 75,
+    "rate_rad_s": 2.0,
+    "dt_s": [
+      0.001,
+      0.0005,
+      0.00025
+    ],
+    "same_legacy_success_classification": true,
+    "final_step_max_descent_absolute_change_limit_m": 0.01,
+    "basis": ".01m is 0.33% of the3m height budget allocated to this selected time-step check; no global error bound or stochastic-population convergence claim",
+    "measurement_noise": "Original pilot imperfections and per-step noise convention retained; changing dt changes the physical noise sampling interpretation, explicitly a limitation.",
+    "stop": "Stop on first failed analytical,finite-output,classification or final-increment check. No limits or gains retuned."
+  },
+  "cg_sign": {
+    "r_thrust_line_minus_CG_m": [
+      0.002,
+      -0.003,
+      0.0
+    ],
+    "force_N": [
+      0.0,
+      0.0,
+      2.0
+    ],
+    "hand_expected_moment_Nm": [
+      -0.006,
+      -0.004,
+      0.0
+    ],
+    "source_expression_moment_Nm": [
+      -0.006,
+      -0.004,
+      0.0
+    ],
+    "pass": true,
+    "R1_mapping": "r_thrust_line_minus_CG_xy = -physical_model.cg_mm[:2]/1000 + uncertainty_draw"
+  },
+  "models": {
+    "historical_actual_code": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.7015760914041373,
+          "max_descent_m": 0.534450182250148,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.1734115269176517,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "elapsed_s": 1.1275075000003199,
+          "dt_s": 0.001,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.696576091404137,
+          "max_descent_m": 0.5318929306745546,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.2164381150061354,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "elapsed_s": 2.6666738999997506,
+          "dt_s": 0.0005,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 1.6978260914041372,
+          "max_descent_m": 0.5321678910624765,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.2109005143189997,
+          "peak_thrust_n": 2.7066419357747273,
+          "case_id": 75,
+          "elapsed_s": 5.886115999999674,
+          "dt_s": 0.00025,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        }
+      ],
+      "same_classification": true,
+      "final_step_max_descent_change_m": 0.0002749603879219631,
+      "limit_m": 0.01,
+      "margin_m": 0.009725039612078037,
+      "pass": true
+    },
+    "Variant_C": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.7265760914041373,
+          "max_descent_m": 0.3549584294645317,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7343827922979917,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "elapsed_s": 1.3584355000002688,
+          "dt_s": 0.001,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.5910760914041373,
+          "max_descent_m": 0.35309478201304223,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7546387258494283,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "elapsed_s": 2.723587899999984,
+          "dt_s": 0.0005,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.602826091404137,
+          "max_descent_m": 0.3535019599026364,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.7638726026021343,
+          "peak_thrust_n": 4.7932966031095585,
+          "case_id": 75,
+          "elapsed_s": 5.120911800000158,
+          "dt_s": 0.00025,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        }
+      ],
+      "same_classification": true,
+      "final_step_max_descent_change_m": 0.0004071778895941569,
+      "limit_m": 0.01,
+      "margin_m": 0.009592822110405843,
+      "pass": true
+    },
+    "Cheapest_H7": {
+      "runs": [
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.131,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.1985760914041372,
+          "max_descent_m": 0.5819760892898074,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.578274938472568,
+          "peak_thrust_n": 3.0522337113971187,
+          "case_id": 75,
+          "elapsed_s": 1.2079619000001003,
+          "dt_s": 0.001,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.289576091404137,
+          "max_descent_m": 0.579498252250247,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.6283890763701416,
+          "peak_thrust_n": 3.0522337113971187,
+          "case_id": 75,
+          "elapsed_s": 2.519510999999966,
+          "dt_s": 0.0005,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        },
+        {
+          "scenario": "release_startup",
+          "t_switch_requested_s": 0.13042390859586284,
+          "t_switch_realized_s": 0.1305,
+          "initial_rate_rad_s": 2.0,
+          "success": true,
+          "crashed": false,
+          "recovery_time_s": 2.294326091404137,
+          "max_descent_m": 0.5799941306022983,
+          "available_height_m": 3.0,
+          "final_tilt_deg": 1.634328037087762,
+          "peak_thrust_n": 3.0522337113971187,
+          "case_id": 75,
+          "elapsed_s": 4.89795950000007,
+          "dt_s": 0.00025,
+          "final_low_tilt": true,
+          "final_low_rate": true,
+          "final_low_vertical_speed": true
+        }
+      ],
+      "same_classification": true,
+      "final_step_max_descent_change_m": 0.0004958783520513377,
+      "limit_m": 0.01,
+      "margin_m": 0.009504121647948663,
+      "pass": true
+    }
+  },
+  "status": "ALL_THREE_PLANTS_PASS_SELECTED_TIME_STEP_CHECK"
+}

@@ -1,0 +1,101 @@
+{
+  "historical_actual_code": {
+    "initial_omega_rad_s": [
+      0.5597977259474208,
+      -0.932996209912368,
+      1.3061946938773152
+    ],
+    "full_Euler_hand_first_step_rad_s": [
+      0.5601633283570594,
+      -0.9327768484665848,
+      1.3061946938773152
+    ],
+    "actual_next_omega_rad_s": [
+      0.5601633283570594,
+      -0.9327768484665848,
+      1.3061946938773152
+    ],
+    "expected_norm_rad_s": 1.700000053466048,
+    "max_component_error_rad_s": 0.0,
+    "constant_moment_expected_first_step_rad_s": [
+      0.00014285714285714287,
+      0.00028571428571428574,
+      -8.928571428571427e-05
+    ],
+    "constant_moment_actual_first_step_rad_s": [
+      0.00014285714285714287,
+      0.00028571428571428574,
+      -8.928571428571429e-05
+    ],
+    "constant_moment_max_component_error_rad_s": 1.3552527156068805e-20,
+    "instrumentation": "Read frozen kernel; add vector logs only in memory; no source file or dynamics changed",
+    "kernel_sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee",
+    "pass": true
+  },
+  "Variant_C": {
+    "initial_omega_rad_s": [
+      0.5597977259474208,
+      -0.932996209912368,
+      1.3061946938773152
+    ],
+    "full_Euler_hand_first_step_rad_s": [
+      0.5602617971726802,
+      -0.932713626590451,
+      1.3062023159725442
+    ],
+    "actual_next_omega_rad_s": [
+      0.5602617971726802,
+      -0.932713626590451,
+      1.3062023159725442
+    ],
+    "expected_norm_rad_s": 1.7000036708344812,
+    "max_component_error_rad_s": 0.0,
+    "constant_moment_expected_first_step_rad_s": [
+      0.00020512701555491675,
+      0.00038893380264653414,
+      -0.00011312927753895008
+    ],
+    "constant_moment_actual_first_step_rad_s": [
+      0.00020512701555491677,
+      0.00038893380264653414,
+      -0.00011312927753895007
+    ],
+    "constant_moment_max_component_error_rad_s": 2.710505431213761e-20,
+    "instrumentation": "Read frozen kernel; add vector logs only in memory; no source file or dynamics changed",
+    "kernel_sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee",
+    "pass": true
+  },
+  "Cheapest_H7": {
+    "initial_omega_rad_s": [
+      0.5597977259474208,
+      -0.932996209912368,
+      1.3061946938773152
+    ],
+    "full_Euler_hand_first_step_rad_s": [
+      0.5601491894966483,
+      -0.9327743536723835,
+      1.3062067632237035
+    ],
+    "actual_next_omega_rad_s": [
+      0.5601491894966483,
+      -0.9327743536723835,
+      1.3062067632237035
+    ],
+    "expected_norm_rad_s": 1.7000032993068068,
+    "max_component_error_rad_s": 0.0,
+    "constant_moment_expected_first_step_rad_s": [
+      0.000270751210850736,
+      0.0005030411446813613,
+      -0.00016377799317278968
+    ],
+    "constant_moment_actual_first_step_rad_s": [
+      0.000270751210850736,
+      0.0005030411446813613,
+      -0.00016377799317278966
+    ],
+    "constant_moment_max_component_error_rad_s": 2.710505431213761e-20,
+    "instrumentation": "Read frozen kernel; add vector logs only in memory; no source file or dynamics changed",
+    "kernel_sha256": "ab3021614998c990faf1311c9c954d8a413c67857480caa4f8c3c47ad9f7e2ee",
+    "pass": true
+  }
+}
